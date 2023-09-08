@@ -1,5 +1,30 @@
 <h1><a  href="https://xolyn.github.io/">&#x2302;</a>  Cyber Puppets: Dancing with Shadows in the Digital Masquerade</h1>
 <!-- style="font-size:30px" -->
+Or listen to this article <a href="javascript:void(0);" id="playLink" onclick="playAudio()" style="display:inline;">&#9658;</a>
+    <a href="javascript:void(0);" id="pauseLink" onclick="pauseAudio()" style="display:none;">&#9646;</a>
+    <audio id="audioPlayer" src="audio.mp3"></audio>
+
+    <script>
+        var audio = document.getElementById("audioPlayer");
+        var playLink = document.getElementById("playLink");
+        var pauseLink = document.getElementById("pauseLink");
+
+        function playAudio() {
+            if (audio.paused) {
+                audio.play();
+                playLink.style.display = "none";
+                pauseLink.style.display = "inline";
+            }
+        }
+
+        function pauseAudio() {
+            if (!audio.paused) {
+                audio.pause();
+                playLink.style.display = "inline";
+                pauseLink.style.display = "none";
+            }
+        }
+    </script>
 <hr>
 In the ever-evolving landscape of the internet, the prevalence of fake identities has surged to staggering proportions, prompting profound reflection on its implications. With the sheer volume of fabricated personas multiplying by the day, the digital realm has become a labyrinth where authenticity often finds itself entangled with deceit. The consequences of this phenomenon extend far beyond mere amusement, as the potential harm is undeniable.
 <br>
