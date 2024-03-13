@@ -4,7 +4,8 @@
     <style>
         body{
             font-family: consolas;
-            line-height: 0.7
+            line-height: 0.7;
+            font-size: calc(2vh + 2vw);
         }
 
         ul[role="tree"] {
@@ -18,7 +19,7 @@ ul[role="tree"] li {
   margin: 0;
   padding: 0;
   list-style: none;
-  width: 100%;
+  width: 100vw;
 }
 
 [role="treeitem"][aria-expanded="false"] + [role="group"] {
@@ -32,7 +33,7 @@ ul[role="tree"] li {
 [role="treeitem"].doc::before {
   font-family: "Font Awesome 5 Free";
   /* content: "\f15c"; */
-  content: "┗";
+  content: "🗎";
   display: inline-block;
   padding-right: 2px;
   padding-left: 5px;
@@ -50,7 +51,7 @@ ul[role="tree"] li {
 [role="treeitem"][aria-expanded="false"] > span::before {
   font-family: "Font Awesome 5 Free";
   /* content: "🗀"; */
-  content: "＞";
+  content: "🗀";
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
@@ -59,7 +60,7 @@ ul[role="tree"] li {
 
 [role="treeitem"][aria-expanded="true"] > span::before {
   font-family: "Font Awesome 5 Free";
-  content: "∨";
+  content: "🗀";
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
