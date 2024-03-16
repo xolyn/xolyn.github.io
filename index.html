@@ -40,6 +40,56 @@ footer{
   font-family: sf;
   /* margin-left:50% */
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  visibility: hidden;
+  /* width: 120px; */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.glow {
+  /* font-size: 70px; */
+  /* color: #ffffff; */
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px lightyellow, 0 0 20px gold, 0 0 30px gold, 0 0 40px gold, 
+                 0 0 50px goldenrod, 0 0 60px goldenrod, 0 0 70px goldenrod;
+  }
+  to {
+    text-shadow: 0 0 20px #eeeeee, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700, 
+                 0 0 60px #ffd700, 0 0 70px white, 0 0 80px white
+  }
+}
+
 </style>
 </head>
 
@@ -65,8 +115,11 @@ footer{
     
     <br>
     <small>
+
       <a href="https://aqmn.github.io">[demo1]</a> | <a href="https://aqmn.github.io/index-code">[demo2]</a> | 
-    <a href="https://aqmn.github.io/index0">[demo3]</a> | <a href="https://aqmn.github.io/comm1">[demo4]</a>
+    <a href="https://aqmn.github.io/index0">[demo3]</a> | <a href="https://aqmn.github.io/comm1">[demo4]</a> |         <div class="tooltip"><a class="glow" href="https://aqmn.github.io/cmd">[demo5<sup>&beta;</sup>]</a>
+        <span class="tooltiptext">Check out my creative CLI website!</span>
+      </div>
     </small>
 
     <hr width="80%;" color="black" size="3" style="margin-top: 30px;">
