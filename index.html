@@ -9,6 +9,7 @@
     @font-face { font-family: neue; src: url("fonts/Neue\ Regrade\ Medium.otf"); } 
     @font-face { font-family: neueb; src: url("fonts/Neue\ Regrade\ Bold.otf"); } 
     @font-face { font-family: sf; src: url("fonts/BDLifelessGrotesk_Variable.ttf"); } 
+    /* @font-face { font-family: op; src: url("fonts/"); }  */
     body {
             background-color: white;
             color: black;
@@ -18,7 +19,7 @@
             text-align: center;
         }
 
-        a{
+        /* a{
             color:black ;
             
             transition: 0.2s;
@@ -27,7 +28,35 @@
         a:hover{
           text-decoration: none;
           transition: 0.2s;
-        }
+        } */
+
+        a {
+    position: relative; 
+    color: grey;
+    transition: color 1s; 
+    text-decoration: none; 
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Start with no underline */
+    height: 2px; /* Thickness of the underline */
+    bottom: 0; /* Position at the bottom of the text */
+    left: 0;
+    background-color: black; /* Color of the underline */
+    transition: width .5s; 
+    transform-origin: bottom left;
+}
+
+a:hover {
+    color: black;
+}
+
+a:hover::after {
+    width: 100%; 
+}
+
 
 footer{
   /* position: fixed;
@@ -54,6 +83,7 @@ footer{
   left: 50%;
   margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
   visibility: hidden;
+  /* width: 120px; */
   background-color: black;
   color: #fff;
   text-align: center;
@@ -89,6 +119,11 @@ footer{
   }
 }
 
+.demo{
+  border-radius: 999px;
+  border-width: 2px;
+  border-style: solid;
+}
 </style>
 </head>
 
@@ -116,7 +151,7 @@ footer{
     <small>
 
       <a href="https://aqmn.github.io">[demo1]</a> | <a href="https://aqmn.github.io/index-code">[demo2]</a> | 
-    <a href="https://aqmn.github.io/index0">[demo3]</a> | <a href="https://aqmn.github.io/comm1">[demo4]</a> |         <div class="tooltip"><a class="glow" href="https://aqmn.github.io/cmd">[demo5<sup>&beta;</sup>]</a>
+    <a href="https://aqmn.github.io/index0">[demo3]</a> | <a href="https://aqmn.github.io/comm1">[demo4]</a> |         <div class="tooltip"><a class="" href="https://aqmn.github.io/cmd">[demo5<sup>&beta;</sup>]</a>
         <span class="tooltiptext">Check out my creative CLI website!</span>
       </div>
     </small>
