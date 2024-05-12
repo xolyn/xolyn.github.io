@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  <style>
+    @font-face {
+      font-family: sig;
+      src: url("fonts/sig.otf");
+    }
+
+    @font-face {
+      font-family: soh;
+      src: url("fonts/sohne.otf");
+    }
+
+    @font-face {
+      font-family: apt;
+      src: url("fonts/aptos.ttf");
+    }
+
+    .cover {
+      position: relative;
+      padding: 0px 30px;
+      /* margin-top: 2vh; */
+    }
+
+    .left {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .right {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .scroll-images {
+      position: relative;
+      width: 100%;
+      padding: 40px 0px;
+      height: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 50vw;
+      height: 70vh;
+      padding: 0px 15px;
+      margin: 1px 10px;
+      border: 2px solid black;
+      overflow: hidden;
+      transition: 0.5s;
+      /* -webkit-box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%); */
+      /* box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%); */
+    }
+
+    .child a {
+      text-decoration: none;
+    }
+
+    .child:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .child img,
+    .child>svg {
+      position: absolute;
+      margin-top: -195px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      /* background: #03A9F4; */
+    }
+
+    .scroll-images::-webkit-scrollbar {
+      width: 5px;
+      height: 8px;
+      background-color: #aaa;
+    }
+
+    .scroll-images::-webkit-scrollbar-thumb {
+      background-color: black;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    a {
+      color: inherit;
+
+
+    }
+  </style>
+  <title>font gallery</title>
+</head>
+
+<body>
+  <p style="font-size: 8vw; margin: 8vh 0 0; padding-left: 6vw; font-family: sig;">font gallery</p>
+  <div class="cover">
+    <button class="left" onclick="leftScroll()">
+      <i class="fas fa-angle-double-left"></i>
+    </button>
+    <div class="scroll-images">
+
+      <a href="fg/signifier.html">
+      <div class="child">
+          <p style="font-size: 6vh; font-family: sig;">Signifier</p>
+      </div>
+      </a>
+
+      <a href="fg/sohne.html">
+        <div class="child">
+            <p style="font-size: 6vh; font-family: soh;">Söhne</p>
+        </div>
+      </a>
+
+
+        <a href="#">
+          <div class="child">
+              <p style="font-size: 6vh; ;">more to come...</p>
+          </div>
+        </a>
+
+      
+
+    </div>
+    <button class="right" onclick="rightScroll()">
+      <i class="fas fa-angle-double-right"></i>
+    </button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const scrollImages = document.querySelector(".scroll-images");
+      const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
+      const leftButton = document.querySelector(".left");
+      const rightButton = document.querySelector(".right");
+
+      function checkScroll() {
+        const currentScroll = scrollImages.scrollLeft;
+        if (currentScroll === 0) {
+          leftButton.setAttribute("disabled", "true");
+          rightButton.removeAttribute("disabled");
+        } else if (currentScroll === scrollLength) {
+          rightButton.setAttribute("disabled", "true");
+          leftButton.removeAttribute("disabled");
+        } else {
+          leftButton.removeAttribute("disabled");
+          rightButton.removeAttribute("disabled");
+        }
+      }
+
+      scrollImages.addEventListener("scroll", checkScroll);
+      window.addEventListener("resize", checkScroll);
+      checkScroll();
+
+      function leftScroll() {
+        scrollImages.scrollBy({
+          left: -200,
+          behavior: "smooth"
+        });
+      }
+
+      function rightScroll() {
+        scrollImages.scrollBy({
+          left: 200,
+          behavior: "smooth"
+        });
+      }
+
+      leftButton.addEventListener("click", leftScroll);
+      rightButton.addEventListener("click", rightScroll);
+    });
+  </script>
+</body>
+
+</html>

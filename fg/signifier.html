@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<title>font gallery</title>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        @font-face { font-family: sig; src: url("../fonts/sig.otf"); } 
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    body{
+        text-align: left;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding-top: 20vh;
+        font-size: x-small;
+        font-family: sig;
+        letter-spacing: -.3px;
+        padding-bottom: 20vh;
+    }
+       
+    a{
+        color:inherit;
+        
+    }
+
+    a:hover{
+        background: black;
+        width: min-content;
+        color:white
+    }
+    footer{
+    background-color: white; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    color: black; 
+    padding: 1em 0 3em 0; 
+    font-family:"Courier Prime", monospace;
+    font-weight: bold;
+    }
+
+    footer a{
+        /* text-decoration-style: dotted; */
+    }
+
+    .font-previewer {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-top: 20px;
+    }
+
+    input{
+        border:none;
+        border-color: transparent;
+    }
+    input[type="text"] {
+        max-width: 80vh; /* Set width of the input box */
+        padding: 0px; /* Padding inside the input box */
+        font-size: large;/* Font size in the input box */
+        margin: 10px 0; /* Margin around the input box */
+        border: none; /* Removes the border */
+        outline: none; /* Removes the focus outline */
+        background-color: transparent; /* Makes the input background transparent */
+    }
+
+
+    /* Apply the custom font to the input box */
+    .preview-text {
+        font-family: sig;
+    }
+    
+    input.middle:focus {
+    outline-width: 0;
+}
+
+    </style>
+    
+</head>
+
+
+<body>
+<!-- <p>font gallery</p> -->
+
+<a style="font-size: 10vh; font-family: sig;" href="https://klim.co.nz/retail-fonts/signifier/">Signifier</a>
+<!-- <div style="height: 2px; background-color: #EAEFF5"></div> -->
+<!-- <div style="height: 2px; background-color: black"></div> -->
+<p>
+    Type: Serif
+    <br>
+    Release time: 2020
+    <br>
+
+    Family: <a href="https://klim.co.nz/">Klim Type Foundry</a> (14F)
+</p>
+
+<div class="font-previewer">
+    <!-- <label for="text-preview">Type your text to preview the font:</label> -->
+    <input style="border:none; border-color: transparent;" type="text" id="text-preview" class="preview-text" placeholder="The quick brown fox jumps over the lazy dog.">
+</div>
+
+<p style="border-left: 2px solid black; padding-left: 2vw; font-size: small;">
+    Söhne is the memory of Akzidenz-Grotesk framed through the reality of Helvetica. It captures the analogue materiality of “Standard Medium” used in Unimark’s legendary wayfinding system for the NYC Subway.
+<br>
+</p>
+<a href="https://klim.co.nz/blog/soehne-design-information/">Read more...</a>
+</body>
+
+<footer>
+    <div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
+    <div style="display: inline-block;">
+    <!-- ?/font gallery/söhne -->
+    <a href="javascript:history.back()">&lt;Back</a>
+    </div>
+    <div  style="display: inline-block;">
+        <!-- <b>EN</b>/<a href="simple.cn.html">CN</a>/<a href="simple.kr.html">KR</a> -->
+    </div>
+    </div>
+    </footer>
