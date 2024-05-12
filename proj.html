@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects</title>
+    <style>
+    body{
+        padding-bottom: 10vh;
+    }
+        .proj {
+    display: flex;
+    flex-direction: column; /* Stack children vertically by default */
+    align-items: center; /* Center-align items */
+    width: 100%;
+}
+
+.thumbnail, .desc {
+    width: 80vw; /* Default width for portrait orientation */
+    margin: 10px 0; /* Spacing between elements */
+}
+
+.thumbnail img {
+    width: 100%; /* Make image responsive within the thumbnail container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for landscape orientation */
+@media screen and (orientation: landscape) {
+    .proj {
+        flex-direction: row; /* Align children horizontally in landscape */
+        justify-content: center; /* Center-align items horizontally */
+    }
+
+    .thumbnail, .desc {
+        width: auto; /* Auto width allows for custom widths as per below */
+    }
+
+    .thumbnail {
+        width: 20vw; /* Width of thumbnail in landscape */
+        padding-right: 10vw;
+    }
+
+    .desc {
+        width: 40vw; /* Width of description in landscape */
+    }
+}
+
+    .desc a{
+        /* text-decoration-style: dotted;  */
+        color:grey;
+        transition: 0.5s;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    .desc a:after{
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        background:black;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    .desc a:hover:after{
+        width: 100%; 
+    }
+
+    .desc a:hover{
+        color:black;
+    }
+    </style>
+</head>
+<body>
+    <p style="font-size: xx-large; padding-left: 5vw;">projects</p>
+
+    <div class="proj" style="padding-bottom: 10vh;">
+        <div class="thumbnail">
+            <img src="https://shorturl.at/anrE3">
+        </div>
+        <div class="desc">
+            <p style="font-size: large;">beamer2ppt</p>
+            Python script converting LaTeX beamer in <code>.pdf</code> file to <code>.ppt</code> / <code>.pptx</code> file, without losing formulae formatting.
+            <br>
+            <br>
+            <a style="font-size: small;" href="https://github.com/xolyn/beamer2ppt">Learn more</a>
+        </div>
+    </div>
+
+    <div class="proj">
+        <div class="thumbnail">
+            <img src="https://turingbotsoftware.com/blog/wp-content/uploads/2020/08/1024px-Neural_network.svg_-1.png">
+        </div>
+        <div class="desc">
+            <p style="font-size: large;">machine learning project</p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla maiores quod nam nisi dicta ad hic atque suscipit eius similique accusamus facilis a sit, illum unde laborum debitis explicabo maxime.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum rerum et ducimus necessitatibus vero temporibus dolore delectus provident, quas quia est harum dicta ipsum magnam impedit obcaecati, quaerat quo nostrum.
+            <br>
+            <br>
+            <a style="font-size: small;" href="https://github.com/xolyn/beamer2ppt">Learn more</a>
+
+        </div>
+    </div>
+
+</body>
+</html>
