@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script> -->
+  <script src="fg.js" ></script>
+
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
   <style>
@@ -22,6 +24,10 @@
     @font-face {
       font-family: apt;
       src: url("fonts/aptos.ttf");
+    }
+
+    .disable-dbl-tap-zoom {
+    touch-action: manipulation;
     }
 
     .cover {
@@ -120,7 +126,7 @@
   <title>font gallery</title>
 </head>
 
-<body>
+<body class="disable-dbl-tap-zoom">
   <p style="font-size: 8vw; margin: 8vh 0 0; padding-left: 6vw; font-family: sig;">font gallery</p>
   <div class="cover">
     <button style="z-index: 999999;" class="left" onclick="leftScroll()">
