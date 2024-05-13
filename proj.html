@@ -12,11 +12,17 @@
         padding-bottom: 10vh;
         font-family:soh;
     }
+
+    ::selection{
+        background: orangered;
+        color:white;
+    }
         .proj {
     display: flex;
     flex-direction: column; /* Stack children vertically by default */
     align-items: center; /* Center-align items */
     width: 100%;
+    padding-bottom: 10vh;
 }
 
 .thumbnail, .desc {
@@ -34,6 +40,7 @@
     .proj {
         flex-direction: row; /* Align children horizontally in landscape */
         justify-content: center; /* Center-align items horizontally */
+        
     }
 
     .thumbnail, .desc {
@@ -79,15 +86,29 @@
     .desc a:hover{
         color:black;
     }
+
+    details:hover{
+            cursor: pointer;
+        }
+
+        summary::after {
+        margin-left: 5%;
+        display: inline-block;
+        content: '+';
+        }
+
+        details[open] > summary::after {
+        content: "-";
+        }
+
     </style>
 </head>
 <body>
     <p style="font-size: xx-large; font-family:sig; padding-left: 5vw;">projects</p>
 
-    <div class="proj" style="padding-bottom: 10vh;">
+    <div class="proj" >
         <div class="thumbnail">
             <img src="https://i.ibb.co/ryXZf9D/blur-edges-1.jpg">
-            
         </div>
         <div class="desc">
             <p style="font-size: large;">beamer2ppt</p>
@@ -115,9 +136,32 @@
             <br>
             <br>
             <a style="font-size: small;" href="https://aqmn.github.io/cmd">Explore</a>
-
         </div>
     </div>
+
+    <div class="proj">
+        <div class="thumbnail">
+            <!-- <img src="https://turingbotsoftware.com/blog/wp-content/uploads/2020/08/1024px-Neural_network.svg_-1.png"> -->
+            <img src=
+            "https://assets-global.website-files.com/63860a6c68b9e86f413fdb22/65a70861be364ef5f29c2790_mike-hindle-a4szJ_sBfiU-unsplash.jpg"
+            >
+        </div>
+        <div class="desc">
+            <p style="font-size: large;">HTML Demo</p>
+            <details >
+                <summary style="display: block;">List of work</summary>
+                <ul style=" margin-top: 5px;">
+                    <li><a href="https://aqmn.github.io">demo1</a><br></li>
+                    <li><a href="https://aqmn.github.io/index-code">demo2</a><br></li>
+                    <li><a href="https://aqmn.github.io/index0">demo3</a><br></li>
+                    <li><a href="https://aqmn.github.io/comm2">demo4</a><br></li>
+                </ul>
+              </details>
+              <br>
+            <!-- <a style="font-size: small;" href="https://aqmn.github.io/cmd">Explore</a> -->
+        </div>
+    </div>
+
 
 </body>
 </html>
