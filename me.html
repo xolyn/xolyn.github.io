@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>me</title>
+    <style>
+    @font-face {
+      font-family: neue;
+      src: url("fonts/nhm.ttf");
+    }
+    ::webkit-scrollbar {display: none}
+
+        body{
+            background-color:black;
+            color:white;
+            margin:0px;
+            font-family: neue;
+        }
+
+        .menu-container {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        overflow: hidden; 
+        overflow-y: hidden;
+        }
+
+        .menu {
+        
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        }
+
+        .menu li {
+        display: inline-block;
+        
+        transition: 0.5s;
+        }
+        .nic{
+            transition: 0.5s;
+        }
+
+        .nic:hover{
+            /* color:red; */
+/* 
+            text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #fff,
+            0 0 82px #fff,
+            0 0 92px #fff,
+            0 0 102px #fff,
+            0 0 151px #fff,;
+            filter: dropshadow(color=#000000, offx=2, offy=2); */
+        }
+
+        .menu li:last-child {
+        margin-right: 0;
+        }
+
+        @media (orientation: landscape) {
+        .menu li {font-size: 5vw;margin-right: 3vw;}
+        .nic {font-size: 30vh; margin-top: 27vh;}
+
+    }
+
+    @media (orientation: portrait) {
+        .menu li {font-size: 20vw;margin-right: 6vw;}
+        .nic {padding-top: 65vh; font-size: 30vw;}
+        .menu-container{
+            padding-bottom: 1vh;
+        }
+    }
+    </style>
+
+<script>
+
+window.onload = function() {
+//   alert(window.innerHeight);
+//   alert(window.innerWidth);
+  if (window.innerHeight<window.innerWidth) {
+    alert("Scroll mouse wheel normally on menu bar to see more!");
+  }
+};
+
+</script>
+</head>
+<body>
+    <div class="menu-container" id="menu-container" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100" >
+        <ul class="menu">
+          <li>Home</li>
+          <li>About</li>
+          <li>Project</li>
+          <li>Socials</li>
+          <li>FAQ</li>
+          <li>Blog</li>
+          <li>Share</li>
+          <li>Gallery</li>
+        </ul>
+      </div>
+    <div class="nic" style="  line-height: 0.9;">Lingyu<br>Zhou</div>
+</body>
+
+</html>
