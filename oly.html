@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+      font-family: neue;
+      src: url("fonts/nhm.ttf");
+    }
+
+    body{
+        margin: 0px;
+        background-color: black;
+        transition: 0.5s;
+    }
+
+    .desc{
+        padding: 3vh 10vw 3vh;
+        color:white;
+        font-family: neue;
+        line-height:.85;
+    }
+
+    .desc a{
+        color:grey;
+        transition: 0.5s;
+        text-decoration: none;
+    }
+
+    .desc a:hover{
+        color:white;
+    }
+
+    @media (orientation: landscape) {
+    body {
+        font-size: 12vw;
+    }
+    .desc a{
+        font-size: 10vw;
+    }
+
+    }
+
+    @media (orientation: portrait) {
+    body {
+        font-size: 20vw;
+    }
+    .desc a{
+        font-size: 18vw;
+    }
+    }
+    </style>
+</head>
+<body>
+    <div style="padding-top: 20vh;"></div>
+    <div class="desc">The<br>Bla<span style=" display: inline-block; transform:  scaleX(-1);">c</span>k<br>Record</div>
+    <!-- <div class="desc"><span style="color:orangered">A</span>rt<br><span style="color:orangered">O</span>f<br><span style="color:orangered">F</span>onts</div> -->
+    <div class="desc"><a href="#">Details</a><br><a href="#">Enroll</a></div>
+</body>
+</html>
