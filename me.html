@@ -10,6 +10,11 @@
       src: url("fonts/nhm.ttf");
     }
     ::webkit-scrollbar {display: none}
+    a{
+        color:inherit;
+        text-decoration: None;
+    }
+
 
         body{
             background-color:black;
@@ -26,17 +31,22 @@
         }
 
         .menu {
-        
         list-style-type: none;
-        margin: 0;
+        margin: 2px;
         padding: 0;
         }
 
         .menu li {
         display: inline-block;
-        
+        padding: -2px -2px -2px;
         transition: 0.5s;
         }
+
+        .menu li a:hover {
+            border: dotted 2px white;
+        }
+        
+
         .nic{
             transition: 0.5s;
         }
@@ -65,7 +75,7 @@
     </style>
 
 <script>
-
+        
 window.onload = function() {
 //   alert(window.innerHeight);
 //   alert(window.innerWidth);
@@ -79,14 +89,14 @@ window.onload = function() {
 <body>
     <div class="menu-container" id="scrollable" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100" >
         <ul class="menu">
-          <li>Home</li>
-          <li>About</li>
-          <li>Project</li>
-          <li>Socials</li>
-          <li>FAQ</li>
-          <li>Blog</li>
-          <li>Share</li>
-          <li>Gallery</li>
+          <li><a href="me.html">home</a></li>
+          <li><a href="https://zhoulingyu.net/about.html">about</a></li>
+          <li><a href="proj.html">project</a></li>
+          <!-- <li>Socials</li> -->
+          <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
+          <li><a href="https://blog.zhoulingyu.net">blog</a></li>
+          <li><a href="#" onclick="javascript:navigator.share({title: 'Lingyu Zhou',text: 'Lingyu Zhou',url: 'https://zhoulingyu.net'})" >share</a></li>
+          <li><a href="fg.html">gallery</a></li>
         </ul>
       </div>
     <div class="nic" style="  line-height: 0.9;">Lingyu<br>Zhou</div>
