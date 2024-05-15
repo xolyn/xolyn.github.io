@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lingyu Zhou</title>
+    <title>me</title>
     <style>
     @font-face {
       font-family: neue;
@@ -29,12 +29,15 @@
         overflow-x: auto;
         white-space: nowrap;
         overflow-y: hidden;
+        background-color: transparent;
+
         }
 
         .menu {
         list-style-type: none;
         margin: 2px;
         padding: 0;
+        /* position: relative; */
         }
 
         .menu li {
@@ -92,16 +95,134 @@
         }
     }
 
+    .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color:transparent; 
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  left: 50%;
+  z-index: 9999;
+  top: 10vh;
+  transform: translateX(-50%);
+  /* margin-left: -60px; */
+    }
+
+    .tooltip:hover .tooltiptext {
+    visibility: visible;
+    }
+
+    .overlay {
+  height: 0;
+  width: 100%;
+  position: fixed; 
+  z-index: 100; 
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0, 0.9); 
+  overflow-y: hidden; 
+  transition: 0.5s; 
+  /* height: 0;
+  width: 100%;
+  position: fixed; 
+  z-index: 100; 
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0, 0.9); 
+  overflow-y: hidden; 
+  transition: height 0.5s, opacity 0.5s;
+  opacity: 0; */
+}
+
+/* 
+.overlay.show {
+  height: 100%;
+  opacity: 1;
+} */
+
+/* Position the content inside the overlay */
+.overlay-content {
+transition: 0.5s;
+backdrop-filter: blur(10px);
+  position: relative;
+  height: 100vh; 
+  padding-top: 25vh;
+  width: 100%;
+  text-align: center; /* Centered text/links */
+
+  z-index: 999;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
 
     </style>
-
 <script>
         
-// window.onload = function() {
-//   if (window.innerHeight<window.innerWidth) {
-//     alert("Scroll mouse wheel normally on menu bar to see more!");
-//   }
-// };
+window.onload = function() {
+  if (window.innerHeight<window.innerWidth) {
+    alert("Scroll mouse wheel normally on menu bar to see more!");
+  }
+};
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+
+// function openNav() {
+//   const overlay = document.getElementById("myNav");
+//   overlay.classList.add("show");
+// }
+
+// function closeNav() {
+//   const overlay = document.getElementById("myNav");
+//   overlay.classList.remove("show");
+// }
 
 </script>
 </head>
@@ -111,14 +232,29 @@
           <li><a href="me.html">home</a></li>
           <li><a href="https://zhoulingyu.net/about.html">about</a></li>
           <li><a href="proj.html">project</a></li>
-          <!-- <li>Socials</li> -->
+          <li><a href="#" onclick="openNav()" >socials </a></li>
           <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
           <li><a href="https://blog.zhoulingyu.net">blog</a></li>
           <li><a href="#" onclick="javascript:navigator.share({title: 'Lingyu Zhou',text: 'Lingyu Zhou',url: 'https://zhoulingyu.net'})" >share</a></li>
           <li><a href="fg.html">gallery</a></li>
         </ul>
       </div>
+
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">instagram</a>
+          <a href="#">x</a>
+          <a href="#">weibo</a>
+          <a href="#">github</a>
+          <a href="#">linkedin</a>
+          <a href="#">coolapk</a>
+        </div>
+      </div>
+
+
     <div class="nic" style="  line-height: 0.9;">Lingyu<br>Zhou</div>
+
 </body>
 
 </html>
