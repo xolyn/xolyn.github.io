@@ -21,6 +21,7 @@
             color:white;
             margin:0px;
             font-family: neue;
+            overflow-y: hidden;
         }
 
         .menu-container {
@@ -40,6 +41,7 @@
         display: inline-block;
         padding: -2px -2px -2px;
         transition: 0.5s;
+        text-transform: uppercase;
         }
 
         .menu li a:hover {
@@ -59,10 +61,18 @@
         @media (orientation: landscape) {
         .menu li {font-size: 5vw;margin-right: 3vw;}
         .nic {font-size: 30vh; margin-top: 27vh;}
-        .menu-container{
-        overflow: hidden; 
+        .menu-container::-webkit-scrollbar{
+            background:transparent
         }
 
+        .menu-container::-webkit-scrollbar-thumb{
+            background:transparent
+        }
+
+        .menu-container::-webkit-scrollbar-track-piece{
+            display:none;
+        }
+        
     }
 
     @media (orientation: portrait) {
@@ -71,6 +81,12 @@
         .menu-container{
             padding-bottom: 1vh;
         }
+    }
+
+    @media (hover: none) {
+    a {
+        background: yellow;
+    }
     }
     </style>
 
