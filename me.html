@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>me</title>
+    <title>Lingyu Zhou</title>
     <style>
     @font-face {
       font-family: neue;
@@ -51,6 +51,10 @@
 
         .nic{
             transition: 0.5s;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100vw
         }
 
 
@@ -60,7 +64,9 @@
 
         @media (orientation: landscape) {
         .menu li {font-size: 5vw;margin-right: 3vw;}
-        .nic {font-size: 30vh; margin-top: 27vh;}
+        .nic {font-size: 30vh; 
+            /* margin-top: 27vh; */
+        }
         .menu-container::-webkit-scrollbar{
             background:transparent
         }
@@ -77,23 +83,25 @@
 
     @media (orientation: portrait) {
         .menu li {font-size: 20vw;margin-right: 6vw;}
-        .nic {padding-top: 50vh; font-size: 30vw;}
+        .nic {
+            /* padding-top: 50vh;  */
+            font-size: 30vw;
+        }
         .menu-container{
             padding-bottom: 1vh;
         }
     }
 
+
     </style>
 
 <script>
         
-window.onload = function() {
-//   alert(window.innerHeight);
-//   alert(window.innerWidth);
-  if (window.innerHeight<window.innerWidth) {
-    alert("Scroll mouse wheel normally on menu bar to see more!");
-  }
-};
+// window.onload = function() {
+//   if (window.innerHeight<window.innerWidth) {
+//     alert("Scroll mouse wheel normally on menu bar to see more!");
+//   }
+// };
 
 </script>
 </head>
