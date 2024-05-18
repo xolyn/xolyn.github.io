@@ -64,7 +64,7 @@
         text-decoration: none;
         display: inline-block;
         position: relative;
-        padding-bottom: 5px;
+        margin-bottom: 5px;
     }
 
     .desc a:after{
@@ -91,7 +91,7 @@
             cursor: pointer;
         }
 
-        summary::after {
+        /* summary::after {
         margin-left: 5%;
         display: inline-block;
         content: '+';
@@ -99,7 +99,7 @@
 
         details[open] > summary::after {
         content: "-";
-        }
+        } */
 
     </style>
 </head>
@@ -148,13 +148,15 @@
         </div>
         <div class="desc">
             <p style="font-size: large;">HTML Demo</p>
-            <details >
-                <summary style="display: block;">List of work</summary>
+            <details open>
+                <summary >List of work</summary>
                 <ul style=" margin-top: 5px;">
                     <li><a href="https://aqmn.github.io">demo1</a><br></li>
                     <li><a href="https://aqmn.github.io/index-code">demo2</a><br></li>
                     <li><a href="https://aqmn.github.io/index0">demo3</a><br></li>
                     <li><a href="https://aqmn.github.io/comm2">demo4</a><br></li>
+                    <li><a href="https://aqmn.github.io/guess">fun</a><br></li>
+                    
                 </ul>
               </details>
               <br>
