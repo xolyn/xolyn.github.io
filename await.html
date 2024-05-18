@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<title>Lingyu Zhou</title>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        /* @font-face { font-family: cour; src: url("fonts/cour.ttf"); }  */
+    body{
+        text-align: left;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding-top: 20vh;
+        font-size: small;
+        /* font-family: cour; */
+        font-family:"Courier Prime", monospace;
+        letter-spacing: -.5px;
+        padding-bottom:20vh;
+    }
+
+    .disable-dbl-tap-zoom {
+    touch-action: manipulation;
+    }
+       
+    a{
+        color:inherit;
+    }
+    a:hover{
+        background: black;
+        width: min-content;
+        color:white;
+    }
+    footer{
+    background-color: white; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    color: black; 
+    padding: 1em 0 3em 0; 
+    }
+        
+    input {
+        
+    }
+
+    input[type=range].vVertical {
+    -webkit-appearance: none;
+    width: 30px;
+    background-color: black;
+    height:4px;
+    border-radius: 999px;
+    -webkit-transform:rotate(90deg);       
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    z-index: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+border: white solid 2px;
+border-radius: 999px;
+}
+
+
+    </style>
+</head>
+
+<body class="disable-dbl-tap-zoom">
+    <a href="simplefor.html"><p style="background: black; width: min-content;color: white; padding: 3px 6px 3px 6px;">Z</p></a>
+<!-- <a href="simple.html">Lingyu Zhou</a> -->
+<b>Lingyu Zhou</b>
+
+<p><a href="https://khentmt.com">Founder</a> and <a href="https://cornell.edu">student</a>, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology.</p>
+
+<p><a   href=mailto:lz568@cornell.edu>e-mail</a> 
+    / <a href=https://f.xoy.one/cv.pdf>résumé</a> 
+    / <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
+    / <a href=https://instagram.com/toqurdn>instagram</a> 
+    / <a href=https://github.com/xolyn>github</a> 
+    / <a href=https://twitter.com/uygniluohz>x</a> 
+    / <a href=https://weibo.com/u/5663761733>weibo</a>
+</p>
+    
+<p><a href="https://xolyn.github.io/proj">projects></a><br>
+    <a href="fg.html">font gallery></a><br>
+
+    
+
+    <!-- <a href="https://aqmn.github.io/guess">fun></a><br> -->
+    <!-- <a href="https://aqmn.github.io">demo1></a><br>
+    <a href="https://aqmn.github.io/index-code">demo2></a><br>
+    <a href="https://aqmn.github.io/index0">demo3></a><br>
+    <a href="https://aqmn.github.io/comm2">demo4></a><br> -->
+    <!-- <a class="" href="https://aqmn.github.io/cmd">demo5(beta)></a></p> -->
+<footer>
+    <div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
+    <div style="display: inline-block;">
+     <a href="https://xolyn.github.io/give">$</a>/<a href="https://xolyn.github.io">home</a>/
+    </div>
+    <div  style="display: inline-block; line-height: .7;">       
+        <!-- <b>EN</b>/CN/KR -->
+        <!-- <a class="de" style="text-decoration: none; " href="">︿</a><br>
+        <a style="text-decoration: none; " href="sm.html" aria-label="Eye of God">&#128065;</a><br>
+        <a class="ev" style="text-decoration: none; " href="">﹀</a> -->
+        <input type="range" min="1" max="3" value="2" step="1" class="vVertical" id="rangeInput">
+    </div>
+
+    <dialog style="    position: fixed;
+    top:0%;
+    left:0%;
+    width: 100vw;
+    height: 100vh;
+    border: black solid 10px;
+    background: black;
+    color:white;
+ " id="deg">
+    <div style="display: flex; justify-content: center; padding-top: 45vh; font-size: 5vh;">degenarate</div>
+    </dialog>
+
+
+    <dialog style="position: fixed;
+    top:0%;
+    left:0%;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    color:black;
+ " id="evo">
+    <div style="display: flex; justify-content: center; padding-top: 45vh; font-size: 5vh;">evolve</div>
+    </dialog>
+
+    </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var rangeInput = document.getElementById("rangeInput");
+            rangeInput.addEventListener("input", function() {
+                var value = parseInt(rangeInput.value);
+        
+                // Redirect based on the value
+                switch(value) {
+                    case 1:
+                        evo.show();
+                        setTimeout(function(){window.location.href = "https://zhoulingyu.net";},750)
+                        break;
+                    case 3:
+                        deg.show();
+                        setTimeout(function(){window.location.href = "https://aqmn.github.io/cmd";},750)
+                        break;
+                    default:
+                        // Do nothing for other values
+                        break;
+                }
+            });
+        });
+        </script>
+</body>
+
