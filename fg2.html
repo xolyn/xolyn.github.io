@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project Gallery</title>
 <style>
+    @import url(https://db.onlinewebfonts.com/c/1058bc9f019dd38b7c08014b7d82b017?family=Sneak-Regular);
+@import url(https://db.onlinewebfonts.com/c/88f10bf18a36407ef36bf30bc25a3618?family=SuisseIntl-Regular);
+@import url(https://db.onlinewebfonts.com/c/031da03967812d134ed68febd3ba78a9?family=GT+America+Regular);
+@import url(https://db.onlinewebfonts.com/c/6e47ef470dd19698c911332a9b4d1cf4?family=Neue+Haas+Grotesk+Text+Pro);
 @font-face {
       font-family: sig;
       src: url("fonts/sig.otf");
@@ -40,42 +44,113 @@
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         width: 90vw; 
-        height: 50vh; 
+        height: 70vh; 
         /* padding: 0 20px 0; */
         box-sizing: border-box; 
         margin-right: 5vw;
         max-height: 60vh;
-        overflow-y: hidden
+        overflow-y: hidden;
+        padding-bottom  : 3vh;
     }
 
     .item {
+        padding: 0px 5vh 0px;
         flex: 0 0 33.333%; 
         height: 100%;
         background-color: #f0f0f0;
+        border-radius: 10px;
+        color:black;
+        text-decoration: none;
         margin: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 24px;
+        text-align: center;
+        font-size: xx-large;
         scroll-snap-align: start;
+        transition: 0.5s;
+    }
+
+    .item:hover{
+        background-color: black;
+        color:white;
     }
 
     /* Media query for portrait orientation: adjust item width */
     @media (orientation: portrait) {
         .item {
-            flex: 0 0 100%; /* Each item takes up the full view width in portrait */
+            flex: 0 0 60%; /* Each item takes up the full view width in portrait */
         }
     }
+
+    .fixed-link {
+            position: fixed;
+            left: 50%;
+            top: 3%;
+            transform: translateX(-50%);
+            z-index: 1000; /* Ensure it overlays on top of other elements */
+            padding: 5px 5px 0px;
+            background-color: white;
+            border: grey 2px solid;
+            color: grey;
+            text-decoration: none;
+            border-radius: 999px;
+        transition: 0.5s;
+        }
+
+        .fixed-link :hover{
+            color: black;
+        }
+
 </style>
 </head>
 <body>
 <p style="font-size: xx-large; font-family: sig;">Project Gallery</p> <!-- Title for the gallery -->
 <div class="gallery">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-    <div class="item">Item 4</div>
-    <div class="item">Item 5</div>
+
+    <a  class="item" href="fg/sohne.html">
+        <div >
+            <p style=" font-family: soh;">Söhne</p>
+        </div>
+      </a>
+
+    <a  class="item" href="fg/signifier.html">
+        <div >
+            <p style=" font-family: sig;">Signifier</p>
+        </div>
+        </a>
+
+        <a   class="item" href="fg/gtamerica.html">
+            <div >
+                <p style=" font-family: GT America Regular;">GT America</p>
+            </div>
+          </a>
+
+        <a   class="item" href="fg/nhg.html">
+            <div >
+                <p style=" font-family: Neue Haas Grotesk Text Pro;">Neue Haas Grotesk</p>
+            </div>
+          </a>
+  
+          <a  class="item" href="fg/sneak.html">
+            <div >
+                <p style=" font-family: 'Sneak-Regular';">Sneak</p>
+            </div>
+          </a>
+  
+          <a   class="item" href="suissen.html">
+            <div >
+                <p style=" font-family: SuisseIntl-Regular;">Suissen Intl</p>
+            </div>
+          </a>
+
+          
 </div>
+<a style="font-family: Neue Haas Grotesk Text Pro" href="javascript: history.back()" class="fixed-link">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="5vh" height="5vh" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+  </svg> 
+  <!-- &larr; back -->
+  </a>
 </body>
 </html>
