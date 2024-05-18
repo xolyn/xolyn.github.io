@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<title>font gallery</title>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url(https://db.onlinewebfonts.com/c/1058bc9f019dd38b7c08014b7d82b017?family=Sneak-Regular);
+    body{
+        text-align: left;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding-top: 20vh;
+        font-size: x-small;
+        font-family: "Sneak-Regular";
+        letter-spacing: -.3px;
+        padding-bottom: 20vh;
+    }
+       
+    a{
+        color:inherit;
+        
+    }
+
+    a:hover{
+        background: black;
+        width: min-content;
+        color:white
+    }
+    footer{
+    background-color: white; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    color: black; 
+    padding: 1em 0 3em 0; 
+    font-family:"Courier Prime", monospace;
+    }
+
+    .font-previewer {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-top: 20px;
+    }
+
+    input{
+        border:none;
+        border-color: transparent;
+    }
+    input[type="text"] {
+        max-width: 80vh; /* Set width of the input box */
+        padding: 0px; /* Padding inside the input box */
+        font-size: large;/* Font size in the input box */
+        margin: 10px 0; /* Margin around the input box */
+        border: none; /* Removes the border */
+        outline: none; /* Removes the focus outline */
+        background-color: transparent; /* Makes the input background transparent */
+    }
+
+
+    /* Apply the custom font to the input box */
+    .preview-text {
+        font-family: "Sneak-Regular";
+    }
+    
+    input.middle:focus {
+    outline-width: 0;
+}
+
+    </style>
+    
+</head>
+
+
+<body>
+<!-- <p>font gallery</p> -->
+
+<a style="font-size: 10vh;" href="https://tightype.com/typefaces/sneak">Sneak</a>
+<!-- <div style="height: 2px; background-color: #EAEFF5"></div> -->
+<!-- <div style="height: 2px; background-color: black"></div> -->
+<p>
+    Type: ~
+    <br>
+    Release time: 2019
+    <br>
+
+    Family: <a href="https://tightype.com/">Hightype</a> (11S)
+</p>
+
+<div class="font-previewer">
+    <!-- <label for="text-preview">Type your text to preview the font:</label> -->
+    <input style="border:none; border-color: transparent;" type="text" id="text-preview" class="preview-text" placeholder="Type to preview...">
+</div>
+
+<p style="border-left: 2px solid black; padding-left: 2vw; font-size: small; ">
+Sneak is a neo-grotesque typeface, featuring several reversed characters, such as its distinctive S. Sneak is available in five weights with corresponding Italics as well as a monospaced style.<br>
+This font is characterized by reversing upside-down characters like "B", "S", "3" ,"8", which have unequal widths at the top and bottom.
+</p>
+<a href="https://tightype.com/typefaces/sneak#:~:text=Sneak%20is%20a%20neo%2Dgrotesque%20typeface%2C%20featuring%20several%20reversed%20characters%2C%20such%20as%20its%20distinctive%20S.%20Sneak%20is%20available%20in%20five%20weights%20with%20corresponding%20Italics%20as%20well%20as%20a%20monospaced%20style.">Read more...</a>
+</body>
+
+<footer>
+    <div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
+    <div style="display: inline-block;">
+    <a href="javascript:history.back()">&lt;Back</a>
+    </div>
+    <div  style="display: inline-block;">
+        <!-- <b>EN</b>/<a href="simple.cn.html">CN</a>/<a href="simple.kr.html">KR</a> -->
+        
+    </div>
+    </div>
+    </footer>
