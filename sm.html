@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<title>Site Map</title>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    body{
+        text-align: left;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding-top: 20vh;
+        font-size: small;
+        font-family:"Courier Prime", monospace;
+        letter-spacing: -.3px;
+        padding-bottom: 10vh;
+    }
+       
+    a{
+        color:inherit;
+        
+    }
+
+    a:hover{
+        background: black;
+        width: min-content;
+        color:white
+    }
+    footer{
+    background-color: white; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    color: black; 
+    padding: 1em 0 3em 0; 
+    font-family:"Courier Prime", monospace;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    tr {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding-right: 2vw;
+    }
+
+    td {
+  padding-right: 2vw;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: "deprecated soon.";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+.ne{
+    cursor: not-allowed;
+    position: relative;
+}
+
+.ne::after {
+  content: "deprecated.";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.ne:hover::after {
+  opacity: 1;
+}
+
+pre{ 
+   /* white-space: pre-wrap; 
+   word-break: break-word; */
+   line-height: 1.1;
+}
+
+.here{
+    cursor: not-allowed;
+    position: relative;
+}
+
+.here::after {
+  content: "you are here!";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.here:hover::after {
+  opacity: 1;
+}
+
+details >a {
+    padding-left: 3vw;
+    border-left: solid black 1px;
+    margin-left: 5px;
+}
+</style>
+    
+</head>
+
+
+<body>
+    
+    <a href="index.html"><p style="background: black; width: min-content;color: white; padding: 3px 6px 3px 6px;">Z</p></a>
+<b>site map</b>
+
+<!-- <details open>
+<summary><a href="https://uygnil.com">uygnil.com</a></summary>
+</details>
+
+<details open>
+    <summary ><a href="https://zhoulingyu.net">zhoulingyu.net</a></summary>
+    <a href="https://blog.zhoulingyu.net">blog.zhoulingyu.net</a><br>
+    <a href="https://drive.zhoulingyu.net">drive.zhoulingyu.net</a><br>
+    <a href="https://portfolio.zhoulingyu.net">portfolio.zhoulingyu.net</a><br>
+    <a>f.zhoulingyu.net</a>
+    </details>
+    <details open>
+        <summary ><a href="https://khentmt.com">khentmt.com</a></summary>
+    </details>
+
+
+
+<details open>
+<summary ><a href="https://xoy.one">xoy.one</a></summary>
+<a href="https://blog.xoy.one">blog.xoy.one</a><br>
+<a>f.xoy.one</a>
+</details>
+
+<details open>
+    <summary ><a href="https://xolyn.github.io"><b>xolyn.github.io</b></a></summary>
+    </details>
+
+<details open>
+    <summary ><a href="https://aqmn.github.io">aqmn.github.io</a></summary>
+    </details>
+    
+    <details open>
+        <summary ><a href="https://iqae.github.io">iqae.github.io</a></summary>
+        </details> -->
+<pre style="font-family:'Courier Prime', monospace; width: 90vw; overflow-x: hidden; margin-bottom: -12px;">
+/
+</pre>
+<pre style="font-family:'Courier Prime', monospace; width: 90vw; overflow-x: hidden;">
+├── <a href="https://uygnil.com">uygnil.com</a>
+├── <a href="https://zhoulingyu.net">zhoulingyu.net</a>
+│   ├── <a href="https://blog.zhoulingyu.net">blog.zhoulingyu.net</a>
+│   ├── <a href="https://drive.zhoulingyu.net">drive.zhoulingyu.net</a>
+│   ├── <a href="https://portfolio.zhoulingyu.net">portfolio.zhoulingyu.net</a>
+│   └── f.zhoulingyu.net
+├── <a href="https://khentmt.com">khentmt.com</a>
+├── <a href="https://xoy.one">xoy.one</a>
+│   ├── <a href="https://blog.xoy.one">blog.xoy.one</a>
+│   └── f.xoy.one
+├── <a class="here" href="https://xolyn.github.io"><b>xolyn.github.io</b></a>
+├── <a  href="https://aqmn.github.io">aqmn.github.io</a>
+├── <a href="https://iqae.github.io">iqae.github.io</a>
+├── <a  href="https://zlybox.eu.org">zlybox.eu.org</a> 
+├── <a class="tooltip" href="https://zlybox.com">zlybox.com</a> 
+└ ─ <a class="ne" style="text-decoration: line-through;" >zly1.com</a>
+<!-- <a href="#" class="tooltip">(!)</a> -->
+<!-- ¦__ <a class="ne" >zly1.com</a> -->
+</pre>
+
+</body>
+
+<footer>
+    <div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
+    <div style="display: inline-block;">
+        <!-- <a href="https://xolyn.github.io/give">$</a> ls -tree <a style="" href="index.html">/</a> -->
+        > os.listdir("<a style="text-decoration: none;" href="index.html">/</a>")
+    </div>
+    <div  style="display: inline-block;">
+        <!-- <b>EN</b>/<a href="simple.cn.html">CN</a>/<a href="simple.kr.html">KR</a> -->
+        
+    </div>
+    </div>
+    </footer>
+
