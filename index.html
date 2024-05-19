@@ -40,8 +40,11 @@
     color: black; 
     padding: 1em 0 3em 0; 
     }
-        
+    #myPre {
+            display: none;
+    }
     </style>
+    
 </head>
 
 <body class="disable-dbl-tap-zoom">
@@ -51,7 +54,8 @@
 
 <p><a href="https://khentmt.com">Founder</a> and <a href="https://cornell.edu">student</a>, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology.</p>
 
-<p><a   href=mailto:lz568@cornell.edu>e-mail</a> 
+<p><a href="" id="emailLink">e-mail</a> 
+    <!-- mailto:lz568@cornell.edu -->
     / <a href=https://f.xoy.one/cv.pdf>résumé</a> 
     / <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
     / <a href=https://instagram.com/toqurdn>instagram</a> 
@@ -59,7 +63,16 @@
     / <a href=https://twitter.com/uygniluohz>x</a> 
     / <a href=https://weibo.com/u/5663761733>weibo</a>
 </p>
-    
+
+<pre id="myPre" style=" line-height: 0.8; letter-spacing: -2px; font-size: .1px;">
+        __      ______      __                             
+ ____  / /_  __/ ____ \____/ /_____________  ____ ___
+/_  / / / / / / / __ `/ __  / ___/ ___/ __ \/ __ `__ \
+ / /_/ / /_/ / / /_/ / /_/ / /  / /__/ /_/ / / / / / /
+/___/_/\__, /\ \__,_/\__,_/_(_) \___/\____/_/ /_/ /_/
+      /____/  \____/                               
+</pre>
+
 <p><a href="proj.html">projects></a><br>
     <a href="fg2.html">font gallery></a><br>
     <a href="sm.html" title="Eye of God">site map></a>
@@ -70,7 +83,31 @@
     <a href="https://aqmn.github.io/index0">demo3></a><br>
     <a href="https://aqmn.github.io/comm2">demo4></a><br> -->
     <!-- <a class="" href="https://aqmn.github.io/cmd">demo5(beta)></a></p> -->
+        
+<!-- 
+.     ._, ._,  _,  __                 ..        .     
+| __. |_  (_  (_) /(]|  _. _ ._.._  _ ||    _  _|  .  
+|  /_. _) (_) (_) \__/ (_.(_)[  | |(/,|| . (/,(_](_|  
+                                                    
+      __     _____     __                      
+ ___ / /_ __/ ___ \___/ /___ _______  __ _     
+/_ // / // / / _ `/ _  / __// __/ _ \/  ' \    
+/__/_/\_, /\ \_,_/\_,_/_/ (_)__/\___/_/_/_/    
+     /___/  \___/     
+                               -->
 
+
+<script>
+document.getElementById('emailLink').addEventListener('click', function(event) {
+    var preSection = document.getElementById('myPre');
+    event.preventDefault(); // Prevent the default link behavior
+    if (preSection.style.display === '' || preSection.style.display === 'none') {
+        preSection.style.display = 'block';
+    } else {
+        preSection.style.display = 'none';
+    }
+});
+</script>
 </body>
 <footer>
     <div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
