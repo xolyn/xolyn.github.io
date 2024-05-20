@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/font.svg" type="image/png">
+
 <title>Project Gallery</title>
 <style>
 @import url(https://db.onlinewebfonts.com/c/1058bc9f019dd38b7c08014b7d82b017?family=Sneak-Regular);
@@ -17,6 +19,11 @@
     @font-face {
       font-family: soh;
       src: url("fonts/sohne.otf");
+    }
+
+    @font-face {
+      font-family: sfr;
+      src: url("fonts/sf-round.otf");
     }
     body {
         margin: 0;
@@ -91,7 +98,7 @@
             z-index: 1000; /* Ensure it overlays on top of other elements */
             padding: 5px 5px 0px;
             background-color: white;
-            border: grey 2px solid;
+            /* border: grey 2px solid; */
             color: grey;
             text-decoration: none;
             border-radius: 999px;
@@ -102,10 +109,30 @@
             color: black;
         }
 
+        .topbtn{
+            text-decoration: none; 
+            border-radius: 99px; 
+            border: #f0f0f0 solid 1px;
+            color:black;
+            background-color:#f0f0f0;
+            /* background-color:black;  */
+            transition: .75s;
+            
+            font-family: sfr;
+            /* font-family: "Neue Haas Grotesk Text Pro"; */
+        }
+
+        .topbtn:hover{
+            border: black solid 1px;
+            background:black;
+            color:white;
+        }
+
 </style>
 </head>
 <body>
 <p style="font-size: xx-large; font-family: sig;">Project Gallery</p> <!-- Title for the gallery -->
+
 <div class="gallery">
 
     <a  class="item" href="fg/sohne.html">
@@ -146,11 +173,17 @@
 
           
 </div>
-<a style="font-family: Neue Haas Grotesk Text Pro" href="javascript: history.back()" class="fixed-link">
+<!-- <a style="font-family: Neue Haas Grotesk Text Pro" href="javascript: history.back()">
     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="5vh" height="5vh" fill="none" viewBox="0 0 24 24">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
   </svg> 
-  <!-- &larr; back -->
-  </a>
+  </a> -->
+<div class="fixed-link">
+<a  class="topbtn" style="padding: 4px 6.5px 4px;" href="javascript: history.back()">&larr;</a>
+
+    <a class="topbtn" href="fdd.html" style="padding: 4px 8px 4px 10px;">juxtapose</a>
+
+</div>
+
 </body>
 </html>
