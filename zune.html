@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
         @import url(https://db.onlinewebfonts.com/c/7ae49051ef02b5a95b5afdc79fdb9c90?family=Diagramatika+Text+Bold);
+        @import url(https://db.onlinewebfonts.com/c/9f98341ab90ec086eb7e80d64e621564?family=Neue+Haas+Grotesk+Disp+W01+65Md);
         body{
             background-color:black;
             color:white;
@@ -13,18 +14,71 @@
             /* font-family: neue; */
             font-family: "Diagramatika Text Bold";
             font-size: 5vmin;
-            padding-bottom: 20vh;
+            padding-bottom: 10vh;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+        }
+        a{
+            text-decoration-style:dashed;
+            color:white;
+        }
+        a:hover{
+            text-decoration-style:none;
+            text-decoration:underline transparent;
+            animation-name:blink;
+            animation-duration:.5s;
+            animation-timing-function:ease-in;
+            animation-iteration-count:Infinite;
+        }
+
+        @keyframes blink{
+        0%{color:white;}
+        50%{color:transparent;}
+        100%{color:white;}}
+
+        p {
+            /* text-indent: 2em; */
+            padding: 0vh 10vw 0px
         }
     </style>
 </head>
 <body>
-    <a href="javascript:history.back()" style="text-decoration: none; color:white;">
+    
         
-        <div style="width:100vw; top: 0%; left:0%; margin-left: -.3em; margin-top: -1vh; text-align: left; font-size: 10vw;"><span style=" border-radius: 99px; border: 1vw white solid; padding: 1vw .6vw 1vw;">&larr;</span>BACK</div>
+        <div style="width:100vw; top: 0%; left:0%; margin-left: -.3em; margin-top: -3vw; text-align: left; font-size: 10vw;">
+            <!-- <span style=" border-radius: 99px; border: 1vw white solid; padding: 1vw .6vw 1vw;">&larr;</span> -->
+            <!-- <svg fill="#ffffff" height="8vw" width="8vw" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.00 512.00" xml:space="preserve" stroke="#ffffff" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M256,0C114.618,0,0,114.618,0,256s114.618,256,256,256s256-114.618,256-256S397.382,0,256,0z M256,469.333 c-117.818,0-213.333-95.515-213.333-213.333S138.182,42.667,256,42.667S469.333,138.182,469.333,256S373.818,469.333,256,469.333 z"></path> <path d="M384,234.667H179.503l48.915-48.915c8.331-8.331,8.331-21.839,0-30.17s-21.839-8.331-30.17,0l-85.333,85.333 c-0.008,0.008-0.014,0.016-0.021,0.023c-0.488,0.49-0.952,1.004-1.392,1.54c-0.204,0.248-0.38,0.509-0.571,0.764 c-0.226,0.302-0.461,0.598-0.671,0.913c-0.204,0.304-0.38,0.62-0.566,0.932c-0.17,0.285-0.349,0.564-0.506,0.857 c-0.17,0.318-0.315,0.646-0.468,0.971c-0.145,0.306-0.297,0.607-0.428,0.921c-0.13,0.315-0.236,0.637-0.35,0.957 c-0.121,0.337-0.25,0.669-0.354,1.013c-0.097,0.32-0.168,0.646-0.249,0.969c-0.089,0.351-0.187,0.698-0.258,1.055 c-0.074,0.375-0.118,0.753-0.173,1.13c-0.044,0.311-0.104,0.617-0.135,0.933c-0.138,1.4-0.138,2.811,0,4.211 c0.031,0.315,0.09,0.621,0.135,0.933c0.054,0.377,0.098,0.756,0.173,1.13c0.071,0.358,0.169,0.704,0.258,1.055 c0.081,0.324,0.152,0.649,0.249,0.969c0.104,0.344,0.233,0.677,0.354,1.013c0.115,0.32,0.22,0.642,0.35,0.957 c0.13,0.314,0.283,0.615,0.428,0.921c0.153,0.325,0.297,0.653,0.468,0.971c0.157,0.293,0.336,0.572,0.506,0.857 c0.186,0.312,0.363,0.628,0.566,0.932c0.211,0.315,0.445,0.611,0.671,0.913c0.191,0.255,0.368,0.516,0.571,0.764 c0.439,0.535,0.903,1.05,1.392,1.54c0.007,0.008,0.014,0.016,0.021,0.023l85.333,85.333c8.331,8.331,21.839,8.331,30.17,0 c8.331-8.331,8.331-21.839,0-30.17l-48.915-48.915H384c11.782,0,21.333-9.551,21.333-21.333S395.782,234.667,384,234.667z"></path> </g> </g> </g> </g></svg> -->
+            <a href="javascript:history.back()" style="text-decoration: none; color:white;">
+            <div><svg fill="#ffffff" height="10vw" width="10vw" viewBox="0 0 512 460" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#ffffff" stroke-width="12.288"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M50.2,169.6C97.9,56.3,228.5,3.1,341.8,50.9s166.4,178.3,118.7,291.6S282.2,508.9,168.9,461.1 C86.4,426.4,32.7,345.5,32.7,256C32.7,226.3,38.6,196.9,50.2,169.6z M254.7,448c106,0,192-86,192-192s-86-192-192-192 s-192,86-192,192S148.7,448,254.7,448z M226.7,140.7L111.4,256l115.3,115.3l21.2-21.2L168.7,271h208.2v-30H168.7l79.1-79.1 L226.7,140.7z"></path></g></svg><span 
+                style="padding-bottom: -2vh;">BACK</span>
+            </div>
+            </a> 
+        </div>
 <br>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita pariatur asperiores porro itaque necessitatibus, commodi nostrum quae recusandae accusamus dolore vel, quod provident excepturi est officia doloremque assumenda quisquam consequuntur, nobis voluptatum sit? Optio ullam laudantium aperiam placeat quam mollitia ipsam numquam earum cumque, odit et porro dolores quia expedita nisi! Eaque, eligendi ipsum cupiditate suscipit dolor sunt dolorum placeat natus id molestias ratione repudiandae consequatur illo, officia ipsa deleniti ducimus voluptate atque sequi, quidem distinctio! Placeat modi voluptate adipisci laudantium perferendis quia cum facilis corrupti obcaecati ullam, alias sint odio rem nam, deleniti, autem veritatis aliquam. Facilis omnis alias sapiente doloribus corrupti, ipsa ipsum, nam eveniet facere fugiat voluptas similique obcaecati ratione labore, amet corporis. Fuga distinctio, quaerat dolore odit ea a, soluta quidem, voluptates suscipit corrupti exercitationem iusto ipsam? Voluptates excepturi labore reiciendis dolores, asperiores dolorum amet non cupiditate porro ea quaerat soluta dignissimos tempora natus corporis eum veniam? Id excepturi dicta, qui a necessitatibus ullam? Tenetur, quidem rerum accusantium dignissimos fugiat porro nisi fugit, eius incidunt modi, earum consectetur eaque consequatur veritatis unde at magni excepturi! Sunt enim blanditiis, odit ad optio nulla aliquid atque consequuntur id dolorum eligendi modi delectus reiciendis eos unde ipsam possimus in dignissimos accusantium, sint dolorem aliquam? Dolores officia est perferendis velit voluptatem quos. Ducimus vero adipisci, ut sed tenetur perspiciatis laudantium libero consequatur consectetur itaque similique? Commodi quos cupiditate alias ex, illo consequatur doloremque ducimus mollitia reiciendis odit cumque placeat soluta velit a! Quos veniam at quidem debitis labore suscipit repellat hic maxime esse! Nostrum perspiciatis voluptatem enim unde rerum! Accusantium, temporibus illum. Quae recusandae omnis nostrum, nobis labore iste ullam? Neque itaque ullam dolorem, porro pariatur quam, minus error placeat nisi magni suscipit repudiandae saepe, exercitationem facere dolor tempora ipsa distinctio aperiam optio possimus! Error aliquam alias eaque totam!
+<span style="color:white;font-size: 10vw; ">ABOUT</span><br>
+<div style="line-height: 1; font-family: 'Neue Haas Grotesk Disp W01 65Md';">
+    <p>My name is Lingyu Zhou. I am a <a href="https://khentmt.com">founder</a> as well as a student</a> at <a href="https://cornel.edu">Cornell University</a>, exploring the numbers and their connections behind.
+        I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
+        Previously, I studied applied mathematics at 
+        <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+    </p>
 
+    <p>
+        My research directions are applied mathematical modeling, applied statistics, and machine learning.
+        My specialties are software engineering, math, data analysis, and data visualization.
+        I am also interested in biology, botany, and etymology.  
+    </p>
+
+    <p>
+        I am now working with <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> on flood data analysis. Previously I worked at the Technology Strategy Department in <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a>, 
+        where my main work involved data analysis on Apache Flink platform and IoT complex events processing based on MQTT protocol. 
+        More information, including the source code about this program can be found <a href="https://github.com/xolyn/flinkmqtt">here</a>. Before joining Hoperun,
+        I was a data operator at <a href="https://www.sino-technology.com/">Shanghai Sino Environmental Technology Co., Ltd</a>.
+    </p>
+</div>
     <!-- <a href="javascript:scroll(0,0)" style="text-decoration: none; color:white;"><div  style="width:100vw;  position: fixed; bottom: 0%; right:0%; margin-right: -3vw; margin-bottom: -4vh; text-align: right; font-size: 15vh;">TOP<span style=" border-radius: 99px; border: 8px white solid; padding: 0px 1.5vh 0px;">&uarr;</span></div> -->
-</a>
+
 </body>
 </html>

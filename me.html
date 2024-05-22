@@ -13,6 +13,7 @@
       src: url("fonts/nhm.ttf");
     }
     ::webkit-scrollbar {display: none}
+    ::selection{background-color: white; color:black}
     a{
         color:inherit;
         text-decoration: None;
@@ -107,18 +108,18 @@
 
     /* Tooltip text */
     .tooltiptext {
-  visibility: hidden;
-  width: max-content;
-  background-color:transparent; 
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  left: 50%;
-  z-index: 9999;
-  top: 10vh;
-  transform: translateX(-50%);
+    visibility: hidden;
+    width: max-content;
+    background-color:transparent; 
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    left: 50%;
+    z-index: 9999;
+    top: 10vh;
+    transform: translateX(-50%);
   /* margin-left: -60px; */
     }
 
@@ -234,11 +235,12 @@ function closeNav() {
     <div class="menu-container" id="scrollable" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100" >
         <ul class="menu">
           <li><a href="me.html">home</a></li>
-          <li><a href="https://zhoulingyu.net/about.html">about</a></li>
+          <li><a href="zune.html">about</a></li>
           <li><a href="proj.html">project</a></li>
           <li><a href="#" onclick="openNav()" >socials </a></li>
           <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
           <li><a href="https://blog.zhoulingyu.net">blog</a></li>
+          <li><a href="fg.html">résumé</a></li>
           <li><a href="#" onclick="javascript:navigator.share({title: 'Lingyu Zhou',text: 'Lingyu Zhou',url: 'https://zhoulingyu.net'})" >share</a></li>
           <li><a href="fg.html">gallery</a></li>
         </ul>
@@ -246,13 +248,13 @@ function closeNav() {
 
       <div id="myNav" class="overlay">
         <div class="overlay-content">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#">instagram</a>
-          <a href="#">x</a>
-          <a href="#">weibo</a>
-          <a href="#">github</a>
-          <a href="#">linkedin</a>
-          <a href="#">coolapk</a>
+            <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href=https://twitter.com/uygniluohz>x</a> 
+            <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
+            <a href=https://instagram.com/toqurdn>instagram</a> 
+            <a href=https://github.com/xolyn>github</a> 
+            <a href=https://weibo.com/u/5663761733>weibo</a>
+          <a href="http://www.coolapk.com/u/1060488">coolapk</a>
         </div>
       </div>
 
