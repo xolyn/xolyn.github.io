@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gambler's ruin</title>
+    <style>
+        @import url(https://db.onlinewebfonts.com/c/0a5fbb91dc4a457f5945dca11d44517d?family=Atlas+Grotesk+Web+Regular+Regular);
+        @import url(https://db.onlinewebfonts.com/c/8b7d1398d1115d2576e7c35358e4161c?family=ModernExtT);
+
+        canvas {
+            width: 100%;
+            height: 35vh; /* Fixed height or based on screen size */
+        }
+
+        body{
+            padding: 0vw 5vw 10vh;
+            font-family: "ModernExtT";
+        }
+
+        button{
+            border-radius: 0px;
+            border: black solid 1px;
+            background-color: white;
+            font-size: medium;
+            font-family: "ModernExtT";
+        }
+    </style>
+</head>
+<body>
+    <p style="font-size: xx-large;">Gambler's Ruin</p>
+    <p>In statistics, <a href="https://en.wikipedia.org/wiki/Gambler%27s_ruin">gambler's ruin</a> is the fact that a persistent gambler with finite wealth, playing a fair game (that is, each bet has expected value of zero to both sides) will eventually and inevitably go broke against an opponent with infinite wealth.
+
+        The concept was initially stated: A persistent gambler who raises his bet to a fixed fraction of the gambler's bankroll after a win, but does not reduce it after a loss, will eventually and inevitably go broke, even if each bet has a positive expected value.
+    <br>Below simulates a situation where a game will randomly (50%-50%) increase of deduct a proportion ("Rate") of the money you have, which in the beginning is "Base". 
+    Hit plot botton to see how your money changes during the period of you specify in "Period" field.
+    </p>
+    <form id="inputForm">
+        <label for="base">Base Value:</label>
+        <input type="number" id="base" name="base" value="10000" required><br><br>
+        <label for="rate">Rate (0~1):</label>
+        <input type="number" id="rate" name="rate" step="0.01" value="0.5" required><br><br>
+        <label for="period">Period (Days):</label>
+        <input type="number" id="period" name="period" value="365" required><br><br>
+        <button type="button" onclick="plotGraph()">Plot Graph</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+
+    </form>
+    <br>
+    <canvas id="graphCanvas" width="2400" height="1600" style="border:2px solid #000000;"></canvas>
+<p>    See how your money will eventually go to zero in the long run, even though the mathematical expectation of change in money is 0, somewhat meaning you should at least get your base back in the end.
+</p>
+<script>
+function plotGraph() {
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Clear previous plot
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const baseInput = parseFloat(document.getElementById('base').value);
+    const rateInput = parseFloat(document.getElementById('rate').value);
+    const periodInput = parseInt(document.getElementById('period').value);
+
+    let base = baseInput;
+    const rate = rateInput;
+    const period = periodInput;
+    let seq = [];
+
+    for (let i = 0; i < period; i++) {
+        seq.push(base);
+        base *= Math.random() < 0.5 ? 1 - rate : 1 + rate;
+    }
+
+    // Normalize data to fit the canvas height
+    const maxSeq = Math.max(...seq);
+    const minSeq = Math.min(...seq);
+    const scaledSeq = seq.map(value => (value - minSeq) / (maxSeq - minSeq) * (canvas.height - 20) + 10);
+    ctx.lineWidth = 5;
+    // Draw plot
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height - scaledSeq[0]);
+    for (let i = 1; i < scaledSeq.length; i++) {
+        ctx.lineTo(i * (canvas.width / period), canvas.height - scaledSeq[i]);
+    }
+    ctx.stroke();
+}
+
+function resetForm() {
+    document.getElementById('base').value = 10000;
+    document.getElementById('rate').value = 0.5;
+    document.getElementById('period').value = 365;
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+    </script>
+</body>
+</html>
