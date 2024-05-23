@@ -12,6 +12,11 @@
       }
 
       @font-face {
+          font-family: 'sfr'; 
+          src: url('fonts/sf-round.otf');
+      }
+
+      @font-face {
           font-family: 'cas'; 
           src: url('fonts/iom.otf');
       }
@@ -51,11 +56,12 @@
     </p>
     <form id="inputForm">
         <label for="base">Base Value:</label>
-        <input type="number" id="base" name="base" value="10000" required><br><br>
+        <input style="width:40vw" type="number" id="base" name="base" value="10000" required><br><br>
         <label for="rate">Rate (0~1):</label>
-        <input type="number" id="rate" name="rate" step="0.01" value="0.5" required><br><br>
+        <input style="width:40vw" type="number" id="rate" name="rate" step="0.01" value="0.5" required>
+        <a href="#how" onclick='setTimeout(function() {document.getElementById("how").setAttribute("open", "");}, 300)' style="border-radius: 99px; border: black 1px solid; padding: 2px 5.8px 0px; text-decoration: none; font-size: x-small; color:black;">i</a><br><br>
         <label for="period">Period (Days):</label>
-        <input type="number" id="period" name="period" value="365" required><br><br>
+        <input style="width:40vw" type="number" id="period" name="period" value="365" required><br><br>
         <button type="button" onclick="plotGraph()">Plot Graph</button>
         <button type="button" onclick="resetForm()">Reset</button>
 
@@ -63,17 +69,27 @@
     <br>
     <p id="finalValue">Final Value (rounded): </p>
     <canvas id="graphCanvas" width="2400" height="1600" style="border:2px solid #000000; width: 80vw;"></canvas>
-<p>    See how your money will eventually go to zero in the long run, even though the mathematical expectation of change in money is 0, somewhat meaning you should at least get your base back in the end.
+<p>    See how your money will eventually become in the long run, even though the mathematical expectation of change in money is 0, somewhat meaning you should at least get your base back in the end.
 </p>
 
 
 <div>
-        <details style="padding-bottom: 3vh;">
+
+    <details style="padding-bottom: 3vh;">
+        <summary><b>Learn how to play in this playground</b></summary>
+<div>
+            <b>1.</b> First don't change any values, use the default values to plot the changes in money. Can you end up with a non-zero final amount? <br>
+        <b>2.</b> Try a smaller rate, and plot for a few times. Can you get a positive ending this time? How will the gambler think in this case?<br> 
+        <b>3.</b> Use the same small rate as in <b>2.</b>, try a longer period and plot for a few times. What do you end up with now?<br>
+        <b>4.</b> Can you come up with a strategy that can guarantee a positive profit (ending money-base)? What differs this case from the reality?
+         </div>    
+</details>
+        <details id="how" style="padding-bottom: 3vh;">
             <summary><b>Learn how this simulation works</b></summary>
         <div>This setup mimics a random walk process for a gambling game. Before everything, 3 values are initialized:<br>
             <b>1.</b> "base" is initilaized to 10000, which represents gambler's starting money.<br>
-            <b>2.</b> "rate" is initilaized to 0.5, which determines the maximum relative change (positive or negative) that can occur in each step of the random walk.<br> 
-            <b>3.</b> "period" is initilaized to 365, which represents the number of steps or days in the simulation, in this case, default is 1 year.<br>
+            <b>2.</b> "rate" is initilaized to 0.5, which determines the change in percentage (positive or negative) that can occur in each step of the random walk. In this case it's increase by 50% or decrease by 50%.<br> 
+            <b>3.</b> "period" is initialized to 365, which represents the number of steps or days in the simulation, in this case, default is 1 year.<br>
             <br>
             First the program  enters a loop that iterates times of "period" length. In each iteration, the current value of "base" is appended to a list that records the historical money gambler has.
             then  value is then updated by multiplying it with a random value chosen from either 1-"rate" (go down) or 1+"rate" (go up), which simulates the random walk process.
@@ -84,7 +100,7 @@
 
         <details style="padding-bottom: 3vh;">
             <summary><b>Get python code</b></summary>
-            <pre style=" font-size: xx-small;  font-family:cas ;border: rgb(52, 52, 52) solid 2px; width: 80vw;">
+            <pre style=" font-size: xx-small;  font-family:cas ;border: rgb(52, 52, 52) solid 2px; width: 80vw;" translate="no" >
 import numpy as np
 import matplotlib.pyplot as plt
 base=10000
