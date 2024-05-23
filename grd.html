@@ -81,7 +81,7 @@
         <summary><b>Learn how to play in this playground</b></summary>
 <div>
             <b>1.</b> First don't change any values, use the default values to plot the changes in money. Can you end up with a non-zero final amount? <br>
-        <b>2.</b> Try a smaller rate, and plot for a few times. Can you get a positive ending this time? How will the gambler think in this case?<br> 
+        <b>2.</b> Try a smaller rate (halving recommended), and plot for a few times. Can you get a positive ending this time? How will the gambler think in this case?<br> 
         <b>3.</b> Use the same small rate as in <b>2.</b>, try a longer period and plot for a few times. What do you end up with now?<br>
         <b>4.</b> Can you come up with a strategy that can guarantee a positive profit (ending money-base)? What differs this case from the reality?
          </div>    
@@ -164,6 +164,8 @@ function resetForm() {
     const canvas = document.getElementById('graphCanvas');
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const finalValueDisplay = document.getElementById('finalValue');
+    finalValueDisplay.textContent = 'Final Value (rounded): ';
 }
     </script>
 </body>
