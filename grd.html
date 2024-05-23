@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/gamble.svg" type="svg">
     <title>gambler's ruin</title>
     <style>
-        @import url(https://db.onlinewebfonts.com/c/0a5fbb91dc4a457f5945dca11d44517d?family=Atlas+Grotesk+Web+Regular+Regular);
         @import url(https://db.onlinewebfonts.com/c/8b7d1398d1115d2576e7c35358e4161c?family=ModernExtT);
+
+        @font-face {
+          font-family: 'ere'; 
+          src: url('fonts/ere.otf');
+      }
 
         canvas {
             width: 100%;
@@ -15,7 +20,8 @@
 
         body{
             padding: 0vw 5vw 10vh;
-            font-family: "ModernExtT";
+            font-family: ere;
+            font-size: medium;
         }
 
         button{
@@ -23,13 +29,13 @@
             border: black solid 1px;
             background-color: white;
             font-size: medium;
-            font-family: "ModernExtT";
+            font-family: ere;
         }
     </style>
 </head>
 <body>
     <p style="font-size: xx-large;">Gambler's Ruin</p>
-    <p>In statistics, <a href="https://en.wikipedia.org/wiki/Gambler%27s_ruin">gambler's ruin</a> is the fact that a persistent gambler with finite wealth, playing a fair game (that is, each bet has expected value of zero to both sides) will eventually and inevitably go broke against an opponent with infinite wealth.
+    <p>In statistics, <a style="color: black;" href="https://en.wikipedia.org/wiki/Gambler%27s_ruin">gambler's ruin</a> is the fact that a persistent gambler with finite wealth, playing a fair game (that is, each bet has expected value of zero to both sides) will eventually and inevitably go broke against an opponent with infinite wealth.
 
         The concept was initially stated: A persistent gambler who raises his bet to a fixed fraction of the gambler's bankroll after a win, but does not reduce it after a loss, will eventually and inevitably go broke, even if each bet has a positive expected value.
     <br>Below simulates a situation where a game will randomly (50%-50%) increase of deduct a proportion ("Rate") of the money you have, which in the beginning is "Base". 
@@ -47,9 +53,12 @@
 
     </form>
     <br>
+    <p id="finalValue">Final Value (rounded): </p>
     <canvas id="graphCanvas" width="2400" height="1600" style="border:2px solid #000000;"></canvas>
 <p>    See how your money will eventually go to zero in the long run, even though the mathematical expectation of change in money is 0, somewhat meaning you should at least get your base back in the end.
 </p>
+
+<p>Stay away from gambling!</p>
 <script>
 function plotGraph() {
     const canvas = document.getElementById('graphCanvas');
@@ -84,6 +93,8 @@ function plotGraph() {
         ctx.lineTo(i * (canvas.width / period), canvas.height - scaledSeq[i]);
     }
     ctx.stroke();
+    const finalValueDisplay = document.getElementById('finalValue');
+    finalValueDisplay.textContent = 'Final Value: ' + seq[seq.length - 1].toFixed(2);
 }
 
 function resetForm() {
