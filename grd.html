@@ -31,6 +31,25 @@
             font-size: medium;
             font-family: ere;
         }
+
+        .summary-container {
+            display: inline-block;
+            padding-right: 3vw;
+            vertical-align: top;
+            width: auto;
+            padding-bottom: 5vh;
+        }
+        details {
+            width: 100%; /* Adjust the width as needed */
+        }
+        summary {
+            line-height: 1.5; /* Ensure this matches the line height of the content */
+            height: 1.5em; /* Same as line height to align the first line */
+            /* display: block; */
+        }
+        details[open] summary {
+            height: auto; /* Reset height when open */
+        }
     </style>
 </head>
 <body>
@@ -58,7 +77,43 @@
 <p>    See how your money will eventually go to zero in the long run, even though the mathematical expectation of change in money is 0, somewhat meaning you should at least get your base back in the end.
 </p>
 
-<p>Stay away from gambling!</p>
+
+<div>
+    <div class="summary-container">
+        <details>
+            <summary>Learn how this simulation works</summary>
+        <span style="width: 100px;">This setup mimics a random walk process for a gambling game. Before everything, 3 values are initialized:<br>
+            <b>1.</b> "base" is initilaized to 10000, which represents gambler's starting money.<br>
+            <b>2.</b> "rate" is initilaized to 0.5, which determines the maximum relative change (positive or negative) that can occur in each step of the random walk.<br> 
+            <b>3.</b> "period" is initilaized to 365, which represents the number of steps or days in the simulation, in this case, default is 1 year.<br>
+            <br>
+            First the program  enters a loop that iterates times of "period" length. In each iteration, the current value of "base" is appended to a list that records the historical money gambler has.
+            then  value is then updated by multiplying it with a random value chosen from either 1-"rate" (go down) or 1+"rate" (go up), which simulates the random walk process.
+            <br>
+            Then the will display the final money gambler has at the end of the period and plot out the how gambler's money changed using html canvas.
+        </span>    
+        </details>
+    </div>
+    <div class="summary-container">
+        <details>
+            <summary>Get python code</summary>
+            <pre style="font-size: small; border: darkblue solid 2px;">
+import numpy as np
+import matplotlib.pyplot as plt
+base=10000
+rate=.5
+period=365
+seq=[]
+for i in range(period):
+    seq.append(base)
+    base*=np.random.choice([1-rate,1+rate])
+print(seq[-1])
+plt.plot(seq)
+</pre>
+        </details>
+    </div>
+</div>
+
 <script>
 function plotGraph() {
     const canvas = document.getElementById('graphCanvas');
@@ -94,7 +149,7 @@ function plotGraph() {
     }
     ctx.stroke();
     const finalValueDisplay = document.getElementById('finalValue');
-    finalValueDisplay.textContent = 'Final Value: ' + seq[seq.length - 1].toFixed(2);
+    finalValueDisplay.textContent = 'Final Value (rounded): ' + seq[seq.length - 1].toFixed(2);
 }
 
 function resetForm() {
