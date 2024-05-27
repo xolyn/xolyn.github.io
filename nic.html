@@ -23,15 +23,19 @@
   font-weight: 400;
   font-style: normal;
     }
-
-    .spin:hover{
-        transform:scaleX(-1);
-    }
+    @media (pointer: fine) {.spin:hover {transform:scaleX(-1);}}
+    @media (pointer: coarse) {.flipped {transform: scaleX(-1);}}
+    @media (pointer: none) {.flipped {transform: scaleX(-1);}}
     @media (orientation: portrait) {body{padding-top: 40vh;}}
 </style>
 </head>
 <body>
-<div class="spin" style="transition: 1s; cursor: pointer;" >
+<div class="spin" id="spin" style="transition: 1s; cursor: pointer;" >
     ZHO<span style="color:orangered">U</span><span style=" display: inline-block; transform:  scaleX(-1);">LINGY</span></div>
+    <script>
+            document.getElementById('spin').addEventListener('click', function() {
+        this.classList.toggle('flipped');
+    });
+    </script>
 </body>
 </html>
