@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Getting Clients IP</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
+    /* Add "https://api.ipify.org?format=json" statement
+            this will communicate with the ipify servers in
+            order to retrieve the IP address $.getJSON will
+            load JSON-encoded data from the server using a
+            GET HTTP request */
+
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+        $("#gfg").html(data.ip);
+    })
+    </script>
+</head>
+
+<body>
+    <center>
+        <p style="font-size: xx-large;">Public IP Address of user is:</p>
+        <p style="color: green;" id="gfg"></p>
+    </center>
+</body>
+
+</html>
