@@ -218,7 +218,13 @@ backdrop-filter: blur(10px);
         text-align: center;
         text-decoration: none;
         }
-
+        details > summary {
+            list-style-type: none;
+        }
+        
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 <script>
         
