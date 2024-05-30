@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
+    <title>lingyu zhou</title>
+    <style>
+    @import url(https://db.onlinewebfonts.com/c/7ae49051ef02b5a95b5afdc79fdb9c90?family=Diagramatika+Text+Bold);
+
+    @font-face {
+      font-family: neue;
+      src: url("fonts/nhm.ttf");
+    }
+    ::webkit-scrollbar {display: none}
+    ::selection{background-color: white; color:black}
+
+    *,html{
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+    }
+    
+    a{
+        color:inherit;
+        text-decoration: None;
+    }
+
+
+        body{
+            background-color:black;
+            color:white;
+            margin:0px;
+            /* font-family: neue; */
+            font-family: "Diagramatika Text Bold";
+            overflow-y: hidden;
+        }
+
+        .menu-container {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        overflow-y: hidden;
+        background-color: transparent;
+
+        }
+
+        .menu {
+        list-style-type: none;
+        margin: 2px;
+        padding: 0;
+        /* position: relative; */
+        }
+
+        .menu li {
+        display: inline-block;
+        padding: -2px -2px -2px;
+        transition: 0.5s;
+        text-transform: uppercase;
+        }
+
+        .menu li a:hover {
+            border: dotted 2px white;
+        }
+        
+        details:hover {
+            border: dotted 2px white;
+        }
+
+        .nic{
+            transition: 0.5s;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100vw
+        }
+
+
+        .menu li:last-child {
+        margin-right: 0;
+        }
+
+        @media (orientation: landscape) {
+        .menu li {font-size: 5vw;margin-right: 3vw;}
+        .nic {font-size: 30vh; 
+            /* margin-top: 27vh; */
+        }
+        .menu-container::-webkit-scrollbar{
+            background:transparent
+        }
+
+        .menu-container::-webkit-scrollbar-thumb{
+            background:transparent
+        }
+
+        .menu-container::-webkit-scrollbar-track-piece{
+            display:none;
+        }
+        
+    }
+
+    @media (orientation: portrait) {
+        .menu li {font-size: 20vw;margin-right: 6vw;}
+        .nic {
+            /* padding-top: 50vh;  */
+            font-size: 30vw;
+        }
+        .menu-container{
+            padding-bottom: 1vh;
+        }
+    }
+
+    .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    background-color:transparent; 
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    left: 50%;
+    z-index: 9999;
+    top: 10vh;
+    transform: translateX(-50%);
+  /* margin-left: -60px; */
+    }
+
+    .tooltip:hover .tooltiptext {
+    visibility: visible;
+    }
+
+    .overlay {
+  height: 0;
+  width: 100%;
+  position: fixed; 
+  z-index: 100; 
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0, 0.9); 
+  overflow-y: hidden; 
+  transition: 0.5s; 
+
+}
+
+.overlay-content {
+transition: 0.5s;
+backdrop-filter: blur(10px);
+  position: relative;
+  height: 100vh; 
+  padding-top: 25vh;
+  width: 100%;
+  text-align: center; /* Centered text/links */
+
+  z-index: 999;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+        details>summary::after{
+            content: "";
+        }
+
+        details>a{
+            color:orangered;
+        }
+
+        details[open]>summary::after{
+            content: "=[";
+        }
+
+        details[open]::after{
+            content: "]";
+        }
+
+        details,summary {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        }
+
+    </style>
+<script>
+        
+window.onload = function() {
+  if (window.innerHeight<window.innerWidth) {
+    alert("Scroll mouse wheel normally on menu bar to see more!");
+  }
+};
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+
+// function openNav() {
+//   const overlay = document.getElementById("myNav");
+//   overlay.classList.add("show");
+// }
+
+// function closeNav() {
+//   const overlay = document.getElementById("myNav");
+//   overlay.classList.remove("show");
+// }
+
+</script>
+</head>
+<body>
+    <div class="menu-container" id="scrollable" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100" >
+        <ul class="menu">
+          <li><a href="me.html">home</a></li>
+          <li><a href="zune.html">about</a></li>
+          
+          <!-- <li><a href="#" onclick="openNav()" >socials </a></li> -->
+          <li>
+          <details style="cursor: copy;">
+            <summary>socials</summary>
+            <a href=https://twitter.com/uygniluohz>x</a>,
+            <a href=https://instagram.com/toqurdn>instagram</a> ,
+            <a href=https://weibo.com/u/5663761733>weibo</a>,
+            <a href=https://github.com/xolyn>github</a> ,
+            <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a>,
+            <a href="http://www.coolapk.com/u/1060488">coolapk</a>  
+          </details>
+        </li>
+        <li><a href="proj.html">project</a></li>
+          <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
+          <li><a href="https://blog.zhoulingyu.net">blog</a></li>
+          <li><a href="fg.html">résumé</a></li>
+          <li><a href="#" onclick="javascript:navigator.share({title: 'Lingyu Zhou',text: 'Lingyu Zhou',url: 'https://zhoulingyu.net'})" >share</a></li>
+          <li><a href="fg.html">gallery</a></li>
+        </ul>
+      </div>
+
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+            <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href=https://twitter.com/uygniluohz>x</a> 
+            <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
+            <a href=https://instagram.com/toqurdn>instagram</a> 
+            <a href=https://github.com/xolyn>github</a> 
+            <a href=https://weibo.com/u/5663761733>weibo</a>
+          <a href="http://www.coolapk.com/u/1060488">coolapk</a>
+        </div>
+      </div>
+
+
+    <div class="nic" style="  line-height: 0.9;">Lingyu<br>Zhou</div>
+
+</body>
+
+</html>
