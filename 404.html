@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://www.svgrepo.com/show/342590/face-dead.svg">
+<title>oops!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+</style>
+</head>
+<body style="text-align: center; background-color: rgb(230,230,230); font-family: 'Schibsted Grotesk'; font-weight: 500; text-transform: uppercase;">
+    <div style=" display: inline-block;  width: 40vh; background-color: white; margin-top: 20vh;">
+        <div style="height: 38vh;width:  38vh; margin-left: 1vh; margin-top: 1vh; background-color: #404;"></div>
+        <p title="Lingyu named it!" style="text-align: left; font-size: x-large; margin-left: 3vh;"><span id="click" onclick="updateSpan()">#404</span><br>"Blackberry"</p>
+    </div>
+    <a href="javascript:history.back()" style="text-decoration: none; position: fixed; right: 5%; bottom:5%; background-color: #404; color:white; border-radius: 50%; width: 100px; height: 100px; line-height: 100px;">RETRACE</a>
+<script>
+    // Function to update the span content
+    function updateSpan() {
+        var span = document.getElementById("click");
+        var currentLetter = span.textContent;
+        var nextLetter;
+    
+        switch (currentLetter) {
+        case "#404":
+            nextLetter = "rgb(68, 0, 68)";
+            break;
+        case "rgb(68, 0, 68)":
+            nextLetter = "0C 27M 0Y 73K";
+            break;
+        case "0C 27M 0Y 73K":
+            nextLetter = "HSL(300, 1, 0.13)";
+            break;
+        case "HSL(300,1,0.13)":
+            nextLetter = "#404";
+            break;
+        default:
+            nextLetter = "#404"; // Reset to "a" if unknown letter
+        }
+    
+        span.textContent = nextLetter;
+    }
+    </script>
+</body>
+</html>
