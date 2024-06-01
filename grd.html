@@ -6,6 +6,7 @@
     <link rel="icon" href="assets/gamble.svg" type="svg">
     <title>gambler's ruin</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
         @font-face {
           font-family: 'ere'; 
           src: url('fonts/ere.otf');
@@ -88,7 +89,6 @@
         <input style="width:40vw" type="number" id="period" name="period" value="365" required><br><br>
         <button type="button" onclick="plotGraph()">Plot Graph</button>
         <button type="button" onclick="resetForm()">Reset</button>
-
     </form>
     <br>
     <p id="finalValue">Final Value (rounded): </p>
@@ -125,7 +125,7 @@
 
         <details style="padding-bottom: 3vh;">
             <summary><b>Get python code</b></summary>
-            <pre class="prettyprint lang-python" style=" font-size: xx-small;  font-family:cas ;border: rgb(52, 52, 52) solid 2px; width: 80vw;" translate="no" >
+            <pre class="prettyprint lang-python" style=" font-size: xx-small;  font-family:'Fira Mono' ;border: rgb(52, 52, 52) solid 2px; width: 80vw;" translate="no" >
 import numpy as np
 import matplotlib.pyplot as plt
 base=10000
@@ -194,3 +194,5 @@ function resetForm() {
     </script>
 </body>
 </html>
+
+
