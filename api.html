@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apis</title>
+<style>
+    h1,h2,h3,h4,h5{font-weight: normal; margin:0px}
+    h1::before{
+        content: "# ";
+    }
+
+    h2::before{
+        content: "## ";
+    }
+
+    h3::before{
+        content: "### ";
+    }
+    h4::before{
+        content: "#### ";
+    }
+    pre{
+        overflow-x: auto;
+        /* border: 1.5px grey solid; */
+        background-color: lightgray;
+        margin: 0px;
+    }
+    /* pre::before{
+        content: "HTML";
+        color:darkcyan;
+        display: block; 
+    } */
+
+    .cb{
+       border: grey 1px solid; 
+       /* padding-left: 2px; */
+    }
+
+    .cb::before{
+        content: "‎ HTML";
+        color:darkcyan;
+        display: contents;
+        font-family: monospace;
+    }
+</style>
+</head>
+<body>
+<h1 >HTML APIs</h1>
+<h2 >inputs: <code>&lt;input type="<span style="color: red;">$type</span>"></code></h2>
+<small style="color: red;">
+button: <input type="button"><br>
+checkbox: <input type="checkbox"><br>
+color: <input type="color"><br>
+date: <input type="date"><br>
+datetime-local: <input type="datetime-local"><br>
+email: <input type="email"><br>
+hidden: <input type="hidden"><br>
+image: <input type="image"><br>
+month: <input type="month"><br>
+number: <input type="number"><br>
+password: <input type="password"><br>
+radio: <input type="radio"><br>
+range: <input type="range"><br>
+reset: <input type="reset"><br>
+search: <input type="search"><br>
+submit: <input type="submit"><br>
+tel: <input type="tel"><br>
+text: <input type="text"><br>
+time: <input type="time"><br>
+url: <input type="url"><br>
+week: <input type="week"><br>
+</small>
+<hr>
+<h3 >file inputs:</h3>
+single file:
+<input type="file"/>
+
+<div class="cb">
+<pre translate="no">
+&lt;input type=&quot;file&quot;/&gt;
+</pre>
+</div>
+
+<hr>
+specified type (image):
+<input type="file" accept="image/png, image/jpeg" />
+
+<div class="cb">
+<pre translate="no">
+&lt;input type="file" accept="image/png, image/jpeg"/&gt;
+</pre>
+</div>
+
+<hr>
+
+multiple files:
+<input type="file" multiple/>
+
+<div class="cb">
+<pre translate="no">
+&lt;input type="file" multiple/>
+</pre>
+</div>
+<hr>
+files with directory:
+<input type="file" multiple directory webkitdirectory mozdirectory odirectory/>
+
+<div class="cb">
+<pre translate="no">
+&lt;input type="file" multiple directory webkitdirectory mozdirectory odirectory/>
+</pre>
+</div>
+
+<hr>
+change prompt (js):
+<button onclick="document.getElementById('getFile').click()">Your text here</button>
+<input type='file' id="getFile" style="display:none">
+
+<div class="cb">
+<pre translate="no">
+&lt;button onclick="document.getElementById('getFile').click()">Your text here&lt;/button>
+&lt;input type='file' id="getFile" style="display:none">
+</pre>
+</div>
+
+<hr>
+
+<h2>Web share API</h2>
+<button onclick="javascript:navigator.share({title:'site name',text:'desc',url:'https://example.com'})">share</button>
+<div class="cb">
+<pre translate="no">
+&lt;button onclick="javascript:navigator.share({title:'site name',text:'desc',url:'https://example.com'})">share&lt;/button>
+</pre>
+</div>
+<hr>
+
+
+</body>
+</html>
