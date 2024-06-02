@@ -73,9 +73,19 @@ label {
 .ft{
     left:12%;
 }
+
+pre{
+filter: blur(2px);
+transition: .35s;
+}
+
+pre:hover{
+  filter: blur(0px);
+}
+
 @media (orientation: landscape) {
   .ft {
-    left:5%
+    left:6%
   }
   img {
         filter: grayscale(1);
@@ -91,7 +101,7 @@ label {
     <div class="ft" style="position: fixed; top:5%; z-index: 9999; font-size: xx-large; mix-blend-mode: difference;color:white">
     <details>
         <summary style="cursor: nw-resize;">gallery</summary>
-        <span style="font-size: x-large;">created by Lingyu Zhou</span>
+        <div style="font-size: small; width: 75vw;">fusion of modern arts and minimalism.<br>- Lingyu Zhou</div>
     </details>
     </div>
     <main>
@@ -132,5 +142,12 @@ label {
       <figure><img onclick="window.open(this.src, '_blank');" src="https://picsum.photos/seed/195/1200/800"></figure>
       <figure><img onclick="window.open(this.src, '_blank');" src="https://picsum.photos/seed/111/1200/800"></figure>
     </main>
+<center>
+<span style="font-size: xx-large;">&vellip;</span>
+</center>
+<pre style="font-size: 5px; margin-top: 10vh;">
+(C) Lingyu Zhou
+dd3cc191-5bd0-42a4-a88f-a55d65cb240c
+</pre>
 </body>
 </html>
