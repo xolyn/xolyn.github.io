@@ -18,6 +18,12 @@ pre{
     background-color: lightgray;
     margin: 0px;
     overflow-y: hidden;
+    transition: .3s;
+}
+
+pre:hover{
+  background-color: rgb(180 180 180);
+
 }
 /* pre::before{
     content: "HTML";
@@ -50,7 +56,10 @@ code{
 }
 
 code,pre{font-family: monospace;}
+
 </style>
+
+
 
     <script>
         const csstxt='<link rel="stylesheet" href="https://xolyn.github.io/font.css">'
@@ -78,7 +87,7 @@ Add the following code inside html <samp translate="no">&lt;head></samp> section
 <div class="cb">
 <svg style="cursor: pointer; transition: .3s;" onclick="navigator.clipboard.writeText(csstxt);"
 width="12.5px" height="12.5px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
-<pre >
+<pre class="prettyprint lang-html" style="border: 0px;">
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
 </div>
@@ -86,9 +95,10 @@ width="12.5px" height="12.5px" viewBox="0 0 512 512" version="1.1" xmlns="http:/
 <br>
 Then refer to the preview below for your preferred fonts and use corresponding alias. You can click on names to copy.
 
-<table translate="no" style="width: 100%; font-size: small;">
+<div style="overflow-x: auto">
+<table translate="no" style="width: 100%; font-size: small; ">
     <tr>
-      <th>css name</th>
+      <th><samp>font-family:</samp></th>
       <th>preview</th>
     </tr>
   
@@ -182,9 +192,9 @@ Then refer to the preview below for your preferred fonts and use corresponding a
       <td><span style="font-family:sohne; overflow-x:auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, aliquid?</span></td>
     </tr>
   </table>
-  
+</div>
     
-
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 <script>
 function copyTab(element) {
     var tempTextarea = document.createElement("textarea");
