@@ -10,20 +10,12 @@
         font-family: sans-serif;
     }
     h1,h2,h3,h4,h5{font-weight: normal; margin:2vh 0px 0px; border-top: 1.5px solid grey;}
-    h1::before{
-        content: "# ";
-    }
+    h1::before{ content: "# "; }
+    h2::before{ content: "## "; }
+    h3::before{ content: "### "; }
+    h4::before{ content: "#### "; }
+    h5::before{ content: "##### "; }
 
-    h2::before{
-        content: "## ";
-    }
-
-    h3::before{
-        content: "### ";
-    }
-    h4::before{
-        content: "#### ";
-    }
     pre{
         overflow-x: auto;
         /* border: 1.5px grey solid; */
