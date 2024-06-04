@@ -1,10 +1,10 @@
-@font-face {font-family:BDLifelessGrotesk_Variable; src:url("fonts/BDLifelessGrotesk_Variable.ttf");}
+@font-face {font-family:BDLifelessGrotesk; src:url("fonts/BDLifelessGrotesk.ttf");}
 @font-face {font-family:CascadiaMono-Regular; src:url("fonts/CascadiaMono-Regular.ttf");}
 @font-face {font-family:cour; src:url("fonts/cour.ttf");}
 @font-face {font-family:CourierPrime-Regular; src:url("fonts/CourierPrime-Regular.ttf");}
 @font-face {font-family:dtb; src:url("fonts/dtb.ttf");}
-@font-face {font-family:ere; src:url("fonts/ere.otf"); font-weight: normal;}
-@font-face {font-family:ere; src:url("fonts/Erewhon-Bold.pfb.ttf"); font-weight: bold;}
+@font-face {font-family:ere; src:url("fonts/ere.otf");}
+@font-face {font-family:Erewhon-Bold; src:url("fonts/Erewhon-Bold.pfb.ttf");}
 @font-face {font-family:iom; src:url("fonts/iom.otf");}
 @font-face {font-family:Monolisa Font; src:url("fonts/Monolisa Font.ttf");}
 @font-face {font-family:Neue Kaine Variable; src:url("fonts/Neue Kaine Variable.ttf");}
@@ -13,6 +13,12 @@
 @font-face {font-family:nhm; src:url("fonts/nhm.ttf");}
 @font-face {font-family:nhr; src:url("fonts/nhr.ttf");}
 @font-face {font-family:sf-round; src:url("fonts/sf-round.otf");}
+@font-face {font-family:sf_b; src:url("fonts/sf_b.otf");}
+@font-face {font-family:sf_l; src:url("fonts/sf_l.otf");}
+@font-face {font-family:sf_r; src:url("fonts/sf_r.otf");}
 @font-face {font-family:sig; src:url("fonts/sig.otf");}
 @font-face {font-family:sneak; src:url("fonts/sneak.ttf");}
 @font-face {font-family:sohne; src:url("fonts/sohne.otf");}
+@font-face {font-family:appletc; src:url("fonts/apple_tc.ttf");}
+@font-face {font-family:diag_r; src:url("fonts/diag_r.ttf");}
+@font-face {font-family:diag_b; src:url("fonts/diag_b.ttf");}
