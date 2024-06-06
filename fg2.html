@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +26,13 @@
       font-family: sfr;
       src: url("fonts/sf-round.otf");
     }
+
+    @font-face {
+      font-family: crp;
+      src: url("fonts/ChirpRegular.ttf");
+    }
+
+    
     body {
         margin: 0;
         padding: 0 20px;
@@ -128,6 +136,17 @@
             color:white;
         }
 
+        .btma{
+            color:gray;
+            transition: .3s;
+            font-family: crp;
+        }
+
+        .btma:hover{
+            color:black;
+        }
+
+
 </style>
 </head>
 <body>
@@ -173,6 +192,7 @@
 
           
 </div>
+<br><a href="https://xolyn.github.io/fontcss" class="btma">Try my fonts by linking font.css in HTML! <span style="font-family: sfr;">&rarr;</span></a>
 <!-- <a style="font-family: Neue Haas Grotesk Text Pro" href="javascript: history.back()">
     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="5vh" height="5vh" fill="none" viewBox="0 0 24 24">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
@@ -182,8 +202,9 @@
 <a  class="topbtn" style="padding: 4px 6.5px 4px;" href="javascript: history.back()">&larr;</a>
 
     <a class="topbtn" href="fdd.html" style="padding: 4px 8px 4px 10px;">juxtapose</a>
-
+    <!-- <a class="topbtn"  style="padding: 4px 8px 4px 10px;" href="">Use font.css &rarr;</a> -->
 </div>
+
 
 </body>
 </html>
