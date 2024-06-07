@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>can u believe?</title>
+</head>
+<body>
+<h1>can you believe this?</h1>
+<h2>crazy uses of list comprehension:</h2>
+<h3>1.</h3>
+<pre translate="no" class="prettyprint lang-python" style="overflow-x: auto; width: 100%;">
+def genSubRule(lol):
+    opdict = {}
+    for t in lol:
+        minItem = sorted(t, key=lambda x: len(x))[0]
+        for x in t:
+            opdict[x] = minItem
+    return opdict
+</pre>
+<center>&darr;</center>
+<pre translate="no" class="prettyprint lang-python" style="overflow-x: auto;width: 100%">
+genSubRule=lambda lol: {x: sorted(t, key=lambda x: len(x))[0] for t in lol for x in t}
+</pre>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</body>
+</html>
