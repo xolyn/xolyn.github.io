@@ -74,6 +74,22 @@
 
     ul>li>a{color:inherit; text-decoration: none;}
 
+    span.x{
+        display: inline-block;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        margin: 0px 10px 0px;
+        /* font-size: x-large; */
+    }
+
+    span.x::before{content: "|"; font-family: monospace; font-size: large;}
+
+    .funcbtn>a{
+        text-decoration: none;
+        color:unset;
+        font-size: large;
+    }
     </style>
 </head>
 <body>
@@ -156,9 +172,10 @@
 
       <div id="prompt" style="text-align: center; display: block; color:gray; position: fixed; top:55%; width: 100%; font-size: small;">Select a file from above to view.</div>
     <div id="adobe-dc-view"></div>
+    <div class="funcbtn" style="position: fixed; bottom: 5%; left:50%;transform: translate(-50%,0); font-family: 'sf-round'; border-radius:999px;  background-color:rgba(210,210,210,0.8); padding:10px 20px 10px; width: min-content;white-space: nowrap;"><a href="javascript:history.back()">←</a><span class="x" style="color:grey"></span><a  href="javascript:window.scrollTo({top:0,behavior:'smooth'})">↑</a></div>
     <div id="btm"></div>
 
-<a style="background-color: rgba(211,211,211,0.8); font-family:'sf-round'; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 40px; line-height: 40px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
+<!-- <a style="background-color: rgba(211,211,211,0.8); font-family:'sf-round'; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 40px; line-height: 40px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a> -->
 
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
