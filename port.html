@@ -6,12 +6,8 @@
     <link rel="stylesheet" href="https://xolyn.github.io/font.css">
     <title>Portfolio</title>
     <style>
-       @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); 
-    @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');  
-/* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');    
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
-body{
+    body{
     font-family:sf_r;
     margin:unset
     }
@@ -21,30 +17,26 @@ body{
     overflow: auto;
     white-space: nowrap;
     color: black;
-    border-bottom: 1.5px black solid;
-    border-top: 1.5px black solid;
+    /* border-bottom: 1px lightgray solid; */
+    /* border-top: 1.5px black solid; */
     position: sticky; /*important*/
     top: 0;
-    }
-
-    div.nav a {
-    display: inline-block;
-    color:inherit;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
+    padding-bottom: 1vh;
     }
 
     div.nav details {
+        transition: .5s;
         display: inline-block;
-        padding: 5px;
+        padding: 2px 0px 2px 0px;
         vertical-align: text-top; /*important*/
-        margin: 0vw 2vw 0vw;
+        margin: 0vw 1vw 0vw 2vw;
     }
 
     div.nav details>summary{font-size: x-large;}
 
-    ul{ margin: 0; }
+    ul{ margin: 0; list-style-type: none; padding: 0px;}
+
+    /* ul>li{} */
 
     li,details>summary{
         cursor: pointer;
@@ -56,6 +48,21 @@ body{
     }
 
     a:hover{ color:inherit; }
+
+    details summary::-webkit-details-marker,
+    details summary::marker {
+    display: none; 
+    content: "";
+    }
+
+    details[open] summary ~ * {
+        animation: sweep .3s ease-in-out;
+        }
+
+    @keyframes sweep {
+    0%    {opacity: 0; transform: translateY(-10px)}
+    100%  {opacity: 1; transform: translateY(0)}
+    }
 
     </style>
 </head>
@@ -109,43 +116,34 @@ body{
             </details>
       </div>
 
-      <div id="prompt" style="text-align: center; padding-top: 30vh; display: block; color:gray">Select a file from above to view.</div>
+      <div id="prompt" style="text-align: center; display: block; color:gray; position: fixed; top:55%; width: 100%; font-size: small;">Select a file from above to view.</div>
     <div id="adobe-dc-view"></div>
 
-<a style="background-color: rgba(211,211,211,0.8); font-family:sf_r; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
+<a style="background-color: rgba(211,211,211,0.8); font-family:'sf-round'; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 40px; line-height: 40px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
 
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+function apdfv(pdfurl) {
+    var div = document.getElementById("prompt");
+    div.style.display = "none";
+    let adobeDCView=new AdobeDC.View({clientId: "aec8eace9e4d4270acb9a937b5815cf4", divId: "adobe-dc-view" });
+    adobeDCView.previewFile({content: {location: {url: pdfurl}},metaData: {fileName: " "}});
 
- <script type="text/javascript">
-    function apdfv(pdfurl) {
-        var div = document.getElementById("prompt");
-        div.style.display = "none";
-        let adobeDCView=new AdobeDC.View({clientId: "aec8eace9e4d4270acb9a937b5815cf4", divId: "adobe-dc-view" });
-   adobeDCView.previewFile({
-     content: {location: {url: pdfurl}},
-     metaData: {fileName: " " }
-   });
-           // Find all open <details> elements and close them
-            const openDetails = document.querySelectorAll('.nav details[open]');
-        openDetails.forEach(detail => detail.removeAttribute('open'));
- }
+    // close all
+    const openDetails = document.querySelectorAll('.nav details[open]');
+    openDetails.forEach(detail => detail.removeAttribute('open'));
+    // close parent:
+    // const details = document.querySelector('.nav details[open]');
+    // if (details) {
+    //     details.removeAttribute('open');
+    // }
+
+    // function showpdf(pdf) {
+    //     document.getElementById('pdf').src = pdf;
+    //     const openDetails = document.querySelectorAll('.nav details[open]');
+    //     openDetails.forEach(detail => detail.removeAttribute('open'));
+    // }
+}
 </script>
-
-<script>
-    function showpdf(pdf) {
-        document.getElementById('pdf').src = pdf;
-        // close all:
-        const openDetails = document.querySelectorAll('.nav details[open]');
-        openDetails.forEach(detail => detail.removeAttribute('open'));
-        // close parent:
-        // const details = document.querySelector('.nav details[open]');
-        // if (details) {
-        //     details.removeAttribute('open');
-        // }
-    }
-
-
-</script>
-
 </body>
 </html>
