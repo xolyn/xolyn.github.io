@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://xolyn.github.io/font.css">
     <title>Portfolio</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');    
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); 
+    @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');  
+/* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');    
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
 body{
-    font-family: "Roboto", sans-serif;
+    font-family:sohne;
     margin:unset
     }
 
@@ -52,9 +55,9 @@ body{
 </head>
 <body>
 
-<div style="margin: 2vh 0vh 2vh 2vw; font-size: xx-large;">Portfolio</div>
-<div style="margin: 2vh 0vh 2vh 2vw;font-size: xx-small;">Special thanks <a href="https://opensource.adobe.com/pdfembed-sdk-docs/">Adobe' solution</a> to embed PDFs on Webkit Browser</div>
-     <div class="nav">
+<div style="margin: 2vh 0vh .5vh 2vw; font-size: 3rem;">Portfolio</div>
+<div style="margin: 1vh 0vh 2vh 2vw;font-size: xx-small;">Special thanks <a href="https://opensource.adobe.com/pdfembed-sdk-docs/">Adobe's solution</a> to embed PDFs on Webkit Browser</div>
+     <div class="nav" translate="no">
      <!--   <details><summary class="">CS5780</summary>
         <ul>
         <li onclick="showpdf('files/5780hw1.pdf')">hw1</li>
@@ -100,10 +103,10 @@ body{
             </details>
       </div>
 
-      <div id="prompt" style="text-align: center; padding-top: 30vh; display: block;">Select a file in the navbar to view.</div>
+      <div id="prompt" style="text-align: center; padding-top: 30vh; display: block; color:gray">Select a file from above to view.</div>
     <div id="adobe-dc-view"></div>
 
-<a style="background-color: rgba(211,211,211,0.8); position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
+<a style="background-color: rgba(211,211,211,0.8); font-family:sohne; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
 
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 
