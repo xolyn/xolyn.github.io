@@ -156,6 +156,7 @@
 
       <div id="prompt" style="text-align: center; display: block; color:gray; position: fixed; top:55%; width: 100%; font-size: small;">Select a file from above to view.</div>
     <div id="adobe-dc-view"></div>
+    <div id="btm"></div>
 
 <a style="background-color: rgba(211,211,211,0.8); font-family:'sf-round'; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 40px; line-height: 40px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
 
@@ -167,7 +168,7 @@ function apdfv(pdfurl) {
     div.style.display = "none";
     let adobeDCView=new AdobeDC.View({clientId: "aec8eace9e4d4270acb9a937b5815cf4", divId: "adobe-dc-view" });
     adobeDCView.previewFile({content: {location: {url: pdfurl}},metaData: {fileName: " "}});
-    scrollTo({top:100,behavior:'smooth'});
+    scrollTo({top:200,behavior:'smooth'});
     // close all
     const openDetails = document.querySelectorAll('.nav details[open]');
     openDetails.forEach(detail => detail.removeAttribute('open'));
