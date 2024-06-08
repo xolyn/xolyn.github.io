@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
     <link rel="stylesheet" href="https://xolyn.github.io/font.css">
     <title>Portfolio</title>
     <style>
@@ -29,7 +30,7 @@
         display: inline-block;
         padding: 2px 0px 2px 0px;
         vertical-align: text-top; /*important*/
-        margin: 0vw 1vw 0vw 2vw;
+        margin: 0vw 1vw 0vw 3vh;
     }
 
     div.nav details>summary{font-size: x-large;}
@@ -73,8 +74,11 @@
 </head>
 <body>
 
-<div style="margin: 2vh 0vh .5vh 2vw; font-size: 3rem;">Portfolio</div>
-<div style="margin: 1vh 0vh 2vh 2vw;font-size: xx-small;">Special thanks <a href="https://opensource.adobe.com/pdfembed-sdk-docs/">Adobe's solution</a> to embed PDFs on Webkit Browsers</div>
+<div style="margin: 2vh 0vh .5vh 3vh; font-size: 3rem;">Portfolio</div>
+
+<div style="margin: 1vh 3vh 2vh  3vh;font-size: xx-small;">
+    Special thanks to <a href="https://opensource.adobe.com/pdfembed-sdk-docs/" target="_blank">Adobe's solution</a> for embedding PDFs on Webkit browsers.
+</div>
      <div class="nav" translate="no">
      <!--   <details><summary class="">CS5780</summary>
         <ul>
@@ -154,11 +158,12 @@
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
 function apdfv(pdfurl) {
+    
     var div = document.getElementById("prompt");
     div.style.display = "none";
     let adobeDCView=new AdobeDC.View({clientId: "aec8eace9e4d4270acb9a937b5815cf4", divId: "adobe-dc-view" });
     adobeDCView.previewFile({content: {location: {url: pdfurl}},metaData: {fileName: " "}});
-
+    scrollTo({top:100,behavior:'smooth'});
     // close all
     const openDetails = document.querySelectorAll('.nav details[open]');
     openDetails.forEach(detail => detail.removeAttribute('open'));
