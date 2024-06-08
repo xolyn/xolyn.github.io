@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+    body{
+        font-family: "DM Sans", sans-serif;
+        margin:unset
+    }
+
+    div.nav {
+    background-color: white;
+    overflow: auto;
+    white-space: nowrap;
+    color: black;
+    border-bottom: 1.5px black solid;
+    border-top: 1.5px black solid;
+    position: sticky; /*important*/
+    top: 0;
+    }
+
+    div.nav a {
+    display: inline-block;
+    color:inherit;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    }
+
+    div.nav details {
+        display: inline-block;
+        padding: 5px;
+        vertical-align: text-top; /*important*/
+    }
+
+    ul{
+        margin: 0;
+    }
+
+    li,details>summary{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+
+<h1 style="font-weight: normal; margin-left: 2vw;">Portfolio</h1>
+    <div class="nav">
+        <details><summary>CS5780</summary>
+        <ul>
+        <li onclick="document.getElementById('pdf').src='files/5780hw1.pdf'">hw1</li>
+        <li onclick="document.getElementById('pdf').src='files/5780hw2.pdf'">hw2</li>
+        <li onclick="document.getElementById('pdf').src='files/5780hw3.pdf'">hw3</li>
+        <li onclick="document.getElementById('pdf').src='files/5780hw5.pdf'">hw5</li>
+        <li onclick="document.getElementById('pdf').src='files/5780hw6.pdf'">hw6</li>
+        <li onclick="document.getElementById('pdf').src='files/5780hw7.pdf'">hw7</li>
+        </ul>
+        </details>
+
+        <details><summary>STSCI 5160</summary>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            </details>
+
+
+      </div>
+
+
+   <div style="text-align: center;">
+<iframe height="100%" width="100%" id="pdf" style="width:90%; height:100vh; padding-top: 3vh; border:none;" src="files/5780hw1.pdf"> </iframe> 
+</div>
+
+<!-- <script>
+        document.querySelectorAll('.nav.ul li ').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var src = this.getAttribute('data-src');
+                document.getElementById('contentFrame').setAttribute('src', src);
+            });
+        });
+    </script> -->
+</body>
+</html>
