@@ -6,8 +6,6 @@
     <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
     <title>lingyu zhou</title>
     <style>
-    @import url(https://db.onlinewebfonts.com/c/7ae49051ef02b5a95b5afdc79fdb9c90?family=Diagramatika+Text+Bold);
-
     @font-face {
       font-family: dtb;
       src: url("fonts/dtb.ttf");
@@ -57,7 +55,7 @@
             border: dotted 2px white;
         }
         
-        details:hover{border: dotted 2px white;}
+        /* details:hover{border: dotted 2px white;} */
 
         .nic{
             transition: 0.5s;
@@ -163,12 +161,10 @@ backdrop-filter: blur(10px);
   transition: 0.3s; /* Transition effects on hover (color) */
 }
 
-/* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
   color: #f1f1f1;
 }
 
-/* Position the close button (top right corner) */
 .overlay .closebtn {
   position: absolute;
   top: 20px;
@@ -176,7 +172,6 @@ backdrop-filter: blur(10px);
   font-size: 60px;
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
   .overlay .closebtn {
@@ -206,7 +201,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
-
 </script>
 </head>
 <body>
@@ -214,25 +208,35 @@ function closeNav() {
         <ul class="menu">
           <li><a href="me.html">home</a></li>
           <li><a href="zune.html">about</a></li>
-          <li><a href="proj.html">project</a></li>
-          <!-- <li><a href="#" onclick="openNav()" >socials </a></li> -->
-          <li>
-            <details style="vertical-align: text-top; display: inline-block;">
-              <summary style="cursor: copy;">socials</summary>
+          <li class="contact">
+            <details style="vertical-align: text-top; display: inline-block; margin: 0px; padding: 0px;">
+              <summary style="cursor: copy;">contact</summary>
               <div style="font-size: large;">
-                <a href=https://twitter.com/uygniluohz>x</a> <br>
+                <a href=mailto:lz568@cornell.edu>email</a> <br>
+                <a href=https://github.com/xolyn>github</a> <br>
                 <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> <br>
                 <a href=https://instagram.com/toqurdn>instagram</a> <br>
-                <a href=https://github.com/xolyn>github</a> <br>
+                <a href=https://twitter.com/uygniluohz>x</a> <br>
                 <a href=https://weibo.com/u/5663761733>weibo</a><br>
                 <a href="http://www.coolapk.com/u/1060488">coolapk</a>
               </div>
             </details>
           </li>
-          <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
           <li><a href="https://blog.zhoulingyu.net">blog</a></li>
-          <li><a href="fg.html">résumé</a></li>
-          <li><a href="fg.html">gallery</a></li>
+          <!-- <li><a href="proj.html">project</a></li> -->
+          <li >
+            <details style="vertical-align: text-top; display: inline-block; margin: 0px; padding: 0px;">
+              <summary style="cursor: copy;">work</summary>
+              <div style="font-size: large;">
+                <a href="port.html">portfolio</a><br>
+                <a href="proj.html">project</a><br>
+              </div>
+            </details>
+          </li>
+          <!-- <li><a href="#" onclick="openNav()" >socials </a></li> -->
+          <li><a href="https://f.xoy.one/cv.pdf">résumé</a></li>
+          <li><a href="fg2.html">gallery</a></li>
+          <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
           <li><a href="#" onclick="javascript:navigator.share({title: 'Lingyu Zhou',text: 'Lingyu Zhou',url: 'https://zhoulingyu.net'})" >share</a></li>
         </ul>
       </div>
@@ -240,5 +244,4 @@ function closeNav() {
     <div class="nic" style="line-height: 0.9; cursor:default">Lingyu<br>Zhou</div>
 
 </body>
-
 </html>
