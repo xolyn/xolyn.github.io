@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-    body{
-        font-family: "DM Sans", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');    body{
+        font-family: "Public Sans", sans-serif;
         margin:unset
     }
 
@@ -20,6 +19,7 @@
     border-top: 1.5px black solid;
     position: sticky; /*important*/
     top: 0;
+    font-size: x-large;
     }
 
     div.nav a {
@@ -34,6 +34,7 @@
         display: inline-block;
         padding: 5px;
         vertical-align: text-top; /*important*/
+        margin: 0vw 2vw 0vw;
     }
 
     ul{
@@ -43,20 +44,22 @@
     li,details>summary{
         cursor: pointer;
     }
+
     </style>
 </head>
 <body>
 
 <h1 style="font-weight: normal; margin-left: 2vw;">Portfolio</h1>
     <div class="nav">
-        <details><summary>CS5780</summary>
+        <details><summary class="">CS5780</summary>
         <ul>
-        <li onclick="document.getElementById('pdf').src='files/5780hw1.pdf'">hw1</li>
-        <li onclick="document.getElementById('pdf').src='https://f.xoy.one/files/5780hw2.pdf'">hw2</li>
-        <li onclick="document.getElementById('pdf').src='files/5780hw3.pdf'">hw3</li>
-        <li onclick="document.getElementById('pdf').src='files/5780hw5.pdf'">hw5</li>
-        <li onclick="document.getElementById('pdf').src='files/5780hw6.pdf'">hw6</li>
-        <li onclick="document.getElementById('pdf').src='files/5780hw7.pdf'">hw7</li>
+        <li onclick="showpdf('files/5780hw1.pdf')">hw1</li>
+        <!-- <li onclick="document.getElementById('pdf').src='files/5780hw1.pdf'">hw1</li> -->
+        <li onclick="showpdf('files/5780hw2.pdf')">hw2</li>
+        <li onclick="showpdf('files/5780hw3.pdf')">hw3</li>
+        <li onclick="showpdf('files/5780hw5.pdf')">hw5</li>
+        <li onclick="showpdf('files/5780hw6.pdf')">hw6</li>
+        <li onclick="showpdf('files/5780hw7.pdf')">hw7</li>
         </ul>
         </details>
 
@@ -70,21 +73,44 @@
             </ul>
             </details>
 
+        <details><summary>MATH 535</summary>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            </details>
+
 
       </div>
 
 
-   <div style="text-align: center;">
-<iframe id="pdf" style="width:90%; height:100vh; padding-top: 3vh; border:none;" src="files/5780hw1.pdf"> </iframe> 
+   <div style="text-align: center; margin-top: 10vh;">
+<iframe id="pdf" style="width:90%; height:100vh; border:none;" src="files/5780hw1.pdf"> </iframe> 
 </div>
 
-<!-- <script>
-        document.querySelectorAll('.nav.ul li ').forEach(function(item) {
-            item.addEventListener('click', function() {
-                var src = this.getAttribute('data-src');
-                document.getElementById('contentFrame').setAttribute('src', src);
-            });
-        });
-    </script> -->
+<!-- <div style="background-color: lightgray; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;">
+<a style=" text-decoration: none;color: black;" href="javascript:window.scrollTo({ top: 0, behavior: 'smooth' })">&uarr;</a>
+</div> -->
+
+<a style="background-color: rgba(211,211,211,0.8); position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
+
+
+<script>
+    function showpdf(pdf) {
+        document.getElementById('pdf').src = pdf;
+        // close all:
+        const openDetails = document.querySelectorAll('.nav details[open]');
+        openDetails.forEach(detail => detail.removeAttribute('open'));
+        // close parent:
+        // const details = document.querySelector('.nav details[open]');
+        // if (details) {
+        //     details.removeAttribute('open');
+        // }
+    }
+</script>
+
 </body>
 </html>
