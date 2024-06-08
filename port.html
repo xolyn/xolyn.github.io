@@ -21,7 +21,7 @@
     /* border-top: 1.5px black solid; */
     position: sticky; /*important*/
     top: 0;
-    padding-bottom: 1vh;
+    /* padding-bottom: 1vh; */
     }
 
     div.nav details {
@@ -64,6 +64,11 @@
     100%  {opacity: 1; transform: translateY(0)}
     }
 
+    summary.cornell::after{content:" ";height:10px; width:10px; background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Cornell_%22C%22_logo.svg/200px-Cornell_%22C%22_logo.svg.png); background-size: 10px 10px;display:inline-block;  vertical-align: super}
+    summary.uw::after{content:" ";height:10px; width:10px; background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/494px-Wisconsin_Badgers_logo.svg.png); background-size: 10px 10px;display:inline-block;  vertical-align: super}
+
+    ul>li>a{color:inherit; text-decoration: none;}
+
     </style>
 </head>
 <body>
@@ -84,7 +89,7 @@
 
         <!-- <li onclick="document.getElementById('pdf').src='files/5780hw1.pdf'">hw1</li> -->
 
-        <details><summary class="">CS5780</summary>
+        <details><summary title="Cornell University" >CS5780</summary>
             <ul>
             <li onclick="apdfv('https://f.xoy.one/files/5780hw1.pdf')">hw1</li>
             <li onclick="apdfv('https://f.xoy.one/files/5780hw2.pdf')">hw2</li>
@@ -95,25 +100,50 @@
             </ul>
             </details>
 
-        <details><summary>STSCI 5160</summary>
+        <details><summary title="Cornell University">STSCI 5160</summary>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160mid.pdf')">Paper</li>
             </ul>
             </details>
 
-        <details><summary>MATH 535</summary>
+        <details><summary title="University of Wisconsin-Madison">MATH 535</summary>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw6.pdf')">hw6</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw7.pdf')">hw7</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw8.pdf')">hw8</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw9.pdf')">hw9</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw10.pdf')">hw10</li>
             </ul>
             </details>
+
+        <details><summary title="University of Wisconsin-Madison">ECON 400</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw6.pdf')">hw6</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw7.pdf')">hw7</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw8.pdf')">hw8</li>
+            </ul>
+        </details>
+        
+        <details><summary>More</summary>
+            <ul>
+                <li><a href="https://github.com/xolyn/cs220">CS 220</a></li>
+                <li><a href="https://github.com/xolyn/cs200">CS 200</a></li>
+            </ul>
+        </details>
+
       </div>
 
       <div id="prompt" style="text-align: center; display: block; color:gray; position: fixed; top:55%; width: 100%; font-size: small;">Select a file from above to view.</div>
