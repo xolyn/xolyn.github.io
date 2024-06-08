@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');    body{
-        font-family: "Public Sans", sans-serif;
-        margin:unset
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');    
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    font-family: "Roboto", sans-serif;
+    margin:unset
     }
 
     div.nav {
@@ -49,19 +52,32 @@
 </head>
 <body>
 
-<h1 style="font-weight: normal; margin-left: 2vw;">Portfolio</h1>
-    <div class="nav">
-        <details><summary class="">CS5780</summary>
+<div style="margin: 2vh 0vh 2vh 2vw; font-size: xx-large;">Portfolio</div>
+<div style="margin: 2vh 0vh 2vh 2vw;font-size: xx-small;">Special thanks <a href="https://opensource.adobe.com/pdfembed-sdk-docs/">Adobe' solution</a> to embed PDFs on Webkit Browser</div>
+     <div class="nav">
+     <!--   <details><summary class="">CS5780</summary>
         <ul>
         <li onclick="showpdf('files/5780hw1.pdf')">hw1</li>
-        <!-- <li onclick="document.getElementById('pdf').src='files/5780hw1.pdf'">hw1</li> -->
         <li onclick="showpdf('files/5780hw2.pdf')">hw2</li>
         <li onclick="showpdf('files/5780hw3.pdf')">hw3</li>
         <li onclick="showpdf('files/5780hw5.pdf')">hw5</li>
         <li onclick="showpdf('files/5780hw6.pdf')">hw6</li>
         <li onclick="showpdf('files/5780hw7.pdf')">hw7</li>
         </ul>
-        </details>
+        </details> -->
+
+        <!-- <li onclick="document.getElementById('pdf').src='files/5780hw1.pdf'">hw1</li> -->
+
+        <details><summary class="">CS5780</summary>
+            <ul>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw1.pdf')">hw1</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw2.pdf')">hw2</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw3.pdf')">hw3</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw5.pdf')">hw5</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw6.pdf')">hw6</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw7.pdf')">hw7</li>
+            </ul>
+            </details>
 
         <details><summary>STSCI 5160</summary>
             <ul>
@@ -82,21 +98,29 @@
                 <li>5</li>
             </ul>
             </details>
-
-
       </div>
 
-
-   <div style="text-align: center; margin-top: 10vh;">
-<iframe id="pdf" style="width:90%; height:100vh; border:none;" src="files/5780hw1.pdf"> </iframe> 
-</div>
-
-<!-- <div style="background-color: lightgray; position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;">
-<a style=" text-decoration: none;color: black;" href="javascript:window.scrollTo({ top: 0, behavior: 'smooth' })">&uarr;</a>
-</div> -->
+      <div id="prompt" style="text-align: center; padding-top: 30vh; display: block;">Select a file in the navbar to view.</div>
+    <div id="adobe-dc-view"></div>
 
 <a style="background-color: rgba(211,211,211,0.8); position: fixed; bottom: 2%; right:2%; border-radius: 50%; width: 60px; line-height: 60px; text-align: center;text-decoration: none;color: black;" href="javascript:window.scrollTo({top:0,behavior:'smooth'})">&uarr;</a>
 
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+ <script type="text/javascript">
+    function apdfv(pdfurl) {
+        var div = document.getElementById("prompt");
+        div.style.display = "none";
+        let adobeDCView=new AdobeDC.View({clientId: "aec8eace9e4d4270acb9a937b5815cf4", divId: "adobe-dc-view" });
+   adobeDCView.previewFile({
+     content: {location: {url: pdfurl}},
+     metaData: {fileName: " " }
+   });
+           // Find all open <details> elements and close them
+            const openDetails = document.querySelectorAll('.nav details[open]');
+        openDetails.forEach(detail => detail.removeAttribute('open'));
+ }
+</script>
 
 <script>
     function showpdf(pdf) {
@@ -110,6 +134,8 @@
         //     details.removeAttribute('open');
         // }
     }
+
+
 </script>
 
 </body>
