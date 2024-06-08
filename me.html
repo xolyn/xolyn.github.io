@@ -57,6 +57,7 @@
             border: dotted 2px white;
         }
         
+        details:hover{border: dotted 2px white;}
 
         .nic{
             transition: 0.5s;
@@ -138,25 +139,8 @@
   background-color: rgba(0,0,0, 0.9); 
   overflow-y: hidden; 
   transition: 0.5s; 
-  /* height: 0;
-  width: 100%;
-  position: fixed; 
-  z-index: 100; 
-  left: 0;
-  top: 0;
-  background-color: rgba(0,0,0, 0.9); 
-  overflow-y: hidden; 
-  transition: height 0.5s, opacity 0.5s;
-  opacity: 0; */
-}
+      }
 
-/* 
-.overlay.show {
-  height: 100%;
-  opacity: 1;
-} */
-
-/* Position the content inside the overlay */
 .overlay-content {
 transition: 0.5s;
 backdrop-filter: blur(10px);
@@ -202,10 +186,13 @@ backdrop-filter: blur(10px);
   }
 }
 
-
-    </style>
-<script>
-        
+details summary::-webkit-details-marker,
+    details summary::marker {
+    display: none; 
+    content: "";
+    }
+</style>
+<script>  
 window.onload = function() {
   if (window.innerHeight<window.innerWidth) {
     alert("Scroll mouse wheel normally on menu bar to see more!");
@@ -220,16 +207,6 @@ function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
 
-// function openNav() {
-//   const overlay = document.getElementById("myNav");
-//   overlay.classList.add("show");
-// }
-
-// function closeNav() {
-//   const overlay = document.getElementById("myNav");
-//   overlay.classList.remove("show");
-// }
-
 </script>
 </head>
 <body>
@@ -238,7 +215,20 @@ function closeNav() {
           <li><a href="me.html">home</a></li>
           <li><a href="zune.html">about</a></li>
           <li><a href="proj.html">project</a></li>
-          <li><a href="#" onclick="openNav()" >socials </a></li>
+          <!-- <li><a href="#" onclick="openNav()" >socials </a></li> -->
+          <li>
+            <details style="vertical-align: text-top; display: inline-block;">
+              <summary style="cursor: copy;">socials</summary>
+              <div style="font-size: large;">
+                <a href=https://twitter.com/uygniluohz>x</a> <br>
+                <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> <br>
+                <a href=https://instagram.com/toqurdn>instagram</a> <br>
+                <a href=https://github.com/xolyn>github</a> <br>
+                <a href=https://weibo.com/u/5663761733>weibo</a><br>
+                <a href="http://www.coolapk.com/u/1060488">coolapk</a>
+              </div>
+            </details>
+          </li>
           <li><a href="https://zhoulingyu.net/faq.html">faq</a></li>
           <li><a href="https://blog.zhoulingyu.net">blog</a></li>
           <li><a href="fg.html">résumé</a></li>
@@ -246,19 +236,6 @@ function closeNav() {
           <li><a href="fg.html">gallery</a></li>
         </ul>
       </div>
-
-      <div id="myNav" class="overlay">
-        <div class="overlay-content">
-            <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href=https://twitter.com/uygniluohz>x</a> 
-            <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
-            <a href=https://instagram.com/toqurdn>instagram</a> 
-            <a href=https://github.com/xolyn>github</a> 
-            <a href=https://weibo.com/u/5663761733>weibo</a>
-          <a href="http://www.coolapk.com/u/1060488">coolapk</a>
-        </div>
-      </div>
-
 
     <div class="nic" style="  line-height: 0.9;">Lingyu<br>Zhou</div>
 
