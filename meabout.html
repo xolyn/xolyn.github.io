@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
     <link rel="stylesheet" href="https://xolyn.github.io/font.css">
-    <title>lingyu zhou</title>
+    <title>about</title>
     <style>
 @import url(https://db.onlinewebfonts.com/c/6e47ef470dd19698c911332a9b4d1cf4?family=Neue+Haas+Grotesk+Text+Pro);
 
     ::webkit-scrollbar {display: none}
+
     ::selection{background-color: white; color:black}
     a{
         color:inherit;
@@ -23,15 +25,17 @@
             margin:0px;
             /* font-family: neue; */
             font-family: dtb;
-            overflow-y: hidden;
+            /* overflow-y: hidden; */
         }
 
         .menu-container {
         width: 100%;
         overflow-x: auto;
-        white-space: nowrap;
         overflow-y: hidden;
-        background-color: transparent;
+        top:0;
+        white-space: nowrap;
+        background-color: inherit ;
+        position: sticky;
 
         }
 
@@ -63,7 +67,6 @@
             width: 100vw
         }
 
-
         .menu li:last-child {
         margin-right: 0;
         }
@@ -85,6 +88,11 @@
             display:none;
         }
         
+        div.main-txt{
+          padding: 0px 10vw;
+          line-height: 1.5;
+        }
+        
     }
 
     @media (orientation: portrait) {
@@ -93,91 +101,12 @@
             /* padding-top: 50vh;  */
             font-size: 30vw;
         }
-        .menu-container{
-            padding-bottom: 1vh;
+
+        div.main-txt{
+          padding: 0px 15vw;
+          line-height: 1.2;
         }
     }
-
-    .tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-    }
-
-    /* Tooltip text */
-    .tooltiptext {
-    visibility: hidden;
-    width: max-content;
-    background-color:transparent; 
-    color: white;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    left: 50%;
-    z-index: 9999;
-    top: 10vh;
-    transform: translateX(-50%);
-  /* margin-left: -60px; */
-    }
-
-    .tooltip:hover .tooltiptext {
-    visibility: visible;
-    }
-
-    .overlay {
-  height: 0;
-  width: 100%;
-  position: fixed; 
-  z-index: 100; 
-  left: 0;
-  top: 0;
-  background-color: rgba(0,0,0, 0.9); 
-  overflow-y: hidden; 
-  transition: 0.5s; 
-      }
-
-.overlay-content {
-transition: 0.5s;
-backdrop-filter: blur(10px);
-  position: relative;
-  height: 100vh; 
-  padding-top: 25vh;
-  width: 100%;
-  text-align: center; /* Centered text/links */
-
-  z-index: 999;
-}
-
-/* The navigation links inside the overlay */
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
 
 details summary::-webkit-details-marker,
     details summary::marker {
@@ -185,9 +114,31 @@ details summary::-webkit-details-marker,
     content: "";
     }
 
-  #about>p>a{
-    text-decoration: underline;
-  }
+    .now{
+      border: 15px solid;
+  border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' width='11' height='11'><g fill='white'><rect width='1' height='5'/><rect y='6' width='1' height='5'/><rect x='10' y='6' width='1' height='5'/><rect x='10' width='1' height='5'/><rect width='5' height='1'/><rect y='10' width='5' height='1'/><rect x='6' y='10' width='5' height='1'/><rect x='6' width='5' height='1'/></g></svg>") 5;
+
+    }
+
+    .main-txt>p>a{
+        text-decoration: underline;
+    }
+
+    .main-txt>p>a:hover{
+            /* text-decoration-style:none; */
+            /* text-decoration:underline transparent; */
+            animation-name:blink;
+            animation-duration:.5s;
+            animation-timing-function:ease-in;
+            animation-iteration-count:Infinite;
+        }
+
+    @keyframes blink{
+        0%{color:white;}
+        50%{color:transparent;}
+        100%{color:white;}}
+
+
 </style>
 <script>  
 window.onload = function() {
@@ -206,16 +157,16 @@ function closeNav() {
 </script>
 </head>
 <body>
-    <div class="menu-container" id="scrollable" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100" >
+    <!-- <div class="menu-container" id="scrollable" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100" > -->
+    <div class="menu-container" id="scrollable" onWheel="navscroll(event)" >
         <ul class="menu">
-          <li><a href="me.html" style="text-decoration: underline;">home</a></li>
-          <!-- <li><a onclick="showabout()">about</a></li> -->
-          <li><a href="meabout.html">about</a></li>
+          <li><a href="me.html">home</a></li>
+          <li><a style="text-decoration: underline;" href="">about</a></li>
           <li class="contact">
             <details style="vertical-align: text-top; display: inline-block; margin: 0px; padding: 0px;">
               <summary style="cursor: copy;">contact</summary>
               <div style="font-size: large;">
-                <a href=mailto:lz568@cornell.edu>email</a> <br>
+                <a href="/cdn-cgi/l/email-protection#3b57410e0d037b585449555e5757155e5f4e">email</a> <br>
                 <a href=https://github.com/xolyn>github</a> <br>
                 <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> <br>
                 <a href=https://instagram.com/toqurdn>instagram</a> <br>
@@ -242,37 +193,37 @@ function closeNav() {
           <li><a href="#" onclick="javascript:navigator.share({title: 'Lingyu Zhou',text: 'Lingyu Zhou',url: 'https://zhoulingyu.net'})" >share</a></li>
         </ul>
       </div>
-      <div id="about" style="display: none; font-family: 'Neue Haas Grotesk Text Pro'; padding-left: 5vw; font-size: 0.1vmin; width: 80%;">
-        <p>My name is Lingyu Zhou. I am a <a href="https://khentmt.com">founder</a> as well as a student</a> at <a href="https://cornel.edu">Cornell University</a>, exploring the numbers and their connections behind.
-          I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
-          Previously, I studied applied mathematics at 
-          <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
-      </p>
-  
-      <p>
-          My research directions are applied mathematical modeling, applied statistics, and machine learning.
-          My specialties are software engineering, math, data analysis, and data visualization.
-          I am also interested in biology, botany, and etymology.  
-      </p>
-  
-      <p>
-          I am now working with <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> on flood data analysis. Previously I worked at the Technology Strategy Department in <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a>, 
-          where my main work involved data analysis on Apache Flink platform and IoT complex events processing based on MQTT protocol. 
-          More information, including the source code about this program can be found <a href="https://github.com/xolyn/flinkmqtt">here</a>. Before joining Hoperun,
-          I was a data operator at <a href="https://www.sino-technology.com/">Shanghai Sino Environmental Technology Co., Ltd</a>.
-      </p>
-      </div>
-    <div class="nic" style="line-height: 0.9; cursor:default">Lingyu<br>Zhou</div>
 
-    <script>
-        function showabout() {
-            const aboutSection = document.getElementById('about');
-            if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
-                aboutSection.style.display = 'block';
-            } else {
-                aboutSection.style.display = 'none';
-            }
+      <div class="main-txt" style="font-family: 'Neue Haas Grotesk Text Pro';  font-size: large; letter-spacing: -.3px;">
+        <p>My name is Lingyu Zhou. I am a <a href="https://khentmt.com">founder</a> as well as a student</a> at <a href="https://cornel.edu">Cornell University</a>, exploring the numbers and their connections behind.
+            I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
+            Previously, I studied applied mathematics at 
+            <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+        </p>
+    
+        <p>
+            My research directions are applied mathematical modeling, applied statistics, and machine learning.
+            My specialties are software engineering, math, data analysis, and data visualization.
+            I am also interested in biology, botany, and etymology.  
+        </p>
+    
+        <p>
+            I am now working with <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> on flood data analysis. Previously I worked at the Technology Strategy Department in <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a>, 
+            where my main work involved data analysis on Apache Flink platform and IoT complex events processing based on MQTT protocol. 
+            More information, including the source code about this program can be found <a href="https://github.com/xolyn/flinkmqtt">here</a>. Before joining Hoperun,
+            I was a data operator at <a href="https://www.sino-technology.com/">Shanghai Sino Environmental Technology Co., Ltd</a>.
+        </p>
+
+      </div>
+
+
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function navscroll(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var delta = event.deltaY > 0 ? 100 : -100;
+            document.getElementById('scrollable').scrollLeft += delta;
         }
-    </script>
+      </script>
 </body>
 </html>
