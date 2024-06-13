@@ -59,7 +59,7 @@ code{
 
 code,pre{font-family: monospace;}
 
-input{ width: 98%; border:none;outline: none; border-color: transparent;
+input{ width: 95%; border:none;outline: none; border-color: transparent;
 }
 
 
@@ -263,6 +263,18 @@ function copy() {
   navigator.clipboard.writeText(copyText.value);
   alert("Copied the text: " + copyText.value);
 }
+
+function syncInputs(event) {
+            const newValue = event.target.value;
+            const inputs = document.querySelectorAll('table input[type="text"]');
+            inputs.forEach(input => {
+                input.value = newValue;
+            });
+        }
+        const inputFields = document.querySelectorAll('table input[type="text"]');
+        inputFields.forEach(input => {
+            input.addEventListener('input', syncInputs);
+        });
 </script>
 </body>
 </html>
