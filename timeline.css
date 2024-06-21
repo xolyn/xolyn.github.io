@@ -1,0 +1,29 @@
+.timeline{
+border-collapse: collapse;
+font-size: large;
+/* font-family: chirp_r; */
+margin: auto;
+}
+
+/* tr{border: none;} */
+
+.timeline tr td:first-child{
+border-right: 2px solid black;
+text-align: right;
+padding: 2vmin 4vmin 2vmin  0px;
+}
+
+.timeline tr td:last-child{
+text-align: left;
+padding: 2vmin  0 2vmin 4vmin;
+}
+
+.timeline tr td details[open]{
+width: 60vmin;
+}
+
+.timeline tr td ul{padding: 0 0 0 4vmin;}
+
+.timeline tr td li{padding: 0;}
+
+#tdnostyle{border-left: none; background: none;}
