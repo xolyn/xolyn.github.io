@@ -43,12 +43,25 @@
     #myPre {
             display: none;
     }
+
+    .shake{
+    animation: shaking 0.4s;
+    animation-iteration-count: 1;
+    }
+            @keyframes shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+    }
     </style>
     
 </head>
 
-<body class="disable-dbl-tap-zoom">
-    <a href="simplefor.html"><p style="background: black; width: min-content;color: white; padding: 3px 6px 1px 5px;">Z</p></a>
+<body>
+<div id="ctx">
+<a href="simplefor.html"><p style="background: black; width: min-content;color: white; padding: 3px 6px 1px 5px;">Z</p></a>
 <!-- <a href="simple.html">Lingyu Zhou</a> -->
 <b>Lingyu Zhou</b>
 
@@ -79,7 +92,7 @@
     <a href="proj.html">projects></a><br>
     <a href="gall.html">gallery></a><br>
     <a href="fg2.html">font studio></a><br>
-    <a href="sm.html" title="Eye of God">site map></a>
+    <a href="sm.html" title="Eye of God">site map></a></p>
 
     <!-- <a href="https://aqmn.github.io/guess">fun></a><br> -->
     <!-- <a href="https://aqmn.github.io">demo1></a><br>
@@ -100,7 +113,19 @@
      /___/  \___/     
                                -->
 
+</div>
 
+<footer>
+<div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
+<div style="display: inline-block;">
+    <a href="https://xolyn.github.io/give">$</a>/<a style="cursor: pointer; text-decoration: underline;" id="shaker">home</a>/
+</div>
+<div  style="display: inline-block;">       
+    <!-- <b>EN</b>/CN/KR -->
+    <!-- <a style="text-decoration: none; " href="sm.html" label="Eye of God">&#128065;</a> -->
+</div>
+</div>
+</footer>
 <script>
 document.getElementById('emailLink').addEventListener('click', function(event) {
     var preSection = document.getElementById('myPre');
@@ -111,16 +136,12 @@ document.getElementById('emailLink').addEventListener('click', function(event) {
         preSection.style.display = 'none';
     }
 });
+document.getElementById('shaker').addEventListener('click', function() {
+    const element = document.getElementById('ctx');
+    element.classList.add('shake');
+    element.addEventListener('animationend', function() {
+        element.classList.remove('shake');
+    }, { once: true });});
 </script>
 </body>
-<footer>
-<div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
-<div style="display: inline-block;">
-    <a href="https://xolyn.github.io/give">$</a>/<a href="https://xolyn.github.io">home</a>/
-</div>
-<div  style="display: inline-block;">       
-    <!-- <b>EN</b>/CN/KR -->
-    <!-- <a style="text-decoration: none; " href="sm.html" label="Eye of God">&#128065;</a> -->
-</div>
-</div>
-</footer>
+
