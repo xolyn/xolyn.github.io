@@ -1,0 +1,11 @@
+@import url('https://xolyn.github.io/font.css');
+
+*,html,body{
+    font-family: fira;
+}
+
+blockquote{
+    margin-left:0;
+    padding-left:1em;
+    border-left: 3px black solid;
+}
