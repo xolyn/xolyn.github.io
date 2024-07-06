@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>fonts repo</title>
-<!-- <link rel="stylesheet" href="font.css"> -->
-<link rel="stylesheet" href="https://xolyn.github.io/font.css">
+<link rel="stylesheet" href="font.css">
+<link rel="shortcut icon" href="https://www.svgrepo.com/show/513642/font.svg" type="image/svg">
+<!-- <link rel="stylesheet" href="https://xolyn.github.io/font.css"> -->
 
 <style>
 h1,h2,h3,h4{margin: 1% 0% 1%;}
@@ -19,8 +20,8 @@ pre{
     /* border: 1.5px grey solid; */
     background-color: lightgray;
     margin: 0px;
-    overflow-y: hidden;
     transition: .3s;
+    font-size: x-small;
 }
 
 pre:hover{
@@ -34,15 +35,19 @@ pre:hover{
 } */
 
 .cb{
-    border: grey 1px solid; 
+    /* border-top: grey 1px solid;
+    border-bottom: grey 1px solid;  */
     /* padding-left: 2px; */
+    max-width: 100%;
 }
 
 .cb::before{
     content: "‎ HTML";
     color:darkcyan;
-    display: contents;
-    font-family: monospace;
+    margin: 1em 0 1em 1em;
+    display: inline-block;
+    font-family: monaco;
+    /* background-color: rgb(220,220,220); */
 }
 
 /* svg:hover{
@@ -57,7 +62,7 @@ code{
     cursor: pointer;
 }
 
-code,pre{font-family: monospace;}
+code,pre,samp{font-family: monaco;}
 
 input{ width: 95%; border:none;outline: none; border-color: transparent;
 }
@@ -65,17 +70,17 @@ input{ width: 95%; border:none;outline: none; border-color: transparent;
 
 </style>
 
+<script>
+    const csstxt='<link rel="stylesheet" href="https://xolyn.github.io/font.css">'
+</script>
 
-
-    <script>
-        const csstxt='<link rel="stylesheet" href="https://xolyn.github.io/font.css">'
-    </script>
 </head>
-<body style="font-family: sans-serif;">
+<body style="font-family: BDLifelessGrotesk; margin: 0">
 
-<h1 style="font-weight: normal;">Welcome to use my font css</h1>
+<div style="margin: 1.5em;">
+  <h1 style="font-weight: normal;">Welcome to use my font css</h1>
 <details>
-    <summary ><span style="color:red; font-size: 1.5rem;">Usage Notice</span></summary>
+    <summary style="color:red;"><span style=" font-size: 1.5rem;">Usage Notice</span></summary>
     Please be aware that these fonts are intended for personal and non-commercial use only. By importing and using our CSS file, you agree not to use these fonts for any commercial purposes. Unauthorized commercial use of these fonts is strictly prohibited. If you choose to use these fonts for commercial purposes, you do so at your own risk and will bear full responsibility for any consequences that may arise.
 <br>
 To ensure compliance with these terms, our fonts are licensed under the 
@@ -90,22 +95,23 @@ By using our fonts, you acknowledge that you have read, understood, and agreed t
 
 <h2 style="font-weight: normal;">How to use?</h2>
 Add the following code inside html <samp translate="no">&lt;head></samp> section:
-<div class="cb">
+</div>
+
+<div class="cb" style="max-width: 100%; border-top: 1px lightgrey solid;">
 <svg style="cursor: pointer; transition: .3s;" onclick="navigator.clipboard.writeText(csstxt);"
-width="12.5px" height="12.5px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
-<pre class="prettyprint lang-html" style="border: 0px;">
+width="15px" height="15px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
+<pre class="prettyprint lang-html" style="border: 0px; padding: 2em;">
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
 </div>
 
-<br>
-Then refer to the preview below for your preferred fonts and use corresponding alias. You can click on names to copy.
 
-<div style="overflow-x: auto">
+<div style="overflow-x: auto; margin: 1.5em;">
+  Then refer to the preview below for your preferred fonts and use corresponding alias. You can click on names to copy.<br><br>
   <table style="width: 100%; font-size: small;">
     <tr>
       <th><samp>font-family:</samp></th>
-      <th>preview</th>
+      <th style="font-weight: normal;">preview</th>
     </tr>
   
     <tr>
@@ -257,6 +263,21 @@ Then refer to the preview below for your preferred fonts and use corresponding a
     <tr>
       <td><code onclick="copyTab(this)">aptos</code></td>
       <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:aptos;"></input></td>
+    </tr>
+    
+    <tr>
+      <td><code onclick="copyTab(this)">monaco</code></td>
+      <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:monaco;"></input></td>
+    </tr>
+
+    <tr>
+      <td><code onclick="copyTab(this)">bios</code></td>
+      <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:bios;"></input></td>
+    </tr>
+
+    <tr>
+      <td><code onclick="copyTab(this)">vulf</code></td>
+      <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:vulf;"></input></td>
     </tr>
 
     <tr>
