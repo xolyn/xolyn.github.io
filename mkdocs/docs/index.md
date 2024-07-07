@@ -1,15 +1,5 @@
-# Welcome to ZDocs
+# Welcome to use XOYCSS
+## About
+This is a document about using XOYCSS. XOYCSS is a collection of personalized styles for multiple elements in HTML that I created. It meets the characteristics of simplicity and high customization.
 
-## Tests markdown functionalities:
-I like \(\LaTeX\).
-
-[HyperLink](https://xoy.one)
-
-|A|B|C|
-|--|--|--|
-|1|2|3|
-|4|5|6|
-
-> To be or not to be, that is the question.	
-> 
->   --William Shakespeare
+All source codes are stored [here](https://xoyln.github.io)
