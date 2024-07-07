@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +68,15 @@ code,pre,samp{font-family: monaco;}
 input{ width: 95%; border:none;outline: none; border-color: transparent;
 }
 
+td>input, tr>th{
+  padding: 5px 0 5px 5px;
+  font-size: small;
+}
+
+tr>th:first-child,
+tr>td:first-child{
+  font-size: xx-small;
+}
 
 </style>
 
@@ -109,6 +119,10 @@ width="15px" height="15px" viewBox="0 0 512 512" version="1.1" xmlns="http://www
 <div style="overflow-x: auto; margin: 1.5em;">
   Then refer to the preview below for your preferred fonts and use corresponding alias. You can click on names to copy.<br><br>
   <table style="width: 100%; font-size: small;">
+    <colgroup>
+      <col style="width: 20%;">
+      <col style="width: 70%;">
+  </colgroup>
     <tr>
       <th><samp>font-family:</samp></th>
       <th style="font-weight: normal;">preview</th>
@@ -278,6 +292,21 @@ width="15px" height="15px" viewBox="0 0 512 512" version="1.1" xmlns="http://www
     <tr>
       <td><code onclick="copyTab(this)">vulf</code></td>
       <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:vulf;"></input></td>
+    </tr>
+
+    <tr>
+      <td><code onclick="copyTab(this)">palo</code></td>
+      <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:palo;"></input></td>
+    </tr>
+
+    <tr>
+      <td><code onclick="copyTab(this)">questa</code></td>
+      <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:questa;"></input></td>
+    </tr>
+
+    <tr>
+      <td><code onclick="copyTab(this)">fsk</code></td>
+      <td><input type="text" placeholder="The quick brown fox jumps over the lazy dog." style="font-family:fsk;"></input></td>
     </tr>
 
     <tr>
