@@ -9,6 +9,10 @@
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
 <title>fonts repo</title>
 <style>
+a{
+    color:inherit
+}
+
 fieldset{
     border-radius: 5px;
     border: 1.5px solid black;
@@ -58,7 +62,7 @@ pre:hover{
 .cb::before{
     content: "‎ HTML";
     color:darkcyan;
-    margin: 1em 0 1em 10vw;
+    margin: .5em 0 .5em 10vw;
     display: inline-block;
     font-family: monaco;
     /* background-color: rgb(220,220,220); */
@@ -126,7 +130,7 @@ span#instant.fade-out {
 <body style="margin:0; font-family: BDLifelessGrotesk;">
 
 <article>
-    <h1 style="font-weight: normal;">Welcome to use font.css</h1>
+    <h1 style="font-weight: normal; font-size: 2rem;">Welcome to use font.css</h1>
     <details>
         <summary style="color:red;"><span style=" font-size: 1.5rem;">Terms and Notices</span></summary>
         Please be aware that these fonts are intended for personal and non-commercial use only. By importing and using our CSS file, you agree not to use these fonts for any commercial purposes. Unauthorized commercial use of these fonts is strictly prohibited. If you choose to use these fonts for commercial purposes, you do so at your own risk and will bear full responsibility for any consequences that may arise.
@@ -147,8 +151,8 @@ span#instant.fade-out {
     
 <div class="cb" style="max-width: 100%; border-top: 1px lightgrey solid;">
 <svg style="cursor: pointer; transition: .3s;" onclick="showInstant();navigator.clipboard.writeText(csstxt); "
-width="15px" height="15px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
-<span id="instant" style="font-size: small;">Copied.</span>
+width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
+<span id="instant" style="font-size: x-small; color: grey;">Copied.</span>
 <pre class="prettyprint lang-html" style="border: 0px; padding: 1.5em 10vw 1.5em 10vw;" translate="no">
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
@@ -163,7 +167,8 @@ width="15px" height="15px" viewBox="0 0 512 512" version="1.1" xmlns="http://www
         <label translate="no" for="fontSizeRange" style="font-size: x-small;">A&nbsp;</label>
         <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="16">
         <span style="font-size: x-large;" translate="no">&nbsp;A</span>
-        <input type="color" id="colorPicker" style="margin-left: 2vw;">
+        <input type="color" id="colorPicker" style="margin:0 3vw;">
+        <!-- <span onclick=reset()>↻</span> -->
     </div>
     
     <fieldset translate="no">
@@ -315,7 +320,15 @@ width="15px" height="15px" viewBox="0 0 512 512" version="1.1" xmlns="http://www
         <div style="font-family:fsk;" class="usrtxt" contenteditable ></div>
     </fieldset>
     
+
+        
 </article>
+<hr>
+<center style="font-size: small; padding:1em 0;">
+<a href="javascript:history.back()">back</a> | 
+<a href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">top</a> 
+<!-- <br>&copy; 2024 Lingyu Zhou All rights reserved. -->
+</center>
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 <script>
@@ -340,6 +353,7 @@ function showInstant() {
             el.style.fontSize = fontSize;
         });
     });
+
 
     document.getElementById('colorPicker').addEventListener('input', function() {
             var color = this.value;
@@ -381,6 +395,7 @@ var textAreas = document.getElementsByClassName('usrtxt');
                 document.execCommand('insertText', false, text);
             });
         });
+
 </script>
 </body>
 </html>
