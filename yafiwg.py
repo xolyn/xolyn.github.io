@@ -1,6 +1,11 @@
-import sys,os
+# author: lingyu zhou (zly.ch)
+# build: 1.0.2
+# date: 2024.7.9
+
+import sys,os,re,time
 
 def f(path):
+    start=time.time()
     html_content = []
     def add_directory(directory, level=0):
         if '.git' in directory:
@@ -37,17 +42,25 @@ def f(path):
     '''
     suffix="\n</body>\n</html>"
 
+    pattern = re.compile(r'<ul>\s*</ul>', re.IGNORECASE)
+    html=pattern.sub('<ul><span style="color:grey;font-style:italic">blank folder</span></ul>', prefix+body+suffix)
+
     with open("file_tree.html", 'w') as f:
-        f.write(prefix+body+suffix)
+        f.write(html)
     # return prefix+body+suffix
+    return round((time.time()-start),2)
 
 upath="."
 if 1<len(sys.argv)<2:
         param = ' '.join(sys.argv[1:])
         upath=param
+        te=f(path=upath)
+        opdir=os.path.join(upath,"file_tree.html")
+        print(f"Complied successfully in {te} second(s), see {opdir}")
 elif len(sys.argv)>2:
-    print("\ntoo many arguments!\n")
+    print("\nToo many arguments!\n")
 else:
     f(path=upath)
-    opdir=os.path.join(".","file_tree.html")
-    print(f"complied successfully, check {opdir}")
+    opdir=os.path.join(upath,"file_tree.html")
+    te=f(path=upath)
+    print(f"Complied successfully in {te} second(s), see {opdir}")
