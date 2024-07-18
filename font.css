@@ -39,3 +39,5 @@
 @font-face {font-family:segoe; src:url("fonts/Segoe\ Pro.ttf")}
 @font-face {font-family:gtamerica; src:url("fonts/GT\ America\ Regular.ttf")}
 @font-face {font-family:suisse; src:url("fonts/SuisseIntl-Regular.ttf")}
+@font-face {font-family:georgia; font-weight: normal; src:url("fonts/georgia.ttf")}
+@font-face {font-family:georgia; font-weight: bold; src:url("fonts/georgiab.ttf")}
