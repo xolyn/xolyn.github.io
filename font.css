@@ -34,10 +34,11 @@
 @font-face {font-family:monaco; src:url("fonts/Monaco.ttf")}
 @font-face {font-family:palo; src:url("fonts/Palo-Regular.ttf")}
 @font-face {font-family:questa; src:url("fonts/Questa_Sans_Regular.otf")}
-@font-face {font-family:fsk; src:url("fonts/FSKoopmanVF.ttf")}
+@font-face {font-family:fsk; src:url("fonts/FSKoopmanVF.woff2")}
 @font-face {font-family:helvnow; src:url("fonts/HelveticaNowDisplay-Regular.otf")}
 @font-face {font-family:segoe; src:url("fonts/Segoe\ Pro.ttf")}
 @font-face {font-family:gtamerica; src:url("fonts/GT\ America\ Regular.ttf")}
 @font-face {font-family:suisse; src:url("fonts/SuisseIntl-Regular.ttf")}
+@font-face {font-family:made; src:url("fonts/MADE.otf")}
 @font-face {font-family:georgia; font-weight: normal; src:url("fonts/georgia.ttf")}
 @font-face {font-family:georgia; font-weight: bold; src:url("fonts/georgiab.ttf")}

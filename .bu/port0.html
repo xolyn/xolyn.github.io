@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
+    <link rel="apple-touch-icons" href="https://f.xoy.one/assets/logo.png">
+    <link rel="stylesheet" href="https://xolyn.github.io/font.css">
+    <title>Portfolio</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+    body{
+    font-family:sf_r;
+    margin:unset;
+    }
+
+    div.nav {
+    background-color: white;
+    overflow: auto;
+    white-space: nowrap;
+    color: black;
+    position: sticky; /*☆*/
+    top: 0;
+    z-index: 999;
+    }
+
+    div.nav details {
+        transition: .5s;
+        display: inline-block;
+        padding: 5px 0px 2px 0px;
+        vertical-align: text-top; /*☆*/
+        margin: 0vw 1vw 0vw 3vh;
+    }
+
+    div.nav details:last-child{padding-right: 3vh;}
+
+    div.nav details>summary{font-size: x-large;}
+
+    ul{ margin: 0; list-style-type: none; padding: 0px;}
+
+    li,details>summary{cursor: pointer;}
+
+    a{
+        color:grey; 
+        transition: .3s;
+    }
+
+    a:hover{ color:inherit; }
+
+    details summary::-webkit-details-marker,
+    details summary::marker {
+    display: none; 
+    content: "";
+    }
+
+    details[open] summary ~ * {
+        animation: sweep .3s ease-in-out;
+        }
+
+    @keyframes sweep {
+    0%    {opacity: 0; transform: translateY(-10px)}
+    100%  {opacity: 1; transform: translateY(0)}
+    }
+
+    summary.cornell::after{content:" ";height:10px; width:10px; background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Cornell_%22C%22_logo.svg/200px-Cornell_%22C%22_logo.svg.png); background-size: 10px 10px;display:inline-block;  vertical-align: super}
+    summary.uw::after{content:" ";height:10px; width:10px; background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/494px-Wisconsin_Badgers_logo.svg.png); background-size: 10px 10px;display:inline-block;  vertical-align: super}
+
+    ul>li>a{color:inherit; text-decoration: none;}
+
+    span.x{
+        display: inline-block;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        margin: 0px 10px;
+    }
+
+    span.x::before{content: "│"; font-family: monospace; font-size: large;} /*｜*/
+    .funcbtn>a{
+        text-decoration: none;
+        color:unset;
+        font-size: medium;
+    }
+
+    #about::after{
+        content:"↗";
+        font-family: sf-round;
+        color:inherit;
+    }
+    </style>
+</head>
+<body>
+
+<div style="margin: 2vh 0vh .5vh 3vh; font-size: 3rem;">Portfolio</div>
+
+<div style="margin: 1vh 3vh 2vh  3vh;font-size: xx-small;">
+    Special thanks to <a href="https://opensource.adobe.com/pdfembed-sdk-docs/" target="_blank">Adobe's solution</a> for embedding PDFs on Webkit browsers.
+</div>
+     <div class="nav" translate="no">
+
+        <details><summary title="Cornell University" >CS5780</summary>
+            <ul>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw1.pdf')">hw1</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw2.pdf')">hw2</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw3.pdf')">hw3</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw5.pdf')">hw5</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw6.pdf')">hw6</li>
+            <li onclick="apdfv('https://f.xoy.one/files/5780hw7.pdf')">hw7</li>
+            <li id="about" onclick="window.open('https://www.cs.cornell.edu/courses/cs4780/2024sp/')">about</li>
+            </ul>
+            </details>
+
+        <details><summary title="Cornell University">STSCI 5160</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160hw5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/5160mid.pdf')">paper</li>
+                <li id="about" onclick="window.open('https://classes.cornell.edu/browse/roster/FA23/class/STSCI/5160')">about</li>
+            </ul>
+            </details>
+
+        <details><summary title="Cornell University">ORIE 5160</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/orie5160hw1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/orie5160hw2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/orie5160paper.pdf')">final project</li>
+                <li id="about" onclick="window.open('https://classes.cornell.edu/browse/roster/SP24/class/ORIE/5160')">about</li>
+            </ul>
+        </details>
+
+        <details><summary title="University of Wisconsin-Madison">MATH 535</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw6.pdf')">hw6</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw7.pdf')">hw7</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw8.pdf')">hw8</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw9.pdf')">hw9</li>
+                <li onclick="apdfv('https://f.xoy.one/files/535hw10.pdf')">hw10</li>
+                <li id="about" onclick="window.open('https://people.math.wisc.edu/~roch/mmids/')">about</li>
+            </ul>
+            </details>
+
+        <details><summary title="University of Wisconsin-Madison">ECON 400</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw6.pdf')">hw6</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw7.pdf')">hw7</li>
+                <li onclick="apdfv('https://f.xoy.one/files/e400hw8.pdf')">hw8</li>
+            </ul>
+        </details>
+
+
+        <details><summary title="University of Wisconsin-Madison">MATH 320</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW6.pdf')">hw6</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW7.pdf')">hw7</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW8.pdf')">hw8</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW9.pdf')">hw9</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW10.pdf')">hw10</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW11.pdf')">hw11</li>
+                <li onclick="apdfv('https://f.xoy.one/files/320HW12.pdf')">hw12</li>
+            </ul>
+        </details>
+
+        <details><summary title="University of Wisconsin-Madison">MATH 415</summary>
+            <ul>
+                <li onclick="apdfv('https://f.xoy.one/files/415HW1.pdf')">hw1</li>
+                <li onclick="apdfv('https://f.xoy.one/files/415HW2.pdf')">hw2</li>
+                <li onclick="apdfv('https://f.xoy.one/files/415HW3.pdf')">hw3</li>
+                <li onclick="apdfv('https://f.xoy.one/files/415HW4.pdf')">hw4</li>
+                <li onclick="apdfv('https://f.xoy.one/files/415HW5.pdf')">hw5</li>
+                <li onclick="apdfv('https://f.xoy.one/files/415HW6.pdf')">hw6</li>
+                <li id="about" onclick="window.open('https://people.math.wisc.edu/~tgchandler/math415-F23.html')">about</li>
+            </ul>
+        </details>
+        
+        <details><summary>More</summary>
+            <ul>
+                <li id="about"><a href="https://github.com/xolyn/cs220">CS 220</a></li>
+                <li id="about"><a href="https://github.com/xolyn/cs200">CS 200</a></li>
+            </ul>
+        </details>
+
+      </div>
+      <!-- <div id="prompt" style="text-align: center; display: block; color:gray; text-align: center; font-size: small;z-index: 1; margin-top: 30vh;">Select a file from above to view.</div> -->
+      <div id="prompt" style="text-align: center; display: block; color:gray; position: fixed; top:60%; width: 100%; font-size: small;">Select a file from the scroll bar above to view.</div>
+    <div id="adobe-dc-view"></div>
+
+    <div class="funcbtn" style="position: fixed; bottom: 2%; left:50%;transform: translate(-50%,0); font-family: 'sf-round'; border-radius:999px;  background-color:rgba(210,210,210,0.3);
+    backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    padding:10px 20px 10px; width: min-content;white-space: nowrap;"><a href="javascript:void(0)" onclick="history.back()">←BACK</a><span class="x" style="color:grey"></span>
+    <a href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'})">TOP↑</a></div>
+    
+    <div id="btm"></div>
+
+<script src="https://documentcloud.adobe.com/view-sdk/main.js" nonce="Mzc4ODg1MjcxMCwxMjYxNTc3NTg2"></script>
+<script type="text/javascript" nonce="Mzc4ODg1MjcxMCwxMjYxNTc3NTg2">
+function apdfv(pdfurl) {
+    try{var pdfname=pdfurl.split('/').pop().split('.')[0];}catch(error){var pdfname=" ";}
+    var div = document.getElementById("prompt");
+    div.style.display = "none";
+    let adobeDCView=new AdobeDC.View({clientId: "7b6c29cdcf8a48cfa338a9afd82545da", divId: "adobe-dc-view" });
+    adobeDCView.previewFile({content: {location: {url: pdfurl}},metaData: {fileName: pdfname}});
+    scrollTo({top:300,behavior:'smooth'});
+    const openDetails = document.querySelectorAll('.nav details[open]');
+    openDetails.forEach(detail => detail.removeAttribute('open'));
+}
+</script>
+</body>
+</html>
