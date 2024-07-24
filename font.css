@@ -1,29 +1,38 @@
 @font-face {font-family:BDLifelessGrotesk; src:url("fonts/BDLifelessGrotesk.ttf");}
-@font-face {font-family:CascadiaMono-Regular; src:url("fonts/CascadiaMono-Regular.ttf");}
-@font-face {font-family:cour; src:url("fonts/cour.ttf");}
-@font-face {font-family:CourierPrime-Regular; src:url("fonts/CourierPrime-Regular.ttf");}
+@font-face {font-family:casmono; src:url("fonts/CascadiaMono-Regular.ttf");}
+@font-face {font-family:courier; src:url("fonts/cour.ttf");}
+@font-face {font-family:courierprime; src:url("fonts/CourierPrime-Regular.ttf");}
 @font-face {font-family:dtb; src:url("fonts/dtb.ttf");}
-@font-face {font-family:ere; src:url("fonts/ere.otf");}
-@font-face {font-family:Erewhon-Bold; src:url("fonts/Erewhon-Bold.pfb.ttf");}
+@font-face {font-family:ere; font-weight: normal; src:url("fonts/ere.otf");}
+@font-face {font-family:ere; font-weight: bold; src:url("fonts/Erewhon-Bold.pfb.ttf");}
 @font-face {font-family:iom; src:url("fonts/iom.otf");}
-@font-face {font-family:Monolisa Font; src:url("fonts/Monolisa Font.ttf");}
+@font-face {font-family:monolisa; src:url("fonts/Monolisa Font.ttf");}
 @font-face {font-family:Neue Kaine Variable; src:url("fonts/Neue Kaine Variable.ttf");}
-@font-face {font-family:Neue Regrade Bold; src:url("fonts/Neue Regrade Bold.otf");}
-@font-face {font-family:Neue Regrade Medium; src:url("fonts/Neue Regrade Medium.otf");}
-@font-face {font-family:nhm; src:url("fonts/nhm.ttf");}
-@font-face {font-family:nhr; src:url("fonts/nhr.ttf");}
+@font-face {font-family:Neue Regrade; font-weight: normal; src:url("fonts/Neue Regrade Medium.otf");}
+@font-face {font-family:Neue Regrade; font-weight:bold;   src:url("fonts/Neue Regrade Bold.otf");}
+
+@font-face {font-family:nhg;font-weight: normal;src:url("fonts/nhr.ttf");}
+@font-face {font-family:nhg;font-weight:bold;  src:url("fonts/nhm.ttf");}
+
 @font-face {font-family:sf-round; src:url("fonts/sf-round.otf");}
-@font-face {font-family:sf_b; src:url("fonts/sf_b.otf");}
 @font-face {font-family:sf_l; src:url("fonts/sf_l.otf");}
-@font-face {font-family:sf_r; src:url("fonts/sf_r.otf");}
+@font-face {font-family:sf; font-weight: normal; src:url("fonts/sf_r.otf");}
+@font-face {font-family:sf; font-weight:bold;src: url("fonts/sf_b.otf");}
+
+
 @font-face {font-family:sig; src:url("fonts/sig.otf");}
 @font-face {font-family:sneak; src:url("fonts/sneak.ttf");}
 @font-face {font-family:sohne; src:url("fonts/sohne.otf");}
 @font-face {font-family:appletc; src:url("fonts/apple_tc.ttf");}
-@font-face {font-family:diag_r; src:url("fonts/diag_r.ttf");}
-@font-face {font-family:diag_b; src:url("fonts/diag_b.ttf");}
-@font-face {font-family:chirp_r; src:url("fonts/ChirpRegular.ttf");}
-@font-face {font-family:chirp_m; src:url("fonts/ChirpMedium.ttf");}
+@font-face {font-family:diag; font-weight: normal; src:url("fonts/diag_r.ttf");}
+@font-face {font-family:diag; font-weight: bold; src:url("fonts/diag_b.ttf");}
+
+@font-face {font-family:chirp;  font-weight: normal; src:url("fonts/ChirpRegular.ttf");}
+@font-face {font-family:chirp; font-weight: bold; src:url("fonts/ChirpMedium.ttf");}
+
+/* @font-face {font-family:chirp_r; src:url("fonts/ChirpRegular.ttf");}
+@font-face {font-family:chirp_m; src:url("fonts/ChirpMedium.ttf");} */
+
 @font-face {font-family:humanbby; src:url("fonts/Human\ BBY\ Web.ttf");}
 @font-face {font-family:geist; src:url("fonts/GeistVF.ttf");}
 @font-face {font-family:fira; src:url("fonts/FiraSans-Regular.ttf");}
@@ -42,3 +51,7 @@
 @font-face {font-family:made; src:url("fonts/MADE.otf")}
 @font-face {font-family:georgia; font-weight: normal; src:url("fonts/georgia.ttf")}
 @font-face {font-family:georgia; font-weight: bold; src:url("fonts/georgiab.ttf")}
+@font-face {font-family:right; font-weight: normal; src:url("fonts/RightGrotesk-Medium.otf")}
+@font-face {font-family:right; font-weight: bold; src:url("fonts/RightGrotesk-WideMedium.otf")}
+@font-face {font-family:atlas; font-weight: normal; src:url("fonts/AtlasGrotesk-Regular.otf")}
+@font-face {font-family:atlas; font-weight: bold; src:url("fonts/AtlasGrotesk-Medium.otf")}

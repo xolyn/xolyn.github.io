@@ -118,6 +118,10 @@ span#instant.show {
 span#instant.fade-out {
     opacity: 0; 
 }
+
+legend#var::after{
+    content: "＊";
+}
 </style>
 
 <script>
@@ -163,85 +167,71 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 <p>
     Then edit and refer to the preview below to choose fonts you like to use them by corresponding alias(es). 
 </p>
-    <div style="display: flex; align-items: center; font-family: sf_l;">
-        <label translate="no" for="fontSizeRange" style="font-size: x-small;">A&nbsp;</label>
-        <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="16">
-        <span style="font-size: x-large;" translate="no">&nbsp;A</span>
-        <input type="color" id="colorPicker" style="margin:0 3vw;">
-        <!-- <span onclick=reset()>↻</span> -->
-    </div>
+
+<div style="display: flex; align-items: center; font-family: sf_l; position: sticky; top:0; background-color: white; padding: 1em 0;">
+    <label translate="no" for="fontSizeRange" style="font-size: x-small;">A&nbsp;</label>
+    <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="16">
+    <span style="font-size: x-large;" translate="no">&nbsp;A</span>
+    <input type="color" id="colorPicker" style="margin:0 3vw;">
+    <!-- <span onclick=reset()>↻</span> -->
+</div>
     
     <fieldset>
         <legend>BDLifelessGrotesk</legend>
         <div style="font-family:BDLifelessGrotesk;" class="usrtxt" id="orig" contenteditable >The quick brown fox jumps over the lazy dog.</div>
     </fieldset>
     <fieldset>
-        <legend>CascadiaMono-Regular</legend>
-        <div style="font-family:CascadiaMono-Regular;" class="usrtxt" contenteditable ></div>
+        <legend>casmono</legend>
+        <div style="font-family:casmono;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>cour</legend>
-        <div style="font-family:cour;" class="usrtxt" contenteditable ></div>
+        <legend>courier</legend>
+        <div style="font-family:courier;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>CourierPrime-Regular</legend>
-        <div style="font-family:CourierPrime-Regular;" class="usrtxt" contenteditable ></div>
+        <legend>courierprime</legend>
+        <div style="font-family:courierprime;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
         <legend>dtb</legend>
         <div style="font-family:dtb;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>ere</legend>
+        <legend id="var">ere</legend>
         <div style="font-family:ere;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>Erewhon-Bold</legend>
-        <div style="font-family:Erewhon-Bold;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
         <legend>iom</legend>
         <div style="font-family:iom;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>Monolisa Font</legend>
-        <div style="font-family:Monolisa Font;" class="usrtxt" contenteditable ></div>
+        <legend>monolisa</legend>
+        <div style="font-family:monolisa;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
         <legend>Neue Kaine Variable</legend>
         <div style="font-family:Neue Kaine Variable;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>Neue Regrade Bold</legend>
-        <div style="font-family:Neue Regrade Bold;" class="usrtxt" contenteditable ></div>
+        <legend id="var">Neue Regrade</legend>
+        <div style="font-family:Neue Regrade;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>Neue Regrade Medium</legend>
-        <div style="font-family:Neue Regrade Medium;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>nhm</legend>
-        <div style="font-family:nhm;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>nhr</legend>
-        <div style="font-family:nhr;" class="usrtxt" contenteditable ></div>
+        <legend id="var">nhg</legend>
+        <div style="font-family:nhg;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
         <legend>sf-round</legend>
         <div style="font-family:sf-round;" class="usrtxt" contenteditable ></div>
     </fieldset>
-    <fieldset>
-        <legend>sf_b</legend>
-        <div style="font-family:sf_b;" class="usrtxt" contenteditable ></div>
-    </fieldset>
+
     <fieldset>
         <legend>sf_l</legend>
         <div style="font-family:sf_l;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>sf_r</legend>
-        <div style="font-family:sf_r;" class="usrtxt" contenteditable ></div>
+        <legend id="var">sf</legend>
+        <div style="font-family:sf;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
         <legend>sig</legend>
@@ -260,21 +250,17 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         <div style="font-family:appletc;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>diag_r</legend>
-        <div style="font-family:diag_r;" class="usrtxt" contenteditable ></div>
+        <legend>diag</legend>
+        <div style="font-family:diag;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>diag_b</legend>
-        <div style="font-family:diag_b;" class="usrtxt" contenteditable ></div>
+        <legend id="var">chirp</legend>
+        <div style="font-family:chirp;" class="usrtxt" contenteditable ></div>
     </fieldset>
-    <fieldset>
-        <legend>chirp_r</legend>
-        <div style="font-family:chirp_r;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
+    <!-- <fieldset>
         <legend>chirp_m</legend>
         <div style="font-family:chirp_m;" class="usrtxt" contenteditable ></div>
-    </fieldset>
+    </fieldset> -->
     <fieldset>
         <legend>humanbby</legend>
         <div style="font-family:humanbby;" class="usrtxt" contenteditable ></div>
@@ -309,7 +295,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     </fieldset>
         
     <fieldset>
-        <legend>georgia</legend>
+        <legend id="var">georgia</legend>
         <div style="font-family:georgia;" class="usrtxt" contenteditable ></div>
     </fieldset>
 
@@ -322,7 +308,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         <div style="font-family:questa;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
-        <legend>fsk</legend>
+        <legend id="var">fsk</legend>
         <div style="font-family:fsk;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
@@ -338,6 +324,10 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
             <div style="font-family:gtamerica;" class="usrtxt" contenteditable ></div>
     </fieldset>
     <fieldset>
+        <legend id="var">atlas</legend>
+        <div style="font-family:atlas;" class="usrtxt" contenteditable ></div>
+    </fieldset>
+    <fieldset>
             <legend>suisse</legend>
             <div style="font-family:suisse;" class="usrtxt" contenteditable ></div>
     </fieldset>
@@ -345,10 +335,18 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
             <legend>made</legend>
             <div style="font-family:made;" class="usrtxt" contenteditable ></div>
     </fieldset>
+
+    <fieldset>
+        <legend id="var">right</legend>
+        <div style="font-family:right;" class="usrtxt" contenteditable ></div>
+    </fieldset>
         
 </article>
 <hr>
-<center style="font-size: small; padding:1em 0;">
+<article style="font-size: small;">
+    ＊<code>bold</code> font weight available for font family with asterisk suffix.
+</article>
+<center style="font-size: small; padding:0 0 1em 0;">
 <a href="javascript:history.back()">back</a> | 
 <a href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">top</a> 
 <!-- <br>&copy; 2024 Lingyu Zhou All rights reserved. -->
