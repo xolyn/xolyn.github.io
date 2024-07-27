@@ -1,0 +1,74 @@
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 5rem;
+  }
+  
+  /* Removes default focus */
+  input[type="range"]:focus {
+    outline: none;
+  }
+  
+  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+  /* slider track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #000000;
+    border-radius: 0rem;
+    height: .15rem;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    transition: .2s;
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -5.5px; /* Centers thumb on the track */
+    background-color: white;
+    border-radius: 50%;
+    height: .8rem;
+    width: .8rem;
+    border: 2px solid black;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: black;
+}
+ 
+/* input[type="range"]:focus::-webkit-slider-thumb {
+    background-color: black;
+} */
+
+  /* input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid black;
+    outline-offset: 2px;
+  } */
+  
+  /*********** Firefox styles ***********/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    background-color: #000000;
+    border-radius: 0rem;
+    height: .15rem;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    background-color: white;
+    border: black solid 2px !important;
+    border-radius: 50%;
+    height: .8rem;
+    width: .8rem;
+    transition: .2s;
+  }
+  
+  /* input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid green;
+    outline-offset: 0.125rem;
+  } */
+
+  input[type="range"]::-moz-range-thumb:hover{
+    background-color: black;
+  }
