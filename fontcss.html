@@ -122,6 +122,11 @@ span#instant.fade-out {
 legend#var::after{
     content: "＊";
 }
+
+/* input#showBold:checked ~ legend#var>div{
+font-weight: bold;
+} */
+
 </style>
 
 <script>
@@ -165,14 +170,16 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 
 <article style="">
 <p>
-    Then edit and refer to the preview below to choose fonts you like to use them by corresponding alias(es). 
+    Then edit and refer to the preview below to choose fonts you like to use them by corresponding alias(es).<br>
+    You can click on names followed by an asterisk (＊) to see its bolder font weight.
 </p>
 
-<div style="display: flex; align-items: center; font-family: sf_l; position: sticky; top:0; background-color: white; padding: 1em 0;">
-    <label translate="no" for="fontSizeRange" style="font-size: x-small;">A&nbsp;</label>
+<div style="display: flex; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">
+    <label translate="no" for="fontSizeRange" style="font-size: x-small; font-family: fsk;">A&nbsp;</label>
     <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="16">
-    <span style="font-size: x-large;" translate="no">&nbsp;A</span>
+    <span style="font-size: x-large;font-family: fsk;" translate="no">&nbsp;A</span>
     <input type="color" id="colorPicker" style="margin:0 3vw;">
+    <!-- <span>Show bolder font weight if available:</span> <input id="showBold" type="checkbox"></input> -->
     <!-- <span onclick=reset()>↻</span> -->
 </div>
     
@@ -337,13 +344,15 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     </fieldset>
 
     <fieldset>
-        <legend id="var">right</legend>
+        <legend id="var" >right</legend>
         <div style="font-family:right;" class="usrtxt" contenteditable ></div>
     </fieldset>
         
 </article>
-<hr>
-<article style="font-size: small;">
+<div style="margin: 0 8vw;">
+    <hr>
+</div>
+<article hidden style="font-size: small;">
     ＊<code>bold</code> font weight available for font family with asterisk suffix.
 </article>
 <center style="font-size: small; padding:0 0 1em 0;">
@@ -353,6 +362,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 </center>
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<script src="https://f.zly.vg/jq.js"></script>
 <script>
 function showInstant() {
     var instantElement = document.getElementById('instant');
@@ -417,6 +427,14 @@ var textAreas = document.getElementsByClassName('usrtxt');
                 document.execCommand('insertText', false, text);
             });
         });
+
+
+document.querySelectorAll('legend#var').forEach(function(legend) {
+            legend.onclick = function() {
+                this.nextElementSibling.style.fontWeight=this.nextElementSibling.style.fontWeight=='bold'?'normal':'bold';
+            };
+        });
+
 
 </script>
 </body>
