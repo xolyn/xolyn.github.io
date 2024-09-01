@@ -58,6 +58,9 @@
 @font-face {font-family:passenger; font-weight: normal; src:url("fonts/PassengerSans-Regular-BF63eaffd178ad9.otf")}
 @font-face {font-family:passenger; font-weight: bold; src:url("fonts/PassengerSans-Medium-BF63eaffd03cb6f.otf")}
 @font-face {font-family:inter; src:url("fonts/InterVariable.woff2")}
+@font-face {font-family:inter; src:url("fonts/InterVariable.woff2")}
+@font-face {font-family:equinox; src:url("fonts/equinox.woff2")}
+@font-face {font-family:stco; src:url("fonts/stco.woff2")}
 
 /* open source: */
 
