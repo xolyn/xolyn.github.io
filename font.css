@@ -62,6 +62,18 @@
 @font-face {font-family:equinox; src:url("fonts/equinox.woff2")}
 @font-face {font-family:scto; src:url("fonts/scto.woff2")}
 
+@font-face {
+  font-family: charles;
+  src: url('fonts/CharlesModern-Regular.woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: charles;
+  src: url('fonts/CharlesModern-Bold.woff.woff');
+  font-weight: bold;
+}
+
 /* open source: */
 
 
