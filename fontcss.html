@@ -124,6 +124,8 @@ legend#var::after{
     content: "＊";
 }
 
+
+
 </style>
 
 <script>
@@ -165,7 +167,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 </div>
 
 
-<article style="">
+<article>
 <p>
     Then edit and refer to the preview below to choose fonts you like to use them by corresponding alias(es).<br>
     You can click on names followed by an asterisk (＊) to see its bolder font weight.
@@ -179,201 +181,205 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     <!-- <span>Show bolder font weight if available:</span> <input id="showBold" type="checkbox"></input> -->
     <!-- <span onclick=reset()>↻</span> -->
 </div>
-    
-    <fieldset>
-        <legend>BDLifelessGrotesk</legend>
-        <div style="font-family:BDLifelessGrotesk;" class="usrtxt" id="orig" contenteditable >The quick brown fox jumps over the lazy dog.</div>
-    </fieldset>
-    <fieldset>
-        <legend>casmono</legend>
-        <div style="font-family:casmono;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>courier</legend>
-        <div style="font-family:courier;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>courierprime</legend>
-        <div style="font-family:courierprime;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>dtb</legend>
-        <div style="font-family:dtb;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">ere</legend>
-        <div style="font-family:ere;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>iom</legend>
-        <div style="font-family:iom;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>monolisa</legend>
-        <div style="font-family:monolisa;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>Neue Kaine Variable</legend>
-        <div style="font-family:Neue Kaine Variable;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">Neue Regrade</legend>
-        <div style="font-family:Neue Regrade;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">nhg</legend>
-        <div style="font-family:nhg;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>sf-round</legend>
-        <div style="font-family:sf-round;" class="usrtxt" contenteditable ></div>
-    </fieldset>
 
-    <fieldset>
-        <legend>sf_l</legend>
-        <div style="font-family:sf_l;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">sf</legend>
-        <div style="font-family:sf;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>sig</legend>
-        <div style="font-family:sig;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>sneak</legend>
-        <div style="font-family:sneak;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>sohne</legend>
-        <div style="font-family:sohne;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>appletc</legend>
-        <div style="font-family:appletc;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>diag</legend>
-        <div style="font-family:diag;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">chirp</legend>
-        <div style="font-family:chirp;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <!-- <fieldset>
-        <legend>chirp_m</legend>
-        <div style="font-family:chirp_m;" class="usrtxt" contenteditable ></div>
-    </fieldset> -->
-    <fieldset>
-        <legend>humanbby</legend>
-        <div style="font-family:humanbby;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>geist</legend>
-        <div style="font-family:geist;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>fira</legend>
-        <div style="font-family:fira;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>firamono</legend>
-        <div style="font-family:firamono;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>aptos</legend>
-        <div style="font-family:aptos;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>bios</legend>
-        <div style="font-family:bios;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>vulf</legend>
-        <div style="font-family:vulf;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>monaco</legend>
-        <div style="font-family:monaco;" class="usrtxt" contenteditable ></div>
-    </fieldset>
+    
+    <div id="fontset" style="max-width: 100vw;
+    overflow-x: auto;">
+        <fieldset>
+            <legend>BDLifelessGrotesk</legend>
+            <div style="font-family:BDLifelessGrotesk;" class="usrtxt" id="orig" contenteditable >The quick brown fox jumps over the lazy dog.</div>
+        </fieldset>
+        <fieldset>
+            <legend>casmono</legend>
+            <div style="font-family:casmono;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>courier</legend>
+            <div style="font-family:courier;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>courierprime</legend>
+            <div style="font-family:courierprime;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>dtb</legend>
+            <div style="font-family:dtb;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">ere</legend>
+            <div style="font-family:ere;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>iom</legend>
+            <div style="font-family:iom;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>monolisa</legend>
+            <div style="font-family:monolisa;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>Neue Kaine Variable</legend>
+            <div style="font-family:Neue Kaine Variable;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">Neue Regrade</legend>
+            <div style="font-family:Neue Regrade;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">nhg</legend>
+            <div style="font-family:nhg;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>sf-round</legend>
+            <div style="font-family:sf-round;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend>sf_l</legend>
+            <div style="font-family:sf_l;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">sf</legend>
+            <div style="font-family:sf;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>sig</legend>
+            <div style="font-family:sig;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>sneak</legend>
+            <div style="font-family:sneak;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>sohne</legend>
+            <div style="font-family:sohne;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>appletc</legend>
+            <div style="font-family:appletc;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>diag</legend>
+            <div style="font-family:diag;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">chirp</legend>
+            <div style="font-family:chirp;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <!-- <fieldset>
+            <legend>chirp_m</legend>
+            <div style="font-family:chirp_m;" class="usrtxt" contenteditable ></div>
+        </fieldset> -->
+        <fieldset>
+            <legend>humanbby</legend>
+            <div style="font-family:humanbby;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>geist</legend>
+            <div style="font-family:geist;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>fira</legend>
+            <div style="font-family:fira;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>firamono</legend>
+            <div style="font-family:firamono;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>aptos</legend>
+            <div style="font-family:aptos;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>bios</legend>
+            <div style="font-family:bios;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>vulf</legend>
+            <div style="font-family:vulf;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>monaco</legend>
+            <div style="font-family:monaco;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+            
+        <fieldset>
+            <legend id="var">georgia</legend>
+            <div style="font-family:georgia;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend>palo</legend>
+            <div style="font-family:palo;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend>questa</legend>
+            <div style="font-family:questa;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">fsk</legend>
+            <div style="font-family:fsk;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+                <legend>helvnow</legend>
+                <div style="font-family:helvnow;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+                <legend>segoe</legend>
+                <div style="font-family:segoe;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+                <legend>gtamerica</legend>
+                <div style="font-family:gtamerica;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+            <legend id="var">atlas</legend>
+            <div style="font-family:atlas;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+                <legend>suisse</legend>
+                <div style="font-family:suisse;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        <fieldset>
+                <legend>made</legend>
+                <div style="font-family:made;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend id="var" >right</legend>
+            <div style="font-family:right;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend id="var" >zilla</legend>
+            <div style="font-family:zilla;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend id="var" >inter</legend>
+            <div style="font-family:inter;" class="usrtxt" contenteditable ></div>
+        </fieldset>
         
-    <fieldset>
-        <legend id="var">georgia</legend>
-        <div style="font-family:georgia;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend>palo</legend>
-        <div style="font-family:palo;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend>questa</legend>
-        <div style="font-family:questa;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">fsk</legend>
-        <div style="font-family:fsk;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-            <legend>helvnow</legend>
-            <div style="font-family:helvnow;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-            <legend>segoe</legend>
-            <div style="font-family:segoe;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-            <legend>gtamerica</legend>
-            <div style="font-family:gtamerica;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-        <legend id="var">atlas</legend>
-        <div style="font-family:atlas;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-            <legend>suisse</legend>
-            <div style="font-family:suisse;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-    <fieldset>
-            <legend>made</legend>
-            <div style="font-family:made;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend id="var" >right</legend>
-        <div style="font-family:right;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend id="var" >zilla</legend>
-        <div style="font-family:zilla;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend id="var" >inter</legend>
-        <div style="font-family:inter;" class="usrtxt" contenteditable ></div>
-    </fieldset>
+        <fieldset>
+            <legend id="var" >passenger</legend>
+            <div style="font-family:passenger;" class="usrtxt" contenteditable ></div>
+        </fieldset>
     
-    <fieldset>
-        <legend id="var" >passenger</legend>
-        <div style="font-family:passenger;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend id="var" >scto</legend>
-        <div style="font-family:scto;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend id="var" >equinox</legend>
-        <div style="font-family:equinox;" class="usrtxt" contenteditable ></div>
-    </fieldset>
-
-    <fieldset>
-        <legend id="var" >charles</legend>
-        <div style="font-family:charles;" class="usrtxt" contenteditable ></div>
-    </fieldset>
+        <fieldset>
+            <legend id="var" >scto</legend>
+            <div style="font-family:scto;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend id="var" >equinox</legend>
+            <div style="font-family:equinox;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    
+        <fieldset>
+            <legend id="var" >charles</legend>
+            <div style="font-family:charles;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+    </div>
 
 </article>
 <div style="margin: 0 8vw;">
