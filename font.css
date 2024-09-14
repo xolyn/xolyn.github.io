@@ -73,8 +73,13 @@
 
 @font-face {
   font-family: charles;
-  src: url('fonts/CharlesModern-Bold.woff.woff');
+  src: url('fonts/CharlesModern-Bold.woff');
   font-weight: bold;
+}
+
+@font-face {
+  font-family: psu;
+  src: url('fonts/psu.woff2');
 }
 
 /* open source: */
