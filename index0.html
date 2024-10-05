@@ -1,180 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lingyu Zhou</title>
-<style>
-    @font-face { font-family: kaine; src: url("fonts/Neue\ Kaine\ Variable.ttf"); } 
-    @font-face { font-family: neue; src: url("fonts/Neue\ Regrade\ Medium.otf"); } 
-    @font-face { font-family: neueb; src: url("fonts/Neue\ Regrade\ Bold.otf"); } 
-    @font-face { font-family: sf; src: url("fonts/BDLifelessGrotesk_Variable.ttf"); } 
-    /* @font-face { font-family: op; src: url("fonts/"); }  */
-    body {
-            background-color: white;
-            color: black;
-            line-height: 1; /* Adjust line spacing */
-            letter-spacing: -1px;
-            font-size:3vh;
-            text-align: center;
-        }
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        /* @font-face { font-family: cour; src: url("fonts/cour.ttf"); }  */
+    body{
+        text-align: left;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding-top: 20vh;
+        font-size: small;
+        /* font-family: cour; */
+        font-family:"Courier Prime", monospace;
+        letter-spacing: -.5px;
+        padding-bottom:20vh;
+    }
 
-        /* a{
-            color:black ;
-            
-            transition: 0.2s;
-        }
-
-        a:hover{
-          text-decoration: none;
-          transition: 0.2s;
-        } */
-
-        a {
-    position: relative; 
-    color: grey;
-    transition: color 1s; 
-    text-decoration: none; 
-}
-
-a::after {
-    content: '';
-    position: absolute;
-    width: 0; /* Start with no underline */
-    height: 2px; /* Thickness of the underline */
-    bottom: 0; /* Position at the bottom of the text */
-    left: 0;
-    background-color: black; /* Color of the underline */
-    transition: width .5s; 
-    transform-origin: bottom left;
-}
-
-a:hover {
-    color: black;
-}
-
-a:hover::after {
+    .disable-dbl-tap-zoom {
+    touch-action: manipulation;
+    }
+       
+    a{
+        color:inherit;
+    }
+    a:hover{
+        background: black;
+        width: min-content;
+        color:white;
+    }
+    footer{
+    background-color: white; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
     width: 100%; 
-}
+    color: black; 
+    padding: 1em 0 3em 0; 
+    }
 
+    #myPre {
+            display: none;
+    }
 
-footer{
-  /* position: fixed;
-  bottom: 1vh;  */
-  bottom: 1vh;
-    position: fixed;
-    width: 100vw;
-  text-align: center;
-  font-size: 2.2vh;
-  font-family: sf;
-  /* margin-left:50% */
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  /* border-bottom: 1px dotted black; */
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-    width: 120px;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-  visibility: hidden;
-  /* width: 120px; */
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-.glow {
-  /* font-size: 70px; */
-  /* color: #ffffff; */
-  text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px lightyellow, 0 0 20px gold, 0 0 30px gold, 0 0 40px gold, 
-                 0 0 50px goldenrod, 0 0 60px goldenrod, 0 0 70px goldenrod;
-  }
-  to {
-    text-shadow: 0 0 20px #eeeeee, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700, 
-                 0 0 60px #ffd700, 0 0 70px white, 0 0 80px white
-  }
-}
-
-.demo{
-  border-radius: 999px;
-  border-width: 2px;
-  border-style: solid;
-}
-
-.nondec::after {
-  text-decoration: none;
-}
-
-</style>
+    .shake{
+    animation: shaking 0.4s;
+    animation-iteration-count: 1;
+    }
+            @keyframes shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+    }
+    </style>
+    
 </head>
 
-<body style="font-family: neue;">
+<body>
+<div id="ctx">
+<a href="simplefor.html"><p style="background: black; width: min-content;color: white; padding: 3px 6px 1px 5px;">Z</p></a>
+<!-- <a href="simple.html">Lingyu Zhou</a> -->
+<b>Lingyu Zhou</b>
 
+<p><a href="https://khentmt.com">Founder</a> and <a href="https://cornell.edu">student</a>, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology.</p>
 
+<p><a href="" id="emailLink">e-mail</a> 
+    <!-- mailto:lz568@cornell.edu -->
+    / <a href=https://f.xoy.one/cv.pdf>résumé</a> 
+    / <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
+    / <a href=https://instagram.com/toqurdn>instagram</a> 
+    / <a href=https://github.com/xolyn>github</a> 
+    / <a href=https://twitter.com/uygniluohz>x</a> 
+    / <a href=https://weibo.com/u/5663761733>weibo</a>
+</p>
 
-<!-- <div class="container">
-  <div class="image-container">
-    <img src="abs1.jpg" alt="Artistic Image">
-    <div class="overlay"></div>
-    <div class="text-above">Text Above Image</div>
-    <div class="text-in-image">Text in Image</div>
-    <div class="text-outside">Text Outside Image</div>
-  </div>
-</div> -->
-<div style="margin-top:20vh">
-  <h1 style="font-family: neueb;"> <a href="https://github.com/xolyn"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="6vh" height="6vh" viewBox="0,-30,256,256">
-    <g fill="black" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2.09961l-11,9.90039h3v9h7v-6h2v6h7v-9h3zM12,4.79102l6,5.40039v0.80859v8h-3v-6h-6v6h-3v-8.80859z"></path></g></g>
-    </svg></a><a href="https://zhoulingyu.net">Lingyu Zhou</a></h1>
-    
-    lz568 [at] cornell [dot] com
-    
-    <br>
-    <br>
-    <small>
-
-      <a href="https://aqmn.github.io/guess">[Fun]</a>  | <a href="https://aqmn.github.io">[demo1]</a> | <a href="https://aqmn.github.io/index-code">[demo2]</a> | 
-    <a href="https://aqmn.github.io/index0">[demo3]</a> | <a href="https://aqmn.github.io/comm2">[demo4]</a> |         <div class="tooltip"><a class="" href="https://aqmn.github.io/cmd">[demo5<sup>&beta;</sup>]</a>
-        <span class="tooltiptext">Check out my creative CLI website!</span>
-      </div>
-<br>
-<!-- <a class="nondec" href="https://aqmn.github.io"><button style="border: solid black 1px; border-radius: 999px; padding: .2vh 1vw .2vh 1vw; background-color:transparent;margin-top: 1vh;font-family: neueb"> FUN</button></a> -->
- 
-</small>
-
-    <hr width="80%;" color="black" size="3" style="margin-top: 30px;">
-    <p style="font-family: neueb;">The fusion of abstract expressionism and contemporary aesthetic purposes.</p>
-    
-
+<div id="myPre">
+<pre  style=" line-height: .9; font-size: xx-small; font-family: firamono, monospace;">
+ _                _                         
+(_)   ____       | |                        
+ _   / __ \  ____| | _   _    __   __  __ _ 
+| | / / _` ||_  /| || | | |   \ \ / / / _` |
+| || | (_| | / / | || |_| | _  \ V / | (_| |
+|_| \ \__,_|/___||_| \__, |(_)  \_/   \__, |
+     \____/           __/ |            __/ |
+                     |___/            |___/ 
+</pre>
 </div>
 
+<p><a href="https://portfolio.zhoulingyu.net">portfolio></a><br>
+    <a href="proj.html">projects></a><br>
+    <a href="gall.html">gallery></a><br>
+    <a href="fg2.html">font studio></a><br>
+    <a href="sm.html" title="Eye of God">site map></a></p>
+</div>
 
+<footer>
+<div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
+<div style="display: inline-block;">
+    <a href="https://xolyn.github.io/give">$</a>/<a style="cursor: pointer; text-decoration: underline;" id="shaker">home</a>/
+</div>
+<div  style="display: inline-block;">       
+    <!-- <b>EN</b>/CN/KR -->
+    <!-- <a style="text-decoration: none; " href="sm.html" label="Eye of God">&#128065;</a> -->
+</div>
+</div>
+</footer>
+<script src='https://f.zly.vg/js/newurl.js'></script>
+
+<script>
+document.getElementById('emailLink').addEventListener('click', function(event) {
+    var preSection = document.getElementById('myPre');
+    event.preventDefault(); // Prevent the default link behavior
+    if (preSection.style.display === '' || preSection.style.display === 'none') {
+        preSection.style.display = 'block';
+    } else {
+        preSection.style.display = 'none';
+    }
+});
+document.getElementById('shaker').addEventListener('click', function() {
+    const element = document.getElementById('ctx');
+    element.classList.add('shake');
+    element.addEventListener('animationend', function() {
+        element.classList.remove('shake');
+    }, { once: true });});
+</script>
 </body>
-<footer>Powered by Lingyu Zhou, under license to  <a href="https://khentmt.com">KH Entertainment 
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1.1rem" height="1.1rem" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/> </svg>  -->
-    </a> © (2012-2023) All rights reserved.</footer>
-<!-- <footer>© Lingyu Zhou <a href="https://khentmt.com">KH Entertainment</a>.</footer> -->
-</html>
+

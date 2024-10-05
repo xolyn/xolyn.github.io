@@ -1,132 +1,194 @@
 <!DOCTYPE html>
-<title>Lingyu Zhou</title>
-<html>
+<html lang='en'>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" href="https://f.xoy.one/assets/logo.png" type="image/png">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        /* @font-face { font-family: cour; src: url("fonts/cour.ttf"); }  */
-    body{
-        text-align: left;
-        margin-left: 10vw;
-        margin-right: 10vw;
-        padding-top: 20vh;
-        font-size: small;
-        /* font-family: cour; */
-        font-family:"Courier Prime", monospace;
-        letter-spacing: -.5px;
-        padding-bottom:20vh;
-    }
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="shortcut icon" href="https://cdn.creazilla.com/emojis/45166/black-circle-emoji-clipart-xl.png" type="image/x-icon">
+<link rel="stylesheet" href="https://f.zly.vg/css/timeline.css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+<link rel="stylesheet" href="https://f.zly.vg/css/details.css">
+<title>Lingyu Zhou</title>
+<style>
 
-    .disable-dbl-tap-zoom {
-    touch-action: manipulation;
-    }
-       
-    a{
-        color:inherit;
-    }
-    a:hover{
-        background: black;
-        width: min-content;
-        color:white;
-    }
-    footer{
-    background-color: white; 
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    color: black; 
-    padding: 1em 0 3em 0; 
-    }
+:root{
+    --mainColor:white;
+    --subColor:black;
+}
 
-    #myPre {
-            display: none;
-    }
+*{
+    scroll-behavior: smooth;
+    scroll-padding: 2em;
+}
 
-    .shake{
-    animation: shaking 0.4s;
-    animation-iteration-count: 1;
+a{
+    opacity: 0.7;
+    color:var(--mainColor);
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: 1;
+}
+
+nav>div#click{
+    margin-top:auto;
+    margin-bottom:auto;
+    cursor: pointer;
+    font-family: courier;
+    font-size: x-large;
+}
+
+.index::after{
+    content: '○';
+}
+
+.index:hover::after{
+    content: '●';
+}
+
+.info{
+    gap:3px !important;
+}
+
+@media (orientation: potrait) {
+    *,html,body{
+        font-size: smaller;
     }
-            @keyframes shaking {
-    0% { transform: translateX(0) }
-    25% { transform: translateX(5px) }
-    50% { transform: translateX(-5px) }
-    75% { transform: translateX(5px) }
-    100% { transform: translateX(0) }
-    }
-    </style>
-    
+}
+</style>
 </head>
+<body style="font-family: passenger; margin: 0; background-color: var(--subColor); line-height: 95%;">
+<nav style="padding: .1em 0; line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
+<div id='click' class="index" onclick="window.location.href=window.location.href;" style="margin-left:.5em; "></div>
+<div style="margin: auto;"></div>
+<div id='click' style="margin-right:.5em;" onclick="showMenu(); ">≡</div>
+<!-- this.innerHTML=this.innerHTML==='&times;'?'≡':'&times;'; -->
+</nav>
 
-<body>
-<div id="ctx">
-<a href="simplefor.html"><p style="background: black; width: min-content;color: white; padding: 3px 6px 1px 5px;">Z</p></a>
-<!-- <a href="simple.html">Lingyu Zhou</a> -->
-<b>Lingyu Zhou</b>
+<div id="menu" style=" background-color: var(--subColor); color:var(--mainColor); transition: .5s; max-height: 40vh; overflow-y: auto; display: flex; position: fixed; top:0; width:100vw; right:0; border-bottom: 1px solid var(--mainColor); z-index: 98; transform: translateY(-100%);">
+<div style="margin: 2em auto auto 2em ; padding: .5em 0; line-height: 105%; text-align: left;">
+    <details class='widechevron'style="font-size: small;">
+        <summary >ToC</summary>
+        <a href="#about" onclick="showMenu()">About</a><br>
+        <a href="#edu" onclick="showMenu()">Education</a><br>
+        <a href="#pub" onclick="showMenu()">Publication</a><br>
+        <a href="#belief" onclick="showMenu()">Things I believe</a><br>
+    </details>
+    <!-- <hr> -->
+    <details class='widechevron' open style="margin-top: .5em;font-size: small;">
+        <summary>External links</summary>
+            <a href="https://zly.vg/cv.pdf">Résumé</a><br>
+            <a href="https://blog.zhoulingyu.net">Blog</a><br>
+            <a href="https://xolyn.github.io/proj">Projects</a><br>
+            <a href="https://portfolio.zhoulingyu.net">Portfolio</a><br>
+            <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a><br>
+            <a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a><br>
+            <!-- <a href="//f.zly.vg/bug">bugs</a><br> -->
+    </details>
+</div>
+</div>
+<main style="margin: 1em; font-size: medium; color:var(--mainColor);" onclick="menu.style.transform='translateY(-100%)';">
+<p style="font-size: larger;">Lingyu Zhou</p>
 
-<p><a href="https://khentmt.com">Founder</a> and <a href="https://cornell.edu">student</a>, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology.</p>
-
-<p><a href="" id="emailLink">e-mail</a> 
-    <!-- mailto:lz568@cornell.edu -->
-    / <a href=https://f.xoy.one/cv.pdf>résumé</a> 
-    / <a href=https://www.linkedin.com/in/lingyuzhou>linkedin</a> 
-    / <a href=https://instagram.com/toqurdn>instagram</a> 
-    / <a href=https://github.com/xolyn>github</a> 
-    / <a href=https://twitter.com/uygniluohz>x</a> 
-    / <a href=https://weibo.com/u/5663761733>weibo</a>
+<p  id="about">
+    <p style="text-decoration: underline;">About</p>
+    <p>Hello stranger, I am Lingyu Zhou, a student</a> at <a href="https://cornell.edu">Cornell University</a>,
+        also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
+       I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
+       Previously, I studied applied mathematics at 
+       <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+       I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
+       Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
+       <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
+   </p>
+   <p>
+       My research directions are applied mathematical modeling, applied statistics, and machine learning.
+       My specialties are software engineering, math, data analysis, and data visualization.
+       I am also interested in biology, botany, and etymology.
+        
+   </p>
+   <br> 
 </p>
 
-<div id="myPre">
-<pre  style=" line-height: .9; font-size: xx-small; font-family: firamono, monospace;">
- _                _                         
-(_)   ____       | |                        
- _   / __ \  ____| | _   _    __   __  __ _ 
-| | / / _` ||_  /| || | | |   \ \ / / / _` |
-| || | (_| | / / | || |_| | _  \ V / | (_| |
-|_| \ \__,_|/___||_| \__, |(_)  \_/   \__, |
-     \____/           __/ |            __/ |
-                     |___/            |___/ 
-</pre>
-</div>
+<p id="edu">
+    <p style="text-decoration: underline;">Education</p>
+    <div class="timeline" style="transition: .5s; padding-bottom: 0;">
+        <div class="outer">
+          <div class="card">
+            <div class="info">
+              <h3 class="title">2014.9-2017.6
+                <br><span style="font-size: smaller;">Middle School</span>
+              </h3>
+                <a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <h3 class="title">2017.9-2020.6
+                <br><span style="font-size: smaller;">High School</span>
+              </h3>
+                <a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <h3 class="title">2020.9-2023.5
+                <br><span style="font-size: smaller;">Bachelor's</span>
+              </h3>
+                <a href="http://wisc.edu/">University of Wisconsin - Madison</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <h3 class="title">2023.8-TBD
+                <br><span style="font-size: smaller;">Master's</span>
+            </h3>
+                <a href="http://cornell.edu/">Cornell Univeristy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</p>
 
-<p><a href="https://portfolio.zhoulingyu.net">portfolio></a><br>
-    <a href="proj.html">projects></a><br>
-    <a href="gall.html">gallery></a><br>
-    <a href="fg2.html">font studio></a><br>
-    <a href="sm.html" title="Eye of God">site map></a></p>
-</div>
+<p id="pub">
+    <p style="text-decoration: underline;">Publication</p>
+        <li><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Basic Analysis of the Hog Futures Market in China (BPS_0799)</a></li>
+        Applied Economics and Policy Studies (AEPS) (ISSN 2731-4006);
+       Advances in Economics Management and Political Sciences (Print ISSN 2754-1169)
+       <li>Statistical Analysis of Labor Compliance Rates in East Asia: The Impact of Policies and Regulations</li>
+       TBD;
 
-<footer>
-<div style="display: flex; justify-content: space-between; width: 80vw;  margin: 0 auto; padding: auto;">
-<div style="display: inline-block;">
-    <a href="https://xolyn.github.io/give">$</a>/<a style="cursor: pointer; text-decoration: underline;" id="shaker">home</a>/
-</div>
-<div  style="display: inline-block;">       
-    <!-- <b>EN</b>/CN/KR -->
-    <!-- <a style="text-decoration: none; " href="sm.html" label="Eye of God">&#128065;</a> -->
-</div>
-</div>
+</p>
+
+<p id="belief">
+    <p style="text-decoration: underline;">Things I believe</p>
+    <li>Detail matters.</li>
+    <li>Never too late to act.</li>
+    <li>Minimalism usually works.</li>
+    <li>Live in the present.</li>
+</p>
+
+</main>
+
+<footer style="width: 100%; text-align: left; color: var(--mainColor); margin-top: 3em; border-top: 1px solid var(--mainColor);">
+    <div style="padding: 1em;">
+        <a onclick="window.location.href=window.location.href;">Lingyu Zhou</a> &copy 2024.
+        <div class="network" style="font-family:'Bootstrap-icons'; padding-top: 1em; letter-spacing: .2em;">
+            <a id="social" href="/cdn-cgi/l/email-protection#5e32246b68661e3d312c303b3232703b3a2b">&#xF32C;</a>
+            <a id="social" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
+            <a id="social" href=https://github.com/xolyn>&#xF3ED;</a> 
+            <a id="social" href=https://instagram.com/toqurdn>&#xF437;</a> 
+            <a id="social" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
+            <a id="social" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
+        </div>
+    </div>
 </footer>
-<script src='https://f.zly.vg/js/newurl.js'></script>
 
 <script>
-document.getElementById('emailLink').addEventListener('click', function(event) {
-    var preSection = document.getElementById('myPre');
-    event.preventDefault(); // Prevent the default link behavior
-    if (preSection.style.display === '' || preSection.style.display === 'none') {
-        preSection.style.display = 'block';
-    } else {
-        preSection.style.display = 'none';
+    function showMenu(){
+        menu.style.transform=menu.style.transform===''?'translateY(-100%)':'';
     }
-});
-document.getElementById('shaker').addEventListener('click', function() {
-    const element = document.getElementById('ctx');
-    element.classList.add('shake');
-    element.addEventListener('animationend', function() {
-        element.classList.remove('shake');
-    }, { once: true });});
 </script>
 </body>
-
+</html>
