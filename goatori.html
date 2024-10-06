@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -51,82 +52,43 @@ nav>div#click{
     gap:3px !important;
 }
 
-@media (orientation: portrait) {
-    .hmenu{
-        visibility: hidden;
-        display: none;
-    }
-
-    /* *,html,body{
+@media (orientation: potrait) {
+    *,html,body{
         font-size: smaller;
-    } */
-
+    }
 }
-
-@media (orientation: landscape) {
-    details#elinks{
-        visibility: hidden;
-        display: none;
-    }
-
-    div.hmenu{
-        /* margin: auto .5em auto 1em; */
-        margin: 0; border-left: 1px solid var(--mainColor); display: flex; padding: 0 .5em;
-    }
-
-    div.hmenu>a{
-        margin:auto 0;
-        color:white !important;
-    }
-
-    div#hmenuItemLast{
-        border-right: 1px solid var(--mainColor);
-    }
-
-}
-
 </style>
 </head>
 <body style="font-family: passenger; margin: 0; background-color: var(--subColor); line-height: 95%;">
-<nav style="padding:0; line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
+<nav style="padding: .1em 0; line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
 <div id='click' class="index" onclick="window.location.href=window.location.href;" style="margin-left:.5em; "></div>
 <div style="margin: auto;"></div>
-<!-- <div class="hmenu" style=""> -->
-    <div class="hmenu"><a href="https://zly.vg/cv.pdf">Résumé</a></div>
-    <div class="hmenu"><a href="https://blog.zhoulingyu.net">Blog</a></div>
-    <div class="hmenu"><a href="https://xolyn.github.io/proj">Projects</a></div>
-    <div class="hmenu"><a href="https://portfolio.zhoulingyu.net">Portfolio</a></div>
-    <div class="hmenu"><a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a></div>
-    <div class="hmenu" id="hmenuItemLast"><a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a></div>
-<!-- </div> -->
-
-<div id='click' class="vmenu" style="margin: 0 .5em;" onclick="showMenu();">≡</div>
+<div id='click' style="margin-right:.5em;" onclick="showMenu(); ">≡</div>
 <!-- this.innerHTML=this.innerHTML==='&times;'?'≡':'&times;'; -->
 </nav>
 
 <div id="menu" style=" background-color: var(--subColor); color:var(--mainColor); transition: .5s; max-height: 40vh; overflow-y: auto; display: flex; position: fixed; top:0; width:100vw; right:0; border-bottom: 1px solid var(--mainColor); z-index: 98; transform: translateY(-100%);">
-    <div style="margin: 2em auto auto 2em ; padding: .5em 0; line-height: 105%; text-align: left;">
-        <details open class='widechevron'style="font-size: small;">
-            <summary >ToC</summary>
-            <a href="#about" onclick="showMenu()">About</a><br>
-            <a href="#edu" onclick="showMenu()">Education</a><br>
-            <a href="#pub" onclick="showMenu()">Publication</a><br>
-            <a href="#belief" onclick="showMenu()">Things I believe</a><br>
-        </details>
-        <!-- <hr> -->
-        <details class='widechevron' id="elinks" open style="margin-top: .5em;font-size: small;">
-            <summary>External links</summary>
-                <a href="https://zly.vg/cv.pdf">Résumé</a><br>
-                <a href="https://blog.zhoulingyu.net">Blog</a><br>
-                <a href="https://xolyn.github.io/proj">Projects</a><br>
-                <a href="https://portfolio.zhoulingyu.net">Portfolio</a><br>
-                <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a><br>
-                <a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a><br>
-                <!-- <a href="//f.zly.vg/bug">bugs</a><br> -->
-        </details>
-    </div>
-</div menu>
-
+<div style="margin: 2em auto auto 2em ; padding: .5em 0; line-height: 105%; text-align: left;">
+    <details class='widechevron'style="font-size: small;">
+        <summary >ToC</summary>
+        <a href="#about" onclick="showMenu()">About</a><br>
+        <a href="#edu" onclick="showMenu()">Education</a><br>
+        <a href="#pub" onclick="showMenu()">Publication</a><br>
+        <a href="#belief" onclick="showMenu()">Things I believe</a><br>
+    </details>
+    <!-- <hr> -->
+    <details class='widechevron' open style="margin-top: .5em;font-size: small;">
+        <summary>External links</summary>
+            <a href="https://zly.vg/cv.pdf">Résumé</a><br>
+            <a href="https://blog.zhoulingyu.net">Blog</a><br>
+            <a href="https://xolyn.github.io/proj">Projects</a><br>
+            <a href="https://portfolio.zhoulingyu.net">Portfolio</a><br>
+            <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a><br>
+            <a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a><br>
+            <!-- <a href="//f.zly.vg/bug">bugs</a><br> -->
+    </details>
+</div>
+</div>
 <main style="margin: 1em; font-size: medium; color:var(--mainColor);" onclick="menu.style.transform='translateY(-100%)';">
 <p style="font-size: larger;">Lingyu Zhou</p>
 
