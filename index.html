@@ -49,8 +49,65 @@ nav>div#click{
     content: '●';
 }
 
-.info{
-    gap:3px !important;
+.timeline {
+  background: transparent;
+  margin: 20px auto;
+  padding: 0px 20px 20px 0;
+}
+
+.timeline *{
+  font-size: initial;
+}
+
+/* Outer Layer with the timeline border */
+.outer {
+  border-left: 1px solid var(--mainColor);
+  margin-left: .5em;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  margin: 0 0 0px 10px;
+  padding: 10px;
+  background: transparent;
+  color: var(--mainColor);
+  /* border-radius: 8px; */
+  width: 90%;
+  /* border: 1.5px solid gray; */
+  z-index: 9;
+}
+
+/* event */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 9;
+  color:var(--mainColor);
+}
+
+/* Title of the card */
+.title {
+  position: relative;
+}
+
+/* Timeline dot  */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--subColor);
+  border-radius: 999px;
+  top:8.5px;
+  left: -25.5px;
+  border: 1px solid var(--mainColor)
+}
+
+.info> h3.title{
+  padding: 0;
+  margin: 0;
 }
 
 @media (orientation: portrait) {
