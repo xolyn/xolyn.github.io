@@ -113,6 +113,11 @@ nav>div#click{
   margin: 0;
 }
 
+div#imenu{
+      margin: 2em auto auto 2em ; 
+    }
+    
+
 @media (orientation: portrait) {
     .hmenu{
         visibility: hidden;
@@ -144,15 +149,14 @@ nav>div#click{
 
     div#hmenuItemLast{
         border-right: 1px solid var(--mainColor);
-    }
-
+    }    
 }
 
 </style>
 </head>
 <body style="font-family: var(--cfont); margin: 0; background-color: var(--subColor); line-height: 100%;">
 <nav style="padding:0; line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
-<div id='click' class="index" onclick="window.location.href=window.location.href;" style="margin-left:.5em; "></div>
+<div id='click' class="index" onclick="window.location.href='index.html'" style="margin-left:.5em; "></div>
 <div style="margin: auto; "></div>
 <!-- <div class="hmenu" style=""> -->
     <div class="hmenu"><a href="https://zly.vg/cv.pdf">Résumé</a></div>
@@ -170,16 +174,16 @@ nav>div#click{
 </nav>
 
 <div id="menu" style=" background-color: var(--subColor); color:var(--mainColor); transition: .5s; max-height: 40vh; overflow-y: auto; display: flex; position: fixed; top:0; width:100vw; right:0; border-bottom: 1px solid var(--mainColor); z-index: 98; transform: translateY(-100%);">
-    <div style="margin: 2em auto auto 2em ; padding: .5em 0; line-height: 105%; text-align: left;">
-        <details open class='widechevron'style="font-size: small;">
-            <summary >ToC</summary>
+    <div id="imenu" style="padding: .5em 0; line-height: 105%; text-align: left;">
+        <details class='pm'style="font-size: small;">
+            <summary >Catalog</summary>
             <a href="#about" onclick="showMenu()">About</a><br>
             <a href="#edu" onclick="showMenu()">Education</a><br>
             <a href="#pub" onclick="showMenu()">Publication</a><br>
             <a href="#belief" onclick="showMenu()">Things I believe</a><br>
         </details>
         <!-- <hr> -->
-        <details class='widechevron' id="elinks" open style="margin-top: .5em;font-size: small;">
+        <details class='pm' id="elinks" style="margin-top: .5em;font-size: small;">
             <summary>External links</summary>
                 <a href="https://zly.vg/cv.pdf">Résumé</a><br>
                 <a href="https://blog.zhoulingyu.net">Blog</a><br>
@@ -269,7 +273,7 @@ nav>div#click{
     <p style="text-decoration: underline;">Things I believe</p>
     <li>Detail matters.</li>
     <li>Never too late to act.</li>
-    <li>Minimalism usually works.</li>
+    <li>Minimalism.</li>
     <li>Live in the present.</li>
 </p>
 
@@ -277,7 +281,7 @@ nav>div#click{
 
 <footer style="width: 100%; text-align: left; color: var(--mainColor); margin-top: 3em; border-top: 1px solid var(--mainColor);">
     <div style="padding: 1em;">
-        <a onclick="window.location.href=window.location.href;">Lingyu Zhou</a> &copy 2024.
+        <a href="index.html">Lingyu Zhou</a> &copy 2024.
         <div class="network" style="font-family:'Bootstrap-icons'; padding-top: 1em; letter-spacing: .2em;">
             <a id="social" href="/cdn-cgi/l/email-protection#5e32246b68661e3d312c303b3232703b3a2b">&#xF32C;</a>
             <a id="social" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
