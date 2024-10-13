@@ -11,6 +11,11 @@
 <link rel="stylesheet" href="https://f.zly.vg/css/details.css">
 <title>fonts repo</title>
 <style>
+
+:root{
+    --rm: 6vw;
+}
+
 a{
     color:inherit
 }
@@ -32,7 +37,7 @@ div.usrtxt{
 }
 
 article{
-    margin: 5vh 10vw;
+    margin: 5vh 6vw;
 }
 
 pre{
@@ -64,7 +69,7 @@ pre:hover{
 .cb::before{
     content: "‎ HTML";
     color:darkcyan;
-    margin: .5em 0 .5em 10vw;
+    margin: .5em 0 .5em var(--rm);
     display: inline-block;
     font-family: monaco;
     /* background-color: rgb(220,220,220); */
@@ -162,7 +167,7 @@ legend#var::after{
 <svg style="cursor: pointer; transition: .3s;" onclick="showInstant();navigator.clipboard.writeText(csstxt); "
 width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
 <span id="instant" style="font-size: x-small; color: grey;">Copied.</span>
-<pre class="prettyprint lang-html" style="border: 0px; padding: 1.5em 10vw 1.5em 10vw;" translate="no">
+<pre class="prettyprint lang-html" style="border: 0px; padding: 1.5em var(--rm) 1.5em var(--rm);" translate="no">
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
 </div>
@@ -403,7 +408,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     </div>
 
 </article>
-<div style="margin: 0 8vw;">
+<div style="margin: 0;">
     <hr>
 </div>
 <article hidden style="font-size: small;">

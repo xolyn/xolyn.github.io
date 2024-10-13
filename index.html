@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5{font-weight:normal;}
 *{
     scroll-behavior: smooth;
     scroll-padding: 2em;
+    transition: color,  background-color .8s;
 }
 
 a{
@@ -56,7 +57,7 @@ nav>div#click{
 }
 
 .timeline *{
-  font-size: initial;
+  font-size: inherit;
 }
 
 /* Outer Layer with the timeline border */
@@ -114,18 +115,22 @@ nav>div#click{
 }
 
 div#imenu{
-      margin: 2em auto auto 2em ; 
+      margin: 2rem auto auto 2rem; 
+      font-size: smaller;
     }
     
+details{
+  line-height: 120%;
+}
+
+a#social{
+  font-family:'Bootstrap-icons';
+}
 
 @media (orientation: portrait) {
     .hmenu{
         visibility: hidden;
         display: none;
-    }
-
-    *,html,body{
-        /* font-size: smaller; */
     }
 
 }
@@ -144,7 +149,7 @@ div#imenu{
 
     div.hmenu>a{
         margin:auto 0;
-        color:white !important;
+        color:var(--mainColor) !important;
     }
 
     div#hmenuItemLast{
@@ -167,7 +172,7 @@ div#imenu{
     <div class="hmenu" id="hmenuItemLast"><a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a></div>
 <!-- </div> -->
 
-<div id='click' class="vmenu" style="margin: 0 .5em; display: flex;" onclick="showMenu();">
+<div id='click' class="vmenu" style="margin: 0 .5em; display: flex;" onclick="showMenu();" >
   <div style="margin: auto;">≡</div>
 </div>
 <!-- this.innerHTML=this.innerHTML==='&times;'?'≡':'&times;'; -->
@@ -175,7 +180,7 @@ div#imenu{
 
 <div id="menu" style=" background-color: var(--subColor); color:var(--mainColor); transition: .5s; max-height: 40vh; overflow-y: auto; display: flex; position: fixed; top:0; width:100vw; right:0; border-bottom: 1px solid var(--mainColor); z-index: 98; transform: translateY(-100%);">
     <div id="imenu" style="padding: .5em 0; line-height: 105%; text-align: left;">
-        <details class='pm'style="font-size: small;">
+        <details class='pm'open style=" ">
             <summary >Catalog</summary>
             <a href="#about" onclick="showMenu()">About</a><br>
             <a href="#edu" onclick="showMenu()">Education</a><br>
@@ -183,7 +188,7 @@ div#imenu{
             <a href="#belief" onclick="showMenu()">Things I believe</a><br>
         </details>
         <!-- <hr> -->
-        <details class='pm' id="elinks" style="margin-top: .5em;font-size: small;">
+        <details class='pm' open id="elinks" style="margin-top: .5em; ">
             <summary>External links</summary>
                 <a href="https://zly.vg/cv.pdf">Résumé</a><br>
                 <a href="https://blog.zhoulingyu.net">Blog</a><br>
@@ -199,24 +204,23 @@ div#imenu{
 <main style="margin: 1em; font-size: medium; color:var(--mainColor);" onclick="menu.style.transform='translateY(-100%)';">
 <p style="font-size: larger;">Lingyu Zhou</p>
 
-<p  id="about">
-    <p style="text-decoration: underline;">About</p>
-    <p>Hello stranger, I am Lingyu Zhou, a student</a> at <a href="https://cornell.edu">Cornell University</a>,
-        also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
-       I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
-       Previously, I studied applied mathematics at 
-       <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
-       I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
-       Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
-       <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
-   </p>
-   <p>
-       My research directions are applied mathematical modeling, applied statistics, and machine learning.
-       My specialties are software engineering, math, data analysis, and data visualization.
-       I am also interested in biology, botany, and etymology.
-        
-   </p>
-   <br> 
+<p id="about">
+  <p style="text-decoration: underline;">About</p>
+  <p>Hello stranger, I am Lingyu Zhou, a student</a> at <a href="https://cornell.edu">Cornell University</a>,
+      also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
+     I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
+     Previously, I studied applied mathematics at 
+     <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+     I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
+     Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
+     <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
+ </p>
+ <p>
+     My research directions are applied mathematical modeling, applied statistics, and machine learning.
+     My specialties are software engineering, math, data analysis, and data visualization.
+     I am also interested in biology, botany, and etymology.
+      
+ </p>
 </p>
 
 <p id="edu">
@@ -262,10 +266,10 @@ div#imenu{
 <p id="pub">
     <p style="text-decoration: underline;">Publication</p>
         <li><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Basic Analysis of the Hog Futures Market in China (BPS_0799)</a></li>
-        Applied Economics and Policy Studies (AEPS) (ISSN 2731-4006);
-       Advances in Economics Management and Political Sciences (Print ISSN 2754-1169)
+        <p>Applied Economics and Policy Studies (AEPS) (ISSN 2731-4006) <br>Advances in Economics Management and Political Sciences (Print ISSN 2754-1169)</p>
+       
        <li>Statistical Analysis of Labor Compliance Rates in East Asia: The Impact of Policies and Regulations</li>
-       TBD;
+       <p>TBD;</p>
 
 </p>
 
@@ -282,7 +286,7 @@ div#imenu{
 <footer style="width: 100%; text-align: left; color: var(--mainColor); margin-top: 3em; border-top: 1px solid var(--mainColor);">
     <div style="padding: 1em;">
         <a href="index.html">Lingyu Zhou</a> &copy 2024.
-        <div class="network" style="font-family:'Bootstrap-icons'; padding-top: 1em; letter-spacing: .2em;">
+        <div class="network" style=" padding-top: 1em; letter-spacing: .2em;">
             <a id="social" href="/cdn-cgi/l/email-protection#5e32246b68661e3d312c303b3232703b3a2b">&#xF32C;</a>
             <a id="social" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
             <a id="social" href=https://github.com/xolyn>&#xF3ED;</a> 
@@ -293,10 +297,23 @@ div#imenu{
     </div>
 </footer>
 
+<div style="position: fixed; z-index: 9; bottom: 2%; right: 2%; ">
+  <a title="Change color mode" id="social" href="javascript: themeTogg();">&#xF1D1;</a>
+</div>
+
 <script>
     function showMenu(){
         menu.style.transform=menu.style.transform===''?'translateY(-100%)':'';
     }
+
+    function themeTogg(){
+      document.documentElement.style.setProperty('--mainColor', getComputedStyle(document.documentElement).getPropertyValue('--mainColor')=== 'black' ? 'white' : 'black');
+      document.documentElement.style.setProperty('--subColor', getComputedStyle(document.documentElement).getPropertyValue('--subColor')=== 'white' ? 'black' : 'white');
+    }
+
 </script>
+
+
+
 </body>
 </html>
