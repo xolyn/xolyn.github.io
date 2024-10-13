@@ -6,11 +6,13 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel="shortcut icon" href="https://www.svgrepo.com/show/513642/font.svg" type="image/svg">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,1,200" rel="stylesheet" /> -->
 <link rel='stylesheet' href='font.css'>
 <link rel='stylesheet' href='ir.css'>
 <link rel="stylesheet" href="https://f.zly.vg/css/details.css">
 <title>fonts repo</title>
 <style>
+
 
 :root{
     --rm: 6vw;
@@ -21,7 +23,7 @@ a{
 }
 
 fieldset{
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1.5px solid black;
     overflow-x:auto;
     margin: 2vh 0;
@@ -180,9 +182,18 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 </p>
 
 <div style="display: flex; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">
-    <label translate="no" for="fontSizeRange" style="font-size: x-small; font-family: fsk;">A&nbsp;</label>
+    <label translate="no" for="fontSizeRange" style="">A&UpDownArrow; &nbsp;</label>
     <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="16">
-    <span style="font-size: x-large;font-family: fsk;" translate="no">&nbsp;A</span>
+    <!-- <span style="font-size: x-large;font-family: fsk;" translate="no">&nbsp;A</span> -->
+    <label translate="no" for="letterSpaceRange" style="line-height: 60%; margin-left: 1em;">
+        <div style="display: flex; flex-direction: column;">
+            <div style="margin: auto;">A</div>
+            <div style="margin: auto;">&leftrightarrow;</div>
+        </div>
+        <!-- format_letter_spacing_2 -->
+    </label>
+    <input type="range" id="letterSpaceRange" name="letterSpaceRange" min="-3" max="5" step="0.1" value="0">
+
     <input type="color" id="colorPicker" style="margin:0 3vw;">
     <!-- <span>Show bolder font weight if available:</span> <input id="showBold" type="checkbox"></input> -->
     <!-- <span onclick=reset()>↻</span> -->
@@ -405,6 +416,11 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
             <legend >goat</legend>
             <div style="font-family:goat;" class="usrtxt" contenteditable ></div>
         </fieldset>
+
+        <fieldset>
+            <legend >david</legend>
+            <div style="font-family:david;" class="usrtxt" contenteditable ></div>
+        </fieldset>
     </div>
 
 </article>
@@ -442,6 +458,15 @@ function showInstant() {
         var elements = document.querySelectorAll('.usrtxt');
         elements.forEach(function(el) {
             el.style.fontSize = fontSize;
+        });
+    });
+
+    
+    document.getElementById('letterSpaceRange').addEventListener('input', function() {
+        var spacing = this.value + 'px';
+        var elements = document.querySelectorAll('.usrtxt');
+        elements.forEach(function(el) {
+            el.style.letterSpacing = spacing;
         });
     });
 

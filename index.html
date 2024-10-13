@@ -4,7 +4,7 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
-<link rel="shortcut icon" href="https://cdn.creazilla.com/emojis/45166/black-circle-emoji-clipart-xl.png" type="image/x-icon">
+<link rel="shortcut icon" href="https://f.zly.vg/assets/kDisk.png">
 <link rel="stylesheet" href="https://f.zly.vg/css/timeline.css">
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 <link rel="stylesheet" href="https://f.zly.vg/css/details.css">
@@ -133,9 +133,17 @@ a#social{
         display: none;
     }
 
+    nav{
+      padding: .1em 0;
+    }
+
 }
 
 @media (orientation: landscape) {
+    nav{
+      padding:0;
+    }
+
     details#elinks{
         visibility: hidden;
         display: none;
@@ -160,7 +168,7 @@ a#social{
 </style>
 </head>
 <body style="font-family: var(--cfont); margin: 0; background-color: var(--subColor); line-height: 100%;">
-<nav style="padding:0; line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
+<nav style=" line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
 <div id='click' class="index" onclick="window.location.href='index.html'" style="margin-left:.5em; "></div>
 <div style="margin: auto; "></div>
 <!-- <div class="hmenu" style=""> -->
@@ -298,7 +306,7 @@ a#social{
 </footer>
 
 <div style="position: fixed; z-index: 9; bottom: 2%; right: 2%; ">
-  <a title="Change color mode" id="social" href="javascript: themeTogg();">&#xF1D1;</a>
+  <a title="Change color mode" id="social" href="javascript: themeTogg();" style="font-size: larger;">&#xF1D1;</a>
 </div>
 
 <script>
