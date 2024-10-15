@@ -123,8 +123,21 @@ details{
   line-height: 120%;
 }
 
-a#social{
+#social{
   font-family:'Bootstrap-icons';
+}
+
+div#toolbar{
+  left: -95vw;
+  transition: left .5s;
+  border: 1px solid var(--mainColor);
+  border-left: none;
+  height: 5vw;
+}
+
+.accMrore{
+  visibility:hidden;
+  opacity: 0;
 }
 
 @media (orientation: portrait) {
@@ -163,6 +176,10 @@ a#social{
     div#hmenuItemLast{
         border-right: 1px solid var(--mainColor);
     }    
+
+    div#help{
+      font-size: 1.5em;  
+    }
 }
 
 </style>
@@ -303,11 +320,22 @@ a#social{
             <a id="social" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
         </div>
     </div>
+    <div id="end" style="height: 0;"></div>
 </footer>
 
-<div style="position: fixed; z-index: 9; bottom: 2%; right: 2%; ">
-  <a title="Change color mode" id="social" href="javascript: themeTogg();" style="font-size: larger;">&#xF1D1;</a>
+
+
+<div id="help" style="position: fixed; z-index: 9; bottom:1em; right: 1em;color: var(--mainColor); ">
+<div id="social" class="accMrore" style="transition: .3s;color: var(--mainColor); line-height: 130%; margin: .5em 0;">
+  <a href="javascript: window.scrollTo({top:0, behavior: 'smooth'})">&#xF139;</a><br> 
+  <a href="javascript: themeTogg()">&#xF1D1;</a><br>
+  <a href="javascript: document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });">&#xF118;</a>
 </div>
+  <div id="social" style="cursor: pointer;" onclick="showAcc()">
+    &#xF825;
+  </div>
+</div>
+
 
 <script>
     function showMenu(){
@@ -317,6 +345,12 @@ a#social{
     function themeTogg(){
       document.documentElement.style.setProperty('--mainColor', getComputedStyle(document.documentElement).getPropertyValue('--mainColor')=== 'black' ? 'white' : 'black');
       document.documentElement.style.setProperty('--subColor', getComputedStyle(document.documentElement).getPropertyValue('--subColor')=== 'white' ? 'black' : 'white');
+    }
+
+    function showAcc(){
+      var ac=document.getElementsByClassName('accMrore')[0]
+      ac.style.visibility=ac.style.visibility==='visible'?'hidden':'visible';
+      ac.style.opacity=ac.style.opacity==='1'?'0':'1';
     }
 
 </script>
