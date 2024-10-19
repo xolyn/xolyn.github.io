@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<style>
+article{
+    padding: 1em 4vw;
+}
+.sub-div{
+    margin: 0;
+    width: 33.3333333%;
+    transition: color,background-color .5s;
+    height: 40vh;
+    border: 1px solid lightgray;
+    border-right: none;
+    font-size: x-large;
+    /* padding: 1em; */
+    position: relative;
+    cursor: pointer;
+}
+
+.sub-div:hover{
+    background-color: black;
+    /* border: 1px solid white; */
+    color: white;
+}
+
+#goback{
+    transition: color,background-color .5s;
+cursor: pointer;
+}
+
+#goback:hover{
+    background-color: black;
+    /* border: 1px solid white; */
+    color: white;
+}
+
+.sub-div:after{
+    content: '→';
+    font-family: 'inter';
+    font-size: x-large;
+    position: absolute;
+    bottom: .5em;
+    right:  .5em;
+}
+
+#cardname{
+    padding: 1em;
+}
+
+@media (orientation: portrait) {
+    .container{
+        flex-direction: column;
+    }
+    .sub-div{
+        width: 100%;
+        border: 1px solid lightgray;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        height: 20vh;
+    }
+
+    .sub-div:first-child{
+        border-top: 1px solid lightgray;
+
+    }
+}
+</style>
+</head>
+<body style="margin: 0; font-family: passenger;">
+    <div style="font-size: 40px; color:  white; background-color: black; padding: 2em 4vw;">
+        Font Studio
+    </div>
+    <article>
+        <p style="font-size: larger;">
+            An atelier of fonts, discover a world of unique, handcrafted typefaces and explore custom fonts, font pairing guides, and exclusive typography tips to bring your vision to life.
+        </p>
+    </article>
+    <div class="container" style="width: 100%; display: flex;">
+   <div class="sub-div" onclick="window.location.href='glyph.html'">
+                        <div id="cardname" >Glyphs of Chinese characters</div></div><div
+        class="sub-div" onclick="window.location.href='fontcss.html'"><div id="cardname" >'Fontssentials' CSS</div></div><div
+        class="sub-div" onclick="window.location.href='fg2.html'"><div id="cardname" >Font gallery</div></div>
+	</div>
+
+    <div id="goback" onclick="history.back()" style="width: 100%; font-size: xx-large;">
+<div style="text-align: left; font-family: inter; padding: 1em;">&larr;</div>
+<div style="text-align: right; padding: 1em;">back</div>
+
+    </div>
+</body>
+</html>
