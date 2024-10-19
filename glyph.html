@@ -1,61 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>cnglyph</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
-    .content1,.content2,.content3 {
-        display: none;
-        padding: 20px;
-        border-top: 2px solid #999999;
-    }
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://xolyn.github.io/ir.css'>
 
-    input[type='radio'] {
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
+<title>Document</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+input[type='radio'] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
 
-    label {
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 80px;
-        height: 30px;
-        background-color: lightgray;
-        border: 1.5px grey solid;
-        border-bottom: 0px;
-        border-top-left-radius:  10px;
-        border-top-right-radius: 10px;
-        font-family: sans-serif;    
-    }
+label{
+    padding: .5em 1em;
+    background-color: transparent;
 
-    #tab1:checked+label,#tab2:checked+label,#tab3:checked+label {
-        background-color: grey;
-    }
+}
 
-    #tab1:checked~.content1,#tab2:checked~.content2,#tab3:checked~.content3 {
-        display: block;
-    }
+.select{
+    margin: 0;
+    width: fit-content;
+}
+    .select:checked+ label{
+    background-color: white;
+    border-radius: 99px;
+    transition: .3s;
+}
 
-    input{
-        margin:unset;
-    }
-    </style>
+#selector{
+    background-color: rgba(210,210,210,.5);
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+    width: fit-content;
+    padding: 1em .5em;
+    border-radius: 999px;
+    position: absolute;
+    right:8%;
+    bottom: 8%;
+
+}
+
+
+article{
+    margin: 1em;
+}
+</style>
 </head>
-<body style="margin: unset;">
-    <!-- <div style="text-align: center;">
-        <div style="display: inline-block; font-size:20rem;">A</div>
-    </div> -->
-    <div class="container" style="margin-top: 8vh;">
-        <input type="radio" name="tab" id="tab1" checked><label for="tab1">SC</label><input type="radio" name="tab" id="tab2"><label for="tab2">TC</label><input type="radio" name="tab" id="tab3"><label for="tab3">JP</label>
-        <div  style="text-align: center;" class="content1" id="content1"><div style="display: inline-block; font-size:20rem; font-family: 'Noto Sans SC';">育</div></div> <!--炭低-->
-        <div  style="text-align: center;" class="content2" id="content2"><div style="display: inline-block; font-size:20rem; font-family: 'Noto Sans TC';">育</div></div>
-        <div  style="text-align: center;" class="content3" id="content3"><div style="display: inline-block; font-size:20rem; font-family: 'Noto Sans JP';">育</div></div>
+<body style="margin: 0; font-family: passenger;"> 
+<article>
+    <h1>Differences of glyphs in Chinese fonts among different regions</h1>
+    <p>
+        <!-- The differences in Chinese font glyphs among various regions reflect distinct cultural and linguistic preferences. In regions like Mainland China, Simplified Chinese is the standard, with fonts designed to reflect the simplified characters used in everyday writing. In contrast, Taiwan and Hong Kong primarily use Traditional Chinese, where fonts feature more complex and traditional character forms. These regional variations in fonts can be subtle yet significant, with different shapes, strokes, and even proportions of glyphs, catering to the specific writing systems and typographical aesthetics favored by each area. -->
+    
+The differences in Chinese font glyphs among various regions go beyond just the choice between Simplified and Traditional characters; they extend into more intricate typographical details such as stroke styles, turnings, conjunctions, and the overall aesthetic preferences.
+In Mainland China, where Simplified Chinese is predominantly used, fonts are typically designed with more straightforward and efficient stroke patterns. The simplification process was aimed at reducing the number of strokes in each character, and this is reflected in the fonts, where strokes are often cleaner, more angular, and less ornate. The turnings—where a stroke changes direction—tend to be sharper and more geometric. The conjunctions, where two or more strokes meet, are typically less complex and more streamlined to emphasize simplicity and readability.<br>
+On the other hand, in regions like Taiwan and Hong Kong, where Traditional Chinese is the norm, fonts retain the more complex and historical forms of the characters. The strokes in these fonts are generally more elaborate, with a greater focus on calligraphic elegance. Turnings in Traditional Chinese fonts are often more fluid and curved, mimicking the brushstroke-like quality seen in classical Chinese calligraphy. The conjunctions tend to be more intricate, with a higher density of strokes meeting at various points, creating a richer and more ornate appearance. For instance, the character "龙" in Simplified Chinese has fewer strokes than its Traditional counterpart "龍," where the complexity is evident in the detailed turnings and conjunctions.<br>
+    </p>
+
+</article>
+
+<div style="width: 100%; display: flex;">
+    <div  style="position: relative;width: fit-content; margin: auto;">
+        <div id="selector">
+            <input class="select" type="radio" name="tab" id="tab1" checked><label for="tab1" translate="no">SC</label>
+            <input class="select" type="radio" name="tab" id="tab2"><label for="tab2" translate="no">TC</label>
+            <input class="select" type="radio" name="tab" id="tab3"><label for="tab3" translate="no">JP</label>
+            </div>
+            
+        <div id="txtShow" style="font-size: min(400px,80vw);">育</div>
     </div>
+</div>
+<div style="display: flex; margin-top: -1em;"> 
+    <div style="font-size: smaller; color: lightgray; margin: 0 auto; padding: 0 2em;">
+    Click to see how character varies at turnings, conjunctions, etc.<br>
+SC: Simplied Chinese used in PRC, Singapore, Malaysia<br>
+TC: Traditional Chinese used in ROC<br>
+JP: 'Quasi' Traditional Chinese (Kanji) used in Japan</div>
+</div>
+
+<footer style="background-color: black; padding: 2em; color: white; margin-top: 2em;">
+Lingyu Zhou &copy; 2024
+<p style="font-size: smaller; ">
+    <a style="color: lightgray" href="index.html">Home</a><br>
+    <a style="color: lightgray" href="javascript:void(0)">Legal</a><br>
+    <a style="color: lightgray" href="#">Top</a><br>
+</p>
+</footer>
+
+<script>
+const fontMapping = {
+tab1: 'Noto Sans SC',
+tab2: 'Noto Sans TC',
+tab3: 'Noto Sans JP'
+};
+
+function updateFontFamily() {
+    const selectedRadioButton = document.querySelector('input[name="tab"]:checked');
+    const selectedFont = fontMapping[selectedRadioButton.id];
+    document.getElementById("txtShow").style.fontFamily = selectedFont;
+}
+
+document.querySelectorAll('input[name="tab"]').forEach(function(radioButton) {
+    radioButton.addEventListener('change', updateFontFamily);
+});
+
+updateFontFamily();
+</script>
 </body>
 </html>
