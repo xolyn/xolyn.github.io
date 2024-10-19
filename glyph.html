@@ -48,6 +48,21 @@ label{
 article{
     margin: 1em;
 }
+
+.annot{
+    color: grey;
+    font-size: smaller;
+}
+
+a{
+    color:inherit;
+}
+
+@media (orientation: landscape) {
+    article{
+        font-size: larger;
+    }
+}
 </style>
 </head>
 <body style="margin: 0; font-family: passenger;"> 
@@ -62,27 +77,53 @@ On the other hand, in regions like Taiwan and Hong Kong, where Traditional Chine
     </p>
 
 </article>
-
 <div style="width: 100%; display: flex;">
     <div  style="position: relative;width: fit-content; margin: auto;">
         <div id="selector">
-            <input class="select" type="radio" name="tab" id="tab1" checked><label for="tab1" translate="no">SC</label>
-            <input class="select" type="radio" name="tab" id="tab2"><label for="tab2" translate="no">TC</label>
-            <input class="select" type="radio" name="tab" id="tab3"><label for="tab3" translate="no">JP</label>
+            <input class="select" type="radio" name="tab0" id="tab1" checked><label for="tab1" translate="no">SC</label>
+            <input class="select" type="radio" name="tab0" id="tab2"><label for="tab2" translate="no">TC</label>
+            <input class="select" type="radio" name="tab0" id="tab3"><label for="tab3" translate="no">JP</label>
             </div>
             
-        <div id="txtShow" style="font-size: min(400px,80vw);">育</div>
+        <div id="txtShow" style="font-size: min(400px,80vw);">通</div>
     </div>
 </div>
 <div style="display: flex; margin-top: -1em;"> 
     <div style="font-size: smaller; color: lightgray; margin: 0 auto; padding: 0 2em;">
-    Click to see how character varies at turnings, conjunctions, etc.<br>
-SC: Simplied Chinese used in PRC, Singapore, Malaysia<br>
-TC: Traditional Chinese used in ROC<br>
-JP: 'Quasi' Traditional Chinese (Kanji) used in Japan</div>
+    Click to see how character varies from the shapes, traces, etc. <sup><a href="#annot1" id="annot1o" >1</a></sup><br>
+</div>
+</div>
+
+<article>
+    See another example of a more subtle change:
+</article>
+
+<div style="width: 100%; display: flex;">
+    <div  style="position: relative;width: fit-content; margin: auto;">
+        <div id="selector">
+            <input class="select" type="radio" name="tab1" id="tab4" checked><label for="tab4" translate="no">SC</label>
+            <input class="select" type="radio" name="tab1" id="tab5"><label for="tab5" translate="no">TC</label>
+            <input class="select" type="radio" name="tab1" id="tab6"><label for="tab6" translate="no">JP</label>
+            </div>
+            
+        <div id="txtShow1" style="font-size: min(400px,80vw);">育</div>
+    </div>
+</div>
+
+<div style="display: flex; margin-top: -1em;"> 
+    <div style="font-size: smaller; color: lightgray; margin: 0 auto; padding: 0 2em;">
+    Click to see how character varies at turnings, conjunctions, etc. <sup><a href="#annot1" id="annot1o" >1</a></sup><br>
+</div>
 </div>
 
 <footer style="background-color: black; padding: 2em; color: white; margin-top: 2em;">
+    <!-- <hr> -->
+    <p class="annot" id="annot1"><a href="#annot1o">1</a>:<br>
+        SC: Simplied Chinese used in PRC, Singapore, Malaysia<br>
+TC: Traditional Chinese used in ROC<br>
+JP: 'Quasi' Traditional Chinese (Kanji) used in Japan
+    </p>
+    
 Lingyu Zhou &copy; 2024
 <p style="font-size: smaller; ">
     <a style="color: lightgray" href="index.html">Home</a><br>
@@ -95,20 +136,35 @@ Lingyu Zhou &copy; 2024
 const fontMapping = {
 tab1: 'Noto Sans SC',
 tab2: 'Noto Sans TC',
-tab3: 'Noto Sans JP'
+tab3: 'Noto Sans JP',
+tab4: 'Noto Sans SC',
+tab5: 'Noto Sans TC',
+tab6: 'Noto Sans JP'
 };
 
 function updateFontFamily() {
-    const selectedRadioButton = document.querySelector('input[name="tab"]:checked');
+    const selectedRadioButton = document.querySelector('input[name="tab0"]:checked');
     const selectedFont = fontMapping[selectedRadioButton.id];
     document.getElementById("txtShow").style.fontFamily = selectedFont;
 }
 
-document.querySelectorAll('input[name="tab"]').forEach(function(radioButton) {
+function updateFontFamily1() {
+    const selectedRadioButton1 = document.querySelector('input[name="tab1"]:checked');
+    const selectedFont1 = fontMapping[selectedRadioButton1.id];
+    document.getElementById("txtShow1").style.fontFamily = selectedFont1;
+}
+
+
+document.querySelectorAll('input[name="tab0"]').forEach(function(radioButton) {
     radioButton.addEventListener('change', updateFontFamily);
 });
 
+document.querySelectorAll('input[name="tab1"]').forEach(function(radioButton) {
+    radioButton.addEventListener('change', updateFontFamily1);
+});
+
 updateFontFamily();
+updateFontFamily1();
 </script>
 </body>
 </html>
