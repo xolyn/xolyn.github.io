@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://xolyn.github.io/ir.css'>
+<link rel="shortcut icon" href="https://f.zly.vg/assets/kDisk.png">
+<title>CEE6790 Final Project</title>
+<style>
+
+article{
+    margin: 1em;
+}
+
+.annot{
+    color: grey;
+    font-size: smaller;
+}
+
+a{
+    color:inherit;
+}
+
+@media (orientation: landscape) {
+    article{
+        font-size: larger;
+    }
+}
+
+.kb{
+    background-color: black;
+    color:white;
+}
+
+.art{
+    padding: 1.5em;
+}
+
+.art>p{
+    font-size: larger;
+}
+
+/* @media (orientation: landscape) {
+    img.ecgplot{
+        height: 60vh;
+    }
+}
+
+@media (orientation: portrait) {
+    img.ecgplot{
+        height: 40vh;
+    }
+} */
+</style>
+</head>
+<body style="margin: 0; font-family: passenger;"> 
+<div style="" class="kb art">
+    <h1>Sentiment analysis based on electrocardiac time series</h1>
+    <p style="color:white"  id="cDate">Oct 24, 2024</p>
+</div>
+
+<div class="art">
+<h2>Introduction</h2>
+<p>
+    Understanding emotions or objective sentiment analysis has always been a diffi cult task. Tradi-
+    tional methods are often subjective and not always accurate, while ECG signals can provide a
+    potential link to emotional states through changes in heart rate variability.
+    The motivation for this project is to bridge physiological signals and emotion recognition,
+    offering a novel yet practical approach for detecting emotions, more specifi cally, exploring how
+    ECG data can be used for sentiment analysis. This could have valuable applications in healthcare
+    for monitoring stress and emotional well-being and is even more useful in the society of AI, by
+    improving HCI (human-computer interactions), systems can respond more intelligently to users’
+    emotional states.
+</p>
+
+<p>This project will focus on the relationship between electrocardiac pattern with emotions and sentiments by analyzing the ECG signals recorded by Apple Watch.</p>
+
+<h2>Signal source</h2>
+<p>
+    The signals are generated through the use of a specialized electrical heart sensor by operating
+in conjunction with the Digital Crown that contacts with my fi nger and the back crystal of the
+watch to record an ECG and collected from the 'Health app' of my Apple Watch Series 7 and
+exported from the 'Health app' on the iPhone connected to that Apple Watch. The sampling rate
+is 512Hz, which is shown in the exported health record.
+This ECG on the Apple Watch has decent accuracy, but there is still potential noise compared
+to medical ECG devices, especially:
+<ul>
+    <li> Movements: Occur due to physical movements, such as arm or wrist movement, which may
+        cause abrupt fl uctuations or distortions in the signal.
+    </li>
+    <li> Contact Noise: In wearable devices, poor contact between the skin and sensors
+        due to sweat, dry skin, or blotches can introduce noise. However, on 'Health app', the
+        recording process will be forced to restart if dropouts happen.</li>
+
+    <li>
+        Powerline Interference: This one is rare and hence might not be considered due to technical
+diffi culties in this project. Under strong electromagnetic fi elds environment, like signal from
+nearby electrical devices, this can lead to a potential periodic noise in the signal.
+    </li>
+</ul>
+</p>
+
+<h2>Sample signal plot</h2>
+<div style="width: 100%; overflow-x:scroll;">
+    <img style="width:120vw; aspect-ratio: initial;" src="output.png" id='ecgplot'>
+</div>
+
+    <h2>Scenario</h2>
+<p>
+    A total of 10 ECG signals will be collected under different scenarios, including during watching a horror movie, after extensive exercise, before an interview and simply resting.
+
+</p>
+
+</div>
+
+
+
+<footer class="art kb">
+    <div id="cr">
+    </div>
+
+
+</footer>
+
+<script>
+cr.innerHTML=`&copy; Lingyu Zhou ${new Date().getFullYear()}`;
+</script>
+</body>
+</html>

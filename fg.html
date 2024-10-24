@@ -1,97 +1,187 @@
+
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
-<title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='font.css'>
+<link rel="icon" href="assets/font.svg" type="image/png">
+
+<title>fonts studio</title>
 <style>
-article{
-    padding: 1em 4vw;
-}
-.sub-div{
-    margin: 0;
-    width: 33.3333333%;
-    transition: color,background-color .5s;
-    height: 40vh;
-    border: 1px solid lightgray;
-    border-right: none;
-    font-size: x-large;
-    /* padding: 1em; */
-    position: relative;
-    cursor: pointer;
-}
-
-.sub-div:hover{
-    background-color: black;
-    /* border: 1px solid white; */
-    color: white;
-}
-
-#goback{
-    transition: color,background-color .5s;
-cursor: pointer;
-}
-
-#goback:hover{
-    background-color: black;
-    /* border: 1px solid white; */
-    color: white;
-}
-
-.sub-div:after{
-    content: '→';
-    font-family: 'inter';
-    font-size: x-large;
-    position: absolute;
-    bottom: .5em;
-    right:  .5em;
-}
-
-#cardname{
-    padding: 1em;
-}
-
-@media (orientation: portrait) {
-    .container{
-        flex-direction: column;
-    }
-    .sub-div{
-        width: 100%;
-        border: 1px solid lightgray;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        height: 20vh;
+    
+    body {
+        margin: 0;
+        padding: 0 20px;
+        font-family: sohne;
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden; 
+        padding: 0 5vw 0;
     }
 
-    .sub-div:first-child{
-        border-top: 1px solid lightgray;
-
+    h1 {
+        margin-top: 20px; 
+        margin-bottom: 10px; 
+        text-align: left; 
+        font-size: 32px; 
+        width: 100%; 
     }
-}
+    .gallery {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        width: 90vw; 
+        height: 70vh; 
+        /* padding: 0 20px 0; */
+        box-sizing: border-box; 
+        margin-right: 5vw;
+        max-height: 60vh;
+        overflow-y: hidden;
+        padding-bottom  : 3vh;
+    }
+
+    .item {
+        padding: 0px 5vh 0px;
+        flex: 0 0 33.333%; 
+        height: 100%;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        color:black;
+        text-decoration: none;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: xx-large;
+        scroll-snap-align: start;
+        transition: 0.5s;
+    }
+
+    .item:hover{
+        background-color: black;
+        color:white;
+    }
+
+    /* Media query for portrait orientation: adjust item width */
+    @media (orientation: portrait) {
+        .item {
+            flex: 0 0 60%; /* Each item takes up the full view width in portrait */
+        }
+    }
+
+    .fixed-link {
+            position: fixed;
+            left: 50%;
+            top: 3%;
+            transform: translateX(-50%);
+            z-index: 1000; /* Ensure it overlays on top of other elements */
+            padding: 5px 5px 0px;
+            background-color: white;
+            /* border: grey 2px solid; */
+            color: grey;
+            text-decoration: none;
+            border-radius: 999px;
+        transition: 0.5s;
+        }
+
+        .fixed-link :hover{
+            color: black;
+        }
+
+        .topbtn{
+            text-decoration: none; 
+            border-radius: 99px; 
+            border: #f0f0f0 solid 1px;
+            color:black;
+            background-color:#f0f0f0;
+            /* background-color:black;  */
+            transition: .75s;
+            
+            font-family: sf-round;
+            /* font-family: "Neue Haas Grotesk Text Pro"; */
+        }
+
+        .topbtn:hover{
+            border: black solid 1px;
+            background:black;
+            color:white;
+        }
+
+        .btma{
+            color:gray;
+            transition: .3s;
+            font-family: chirp_r;
+        }
+
+        .btma:hover{
+            color:black;
+        }
+
+
 </style>
 </head>
-<body style="margin: 0; font-family: passenger;">
-    <div style="font-size: 40px; color:  white; background-color: black; padding: 2em 4vw;">
-        Font Studio
-    </div>
-    <article>
-        <p style="font-size: larger;">
-            An atelier of fonts, discover a world of unique, handcrafted typefaces and explore custom fonts, font pairing guides, and exclusive typography tips to bring your vision to life.
-        </p>
-    </article>
-    <div class="container" style="width: 100%; display: flex;">
-   <div class="sub-div" onclick="window.location.href='glyph.html'">
-                        <div id="cardname" >Glyphs of Chinese characters</div></div><div
-        class="sub-div" onclick="window.location.href='fontcss.html'"><div id="cardname" >'Fontssentials' CSS</div></div><div
-        class="sub-div" onclick="window.location.href='fg2.html'"><div id="cardname" >Font gallery</div></div>
-	</div>
+<body>
+<p style="font-size: xx-large; font-family: sig; margin:0px 0px .5vh">fonts studio</p> <!-- Title for the gallery -->
+<a href="fontcss.html" style="margin:0px 0px 2.5vh; font-size: large;" class="btma">Try more fonts on your website! <span style="font-family: sf-round;">&rarr;</span></a>
+<div class="gallery">
 
-    <div id="goback" onclick="history.back()" style="width: 100%; font-size: xx-large;">
-<div style="text-align: left; font-family: inter; padding: 1em;">&larr;</div>
-<div style="text-align: right; padding: 1em;">back</div>
+    <a  class="item" href="fg/sohne.html">
+        <div >
+            <p style=" font-family: sohne;">Söhne</p>
+        </div>
+      </a>
 
-    </div>
+    <a  class="item" href="fg/signifier.html">
+        <div >
+            <p style=" font-family: sig;">Signifier</p>
+        </div>
+        </a>
+
+        <a   class="item" href="fg/gtamerica.html">
+            <div >
+                <p style=" font-family:gtamerica">GT America</p>
+            </div>
+          </a>
+
+        <a   class="item" href="fg/nhg.html">
+            <div >
+                <p style=" font-family: nhr;">Neue Haas Grotesk</p>
+            </div>
+          </a>
+  
+          <a  class="item" href="fg/sneak.html">
+            <div >
+                <p style=" font-family: 'sneak';">Sneak</p>
+            </div>
+          </a>
+  
+          <a   class="item" href="suissen.html">
+            <div >
+                <p style=" font-family: suisse;">Suissen Intl</p>
+            </div>
+          </a>
+
+          
+</div>
+<!-- <br> -->
+<!-- <a style="font-family: Neue Haas Grotesk Text Pro" href="javascript: history.back()">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="5vh" height="5vh" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+  </svg> 
+  </a> -->
+<div class="fixed-link">
+<a  class="topbtn" style="padding: 4px 6.5px 4px;" href="javascript: history.back()">&larr;</a>
+
+    <a class="topbtn" href="fdd.html" style="padding: 4px 8px 4px 10px;">juxtapose</a>
+    <!-- <a class="topbtn"  style="padding: 4px 8px 4px 10px;" href="">Use font.css &rarr;</a> -->
+</div>
+
+
 </body>
 </html>
