@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<style>
+
+@font-face {
+    font-family: karla;
+    src: url('karla.woff2');
+}
+:root{
+    --bgc: white;
+    --txtc: black;
+    --font:haas;
+    --ls: initial;
+}
+#welcomeItem{
+    cursor: pointer;
+}
+#welcomeItem::before{
+    content: '○';
+    font-family: Inter;
+    
+}
+#welcomeItem:hover::before{
+    content: '●';
+    font-family: Inter;
+}
+</style>
+</head>
+<body style="margin: 0px; font-family: var(--font); letter-spacing: var(--ls);">
+<div id="welcome" style="height: 100dvh; width:100%; display: flex; ">
+<div style="background-color: rgb(217 228 97); width: 50%; font-size: 10vw; padding: 5vh 5vw; position: relative;">Lingyu Zhou
+<div style="position: absolute; bottom: 5vh; left: 5vw; font-size: x-large; width: 70%">
+    <span id="clock"></span><span>&nbsp;Ithaca, NY</span>
+</div>
+</div><div
+ style="background-color:  var(--bgc); width: 50%; padding: 5vh 5vw; font-size: 5vw">
+<div id="welcomeItem">ABOUT <br></div>
+<div id="welcomeItem">EDUCATION <br></div>
+<div id="welcomeItem">PROJECT <br></div>
+<div id="welcomeItem">CONTACT <br></div>
+<div id="welcomeItem">CV<br>   </div>
+<div id="welcomeItem">FAQ <br>   </div>
+</div>
+</div>
+
+<script>
+    const clockElement = document.getElementById('clock');
+const intervalId = setInterval(updateTime, 1000); // Update every second
+
+function updateTime() {
+    const now = new Date();
+    const nyTime = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+    const year = nyTime.getFullYear();
+    const month = (nyTime.getMonth() + 1).toString().padStart(2, '0');
+    const day = nyTime.getDate().toString().padStart(2, '0');
+    const hours = nyTime.getHours().toString().padStart(2, '0');
+    const minutes = nyTime.getMinutes().toString().padStart(2, '0');
+    const seconds = nyTime.getSeconds().toString().padStart(2, '0');
+
+    const clockString = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+    clockElement.innerText = clockString;
+}
+
+updateTime(); // Initialize the clock
+</script>
+</body>
+</html>
