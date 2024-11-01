@@ -11,34 +11,84 @@
     font-family: karla;
     src: url('karla.woff2');
 }
+
+
 :root{
     --bgc: white;
     --txtc: black;
     --font:haas;
     --ls: initial;
+    --c1:rgb(217 228 97);
 }
+
+
+a{
+    color:inherit;
+}
+
+a:hover{
+    opacity: .5;
+}
+
+::selection{
+    background-color: var(--c1);
+}
+
+#welcome>div{
+    width: 50%;
+}
+
+
+
 #welcomeItem{
     cursor: pointer;
 }
 #welcomeItem::before{
     content: '○';
     font-family: Inter;
-    
+    transition: .5s;    
 }
 #welcomeItem:hover::before{
     content: '●';
     font-family: Inter;
 }
+
+#board{
+    border-top: 4px solid var(--txtc);;
+    border-bottom: 4px solid var(--txtc);
+    margin: 3vh 3vw;
+}
+
+#board>#title{
+    font-size: xx-large;
+}
+
+#board>p{
+    font-size: x-large;
+}
+@media (orientation: portrait) {
+    #welcome{
+        flex-direction: column;
+    }
+
+    #welcome>div{
+    width: 100%;
+}
+
+    #clock{
+        display: none;
+    }
+}
 </style>
 </head>
 <body style="margin: 0px; font-family: var(--font); letter-spacing: var(--ls);">
 <div id="welcome" style="height: 100dvh; width:100%; display: flex; ">
-<div style="background-color: rgb(217 228 97); width: 50%; font-size: 10vw; padding: 5vh 5vw; position: relative;">Lingyu Zhou
-<div style="position: absolute; bottom: 5vh; left: 5vw; font-size: x-large; width: 70%">
-    <span id="clock"></span><span>&nbsp;Ithaca, NY</span>
+<div style="background-color: var(--c1);  font-size: 10vw; padding: 5vh 5vw; position: relative;">Lingyu Zhou
+<div style="position: absolute; bottom: 5vh; left: 5vw; font-size: x-large; width: 70%" id="clock">
+    <span id="time"></span><span>&nbsp;Ithaca, NY</span>
 </div>
 </div><div
- style="background-color:  var(--bgc); width: 50%; padding: 5vh 5vw; font-size: 5vw">
+ style="background-color:  var(--bgc); padding: 5vh 5vw; font-size: 5vw">
 <div id="welcomeItem">ABOUT <br></div>
 <div id="welcomeItem">EDUCATION <br></div>
 <div id="welcomeItem">PROJECT <br></div>
@@ -48,9 +98,26 @@
 </div>
 </div>
 
+<div id="board">
+    <p id="title">ABOUT</p>
+    <p>
+        Hello stranger, I am Lingyu Zhou, a student</a> at <a href="https://cornell.edu">Cornell University</a>,
+      also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
+     I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
+     Previously, I studied applied mathematics at 
+     <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+     I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
+     Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
+     <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
+    <br>My research directions are applied mathematical modeling, applied statistics, and machine learning.
+    My specialties are software engineering, math, data analysis, and data visualization.
+    I am also interested in biology, botany, and etymology.
+    </p>
+</div>
+
 <script>
-    const clockElement = document.getElementById('clock');
-const intervalId = setInterval(updateTime, 1000); // Update every second
+    const clockElement = document.getElementById('time');
+    const intervalId = setInterval(updateTime, 1000);
 
 function updateTime() {
     const now = new Date();
@@ -66,7 +133,7 @@ function updateTime() {
     clockElement.innerText = clockString;
 }
 
-updateTime(); // Initialize the clock
+updateTime();
 </script>
 </body>
 </html>

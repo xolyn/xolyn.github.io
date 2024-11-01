@@ -8,12 +8,18 @@
 <link rel='stylesheet' href='font.css'>
 <link rel='stylesheet' href='ir.css'>
 <link rel="stylesheet" href="https://f.zly.vg/css/details.css">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>fonts repo</title>
 <style>
 
-
 :root{
     --rm: 6vw;
+}
+
+body{
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
 a{
@@ -87,7 +93,7 @@ code{
     cursor: pointer;
 }
 
-code,pre,samp{font-family: monaco;}
+code,pre,samp{font-family: monolisa;}
 
 input#colorPicker {
     appearance: none;
@@ -141,22 +147,29 @@ legend#var::after{
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.css">
 
 </head>
-<body style="margin:0; font-family: inter;">
+<body style="margin:0;">
 
 <article>
     <h1 style="font-size: xx-large;">Font<span style="color: orangered; ">ss</span>entials</h1>
     <details class="widechevron">
         <summary style="color:red;"><span style=" font-size: 1.5rem;">Terms and Notices</span></summary>
-        Please be aware that these fonts are intended for personal and non-commercial use only. By importing and using our CSS file, you agree not to use these fonts for any commercial purposes. Unauthorized commercial use of these fonts is strictly prohibited. If you choose to use these fonts for commercial purposes, you do so at your own risk and will bear full responsibility for any consequences that may arise.
-    <br>
-    To ensure compliance with these terms, our fonts are licensed under the 
-    Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). 
-    This license allows you to share and adapt the fonts for personal use, 
-    provided you give appropriate credit, do not use them for commercial purposes, 
-    and indicate if changes were made. For more details on this license, 
-    please visit the <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons website.</a>
-    Additionally, the creation of these fonts has no affiliation or relation with the author.<br>
-    By using our fonts, you acknowledge that you have read, understood, and agreed to these terms.
+            <div>
+                <p>
+                    Please be aware that these fonts are intended for personal and non-commercial use only. By importing and using our CSS file, you agree not to use these fonts for any commercial purposes. Unauthorized commercial use of these fonts is strictly prohibited. If you choose to use these fonts for commercial purposes, you do so at your own risk and will bear full responsibility for any consequences that may arise.
+                </p>
+                <p>
+                    To ensure compliance with these terms, our fonts are licensed under the 
+                Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). 
+                This license allows you to share and adapt the fonts for personal use, 
+                provided you give appropriate credit, do not use them for commercial purposes, 
+                and indicate if changes were made. For more details on this license, 
+                please visit the <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons website.</a>
+                Additionally, the creation of these fonts has no affiliation or relation with the author.
+                </p>
+                <p>
+                    By using our fonts, you acknowledge that you have read, understood, and agreed to these terms.
+                </p>
+            </div>
     </details>
     
     <h2 style="font-weight: normal;">How to use?</h2>
@@ -439,17 +452,19 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     </div>
 
 </article>
-<div style="margin: 0;">
-    <hr>
-</div>
+
 <article hidden style="font-size: small;">
     ＊<code>bold</code> font weight available for font family with asterisk suffix.
 </article>
-<center style="font-size: small; padding:0 0 1em 0;">
-<a href="javascript:history.back()">back</a> | 
-<a href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">top</a> 
-<!-- <br>&copy; 2024 Lingyu Zhou All rights reserved. -->
-</center>
+
+<div style="padding: 1em 0; background-color: black; color: white;">
+<article>
+    <a style="text-decoration: none;" href="javascript:history.back()">&larr; Back</a>
+    <br><br>
+    <a style="text-decoration: none;" href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">&uarr; Top</a> 
+</article>
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 <script src="https://f.zly.vg/jq.js"></script>
