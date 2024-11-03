@@ -12,9 +12,9 @@
 <style>
 h1,h2,h3,h4,h5{font-weight:normal;}
 :root{
-    --mainColor:white;
-    --subColor:black;
-    --cfont:'passenger';
+    --mainColor:black;
+    --subColor:white;
+    --cfont:'sohne';
     /* --cfont:'courierprime'; */
 }
 
@@ -178,7 +178,7 @@ div#toolbar{
     }    
 
     div#help{
-      font-size: 1.5em;  
+      font-size: 1rem;  
     }
 }
 
@@ -333,9 +333,9 @@ div#toolbar{
 
 <div id="help" style="position: fixed; z-index: 9; bottom:1em; right: 1em;color: var(--mainColor); ">
 <div id="social" class="accMrore" style="transition: .3s;color: var(--mainColor); line-height: 130%; margin: .5em 0;">
-  <a href="javascript: window.scrollTo({top:0, behavior: 'smooth'})">&#xF139;</a><br> 
-  <a href="javascript: themeTogg()">&#xF1D1;</a><br>
-  <a href="javascript: document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });">&#xF118;</a>
+  <a href="javascript: window.scrollTo({top:0, behavior: 'smooth'})" title="Top">&#xF139;</a><br> 
+  <a href="javascript: themeTogg()" title="Dark/Bright Mode">&#xF1D1;</a><br>
+  <a href="javascript: document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });" title="Bottom">&#xF118;</a>
 </div>
   <div id="social" style="cursor: pointer;" onclick="showAcc()">
     &#xF825;
