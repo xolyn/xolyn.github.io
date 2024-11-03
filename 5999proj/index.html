@@ -1,163 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reveal.js Image Fix</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.css">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .reveal .slides img {
-            max-height: 100vh;  /* Prevent images from being too large */
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto;  /* Center the image horizontally */
-        }
-        .reveal .slides section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                        <img src="images/slide_1.png" alt="Slide" loading="lazy">
-                    </section>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.30.0/tocbot.min.js"></script>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.30.0/tocbot.css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+<title>Document</title>
+<style>
+*{
+    font-family: Inter, sans-serif;
+    /* scroll-padding: 10px; */
+}
 
-                    <section>
-                        <img src="images/slide_2.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_3.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_4.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_5.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_6.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_7.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_8.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_9.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_10.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_11.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_12.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_13.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_14.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_15.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_16.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_17.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_18.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_19.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_20.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_21.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_22.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_23.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_24.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_25.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_26.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_27.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                    <section>
-                        <img src="images/slide_28.png" alt="Slide" loading="lazy">
-                    </section>
-        
-                </div>
-            </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
-            <script>
-                Reveal.initialize({
-                    controls: true,
-                    progress: true,
-                    center: true,    
-                    hash: true,
-                    // width: 'auto',
-                    // height: 'auto',  
-                    // margin: 0.1,
-                    maxScale: 2.0
-                });
-            </script>
-        </body>
-        </html>
-        
+a.dl{
+    padding: 5px;
+    transition: .35s;
+}
+
+a.dl:hover{
+    background-color: lightgray;
+    border-radius: 8px;
+}
+img{
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: initial;
+    margin:0;
+}
+
+
+details summary::-webkit-details-marker,
+details summary::marker {
+display: none; 
+content: '';
+}
+
+details[open]>summary::before{
+content: '\F286\00a0';
+font-family:'Bootstrap-icons';
+font-size: small;
+font-weight: bold;
+width: 1rem;
+}
+
+details>summary::before{
+content: '\F282\00a0';
+font-family:'Bootstrap-icons';
+font-size: small;
+font-weight: bold;
+width: 1rem;
+}
+
+.toc-list{
+padding:0 1rem;
+background-color: transparent;
+}
+
+.toc-list-item>a{
+font-size: smaller;
+opacity: 1;
+color: lightgray;
+text-decoration: none;
+padding: 0;
+transition: .5s;
+}
+
+.toc-list-item>a:hover{
+color:gray
+}
+
+.toc-list-item {
+  list-style: none;
+}
+
+.toc-list-item::marker{
+content: '';
+}
+
+.toc-link::before {
+height: fit-content;
+}
+
+.toc{
+position: fixed;
+top: 0;
+background-color: white;
+padding: .5rem var(--lrp);
+overflow-y: auto;
+width: 100%;
+}
+
+.js-toc {
+padding: .25em 0;
+width: 100%;
+background-color: transparent;
+height: fit-content;
+}
+
+.toc-link.is-active-link {
+font-weight: normal;
+color: black;
+}
+
+section>h2{
+    font-size: 0px;
+}
+</style>
+</head>
+<body style="margin: 0;">
+
+<details class="toc" id="tocnav" style="border-top: .5px solid lightgray;
+background-color: rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+padding: 1rem;
+transition: top .5s;
+">
+    <summary style="cursor: pointer;">Catalog</summary>
+    <div class="js-toc"></div>
+</details>
+
+<div id="ppt">
+<img id="" style="" src="images/slide_1.png" alt="">
+<!-- <img id="Background_and_movitation" src="images/slide_2.png" alt="">
+<img id="Visualization-Historical_trend" src="images/slide_3.png" alt=""> -->
+<section>
+    <h2 id="Background_and_motivation">Background and Motivation</h2>
+    <img src="images/slide_2.png" alt="Background and motivation slide">
+</section>
+
+<section>
+    <h2 id="Visualization-Historical_trend">Visualization: Historical Trend</h2>
+    <img src="images/slide_3.png" alt="Visualization slide">
+</section>
+
+<section> <h2 id="Visualization-Independent_variables">Visualization-Independent_variables</h2>
+     <img src="images/slide_4.png" alt=""></section>
+<section> <h2 id="Visualization-Correlation_heatmap">Visualization-Correlation_heatmap</h2>
+     <img src="images/slide_5.png" alt=""></section>
+<section> <h2 id="Visualization-Annual_feed_use">Visualization-Annual_feed_use</h2>
+     <img src="images/slide_6.png" alt=""></section>
+<section> <h2 id="Visualization-Monthly_average_by_country">Visualization-Monthly_average_by_country</h2>
+     <img src="images/slide_7.png" alt=""></section>
+<section> <h2 id="Visualization-Monthly_import">Visualization-Monthly_import</h2>
+     <img src="images/slide_8.png" alt=""></section>
+<section> <h2 id="Visualization-import_by_country">Visualization-import_by_country</h2>
+     <img src="images/slide_9.png" alt=""></section>
+<section> <h2 id="Visualization-China_cereal_production">Visualization-China_cereal_production</h2>
+     <img src="images/slide_10.png" alt=""></section>
+<section> <h2 id="Visualization-Chinese_population">Visualization-Chinese_population</h2>
+     <img src="images/slide_11.png" alt=""></section>
+<section> <h2 id="Visualization-Soybean_oil_consumption">Visualization-Soybean_oil_consumption</h2>
+     <img src="images/slide_12.png" alt=""></section>
+<section> <h2 id="Visualization-Soybean_production">Visualization-Soybean_production</h2>
+     <img src="images/slide_13.png" alt=""></section>
+<section> <h2 id="Visualization-GDP_by_country">Visualization-GDP_by_country</h2>
+     <img src="images/slide_14.png" alt=""></section>
+<section> <h2 id="Evaluation-Goal_and_criteria">Evaluation-Goal_and_criteria</h2>
+     <img src="images/slide_15.png" alt=""></section>
+<section> <h2 id="Data_Engineering-Data_cleaning">Data_Engineering-Data_cleaning</h2>
+     <img src="images/slide_16.png" alt=""></section>
+<section> <h2 id="Data_Engineering-Feature_selection">Data_Engineering-Feature_selection</h2>
+     <img src="images/slide_17.png" alt=""></section>
+<section> <h2 id="Methology-MLR">Methology-MLR</h2>
+     <img src="images/slide_18.png" alt=""></section>
+<section> <h2 id="Methology-AR">Methology-AR</h2>
+     <img src="images/slide_19.png" alt=""></section>
+<section> <h2 id="Methology-ARIMAX">Methology-ARIMAX</h2>
+     <img src="images/slide_20.png" alt=""></section>
+<section> <h2 id="Methology-SARIMA">Methology-SARIMA</h2>
+     <img src="images/slide_21.png" alt=""></section>
+<section> <h2 id="Methology-Random_forest">Methology-Random_forest</h2>
+     <img src="images/slide_22.png" alt=""></section>
+<section> <h2 id="Result-Random_forest_1">Result-Random_forest_1</h2>
+     <img src="images/slide_23.png" alt=""></section>
+<section> <h2 id="Result-Random_forest_2">Result-Random_forest_2</h2>
+     <img src="images/slide_24.png" alt=""></section>
+<section> <h2 id="Result-Random_forest_3">Result-Random_forest_3</h2>
+     <img src="images/slide_25.png" alt=""></section>
+<section> <h2 id="Conclusion-Comparison">Conclusion-Comparison</h2>
+     <img src="images/slide_26.png" alt=""></section>
+<section> <h2 id="References-Data_sources">References-Data_sources</h2>
+     <img src="images/slide_27.png" alt=""></section>
+<section> <h2 id="SourceDownload">⤓ Get notebook and TeX source file</h2>
+<div style="padding: 2rem;">
+    <h3>Get notebook and TeX source file</h3>
+<a class="dl" href="#" style="color: inherit; text-decoration: none;"><span style="font-family:'Bootstrap-icons'; ">&#xF30A;</span> Download</a>
+</div>
+</section>
+
+</div>
+<!-- <img src="images/slide_28.png" alt=""> -->
+
+
+<div style="padding: 2rem; border-top: .5px solid lightgray;">
+    &copy;Lingyu Zhou 2024
+</div>
+
+<script>
+tocbot.init({
+tocSelector: '.js-toc',
+contentSelector: '#ppt',
+headingSelector: 'h2',
+headingsOffset:0,
+});
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("tocnav").style.top = "0";
+  } else {
+    // document.querySelector('details.toc').removeAttribute('open');
+    if (tocnav.getAttribute('open') == null){
+        document.getElementById("tocnav").style.top = "-100px";
+    }
     
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+document.querySelectorAll('.toc-list-item > a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelector('details.toc').removeAttribute('open');
+            });
+        });
+
+
+</script>
+</body>
+</html>
