@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/gamble.svg" type="svg">
+    <title>gambler's ruin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+        @font-face {
+          font-family: 'ere'; 
+          src: url('fonts/ere.otf');
+      }
+
+      @font-face {
+          font-family: 'sfr'; 
+          src: url('fonts/sf-round.otf');
+      }
+
+      @font-face {
+          font-family: 'cas'; 
+          src: url('fonts/iom.otf');
+      }
+
+        canvas {
+            width: 100%;
+            height: 35vh; /* Fixed height or based on screen size */
+        }
+
+        body{
+            padding: 0vw 5vw 10vh;
+            font-family: ere;
+            font-size: medium;
+        }
+
+        button{
+            border-radius: 0px;
+            border: black solid 1px;
+            background-color: white;
+            font-size: medium;
+            font-family: ere;
+        }
+
+        summary:hover{
+            cursor: pointer;
+        }
+
+        .fixed-back-link {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+            /* background-color: grey;
+            color: black;
+            padding: 10px 20px; */
+            border-radius: 999px;
+            font-family: sfr;
+            font-size: xx-large;
+            text-decoration: none;
+            z-index: 1000;
+            fill:lightgray;
+            transition: 0.5s;
+        }
+        .fixed-back-link:hover {
+            fill:black;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="proj.html" ><svg class="fixed-back-link" height="6vh" 
+        width="6vh" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#808080" stroke-width="0.00512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M384,277.333H179.499 l48.917,48.917c8.341,8.341,8.341,21.824,0,30.165c-4.16,4.16-9.621,6.251-15.083,6.251c-5.461,0-10.923-2.091-15.083-6.251 l-85.333-85.333c-1.963-1.963-3.52-4.309-4.608-6.933c-2.155-5.205-2.155-11.093,0-16.299c1.088-2.624,2.645-4.971,4.608-6.933 l85.333-85.333c8.341-8.341,21.824-8.341,30.165,0s8.341,21.824,0,30.165l-48.917,48.917H384c11.776,0,21.333,9.557,21.333,21.333 S395.776,277.333,384,277.333z"></path> </g> </g> </g></svg></a>
+        
+    <p style="font-size: xx-large;">Gambler's Ruin</p>
+    <p>In statistics, <a style="color: black;" href="https://en.wikipedia.org/wiki/Gambler%27s_ruin">gambler's ruin</a> is the fact that a persistent gambler with finite wealth, playing a fair game (that is, each bet has expected value of zero to both sides) will eventually and inevitably go broke against an opponent with infinite wealth.
+
+        The concept was initially stated: A persistent gambler who raises his bet to a fixed fraction of the gambler's bankroll after a win, but does not reduce it after a loss, will eventually and inevitably go broke, even if each bet has a positive expected value.
+    <br>Below simulates a situation where a game will randomly (50%-50%) increase of deduct a proportion ("Rate") of the money you have, which in the beginning is "Base". 
+    Hit plot botton to see how your money changes during the period of you specify in "Period" field.
+    </p>
+    <form id="inputForm">
+        <label for="base">Base Value:</label>
+        <input style="width:40vw" type="number" id="base" name="base" value="10000" required><br><br>
+        <label for="rate">Rate (0~1):</label>
+        <input style="width:40vw" type="number" id="rate" name="rate" step="0.01" value="0.5" required>
+        <!-- <a href="#how" onclick='setTimeout(function() {document.getElementById("how").setAttribute("open", "");}, 300)' style="border-radius: 99px; border: black 1px solid; padding: 2px 5.8px 0px; text-decoration: none; font-size: x-small; color:black;">i</a> -->
+        <a href="#how" onclick='setTimeout(function() {document.getElementById("how").setAttribute("open", "");}, 300)' style=" text-decoration: none; font-size: small; color:black;">ⓘ</a>
+        <br><br>
+        <label for="period">Period (Days):</label>
+        <input style="width:40vw" type="number" id="period" name="period" value="365" required><br><br>
+        <button type="button" onclick="plotGraph()">Plot Graph</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+    <br>
+    <p id="finalValue">Final Value (rounded): </p>
+    <canvas id="graphCanvas" width="2400" height="1600" style="border:2px solid #000000; width: 80vw;"></canvas>
+<p>    See how your money will eventually become in the long run, even though the mathematical expectation of change in money is 0, somewhat meaning you should at least get your base back in the end.
+</p>
+
+
+<div>
+
+    <details style="padding-bottom: 3vh;">
+        <summary><b>Learn how to play in this playground</b></summary>
+<div>
+            <b>1.</b> First don't change any values, use the default values to plot the changes in money. Can you end up with a non-zero final amount? <br>
+        <b>2.</b> Try a smaller rate (halving recommended), and plot for a few times. Can you get a positive ending this time? How will the gambler think in this case?<br> 
+        <b>3.</b> Use the same small rate as in <b>2.</b>, try a longer period and plot for a few times. What do you end up with now?<br>
+        <b>4.</b> Can you come up with a strategy that can guarantee a positive profit (ending money-base)? What differs this case from the reality?
+         </div>    
+</details>
+        <details id="how" style="padding-bottom: 3vh;">
+            <summary><b>Learn how the simulation behind works</b></summary>
+        <div>This setup mimics a random walk process for a gambling game. Before everything, 3 values are initialized:<br>
+            <b>1.</b> "base" is initilaized to 10000, which represents gambler's starting money.<br>
+            <b>2.</b> "rate" is initilaized to 0.5, which determines the change in percentage (positive or negative) that can occur in each step of the random walk. In this case it's increase by 50% or decrease by 50%.<br> 
+            <b>3.</b> "period" is initialized to 365, which represents the number of steps or days in the simulation, in this case, default is 1 year.<br>
+            <br>
+            First the program  enters a loop that iterates times of "period" length. In each iteration, the current value of "base" is appended to a list that records the historical money gambler has.
+            then  value is then updated by multiplying it with a random value chosen from either 1-"rate" (go down) or 1+"rate" (go up), which simulates the random walk process.
+            <br>
+            Then the will display the final money gambler has at the end of the period and plot out the how gambler's money changed using html canvas.
+        </div>  
+        <span id="how-end"></span>  
+        </details>
+
+        <details style="padding-bottom: 3vh;">
+            <summary><b>Get python code</b></summary>
+            <pre class="prettyprint lang-python" style=" font-size: xx-small;  font-family:'Fira Mono' ;border: rgb(52, 52, 52) solid 2px; width: 80vw;" translate="no" >
+import numpy as np
+import matplotlib.pyplot as plt
+base=10000
+rate=.5
+period=365
+seq=[]
+for i in range(period):
+    seq.append(base)
+    base*=np.random.choice([1-rate,1+rate])
+print(seq[-1])
+plt.plot(seq)
+</pre>
+        </details>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<script>
+function plotGraph() {
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Clear previous plot
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const baseInput = parseFloat(document.getElementById('base').value);
+    const rateInput = parseFloat(document.getElementById('rate').value);
+    const periodInput = parseInt(document.getElementById('period').value);
+
+    let base = baseInput;
+    const rate = rateInput;
+    const period = periodInput;
+    let seq = [];
+
+    for (let i = 0; i < period; i++) {
+        seq.push(base);
+        base *= Math.random() < 0.5 ? 1 - rate : 1 + rate;
+    }
+
+    // Normalize data to fit the canvas height
+    const maxSeq = Math.max(...seq);
+    const minSeq = Math.min(...seq);
+    const scaledSeq = seq.map(value => (value - minSeq) / (maxSeq - minSeq) * (canvas.height - 20) + 10);
+    ctx.lineWidth = 5;
+    // Draw plot
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height - scaledSeq[0]);
+    for (let i = 1; i < scaledSeq.length; i++) {
+        ctx.lineTo(i * (canvas.width / period), canvas.height - scaledSeq[i]);
+    }
+    ctx.stroke();
+    const finalValueDisplay = document.getElementById('finalValue');
+    finalValueDisplay.textContent = 'Final Value (rounded): ' + seq[seq.length - 1].toFixed(2);
+}
+
+function resetForm() {
+    document.getElementById('base').value = 10000;
+    document.getElementById('rate').value = 0.5;
+    document.getElementById('period').value = 365;
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const finalValueDisplay = document.getElementById('finalValue');
+    finalValueDisplay.textContent = 'Final Value (rounded): ';
+}
+    </script>
+</body>
+</html>
+
+
