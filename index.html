@@ -4,364 +4,373 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
-<link rel="shortcut icon" href="https://f.zly.vg/assets/kDisk.png">
-<link rel="stylesheet" href="https://f.zly.vg/css/timeline.css">
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
-<link rel="stylesheet" href="https://f.zly.vg/css/details.css">
-<title>Lingyu Zhou</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+<title>214</title>
 <style>
-h1,h2,h3,h4,h5{font-weight:normal;}
+
 :root{
-    --mainColor:black;
-    --subColor:white;
-    --cfont:'sohne';
-    /* --cfont:'courierprime'; */
+    --tc:black;
+    --bc: white;
+    --ff: Inter, sans-serif;
+    --fs: small;
+    --hp: 4vw;
 }
 
-*{
-    scroll-behavior: smooth;
-    scroll-padding: 2em;
-    transition: color,  background-color .8s;
+*,html,body{
+    font-family: var(--ff);
+    font-size: var(--fs);
+    line-height: 120%;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 20
+}
+
+#index{ font-weight: 400; } 
+#index:hover{ font-weight: 800; }
 
 a{
-    opacity: 0.7;
-    color:var(--mainColor);
-    text-decoration: none;
+    color: inherit;
+    transition: opacity .35s;
 }
 
-a:hover{
-    opacity: 1;
+a:hover{ opacity: .5; }
+
+a:hover::after{
+    content: '↗';
+    font-size: var(--ff);
 }
 
-nav>div#click{
-    margin-top:auto;
-    margin-bottom:auto;
-    cursor: pointer;
-    font-family: courier;
-    font-size: x-large;
+a.reg:hover::after{ content: none; }
+
+#pcMenu>a{
+    margin: 0 .5rem;
 }
 
-.index::after{
-    content: '○';
+article{
+    margin: 2.5vh var(--hp);
 }
 
-.index:hover::after{
-    content: '●';
+#mobMenu{
+    top:-100%;
+    transition: .5s;
 }
 
-.timeline {
-  background: transparent;
-  margin: 20px auto;
-  padding: 0px 20px 20px 0;
+#mobMenu a{
+display: block;
+margin: .25rem 0;
 }
 
-.timeline *{
-  font-size: inherit;
+.swiper-slide{
+    /* background-color: rgb(38,38,38);
+    color: var(--bc); */
+    border-radius: 1rem;
+    background-color: transparent;
+    color: var(--tc);
 }
 
-/* Outer Layer with the timeline border */
-.outer {
-  border-left: 1px solid var(--mainColor);
-  margin-left: .5em;
+.swiper {
+  width: 100%;
+  /* height: 50vh; */
+  height: fit-content;
 }
 
-/* Card container */
-.card {
-  position: relative;
-  margin: 0 0 0px 10px;
-  padding: 10px;
-  background: transparent;
-  color: var(--mainColor);
-  /* border-radius: 8px; */
-  width: 90%;
-  /* border: 1.5px solid gray; */
-  z-index: 9;
-}
-
-/* event */
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  z-index: 9;
-  color:var(--mainColor);
-}
-
-.info>a{
-  width: fit-content;
-}
-/* Title of the card */
-.title {
-  position: relative;
-}
-
-/* Timeline dot  */
-.title::before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: var(--subColor);
-  border-radius: 999px;
-  top:8.5px;
-  left: -25.5px;
-  border: 1px solid var(--mainColor)
-}
-
-.info> h3.title{
-  padding: 0;
-  margin: 0;
-}
-
-div#imenu{
-      margin: 2rem auto auto 2rem; 
-      font-size: smaller;
-    }
+.swiper-button-prev,.swiper-button-next{
+    color: var(--bc);
+    mix-blend-mode: difference;
     
-details{
-  line-height: 120%;
+}
+.swiper-button-prev:after {
+  content: '←';
+  font-family: var(--ff);
+  font-size: medium;
 }
 
-#social{
-  font-family:'Bootstrap-icons';
+.swiper-button-next:after {
+  content: '→';
+  font-family: var(--ff);
+  font-size: medium;
 }
 
-div#toolbar{
-  left: -95vw;
-  transition: left .5s;
-  border: 1px solid var(--mainColor);
-  border-left: none;
-  height: 5vw;
+#projDesc{
+    padding-top: 1rem;
 }
 
-.accMrore{
-  visibility:hidden;
-  opacity: 0;
+#proj{
+    margin: 1rem 0;
 }
 
-@media (orientation: portrait) {
-    .hmenu{
-        visibility: hidden;
-        display: none;
-    }
+#proj>img{
+    aspect-ratio: 1/1;
+}
 
-    nav{
-      padding: .1em 0;
-    }
+tr>td:first-child{
+    width: 35%;
+}
 
+tr>td:nth-child(2){
+    width: 65%;
+    text-align: right;
+}
+
+#edutable{
+    width: 100%;
+}
+
+td{padding: .1rem 0;}
+
+table, tr, td {
+    border: none;
 }
 
 @media (orientation: landscape) {
-    nav{
-      padding:0;
-    }
-
-    details#elinks{
-        visibility: hidden;
-        display: none;
-    }
-
-    div.hmenu{
-        /* margin: auto .5em auto 1em; */
-        margin: 0; border-left: 1px solid var(--mainColor); display: flex; padding: .5em ;
-        font-size: smaller;
-    }
-
-    div.hmenu>a{
-        margin:auto 0;
-        color:var(--mainColor) !important;
-    }
-
-    div#hmenuItemLast{
-        border-right: 1px solid var(--mainColor);
-    }    
-
-    div#help{
-      font-size: 1rem;  
-    }
+#mobMenuTogg,#mobMenu{
+    display: none;
 }
 
-@media only screen and (min-width: 700px) and (min-height: 700px) {
-  * {
-    /* zoom:1.05; */
-  }
+}
+
+@media (orientation: portrait) {
+#pcMenu{
+    display: none;
+}
+
+#mobMenu{
+    display: flex;
+}
+
+
 }
 
 </style>
 </head>
-<body style="font-family: var(--cfont); margin: 0; background-color: var(--subColor); line-height: 100%;">
-<nav style=" line-height: initial; width: 100%; display: flex; color:var(--mainColor); border-bottom: 1px solid var(--mainColor); z-index: 99; background-color: var(--subColor); position: sticky; top:0">
-<div id='click' class="index" onclick="window.location.href='index.html'" style="margin-left:.5em; "></div>
-<div style="margin: auto; "></div>
-<!-- <div class="hmenu" style=""> -->
-    <div class="hmenu"><a href="https://zly.vg/cv.pdf">Résumé</a></div>
-    <div class="hmenu"><a href="https://blog.zhoulingyu.net">Blog</a></div>
-    <div class="hmenu"><a href="https://xolyn.github.io/proj">Projects</a></div>
-    <div class="hmenu"><a href="https://portfolio.zhoulingyu.net">Portfolio</a></div>
-    <div class="hmenu"><a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a></div>
-    <div class="hmenu" id="hmenuItemLast"><a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a></div>
-<!-- </div> -->
+<body style="margin: 0; background-color: var(--bc);">
+ 
+    <nav style="display: flex; margin: 0; position: sticky; top:0; background-color: white;padding: 2vh var(--hp);z-index: 3;">
+        <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s;" translate="no">LINGYUOHZ</div>
+        <div style="margin: auto;">
+        </div>
+        <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
+            <a href="https://blog.zhoulingyu.net">Blog</a>
+            <a href="https://xolyn.github.io/proj">Project</a>
+            <a href="https://portfolio.zhoulingyu.net">Portfolio</a>
+            <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a>
+            <a href="https://xolyn.github.io/fg2.html">Font Studio</a>
+            <a href="https://zly.vg/cv.pdf">Résumé</a>
+        </div>
 
-<div id='click' class="vmenu" style="margin: 0 .5em; display: flex;" onclick="showMenu();" >
-  <div style="margin: auto;">≡</div>
+        <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer;" class="material-symbols-outlined"
+        onclick="menuTogg()" translate="no">menu</div>
+    </nav>
+
+<div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
+
+    <div id="mobMenu1" style="margin: 8vh var(--hp); line-height: 150%;" needPopulate></div>
+
 </div>
-<!-- this.innerHTML=this.innerHTML==='&times;'?'≡':'&times;'; -->
-</nav>
 
-<div id="menu" style=" background-color: var(--subColor); color:var(--mainColor); transition: .5s; max-height: 40vh; overflow-y: auto; display: flex; position: fixed; top:0; width:100vw; right:0; border-bottom: 1px solid var(--mainColor); z-index: 98; transform: translateY(-100%);">
-    <div id="imenu" style="padding: .5em 0; line-height: 105%; text-align: left;">
-        <details class='pm'open style=" ">
-            <summary >Catalog</summary>
-            <a href="#about" onclick="showMenu()">About</a><br>
-            <a href="#edu" onclick="showMenu()">Education</a><br>
-            <a href="#pub" onclick="showMenu()">Publication</a><br>
-            <a href="#belief" onclick="showMenu()">Things I believe</a><br>
-        </details>
-        <!-- <hr> -->
-        <details class='pm' open id="elinks" style="margin-top: .5em; ">
-            <summary>External links</summary>
-                <a href="https://zly.vg/cv.pdf">Résumé</a><br>
-                <a href="https://blog.zhoulingyu.net">Blog</a><br>
-                <a href="https://xolyn.github.io/proj">Projects</a><br>
-                <a href="https://portfolio.zhoulingyu.net">Portfolio</a><br>
-                <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a><br>
-                <a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a><br>
-                <!-- <a href="//f.zly.vg/bug">bugs</a><br> -->
-        </details>
-    </div>
-</div menu>
+<article id="about">
+    <h1 style="">about</h1>
+    <p>Hello stranger. I am Lingyu Zhou (/ʈʂoʊˉ lɪŋˊ yˇ/), a student</a> at <a href="https://cornell.edu">Cornell University</a>,
+        also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
+        I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
+        Previously, I studied applied mathematics at 
+        <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+        I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
+        Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
+        <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
+    </p>
+    <p>
+        My specialties are software engineering, math, data analysis, and data visualization.
+        
+        My research interests are computational social science and affective computing, particularly in using data science methods and natural language processing to model and analyze emotional and behavioral trends within large-scale social networks. My goal is to explore how computational models can provide insights into social phenomena, group dynamics, and collective emotions, utilizing vast social media data to understand real-world interactions and sentiments. This area lies at the intersection of statistical modeling, machine learning, and NLP, with applications in prediction of social behavior, sentiment analysis, and trend forecasting.
 
-<main style="margin: 1em; font-size: medium; color:var(--mainColor);" onclick="menu.style.transform='translateY(-100%)';">
-<p style="font-size: larger;">Lingyu Zhou</p>
+        
+        I am also interested in biology, botany, and etymology.
+    </p>
+</article>
 
-<p id="about">
-  <p style="text-decoration: underline;">About</p>
-  <p>Hello stranger, I am Lingyu Zhou, a student</a> at <a href="https://cornell.edu">Cornell University</a>,
-      also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
-     I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
-     Previously, I studied applied mathematics at 
-     <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
-     I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
-     Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
-     <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
- </p>
- <p>
-     My research directions are applied mathematical modeling, applied statistics, and machine learning.
-     My specialties are software engineering, math, data analysis, and data visualization.
-     I am also interested in biology, botany, and etymology.
-      
- </p>
-</p>
+<article id="education">
+    <h1 style="">education</h1>
+    <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td>Middle School</td>
+            <td><a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a></td>
+        </tr>
+        <tr>
+            <td>High School</td>
+            <td><a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a></td>
+        </tr>
+        <tr>
+            <td>Bachelor's</td>
+            <td><a href="http://wisc.edu/">University of Wisconsin - Madison</a></td>
+        </tr>
+        <tr>
+            <td>Master's</td>
+            <td> <a href="http://cornell.edu/">Cornell Univeristy</a></td>
+        </tr>
+        </tbody>
+        </table>
+</article>
 
-<p id="edu">
-    <p style="text-decoration: underline;">Education</p>
-    <div class="timeline" style="transition: .5s; padding-bottom: 0;">
-        <div class="outer">
-          <div class="card">
-            <div class="info">
-              <h3 class="title">2014.9-2017.6
-                <br><span style="font-size: smaller;">Middle School</span>
-              </h3>
-                <a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a>
+<article id="projects">
+    <h1 style="">projects</h1>
+
+<div class="swiper">
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div id="proj">
+            <img   src="https://f.zly.vg/assets/yafiwg.jpg" style="width: 100%;">
+            <div id="projDesc">
+                <a href="https://github.com/xolyn/yafiwg">YAFIWG</a>
             </div>
-          </div>
-          <div class="card">
-            <div class="info">
-              <h3 class="title">2017.9-2020.6
-                <br><span style="font-size: smaller;">High School</span>
-              </h3>
-                <a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="info">
-              <h3 class="title">2020.9-2023.5
-                <br><span style="font-size: smaller;">Bachelor's</span>
-              </h3>
-                <a href="http://wisc.edu/">University of Wisconsin - Madison</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="info">
-              <h3 class="title">2023.8-TBD
-                <br><span style="font-size: smaller;">Master's</span>
-            </h3>
-                <a href="http://cornell.edu/">Cornell Univeristy</a>
-            </div>
-          </div>
         </div>
       </div>
-</p>
 
-<p id="pub">
-    <p style="text-decoration: underline;">Publication</p>
-        <li><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Basic Analysis of the Hog Futures Market in China (BPS_0799)</a></li>
-        <p>Applied Economics and Policy Studies (AEPS) (ISSN 2731-4006) <br>Advances in Economics Management and Political Sciences (Print ISSN 2754-1169)</p>
-       
-       <li>Statistical Analysis of Labor Compliance Rates in East Asia: The Impact of Policies and Regulations</li>
-       <p>TBD;</p>
-
-</p>
-
-<p id="belief">
-    <p style="text-decoration: underline;">Things I believe</p>
-    <li>Detail matters.</li>
-    <li>Never too late to act.</li>
-    <li>Minimalism.</li>
-    <li>Live in the present.</li>
-</p>
-
-</main>
-
-<footer style="width: 100%; text-align: left; color: var(--mainColor); margin-top: 3em; border-top: 1px solid var(--mainColor);">
-    <div style="padding: 1em;">
-        <a href="index.html">Lingyu Zhou</a> &copy 2024.
-        <div class="network" style=" padding-top: 1em; letter-spacing: .2em;">
-            <a id="social" href="/cdn-cgi/l/email-protection#5e32246b68661e3d312c303b3232703b3a2b">&#xF32C;</a>
-            <a id="social" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
-            <a id="social" href=https://github.com/xolyn>&#xF3ED;</a> 
-            <a id="social" href=https://instagram.com/toqurdn>&#xF437;</a> 
-            <a id="social" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
-            <a id="social" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
+      <div class="swiper-slide">
+        <div id="proj">
+            <img   src="https://f.zly.vg/assets/b2p.jpg" style="width: 100%;">
+            <div id="projDesc">
+                <a href="https://github.com/xolyn/beamer2ppt">beamer2ppt</a>
+            </div>
         </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div id="proj">
+            <img   src="https://shorturl.at/anrE3" style="width: 100%;">
+            <div id="projDesc">
+                <a href="https://aqmn.github.io/cmd">CLI personal webpage</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div id="proj">
+            <img   src="https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
+            <div id="projDesc">
+                <a href="https://xolyn.github.io/grd.html">Gambler's Ruin</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div id="proj">
+            <img   src="https://images.unsplash.com/photo-1700157710823-2e9e58414802?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
+            <div id="projDesc">
+                <a href="https://xolyn.github.io/5999proj">Time Series Analysis</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div id="proj">
+            <img   src="https://f.zly.vg/assets/bug.png" style="width: 100%;">
+            <div id="projDesc">
+                <a href="https://f.zly.vg/bug">Bugs index</a>
+            </div>
+        </div>
+      </div>
+
     </div>
-    <div id="end" style="height: 0;"></div>
+  
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+</article>
+
+<article id="quotes">
+    <h1 style="">quotes</h1>
+    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
+        <i>"You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’"</i>
+        <br><br>
+        -George Bernard Shaw
+    </p>
+    <a href="" class="reg">resample</a>
+</article>
+
+<article id="beliefs">
+    <h1 style="">beliefs</h1>
+    <p>
+        <li>Detail matters.</li>
+        <li>Never too late to act.</li>
+        <li>Simplicity is the ultimate sophistication.</li>
+        <li>Live in the present.</li>
+    </p>
+</article>
+
+<footer>
+    <hr style="border: .5px solid lightgray;">
+    <article>
+        &copy; Lingyu Zhou 2024.
+        <span style="font-weight: 400;">&nbsp;</span>
+        <span style="font-weight: 500;">&nbsp;</span>
+        <span style="font-weight: 600;">&nbsp;</span>
+        <span style="font-weight: 700;">&nbsp;</span>
+        <span style="font-weight: 800;">&nbsp;</span>
+    </article>
 </footer>
 
-
-
-<div id="help" style="position: fixed; z-index: 9; bottom:1em; right: 1em;color: var(--mainColor); ">
-<div id="social" class="accMrore" style="transition: .3s;color: var(--mainColor); line-height: 130%; margin: .5em 0;">
-  <a href="javascript: window.scrollTo({top:0, behavior: 'smooth'})" title="Top">&#xF139;</a><br> 
-  <a href="javascript: themeTogg()" title="Dark/Bright Mode">&#xF1D1;</a><br>
-  <a href="javascript: document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });" title="Bottom">&#xF118;</a>
-</div>
-  <div id="social" style="cursor: pointer;" onclick="showAcc()">
-    &#xF825;
-  </div>
-</div>
-
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 <script>
-    function showMenu(){
-        menu.style.transform=menu.style.transform===''?'translateY(-100%)':'';
-    }
+const swiper = new Swiper('.swiper', {
+slidesPerView: 1,
+  loop: true,   
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    },
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 20
+    },
+    800: {
+      slidesPerView: 4,
+      spaceBetween: 30
+    },
+    // 960: {
+    //   slidesPerView: 5,
+    //   spaceBetween: 40
+    // }
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
 
-    function themeTogg(){
-      document.documentElement.style.setProperty('--mainColor', getComputedStyle(document.documentElement).getPropertyValue('--mainColor')=== 'black' ? 'white' : 'black');
-      document.documentElement.style.setProperty('--subColor', getComputedStyle(document.documentElement).getPropertyValue('--subColor')=== 'white' ? 'black' : 'white');
-    }
+});
 
-    function showAcc(){
-      var ac=document.getElementsByClassName('accMrore')[0]
-      ac.style.visibility=ac.style.visibility==='visible'?'hidden':'visible';
-      ac.style.opacity=ac.style.opacity==='1'?'0':'1';
-    }
+mobMenu1.innerHTML=pcMenu.innerHTML;
 
+function menuTogg(){
+    mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
+    mobMenu.style.top=mobMenu.style.top==='0px'?'-100%':'0px';
+}
+
+function changeBackgroundGradient() {
+        const img = document.getElementById('image');
+        const div = document.getElementById('colorfulDiv');
+        const colorThief = new ColorThief();
+        const palette = colorThief.getPalette(img, 2);
+        div.style.background = `linear-gradient(to right, rgb(${palette[0][0]}, ${palette[0][1]}, ${palette[0][2]}), rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]}))`;
+        }
 </script>
-
-
 
 </body>
 </html>
