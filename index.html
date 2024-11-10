@@ -60,6 +60,10 @@ article{
     margin: 2.5vh var(--hp);
 }
 
+article>h1{
+text-decoration: underline;
+}
+
 #mobMenu{
     top:-100%;
     transition: .5s;
@@ -173,11 +177,11 @@ table, tr, td {
 </head>
 <body style="margin: 0; background-color: var(--bc); transition: background-color .5s;">
 
-<div id="widget" style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; z-index: 9; ;">
+<div id="widget" style=" position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; z-index: 9; ;">
     <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem" onclick="window.scrollTo({top:0, behavior: 'smooth'})">arrow_upward</div>
     <div>
         <div class="material-symbols-outlined" id="widgetItem" onclick="window.history.back()">arrow_back</div>
-        <div class="material-symbols-outlined" onclick="showAccess()" style="border-radius: 999px; border: 1.5px solid var(--tc)">accessibility_new</div>
+        <div class="material-symbols-outlined" onclick="showAccess()" style="border-radius: 999px; border: 1.5px solid var(--tc);">accessibility_new</div>
         <div class="material-symbols-outlined" id="widgetItem" onclick="changeTheme()">contrast</div>
     </div>
     <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem"
@@ -251,7 +255,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
             <td> <a href="http://cornell.edu/">Cornell Univeristy</a></td>
         </tr>
         </tbody>
-        </table>
+    </table>
 </article>
 
 <article id="projects">
@@ -340,6 +344,42 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <li>Simplicity is the ultimate sophistication.</li>
         <li>Live in the present.</li>
     </p>
+</article>
+
+<article id="contact">
+    <h1 style="">contact</h1>
+    <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td>email</td>
+            <td>lz568 [at] cornell [dot] edu</td>
+        </tr>
+
+        <tr>
+            <td>github</td>
+            <td><a href="http://wisc.edu/">@xolyn</a></td>
+        </tr>
+
+        <tr>
+            <td>linkedin</td>
+            <td> <a href="http://cornell.edu/">@lingyuzhou</a></td>
+        </tr>
+
+        <tr>
+            <td>instagram</td>
+            <td><a href="http://njjlhw.njgljy.com/">@toqurdn</a></td>
+        </tr>
+        <tr>
+            <td>X (fka. twitter)</td>
+            <td><a href="http://www.jzhx.net/">@uygniluohz</a></td>
+        </tr>
+
+        <tr>
+            <td>weibo</td>
+            <td> <a href="http://cornell.edu/">@donth8</a></td>
+        </tr>
+        </tbody>
+    </table>
 </article>
 
 <footer>
