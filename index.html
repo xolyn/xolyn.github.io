@@ -154,6 +154,18 @@ table, tr, td {
 
 /* #widget:hover #widgetItem{ opacity: 1; } */
 
+#quote i::before,#quote i::after{
+    content: '"';
+    font-family: var(--ff);
+}
+
+#quote p::before{
+    content: '——\00a0';
+}
+
+#quote>p, #quote>i, #quote>p>i{
+    color:grey;
+}
 
 @media (orientation: landscape) {
 #mobMenuTogg,#mobMenu{
@@ -191,7 +203,8 @@ table, tr, td {
 
 <nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
 background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
-    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s;" translate="no">LINGYUOHZ</div>
+    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s;" translate="no" 
+    onclick="window.location.href='index.html'">LINGYUOHZ</div>
     <div style="margin: auto;">
     </div>
     <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
@@ -203,8 +216,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a href="https://zly.vg/cv.pdf">Résumé</a>
     </div>
 
-    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer;" class="material-symbols-outlined"
-    onclick="menuTogg()" translate="no">dehaze</div>
+    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer;"
+    onclick="menuTogg()" translate="no">menu</div>
 </nav>
 
 <div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
@@ -344,15 +357,15 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <div style="color:gray">email</div>
         <div>lz568 [at] cornell [dot] edu</div><br>
         <div style="color:gray">github</div>
-        <div><a href="http://wisc.edu/">@xolyn</a></div><br>
+        <div><a href="http://github.com/xolyn">@xolyn</a></div><br>
         <div style="color:gray">linkedin</div>
-        <div> <a href="http://cornell.edu/">@lingyuzhou</a></div><br>
+        <div> <a href="https://www.linkedin.com/in/lingyuzhou/">@lingyuzhou</a></div><br>
         <div style="color:gray">instagram</div>
-        <div><a href="http://njjlhw.njgljy.com/">@toqurdn</a></div><br>
+        <div><a href="http://instagram.com/toqurdn">@toqurdn</a></div><br>
         <div style="color:gray">X (fka. twitter)</div>
-        <div><a href="http://www.jzhx.net/">@uygniluohz</a></div><br>
+        <div><a href="https://x.com/uygniluohz">@uygniluohz</a></div><br>
         <div style="color:gray">weibo</div>
-        <div> <a href="http://cornell.edu/">@donth8</a></div><br>
+        <div> <a href="https://weibo.com/u/5663761733">@donth8</a></div><br>
     </p>
 
     <!-- <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
@@ -389,41 +402,27 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     </table> -->
 </article>
 
-
-
-<article id="quotes">
-    <h1 style="">quotes</h1>
-    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
-        <i>"You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’"</i>
-        <br><br>
-        - George Bernard Shaw
-    </p>
-    <!-- <a href="" class="reg">resample</a> -->
-
-    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
-        <i>"Imagination is the one weapon in the war against reality."</i>
-        <br><br>
-        - Jacob (<i>Pirates of the Caribbean: Dead Man's Chest</i>, 2006)
-    </p>
-
-    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
-        <i>"And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it."</i>
-        <br><br>
-        -Sylvia Plath (<i>The Bell Jar</i>)
-    </p>
+<article>
+    <div id="quote"> <i></i> <p></p></div>
 </article>
-
 
 <footer>
     <hr style="border: .5px solid lightgray;">
     <article>
-        &copy; Lingyu Zhou 2024.
-        <span style="font-weight: 400;">&nbsp;</span>
-        <span style="font-weight: 500;">&nbsp;</span>
-        <span style="font-weight: 600;">&nbsp;</span>
-        <span style="font-weight: 700;">&nbsp;</span>
-        <span style="font-weight: 800;">&nbsp;</span>
-    </article>
+    &copy; Lingyu Zhou 2024
+    <span style="font-weight: 400;">&nbsp;</span>
+    <span style="font-weight: 500;">&nbsp;</span>
+    <span style="font-weight: 600;">&nbsp;</span>
+    <span style="font-weight: 700;">&nbsp;</span>
+    <span style="font-weight: 800;">&nbsp;</span>
+
+    <p style="line-height: 150%;">
+        <a href="" style="color: grey">Report a problem</a>
+        <br>
+        <a href="" style="color: grey">Terms and policies</a>
+    </p>
+    
+</article>
 </footer>
 
 <div id="end"></div>
@@ -465,7 +464,7 @@ slidesPerView: 1,
 mobMenu1.innerHTML=pcMenu.innerHTML;
 
 function menuTogg(){
-    mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='dehaze'?'close':'dehaze';
+    mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
     mobMenu.style.top=mobMenu.style.top==='0px'?'-100%':'0px';
 }
 
@@ -481,6 +480,21 @@ function changeTheme(){
     document.documentElement.style.setProperty('--tc', getComputedStyle(document.documentElement).getPropertyValue('--tc')=== 'black' ? 'white' : 'black');
     document.documentElement.style.setProperty('--bc', getComputedStyle(document.documentElement).getPropertyValue('--bc')=== 'white' ? 'black' : 'white');
 }
+
+const quotes = 
+[
+    ['You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’', 'George Bernard Shaw'],
+    ['Imagination is the one weapon in the war against reality.', "Jacob (<i>Pirates of the Caribbean: Dead Man's Chest</i>, 2006)"],
+    ['And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it.', "Sylvia Plath (<i>The Bell Jar</i>)"],
+    // ['b', 'B'],
+];
+const q = quotes[Math.floor(Math.random() * quotes.length)];
+const quoteContent = q[0];
+const quoteAuthor = q[1];
+
+document.querySelector('#quote i').innerHTML=quoteContent;
+document.querySelector('#quote p').innerHTML=quoteAuthor;
+
 
 </script>
 
