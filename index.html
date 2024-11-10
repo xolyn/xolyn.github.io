@@ -15,6 +15,7 @@
 :root{
     --tc:black;
     --bc: white;
+    --ac: lightgray;
     --ff: Inter, sans-serif;
     --fs: small;
     --hp: 4vw;
@@ -177,7 +178,7 @@ table, tr, td {
 </head>
 <body style="margin: 0; background-color: var(--bc); transition: background-color .5s;">
 
-<div id="widget" style=" position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; z-index: 9; ;">
+<!-- <div id="widget" style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; z-index: 9; ;">
     <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem" onclick="window.scrollTo({top:0, behavior: 'smooth'})">arrow_upward</div>
     <div>
         <div class="material-symbols-outlined" id="widgetItem" onclick="window.history.back()">arrow_back</div>
@@ -186,8 +187,7 @@ table, tr, td {
     </div>
     <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem"
     onclick="document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });">arrow_downward</div>
-
-</div>
+</div> -->
 
 <nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
 background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
@@ -326,29 +326,36 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 </article>
 
-<article id="quotes">
-    <h1 style="">quotes</h1>
-    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
-        <i>"You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’"</i>
-        <br><br>
-        -George Bernard Shaw
-    </p>
-    <a href="" class="reg">resample</a>
-</article>
-
 <article id="beliefs">
     <h1 style="">beliefs</h1>
     <p>
-        <li>Detail matters.</li>
-        <li>Never too late to act.</li>
-        <li>Simplicity is the ultimate sophistication.</li>
-        <li>Live in the present.</li>
+
+    • Detail matters.<br>
+    • Never too late to act.<br>
+    • Simplicity is the ultimate sophistication.<br>
+    • Live in the present.<br>
+
     </p>
 </article>
 
 <article id="contact">
     <h1 style="">contact</h1>
-    <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
+    <p>
+        <div style="color:gray">email</div>
+        <div>lz568 [at] cornell [dot] edu</div><br>
+        <div style="color:gray">github</div>
+        <div><a href="http://wisc.edu/">@xolyn</a></div><br>
+        <div style="color:gray">linkedin</div>
+        <div> <a href="http://cornell.edu/">@lingyuzhou</a></div><br>
+        <div style="color:gray">instagram</div>
+        <div><a href="http://njjlhw.njgljy.com/">@toqurdn</a></div><br>
+        <div style="color:gray">X (fka. twitter)</div>
+        <div><a href="http://www.jzhx.net/">@uygniluohz</a></div><br>
+        <div style="color:gray">weibo</div>
+        <div> <a href="http://cornell.edu/">@donth8</a></div><br>
+    </p>
+
+    <!-- <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
         <tbody>
         <tr>
             <td>email</td>
@@ -379,8 +386,33 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
             <td> <a href="http://cornell.edu/">@donth8</a></td>
         </tr>
         </tbody>
-    </table>
+    </table> -->
 </article>
+
+
+
+<article id="quotes">
+    <h1 style="">quotes</h1>
+    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
+        <i>"You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’"</i>
+        <br><br>
+        - George Bernard Shaw
+    </p>
+    <!-- <a href="" class="reg">resample</a> -->
+
+    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
+        <i>"Imagination is the one weapon in the war against reality."</i>
+        <br><br>
+        - Jacob (<i>Pirates of the Caribbean: Dead Man's Chest</i>, 2006)
+    </p>
+
+    <p style="border-left: 3px solid lightgray; padding-left: 1rem;">
+        <i>"And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it."</i>
+        <br><br>
+        -Sylvia Plath (<i>The Bell Jar</i>)
+    </p>
+</article>
+
 
 <footer>
     <hr style="border: .5px solid lightgray;">
