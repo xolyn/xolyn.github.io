@@ -142,7 +142,7 @@ table, tr, td {
 }
 
 #widget div{
-    font-size: var(--fs)
+    font-size: large;
 }
 
 #widgetItem:hover{color: lightgray}
@@ -406,8 +406,8 @@ function showAccess(){
 }
 
 function changeTheme(){
-document.documentElement.style.setProperty('--tc', getComputedStyle(document.documentElement).getPropertyValue('--tc')=== 'black' ? 'white' : 'black');
-document.documentElement.style.setProperty('--bc', getComputedStyle(document.documentElement).getPropertyValue('--bc')=== 'white' ? 'black' : 'white');
+    document.documentElement.style.setProperty('--tc', getComputedStyle(document.documentElement).getPropertyValue('--tc')=== 'black' ? 'white' : 'black');
+    document.documentElement.style.setProperty('--bc', getComputedStyle(document.documentElement).getPropertyValue('--bc')=== 'white' ? 'black' : 'white');
 }
 
 </script>
