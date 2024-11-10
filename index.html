@@ -4,11 +4,11 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="shortcut icon" href="https://f.zly.vg/assets/kDisk.png">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 <title>214</title>
 <style>
 
@@ -24,6 +24,7 @@
     font-family: var(--ff);
     font-size: var(--fs);
     line-height: 120%;
+    color:var(--tc);
 }
 
 .material-symbols-outlined {
@@ -131,6 +132,24 @@ table, tr, td {
     border: none;
 }
 
+#widgetItem{
+    opacity: 0;
+    transition: .3s;
+    cursor: pointer;
+    visibility:hidden;
+    /* mix-blend-mode: difference;
+    color: var(--tc) */
+}
+
+#widget div{
+    font-size: var(--fs)
+}
+
+#widgetItem:hover{color: lightgray}
+
+/* #widget:hover #widgetItem{ opacity: 1; } */
+
+
 @media (orientation: landscape) {
 #mobMenuTogg,#mobMenu{
     display: none;
@@ -152,24 +171,37 @@ table, tr, td {
 
 </style>
 </head>
-<body style="margin: 0; background-color: var(--bc);">
- 
-    <nav style="display: flex; margin: 0; position: sticky; top:0; background-color: white;padding: 2vh var(--hp);z-index: 3;">
-        <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s;" translate="no">LINGYUOHZ</div>
-        <div style="margin: auto;">
-        </div>
-        <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
-            <a href="https://blog.zhoulingyu.net">Blog</a>
-            <!-- <a href="https://xolyn.github.io/proj">Project</a> -->
-            <a href="https://portfolio.zhoulingyu.net">Portfolio</a>
-            <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a>
-            <a href="https://xolyn.github.io/fg2.html">Font Studio</a>
-            <a href="https://zly.vg/cv.pdf">Résumé</a>
-        </div>
+<body style="margin: 0; background-color: var(--bc); transition: background-color .5s;">
 
-        <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer;" class="material-symbols-outlined"
-        onclick="menuTogg()" translate="no">menu</div>
-    </nav>
+<div id="widget" style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; z-index: 9; ;">
+    <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem" onclick="window.scrollTo({top:0, behavior: 'smooth'})">arrow_upward</div>
+    <div>
+        <div class="material-symbols-outlined" id="widgetItem" onclick="window.history.back()">arrow_back</div>
+        <div class="material-symbols-outlined" onclick="showAccess()" style="border-radius: 999px; border: 1.5px solid var(--tc)">accessibility_new</div>
+        <div class="material-symbols-outlined" id="widgetItem" onclick="changeTheme()">contrast</div>
+    </div>
+    <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem"
+    onclick="document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });">arrow_downward</div>
+
+</div>
+
+<nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
+background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
+    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s;" translate="no">LINGYUOHZ</div>
+    <div style="margin: auto;">
+    </div>
+    <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
+        <a href="https://blog.zhoulingyu.net">Blog</a>
+        <!-- <a href="https://xolyn.github.io/proj">Project</a> -->
+        <a href="https://portfolio.zhoulingyu.net">Portfolio</a>
+        <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a>
+        <a href="https://xolyn.github.io/fg2.html">Font Studio</a>
+        <a href="https://zly.vg/cv.pdf">Résumé</a>
+    </div>
+
+    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer;" class="material-symbols-outlined"
+    onclick="menuTogg()" translate="no">dehaze</div>
+</nav>
 
 <div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
 
@@ -322,6 +354,8 @@ table, tr, td {
     </article>
 </footer>
 
+<div id="end"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 <script>
 const swiper = new Swiper('.swiper', {
@@ -359,17 +393,23 @@ slidesPerView: 1,
 mobMenu1.innerHTML=pcMenu.innerHTML;
 
 function menuTogg(){
-    mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
+    mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='dehaze'?'close':'dehaze';
     mobMenu.style.top=mobMenu.style.top==='0px'?'-100%':'0px';
 }
 
-function changeBackgroundGradient() {
-        const img = document.getElementById('image');
-        const div = document.getElementById('colorfulDiv');
-        const colorThief = new ColorThief();
-        const palette = colorThief.getPalette(img, 2);
-        div.style.background = `linear-gradient(to right, rgb(${palette[0][0]}, ${palette[0][1]}, ${palette[0][2]}), rgb(${palette[1][0]}, ${palette[1][1]}, ${palette[1][2]}))`;
-        }
+function showAccess(){
+    document.querySelectorAll('#widgetItem').forEach((element) => {
+        element.style.opacity=element.style.opacity==='1'?'0':'1';
+        element.style.visibility=element.style.visibility==='initial'?'hidden':'initial';
+    })
+    
+}
+
+function changeTheme(){
+document.documentElement.style.setProperty('--tc', getComputedStyle(document.documentElement).getPropertyValue('--tc')=== 'black' ? 'white' : 'black');
+document.documentElement.style.setProperty('--bc', getComputedStyle(document.documentElement).getPropertyValue('--bc')=== 'white' ? 'black' : 'white');
+}
+
 </script>
 
 </body>
