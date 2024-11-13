@@ -16,7 +16,8 @@
     --tc:black;
     --bc: white;
     --ac: lightgray;
-    --ff: Inter, sans-serif;
+    /* --ff: Inter, sans-serif; */
+    --ff: 'nhg';
     --fs: small;
     --hp: 4vw;
 }
@@ -48,7 +49,7 @@ a:hover{ opacity: .5; }
 
 a:hover::after{
     content: '↗';
-    font-size: var(--ff);
+    font-family: inter;
 }
 
 a.reg:hover::after{ content: none; }
@@ -75,19 +76,18 @@ display: block;
 margin: .25rem 0;
 }
 
+.swiper {
+  width: 100%;
+  height: fit-content;
+  cursor: ew-resize;
+
+}
+
 .swiper-slide{
-    /* background-color: rgb(38,38,38);
-    color: var(--bc); */
-    border-radius: 1rem;
     background-color: transparent;
     color: var(--tc);
 }
 
-.swiper {
-  width: 100%;
-  /* height: 50vh; */
-  height: fit-content;
-}
 
 .swiper-button-prev,.swiper-button-next{
     color: var(--bc);
@@ -96,13 +96,13 @@ margin: .25rem 0;
 }
 .swiper-button-prev:after {
   content: '←';
-  font-family: var(--ff);
+  font-family: inter;
   font-size: medium;
 }
 
 .swiper-button-next:after {
   content: '→';
-  font-family: var(--ff);
+  font-family: inter;
   font-size: medium;
 }
 
@@ -116,6 +116,7 @@ margin: .25rem 0;
 
 #proj>img{
     aspect-ratio: 1/1;
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4); */
 }
 
 tr>td:first-child{
@@ -160,7 +161,7 @@ table, tr, td {
 }
 
 #quote p::before{
-    content: '——\00a0';
+    content: '—\00a0';
 }
 
 #quote>p, #quote>i, #quote>p>i{
@@ -208,6 +209,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     <div style="margin: auto;">
     </div>
     <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
+        <!-- <a href="" id="contact">Contact</a> -->
         <a href="https://blog.zhoulingyu.net">Blog</a>
         <!-- <a href="https://xolyn.github.io/proj">Project</a> -->
         <a href="https://portfolio.zhoulingyu.net">Portfolio</a>
@@ -228,7 +230,9 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <article id="about">
     <h1 style="">about</h1>
-    <p>Hello stranger. I am Lingyu Zhou (/ʈʂoʊˉ lɪŋˊ yˇ/), a student</a> at <a href="https://cornell.edu">Cornell University</a>,
+    <p>Hello stranger. I am Lingyu Zhou 
+        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
+        , a student</a> at <a href="https://cornell.edu">Cornell University</a>,
         also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
         I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
         Previously, I studied applied mathematics at 
@@ -495,6 +499,16 @@ const quoteAuthor = q[1];
 document.querySelector('#quote i').innerHTML=quoteContent;
 document.querySelector('#quote p').innerHTML=quoteAuthor;
 
+swiper.el.addEventListener('wheel', (event) => {
+  if (event.shiftKey) {
+    event.preventDefault();
+    if (event.deltaY > 0) {
+      swiper.slideNext();
+    } else {
+      swiper.slidePrev();
+    }
+  }
+});
 
 </script>
 
