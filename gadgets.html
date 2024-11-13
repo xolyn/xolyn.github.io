@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://xolyn.github.io/font.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+        .btn{
+            background-color: lightgray;
+            border: solid 1px lightgray;
+            transition: .5s; 
+        }
+        .btn:hover{
+            background-color: black;
+            border: black 1px solid;
+        }
+
+        details summary::-webkit-details-marker,
+        details summary::marker {
+        display: none; 
+        content: "";
+        }
+
+        ul, li{
+            all:unset;  
+            font-size: large;
+            display: block;
+        }
+
+        details{
+            border-radius: 999px;
+            padding: 0px 9px 5px;
+        }
+
+        details[open]{
+            border-radius: 15px;
+            font-family: sf-round;
+        }
+
+        details[open]>ul{
+            padding: 10px;
+        }
+
+        /* details>summary::after{
+            content:"ⓘ";
+        }
+        
+        details[open]>summary::after{
+            content: "‎";
+        } */
+        
+
+
+
+        .vote-l{
+            transition: .5s;
+            border-top-left-radius:     999px;
+            border-bottom-left-radius:  999px;
+        }
+
+        .vote-r{
+            transition: .5s;
+            border-top-right-radius:    999px;
+            border-bottom-right-radius: 999px;
+        }
+
+        .vote-l:hover, .vote-r:hover{
+            background-color: black;
+            color:white;
+        }
+
+    </style>
+</head>
+<body style="font-size: xx-large;background: linear-gradient(#000, #000) no-repeat center/2px 200vh;">
+    <h3>widgets</h3>
+    <div style="border-radius: 999px; border: solid 1px lightgray; padding: .5rem .5rem .5rem; background-color: grey; width: 10.3rem;">
+        <a href="javascript:history.back()"><div class="btn" style=" padding: 1rem 1.5rem 1rem ; display: inline-block; border-radius: 999px;  color: white;">⮌</div></a>
+        <a href="javascript:window.location.href=window.location.href"><div class="btn" style=" padding: 1rem 1.5rem 1rem; display: inline-block;  border-radius: 999px;color: white;">⭯</div></a>
+        <!-- ⭮⭯ -->
+    </div>
+
+    <hr>
+        <details style="background-color: lightgray; width: min-content;white-space: nowrap;">
+            <summary style="cursor: pointer;">ⓘ</summary>
+            <ul style="text-transform: uppercase;">
+                <li>help></li>
+                <li>contact></li>
+                <li>report></li>
+            </ul>
+        </details>
+
+    <!-- <center>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|<br>|</center> -->
+    <div class="funcbtn" style="position: fixed; bottom: 5%; left:50%;transform: translate(-50%,0); font-family:sf-round; border-radius:99px; background-color:rgba(210,210,210,0.8); padding:10px 20px; width: min-content;white-space: nowrap;"><span style="cursor:pointer" onclick="history.back()">←</span><span style="margin: 0px 5px; font-family: monospace; color:grey;">|</span><span style="cursor:pointer" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</span><span style="margin: 0px 5px; font-family: monospace; color:grey;">|</span><span style="cursor:pointer" onclick='window.location.href=window.location.href'>⭮</span></div>
+    <hr>
+    <div style="border-radius: 999px; border: black 1px solid;width: min-content;white-space: nowrap;"><div class="vote-l" style="padding: 0px 10px; display: inline-block;">👍︎</div><div style="display: inline-block; padding: 0px 10px;" class="vote-r">👎︎</div></div>
+</body>
+</html>

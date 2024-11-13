@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+<!-- https://icons.getbootstrap.com/ -->
+<link rel="stylesheet" href="widgets.css">
+<title>widgetz</title>
+<style>
+/* h1:hover::after, */
+h2:hover::after,h3:hover::after,h4:hover::after,h5:hover::after{content: '\00a0 \F470'; font-family:'Bootstrap-icons'; font-size: smaller;}
+.note{
+    padding: 3vh 2vw;
+    margin: 2vh 0;
+    border: .5px solid lightgray;
+    border-left: .5rem solid lightgreen;
+}
+</style>
+</head>
+<body style="font-family: inter; margin: 0 3.5vw;">
+    <h1>
+        widgetz
+    </h1>
+
+    <p>Some predefined widgets for web.</p>
+
+    <h2>Horizontal scrollable</h2>
+    
+    <div class="note">
+        Contents inside do not have any pre-defined styles for customization purposes. 
+    </div>
+        <div class="hScroll">
+            <a style="margin: 0 1em;" href="#">Category1 </a>
+            <a style="margin: 0 1em;" href="#">Category2 </a>
+            <a style="margin: 0 1em;" href="#">Category3 </a>
+            <a style="margin: 0 1em;" href="#">Category4 </a>
+            <a style="margin: 0 1em;" href="#">Category5 </a>
+            <a style="margin: 0 1em;" href="#">Category6 </a>
+            <a style="margin: 0 1em;" href="#">Category7 </a>
+            <a style="margin: 0 1em;" href="#">Category8 </a>
+            <a style="margin: 0 1em;" href="#">Category9 </a>
+            <a style="margin: 0 1em;" href="#">Category10</a>
+        </div>
+
+<pre>
+    &lt;div class="hScroll"&gt;
+        &lt;!-- Any items: --&gt;
+        &lt;a href="#"&gt;Category1 &lt;/a&gt;
+        &lt;a href="#"&gt;Category2 &lt;/a&gt;
+        &lt;a href="#"&gt;Category3 &lt;/a&gt;
+        &lt;!-- ... More items ...--&gt;
+    &lt;/div&gt;
+</pre>
+            
+
+    <h3>With faded sides</h3>
+
+<pre>
+    &lt;div class="hScrollFaded"&gt;
+        &lt;!-- Any items: --&gt;
+        &lt;a href="#"&gt;Category1 &lt;/a&gt;
+        &lt;a href="#"&gt;Category2 &lt;/a&gt;
+        &lt;a href="#"&gt;Category3 &lt;/a&gt;
+        &lt;!-- ... More items ...--&gt;
+    &lt;/div&gt;
+</pre>
+                
+    <!-- <div style="position: relative;">
+        <div style="position: absolute; left: 0; height: 100%; background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0) 100%); width: 1rem;"></div>
+        <div style="position: absolute; right: 0; height: 100%; background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0) 100%); width: 1rem;"></div>
+        
+        <div class="subMenu" style="display: flex; max-width: 100%; overflow-x:scroll;">
+            <a href="#">Category1 </a>
+            <a href="#">Category2 </a>
+            <a href="#">Category3 </a>
+            <a href="#">Category4 </a>
+            <a href="#">Category5 </a>
+            <a href="#">Category6 </a>
+            <a href="#">Category7 </a>
+            <a href="#">Category8 </a>
+            <a href="#">Category9 </a>
+            <a href="#">Category10</a>
+            <a href="#">Category11</a>
+            <a href="#">Category12</a>
+        </div>
+            
+    </div> -->
+
+    <div class="hScrollFaded">
+        <a style="margin: 0 1em;" href="#">Category1 </a>
+        <a style="margin: 0 1em;" href="#">Category2 </a>
+        <a style="margin: 0 1em;" href="#">Category3 </a>
+        <a style="margin: 0 1em;" href="#">Category4 </a>
+        <a style="margin: 0 1em;" href="#">Category5 </a>
+        <a style="margin: 0 1em;" href="#">Category6 </a>
+        <a style="margin: 0 1em;" href="#">Category7 </a>
+        <a style="margin: 0 1em;" href="#">Category8 </a>
+        <a style="margin: 0 1em;" href="#">Category9 </a>
+        <a style="margin: 0 1em;" href="#">Category10</a>
+    </div>
+
+
+    <h2>Accordion</h2>
+    <!-- <h2>Accessibility</h2> -->
+</body>
+</html>
