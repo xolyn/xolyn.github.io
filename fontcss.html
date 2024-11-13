@@ -28,18 +28,20 @@ a{
 
 fieldset{
     border-radius: 8px;
-    border: 1.5px solid black;
+    border: 1.5px solid transparent;
     overflow-x:auto;
     margin: 2vh 0;
+    padding-left:0;
 }
 
 fieldset legend{
-font-size: x-small;
+font-size: small;
+color: gray;
 }
 
 div.usrtxt{
     width: 100%;
-    
+    font-size: 32px;
 }
 
 article{
@@ -49,14 +51,14 @@ article{
 pre{
     overflow-x: auto;
     /* border: 1.5px grey solid; */
-    background-color: lightgray;
+    background-color: rgb(242, 241, 241);
     margin: 0px;
     transition: .3s;
     font-size: x-small;
 }
 
 pre:hover{
-  background-color: rgb(180 180 180);
+  background-color: lightgray;
 
 }
 /* pre::before{
@@ -151,9 +153,9 @@ legend#var::after{
 
 <article>
     <h1 style="font-size: xx-large;">Font<span style="color: orangered; ">ss</span>entials</h1>
-    <details class="widechevron">
-        <summary style="color:red;"><span style=" font-size: 1.5rem;">Terms and Notices</span></summary>
-            <div>
+    <details class="widechevron" style=" ">
+        <summary style="color:red; width: 100%; "><div style="display: inline-block; padding-bottom: .5rem; font-size: medium; font-weight: bold;">Terms and Policies&nbsp;</div></summary>
+            <div style="font-size: smaller; border-top: 1px solid rgb(242, 241, 241);">
                 <p>
                     Please be aware that these fonts are intended for personal and non-commercial use only. By importing and using our CSS file, you agree not to use these fonts for any commercial purposes. Unauthorized commercial use of these fonts is strictly prohibited. If you choose to use these fonts for commercial purposes, you do so at your own risk and will bear full responsibility for any consequences that may arise.
                 </p>
@@ -171,9 +173,11 @@ legend#var::after{
                 </p>
             </div>
     </details>
-    
-    <h2 style="font-weight: normal;">How to use?</h2>
-    First, add the following code inside html <samp translate="no">&lt;head></samp> section:
+    <p></p>
+    <h2 style="font-size: medium;">How to use?</h2>
+    <p style="font-size: smaller;">
+        First, add the following code inside html <samp translate="no">&lt;head></samp> section:
+    </p>
 </article>
     
 <div class="cb" style="max-width: 100%; border-top: 1px lightgrey solid;">
@@ -181,6 +185,7 @@ legend#var::after{
 width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
 <span id="instant" style="font-size: x-small; color: grey;">Copied.</span>
 <pre class="prettyprint lang-html" style="border: 0px; padding: 1.5em var(--rm) 1.5em var(--rm);" translate="no">
+&lt;link rel="preconnect" href="https://xolyn.github.io/"> &lt;!-- expedite loading, optional -->
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
 </div>
@@ -188,7 +193,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 
 <article>
     <!-- <span style="letter-spacing: -23px; font-size: xx-large;">&nearr;&swarr;</span> -->
-<p>
+<p style="font-size: small;">
     Then edit and refer to the preview below to choose fonts you like to use them by corresponding alias(es).<br>
     You can click on names followed by an asterisk (＊) to see its bolder font weight.
 </p>
@@ -196,7 +201,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 <div style="display: flex; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">
     <label translate="no" for="fontSizeRange" style="">A&updownarrow;</label>
     <!-- &#10530; -->
-    <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="16">
+    <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="32">
     <!-- <span style="font-size: x-large;font-family: fsk;" translate="no">&nbsp;A</span> -->
     <label translate="no" for="letterSpaceRange" style="line-height: 60%; margin-left: 1em;">
         <div style="display: flex; flex-direction: column;">
@@ -207,7 +212,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     </label>
     <input type="range" id="letterSpaceRange" name="letterSpaceRange" min="-3" max="5" step="0.1" value="0">
 
-    <input type="color" id="colorPicker" style="margin:0 3vw;">
+    <input type="color" id="colorPicker" style="margin:0 1vw;">
     <!-- <span>Show bolder font weight if available:</span> <input id="showBold" type="checkbox"></input> -->
     <!-- <span onclick=reset()>↻</span> -->
 </div>
