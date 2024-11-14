@@ -185,6 +185,8 @@ table, tr, td {
     display: flex;
 }
 
+#mobMenuTogg{background-color: rgb(242, 241, 241);}
+#mobMenuTogg:hover{ background-color: lightgray; }
 
 }
 
@@ -219,8 +221,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a href="https://zly.vg/cv.pdf">Résumé</a>
     </div>
 
-    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer;"
-    onclick="menuTogg()" translate="no">menu</div>
+    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .15rem .3rem; transition: .3s;"
+    onclick="menuTogg()" translate="no" >menu</div>
 </nav>
 
 <div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
