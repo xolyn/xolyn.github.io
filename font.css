@@ -61,7 +61,7 @@
 @font-face {font-family:inter; src:url("fonts/InterVariable.woff2")}
 @font-face {font-family:equinox; src:url("fonts/equinox.woff2")}
 @font-face {font-family:scto; src:url("fonts/scto.woff2")}
-@font-face {font-family:univ; src:url("fonts/UniversalSansDisplayGX.woff2")}
+@font-face {font-family:univ; src:url("fonts/UniversalSansDisplayGX.woff2"); font-feature-settings: "ss15";}
 @font-face {font-family:haas; src:url("fonts/haas.woff")}
 @font-face {font-family:goat; src:url("fonts/goat.woff2")}
 @font-face {font-family:david; src:url("fonts/davidoff.woff")}
