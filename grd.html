@@ -32,8 +32,8 @@
         cursor: poInter, sans-serif;
     }
 
-    summary:hover{
-        cursor: poInter, sans-serif;
+    summary{
+        cursor: pointer;
     }
 
     .fixed-back-link {
@@ -75,6 +75,8 @@
     #plotter:hover{
         background-color: gray; 
     }
+
+
 </style>
 </head>
 <body style="margin: 0px;">
@@ -104,8 +106,8 @@
         <br><br>
         <label for="period">Period (Days):</label>
         <input style="width:40vw" type="number" id="period" name="period" value="365" required><br><br>
-        <button type="button" onclick="plotGraph()" id="plotter" style="">Plot Graph</button>
-        <button type="button" onclick="resetForm()">Reset</button>
+        <button type="button" onclick="plotGraph()" id="plotter" style="cursor: pointer;">Plot Graph</button>
+        <button type="button" onclick="resetForm()" style="cursor: pointer;">Reset</button>
     </form>
     <br>
     <p id="finalValue">Final Value (rounded): </p>
@@ -144,8 +146,8 @@
         </details>
 
         <details style="padding-bottom: 3vh;">
-            <summary><b>Get python code</b></summary>
-            <pre class="prettyprint lang-python" style=" font-size: xx-small;  font-family:'monolisa' ;border:solid .5px lightgray; width: 100%;" translate="no" >
+            <summary><b>Get Python simulation code</b></summary>
+            <pre class="prettyprint lang-python" style="background-color: rgb(242, 241, 241); font-size: xx-small;  font-family:'monolisa' ;border-radius: .35rem; border: none; padding: .8rem;" translate="no" >
 import numpy as np
 import matplotlib.pyplot as plt
 base=10000
@@ -157,6 +159,25 @@ for i in range(period):
     base*=np.random.choice([1-rate,1+rate])
 print(seq[-1])
 plt.plot(seq)
+</pre>
+        </details>
+
+        <details style="padding-bottom: 3vh;">
+            <summary><b>Get Matlab simulation code</b></summary>
+            <pre class="prettyprint lang-matlab" style="background-color: rgb(242, 241, 241); font-size: xx-small;  font-family:'monolisa' ;border-radius: .35rem; border: none; padding: .8rem;" translate="no" >
+base = 10000;
+rate = 0.5;
+period = 365;
+seq = zeros(1, period);
+
+for i = 1:period
+    seq(i) = base;
+    choices = [1-rate, 1+rate];
+    base = base * choices(randi([1,2]));
+end
+
+fprintf('%.2f\n', seq(end));
+plot(seq);
 </pre>
         </details>
 </div>
