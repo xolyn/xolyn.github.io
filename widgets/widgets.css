@@ -25,3 +25,74 @@
     width: 1rem;
 }
 
+/* accordion */
+/* - general */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+details > summary::before {
+display: none;
+}
+
+
+summary {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+details.line[open] > summary{
+border-bottom: .5px solid lightgray;
+padding-bottom: 5px;
+margin-bottom: 5px;
+}
+
+summary.far {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+}
+
+details[open] > summary::before {
+display: none;
+}
+
+summary::before,summary::after{
+    font-family:'Bootstrap-icons';
+} 
+
+details > summary.near::before, details > summary.near::after{
+    display: initial;
+}
+
+details > summary.far::before, details > summary.far::after{
+    font-family:'Bootstrap-icons';
+    display: block;
+    margin-left: auto;
+}
+
+details > summary.narrow::after {
+    content: '\F282';
+}
+
+details[open] > summary.narrow::after {
+    content: '\F286';
+}
+
+details > summary.wide::after {
+    content: '\F279';
+}
+
+
+details[open] > summary.wide::after {
+    content: '\F27C';
+}
+
+details > summary.pm::after {
+    content: '\F4FE';
+}
+
+
+details[open] > summary.pm::after {
+    content: '\F2EA';
+}

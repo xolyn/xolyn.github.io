@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+<!-- https://icons.getbootstrap.com/ -->
+<link rel="stylesheet" href="widgets.css">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<title>widgetz</title>
+<style>
+/* h1:hover::after, */
+:root{
+font-family: arimo;
+/* font-family: Inter, sans-serif; */
+font-feature-settings: 'liga' 1, 'calt' 1, 'ccmp' 1; 
+}
+h2:hover::after,h3:hover::after,h4:hover::after,h5:hover::after{content: '\00a0 \F470'; font-family:'Bootstrap-icons'; font-size: smaller;}
+
+.note{
+    /* padding: 3vh 2vw; */
+    margin: 5vh 0;
+    border: .5px solid lightgray;
+    border-radius: .5rem;
+}
+
+.note>p{
+    margin: 2vh 2vw;
+}
+
+.note:before{
+    display: block;
+    /* width: 100%; */
+    padding: 2vh 2vw;
+    background-color:  rgb(242, 241, 241);
+    border-top-left-radius:.5rem;
+    border-top-right-radius: .5rem;
+    border: .5px solid lightgray;
+    /* font-family:'Bootstrap-icons';
+    content: '\F333'; */
+    /* content: '⬒ Information'; */
+    /* content: ' Notice'; */
+    content: 'Notice';
+}
+
+
+pre{
+    background-color: rgb(242, 241, 241);
+    padding: 1rem;
+    border-radius: .3rem;
+    max-width: 100%;
+    overflow-x: auto;
+}
+</style>
+</head>
+<body style=" margin: 5vh 3.5vw;">
+    <h1>
+        widgetz
+    </h1>
+
+    <p>Some predefined widgets for web.</p>
+
+    <h2>Horizontal scrollable</h2>
+    
+    <div class="note">
+        <p>
+            For customization purposes, contents inside do not have any pre-defined styles.
+        </p>
+    </div>
+
+
+        <div class="hScroll">
+            <a style="margin: 0 1em;" href="#">Category1 </a>
+            <a style="margin: 0 1em;" href="#">Category2 </a>
+            <a style="margin: 0 1em;" href="#">Category3 </a>
+            <a style="margin: 0 1em;" href="#">Category4 </a>
+            <a style="margin: 0 1em;" href="#">Category5 </a>
+            <a style="margin: 0 1em;" href="#">Category6 </a>
+            <a style="margin: 0 1em;" href="#">Category7 </a>
+            <a style="margin: 0 1em;" href="#">Category8 </a>
+            <a style="margin: 0 1em;" href="#">Category9 </a>
+            <a style="margin: 0 1em;" href="#">Category10</a>
+        </div>
+
+<pre>
+&lt;div class="hScroll"&gt;
+    &lt;!-- Any items: --&gt;
+    &lt;a href="#"&gt;Category1 &lt;/a&gt;
+    &lt;a href="#"&gt;Category2 &lt;/a&gt;
+    &lt;a href="#"&gt;Category3 &lt;/a&gt;
+    &lt;!-- ... More items ...--&gt;
+&lt;/div&gt;
+</pre>
+            
+
+    <h3>With faded sides</h3>
+
+    <div class="hScrollFaded">
+        <a style="margin: 0 1em;" href="#">Category1 </a>
+        <a style="margin: 0 1em;" href="#">Category2 </a>
+        <a style="margin: 0 1em;" href="#">Category3 </a>
+        <a style="margin: 0 1em;" href="#">Category4 </a>
+        <a style="margin: 0 1em;" href="#">Category5 </a>
+        <a style="margin: 0 1em;" href="#">Category6 </a>
+        <a style="margin: 0 1em;" href="#">Category7 </a>
+        <a style="margin: 0 1em;" href="#">Category8 </a>
+        <a style="margin: 0 1em;" href="#">Category9 </a>
+        <a style="margin: 0 1em;" href="#">Category10</a>
+    </div>
+
+<pre>
+&lt;div class="hScrollFaded"&gt;
+    &lt;!-- Any items: --&gt;
+    &lt;a href="#"&gt;Category1 &lt;/a&gt;
+    &lt;a href="#"&gt;Category2 &lt;/a&gt;
+    &lt;a href="#"&gt;Category3 &lt;/a&gt;
+    &lt;!-- ... More items ...--&gt;
+&lt;/div&gt;
+</pre>
+
+    <h2>Accordion</h2>
+    
+    <h3 style="color: grey;">Parameters
+         <!-- in <samp>class</samp> -->
+        </h3>
+    <input type="checkbox" id="summaryFar" >
+    <label for="summaryFar"><samp>far</samp>: make the marker aligned at right</label>, when not specified, aligned at left.<br>
+    <input type="checkbox" id="detailsLine">
+    <label for="detailsLine"><samp>line</samp>: include a seperation line below the <samp>summary</samp> item, when not specified, do not include.</label><br>
+
+    <h3 style="color: grey;">Markers styles</h3>
+
+    <form action="" id="markers">
+        <input value="narrow" name="markers" type="radio"  id='narrow' checked>
+        <label for="narrow">Narrow chevrons</label><br>
+        <input value="wide" name="markers" type="radio" id='wide' >
+        <label for="wide">Wide chevrons</label><br>
+        <input value="pm" name="markers" type="radio" id='pm' >
+        <label for="pm">Plus and minus</label>
+    </form>
+    <br>
+
+    <details id="dDemo" class="">
+        <summary id="sDemo" class="narrow">
+            Click me
+        </summary>
+        <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem commodi impedit fugiat nesciunt quo harum, quaerat porro dolorum placeat eius ullam animi dolores sapiente fugit cumque. Porro unde eos quae, culpa doloremque recusandae commodi dicta ut aperiam, excepturi pariatur voluptas, in reiciendis delectus nihil quibusdam fuga voluptates! Quidem error quis, reiciendis ratione culpa expedita accusantium perspiciatis maiores sunt quasi porro possimus eveniet obcaecati est esse consectetur cum iusto nobis tenetur nostrum tempore. Voluptatum quos dolor sapiente quam nihil eos incidunt culpa cum dicta, reiciendis officiis in obcaecati. Porro nulla dolorem repellat repellendus optio ratione harum iure, distinctio libero. Minima, ducimus!
+        </div>
+    </details>
+
+    <pre>
+&lt;details class="<div id="dCtx" style="display: inline-block;"></div>"&gt;
+    &lt;summary class="<div id="sCtx" style="display: inline-block;"></div> <div id="markerStyle" style="display: inline-block;">narrow</div>">
+    Click me
+    &lt;/summary>
+    &lt;div>
+    &lt;!-- contents-->
+    &lt;/div>
+&lt;/details>
+</pre>
+
+</body>
+<script>
+
+
+document.getElementById('summaryFar').addEventListener('change', function () {
+    const dDemo = document.getElementById('dDemo');
+    const dCtx = document.getElementById('dCtx');
+    
+    if (this.checked) {
+        sDemo.classList.add('far');
+        sCtx.innerHTML = 'far';
+    } else {
+        sDemo.classList.remove('far');
+        sCtx.innerHTML = '';
+    }
+});
+
+document.getElementById('detailsLine').addEventListener('change', function () {
+    const dDemo = document.getElementById('dDemo');
+    const dCtx = document.getElementById('dCtx');
+    
+    if (this.checked) {
+        dDemo.classList.add('line');
+        dCtx.innerHTML = 'line';
+    } else {
+        dDemo.classList.remove('line');
+        dCtx.innerHTML = '';
+    }
+});
+
+document.getElementById('markers').addEventListener('change', function () {
+    const selectedMarker = document.querySelector('input[name="markers"]:checked'); 
+    const markerStyle = document.getElementById('markerStyle');
+    const sDemo = document.getElementById('sDemo');
+    const ms = selectedMarker.value; 
+
+    sDemo.className = ''; 
+    sDemo.classList.add(ms);
+    markerStyle.innerHTML = ms;
+});
+
+</script>
+</html>
