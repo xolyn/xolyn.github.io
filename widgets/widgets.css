@@ -39,6 +39,7 @@ display: none;
 summary {
     list-style-type: none;
     cursor: pointer;
+    display: flex;
 }
 
 details.line[open] > summary{
@@ -50,7 +51,6 @@ margin-bottom: 5px;
 summary.far {
     width: 100%;
     cursor: pointer;
-    display: flex;
 }
 
 details[open] > summary::before {
@@ -59,40 +59,48 @@ display: none;
 
 summary::before,summary::after{
     font-family:'Bootstrap-icons';
+    /* display: block; */
 } 
 
-details > summary.near::before, details > summary.near::after{
-    display: initial;
+details > summary::before, details > summary::after{
+    display: inline-block;
+    margin: auto auto auto 0;
+    /* display: initial; */
+    /* margin-bottom: 5px; */
 }
+
+
 
 details > summary.far::before, details > summary.far::after{
     font-family:'Bootstrap-icons';
     display: block;
-    margin-left: auto;
+    margin: auto 0 auto auto;
 }
 
 details > summary.narrow::after {
-    content: '\F282';
+    content: '\00a0\F282';
 }
 
 details[open] > summary.narrow::after {
-    content: '\F286';
+    content: '\00a0\F286';
 }
 
 details > summary.wide::after {
-    content: '\F279';
+    content: '\00a0\F279';
 }
 
 
 details[open] > summary.wide::after {
-    content: '\F27C';
+    content: '\00a0\F27C';
 }
 
 details > summary.pm::after {
     content: '\F4FE';
+    font-size: larger;
 }
 
 
 details[open] > summary.pm::after {
     content: '\F2EA';
+    font-size: larger;
 }
