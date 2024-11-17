@@ -7,9 +7,12 @@
 <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,1,200" rel="stylesheet" /> -->
 <link rel='stylesheet' href='font.css'>
 <link rel='stylesheet' href='ir.css'>
-<link rel="stylesheet" href="https://f.zly.vg/css/details.css">
+<!-- <link rel="stylesheet" href="https://f.zly.vg/css/details.css"> -->
+<link rel="stylesheet" href="widgets/widgets.css">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
 <title>fonts repo</title>
 <style>
 
@@ -138,12 +141,11 @@ legend#var::after{
     content: "＊";
 }
 
-
-
 </style>
 
 <script>
-    const csstxt='<link rel="stylesheet" href="https://xolyn.github.io/font.css">'
+const wkadapt=" :root{\n -webkit-font-smoothing: antialiased;\n font-synthesis: none;\n -webkit-text-stroke-width: 0;\n }"
+const csstxt='<link rel="preconnect" href="https://xolyn.github.io/"> <!-- expedite loading, optional -->\n<link rel="stylesheet" href="https://xolyn.github.io/font.css">'
 </script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.css">
@@ -153,8 +155,10 @@ legend#var::after{
 
 <article>
     <h1 style="font-size: xx-large;">Font<span style="color: orangered; ">ss</span>entials</h1>
-    <details class="widechevron" style=" ">
-        <summary style="color:red; width: 100%; "><div style="display: inline-block; padding-bottom: .5rem; font-size: medium; font-weight: bold;">Terms and Policies&nbsp;</div></summary>
+<!-- <hr style="border: .5px solid black;"> -->
+
+    <details class="" style=" ">
+        <summary style="color:red; width: 100%; " class="far narrow"><div style="display: inline-block; padding-bottom: .5rem; font-size: medium; font-weight: bold;">Terms and Policies&nbsp;</div></summary>
             <div style="font-size: smaller; border-top: 1px solid rgb(242, 241, 241);">
                 <p>
                     Please be aware that these fonts are intended for personal and non-commercial use only. By importing and using our CSS file, you agree not to use these fonts for any commercial purposes. Unauthorized commercial use of these fonts is strictly prohibited. If you choose to use these fonts for commercial purposes, you do so at your own risk and will bear full responsibility for any consequences that may arise.
@@ -173,22 +177,62 @@ legend#var::after{
                 </p>
             </div>
     </details>
+<!-- <hr style="border: .5px solid black;"> -->
+ <p></p>
+    <details class="" style=" ">
+        <summary style="" class="far narrow"><div style="display: inline-block; padding-bottom: .5rem; font-size: medium; font-weight: bold;">Adaptability for Webkit</div></summary>
+            <div style="font-size: smaller; border-top: 1px solid rgb(242, 241, 241);">
+                <p>
+                    We made these adaptions in css to resolve double bolding effect of fonts on Webkit browsers. If necessary, use <code>!important</code> to overwrite those properties.
+                </p>
+
+
+
+<div style="position:relative ;">
+    <svg style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem;" onclick="navigator.clipboard.writeText(wkadapt); "
+width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
+
+<pre class="prettyprint lang-html" style="border: 0px; padding: 1.5rem 1rem; border-radius: .5rem;" translate="no" onclick="navigator.clipboard,writeText(wkadapt)">
+:root{
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+    -webkit-text-stroke-width: 0;
+}
+</pre>
+</div>
+
+
+</div>
+    </details>
+<!-- <hr style="border: .5px solid black;"> -->
+
     <p></p>
     <h2 style="font-size: medium;">How to use?</h2>
     <p style="font-size: smaller;">
         First, add the following code inside html <samp translate="no">&lt;head></samp> section:
     </p>
+
+    <div style="position:relative ;">
+        <svg style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem;" onclick="navigator.clipboard.writeText(csstxt); "
+    width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
+
+<pre class="prettyprint lang-html" style="border: 0px; padding: 1.5rem 1rem; border-radius: .5rem;" translate="no">
+&lt;link rel="preconnect" href="https://xolyn.github.io/"> &lt;!-- expedite loading, optional -->
+&lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
+</pre>
+</div>
+
 </article>
-    
+<!--     
 <div class="cb" style="max-width: 100%; border-top: 1px lightgrey solid;">
 <svg style="cursor: pointer; transition: .3s;" onclick="showInstant();navigator.clipboard.writeText(csstxt); "
 width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
 <span id="instant" style="font-size: x-small; color: grey;">Copied.</span>
 <pre class="prettyprint lang-html" style="border: 0px; padding: 1.5em var(--rm) 1.5em var(--rm);" translate="no">
-&lt;link rel="preconnect" href="https://xolyn.github.io/"> &lt;!-- expedite loading, optional -->
+&lt;link rel="preconnect" href="https://xolyn.github.io/"> &lt;!-- expedite loading, optional --&gt;
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
-</div>
+</div> -->
 
 
 <article>

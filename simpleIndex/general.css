@@ -1,0 +1,41 @@
+:root{
+    font-family: 'arimo', sans-serif;
+}
+
+body{
+margin: 0;
+}
+
+a{
+    color:inherit;
+}
+
+nav{
+    display: flex;
+    padding: .5rem 0;
+}
+
+
+div#index{
+    width: 30%;
+    margin: auto 0
+
+}
+
+#menu{
+    margin: 0 0 0 auto;
+    width: 65%;
+    display: flex;
+    list-style-type: none;
+    overflow-x: auto;
+    padding:  inherit 0;
+}
+
+#menu li{
+    padding: 0 .5rem;
+}
+
+#menu li:first-child{
+    margin-left: auto;
+}
+
