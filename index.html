@@ -70,7 +70,8 @@ text-decoration: underline;
 }
 
 #mobMenu{
-    top:-100%;
+    /* top:-100%; */
+    transform: translateY(-100%);
     transition: .5s;
 }
 
@@ -230,9 +231,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </nav>
 
 <div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
-
-    <div id="mobMenu1" style="margin: 8vh var(--hp); line-height: 150%;" needPopulate></div>
-
+    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%;" needPopulate></div>
 </div>
 
 <article id="about">
@@ -485,7 +484,7 @@ mobMenu1.innerHTML=pcMenu.innerHTML;
 
 function menuTogg(){
     mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
-    mobMenu.style.top=mobMenu.style.top==='0px'?'-100%':'0px';
+    mobMenu.style.transform=mobMenu.style.transform==='translateY(0%)'?'translateY(-100%)':'translateY(0%)';
 }
 
 function showAccess(){
