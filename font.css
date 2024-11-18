@@ -1,6 +1,7 @@
 :root{
   -webkit-font-smoothing: antialiased;
-  font-synthesis: none;
+  /* font-synthesis: none; */
+  font-synthesis-weight: none;
   -webkit-text-stroke-width: 0;
 }
 
