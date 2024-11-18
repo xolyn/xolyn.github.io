@@ -14,9 +14,9 @@ As for the article in previous blog, I will try to reset SSH password manually a
 
 I remember you can still add custom HTML element in github markdown like
 
-<detials>
+<details>
 <summary>
 Click me
 </summary>
 This is an accordian.
-</detials>
+</details>
