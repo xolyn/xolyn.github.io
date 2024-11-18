@@ -1,0 +1,12 @@
+html{font-family: inter; font-size: smaller;}
+body::before{
+    content: 'posts';
+    font-size: x-large;
+    display: block;
+    padding: 2vh 0;
+}
+body{ margin: 2vh 5vw;}
+.post{ display: flex; width: 100%; padding: 2vh 0; }
+.post .title{ width: 60%; text-align: left; color: inherit; transition: .2s;}
+a:hover{ opacity: .5;}
+.post .date{margin-left:auto ; text-align: right;}
