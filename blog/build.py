@@ -68,7 +68,7 @@ for post in allPosts:
     _dir=post['dir']
     content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+ f'''<div class='date'>{datetime.strptime(str(post['date']), '%Y%m%d').strftime('%b %d, %Y')}</div>'''
     content=f'''<div class='post'>{content}</div>'''
-    print(content)
+    # print(content)
     tempelateContent+=content
 
 tempelateEnd=\
@@ -80,3 +80,5 @@ tempelateEnd=\
 with open(outputDir, 'w') as opHTML:
     opHTML.writelines(tempelateStart+'\n'+tempelateContent+'\n'+tempelateEnd)
     opHTML.close()
+
+print('Success')
