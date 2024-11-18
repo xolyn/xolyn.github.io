@@ -19,4 +19,4 @@ I remember you can still add custom HTML element in github markdown like
 Click me
 </summary>
 This is an accordian.
-<detials>
+</detials>
