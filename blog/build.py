@@ -4,6 +4,9 @@ import sys
 from datetime import datetime
 import re
 
+def parseTitle(origTitle):
+    pass
+
 def parseHTML(abbr, content):
     match = re.match(r'([^{.#]+)(?:#([^.#]+))?(?:\.([^.#]*))?', abbr)
     tag, id, classes = match.groups()
@@ -63,7 +66,7 @@ allPosts.sort(key=lambda x:x['date'],reverse=True)
 
 for post in allPosts:
     _dir=post['dir']
-    content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+ f'''<div class='date'>{post['date']}</div>'''
+    content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+ f'''<div class='date'>{datetime.strptime(str(post['date']), '%Y%m%d').strftime('%b %d, %Y')}</div>'''
     content=f'''<div class='post'>{content}</div>'''
     print(content)
     tempelateContent+=content
