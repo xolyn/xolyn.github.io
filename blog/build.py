@@ -66,13 +66,14 @@ allPosts.sort(key=lambda x:x['date'],reverse=True)
 
 for post in allPosts:
     _dir=post['dir']
-    content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+ f'''<div class='date'>{datetime.strptime(str(post['date']), '%Y%m%d').strftime('%b %d, %Y')}</div>'''
-    content=f'''<div class='post'>{content}</div>'''
+    content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+'\n'+ f'''<div class='date'>{datetime.strptime(str(post['date']), '%Y%m%d').strftime('%b %d, %Y')}</div>'''+'\n'
+    content=f'''<div class='post'>{content}</div>'''+'\n'
     # print(content)
     tempelateContent+=content
 
 tempelateEnd=\
 '''
+<script src="index.js"></script>
 </body>
 </html>
 '''
