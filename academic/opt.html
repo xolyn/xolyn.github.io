@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Document</title>
+<style>
+:root{
+    font-family: inter;
+    font-size: smaller;
+}
+
+.insp{
+    border-left: .5rem solid grey;
+    background-color: #eee;
+    padding: 2.5vh 1rem;
+}
+
+button{
+    margin: .5rem 0; border-radius: .5rem; padding: .5rem; border: none; 
+    cursor: pointer; background-color: #eee; transition: .3s;
+    font-family: inherit;
+}
+
+button:hover{
+    background-color: #ddd; 
+}
+
+input{
+    border: solid 1px #ddd; border-radius: .5rem; width: 100%; margin:.5rem 0; padding: .5rem; display: block;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<body style="margin: 5vh 7.5vw;">
+<h1>Optimization playground</h1>
+<p>Consider the following scenario: <br>
+You and other n-1 players play a game together, where each come up with a number in the range 0~100. At
+the end of the game, the player with the number nearest to the mean of all player's number will win the game.
+
+Knowing nothing but the distribution of other players' distribution is Unif[0,10]. What should you come up with so that you can
+win the game with max probability?
+</p>
+
+<h2>Give it a try:</h2>
+<!-- <input type="range" name="playerInput" id="playerInput" min="0" max="100"> -->
+<!-- Your number: <input type="number" name="" id="" min="0" max="100"> <button>Will you win?</button><br>
+Result: You <span id="lab1Result"></span>!
+<br>
+<span id="lab1Detail"></span> -->
+<input type="number" id="userInput" min="0" max="100" step="1" placeholder="*Choose your number"             >
+<input type="number" id="nPlayers" min="3" max="100" step="1" placeholder="How many players? (Default: 10)"  >
+<button onclick="playGame()">Will you win?</button>
+
+<p>
+Try some "lucky-numbers" reported by previous players:
+<div id="preDefinedVals" style="padding: .5rem 0;">
+    <button onclick="userInput.value=3.1415926">3.1415926</button>
+<button onclick="userInput.value=6.66">6.66</button>
+<button onclick="userInput.value=11.4514">11.4514</button>
+<button onclick="userInput.value=50">50</button>
+<button onclick="userInput.value=99">69</button>
+<!-- <button onclick="userInput.value=80.8080808080808">80.8080808080808</button> -->
+<button onclick="userInput.value=99">99</button>
+</div>
+</p>
+
+
+
+<div class="insp">
+    Are they, or any of them are truly lucky?
+</div>
+
+
+<div id="result"></div>
+
+<h2>Mechanism behind</h2>
+Denote each player as $U_i \sim \text{Unif}[0,100]$ and any two are i.i.d., we have:
+$$\begin{align*}
+&\text{argmin}_X \left|X-\frac{\mathbb{E}\left[\sum_{i=1}^{n-1} U_i \right]+X}{n}\right|\\
+&= \text{argmin}_X \left(X-\frac{\sum_{i=1}^{n-1} \mathbb{E}\left[U_i \right]+X}{n}\right)^2\\
+&= \text{argmin}_X \left(X-\frac{(n-1) \mathbb{E}\left[U_i \right]+X}{n}\right)^2 \\
+&= \text{argmin}_X  \left(\frac{n-1}{n}X-\frac{n-1}{n} \mathbb{E}\left[U_i \right]\right)^2 \\
+&= \text{argmin}_X  \underbrace{\left(\frac{n-1}{n} (X- \mathbb{E}\left[U_i \right])\right)^2}_{\mathcal{J}(X)} \\
+\end{align*}$$
+
+
+$$\begin{align*}
+\Rightarrow \left . \frac{\partial \mathcal{J}(X)}{\partial X} \right|_{X=\hat{X}}&=0\\
+\frac{\partial \left(\frac{n-1}{n}\right)^2 2 \left( X-\mathbb{E}[U_i]\right)}{\partial X}&=0,\\
+\hat{X}&=\mathbb{E}\left[U_i \right],\\
+\end{align*}$$
+
+where in our case, $\mathbb{E}\left[U_i \right]$ is just $50$
+
+
+
+
+
+
+
+<script>
+    function playGame() {
+        const userInput = parseFloat(document.getElementById('userInput').value);
+        if (isNaN(userInput) || userInput < 0 || userInput > 100) {
+            alert("Invalid input (0~100)!");
+            return;
+        }
+
+        if (nPlayers.value===''|| nPlayers.value < 3 || nPlayers.value > 100){
+            n=10
+        }else{
+            n=nPlayers.value
+        }
+
+        // const n = 10; 
+        const otherPlayers = Array.from({ length: n - 1 }, () => Math.random() * 100);
+        const allNumbers = [...otherPlayers, userInput];
+        const average = allNumbers.reduce((sum, num) => sum + num, 0) / n;
+
+        const allNumbersStr=String(String(allNumbers).replaceAll(",",", "))
+        let closestPlayer = -1;
+        let closestDifference = Infinity;
+        allNumbers.forEach((num, index) => {
+            const diff = Math.abs(num - average);
+            if (diff < closestDifference) {
+                closestDifference = diff;
+                closestPlayer = index;
+            }
+        });
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <p style='font-size: larger'>You <strong>${closestPlayer === n - 1 ? "won" : "lost"}!</strong></p>
+            <p>You chose: <strong>${userInput}</strong></p>
+            <p>The average values among all players is: <strong>${average.toFixed(2)}</strong></p>
+            <details><summary>See numbers from all players</summary><p><span>${allNumbersStr.split(",").slice(0, -1).join("<br>") + "<br>"}</span><b>${allNumbersStr.split(",").slice(-1)}</b></p></details>
+            
+        `;
+    }
+    
+
+    window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+</script>
+
+</body>
+</html>
+
