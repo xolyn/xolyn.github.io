@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>gallery</title>
 <link rel="icon" href="https://www.svgrepo.com/show/333477/abstract.svg">
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
-*,html,body{font-family: "Archivo", sans-serif; font-weight: 600;}
+*,html,body{  font-family: 'karla', sans-serif; font-weight: 600;}
 main {
   display: block;
   columns: 12rem;
   gap: 1rem;
+  margin: 2rem 0;
 }
 
 main figure {
@@ -23,13 +25,10 @@ main figure {
   box-sizing: border-box;
 }
 body { 
-  font-family: avenir, roboto, helvetica, sans-serif;
   margin: 2rem calc(2vw + 2rem);
 }
 
-main {
-  margin: 2rem 0;
-}
+
 img { 
   width: 100%; 
   display: block;
@@ -111,12 +110,14 @@ details> summary::-webkit-details-marker {
 </script>
 </head>
 <body style="background-color: white;">
-    <div class="ft" style="position: fixed; top:5%; z-index: 9999; font-size: xx-large; mix-blend-mode: difference;color:white">
-    <details open>
+    <div class="ft" style="position: fixed; top:5%; z-index: 9999; font-size: smaller; mix-blend-mode: difference;color:white">
+    <!-- <details open>
         <summary style="cursor: nw-resize;">gallery</summary>
         <div style="font-size: small; width: 75vw;">fusion of modern arts and minimalism.</div>
         <div onclick="history.back()" style="font-size: small; width: 75vw; cursor:pointer">&lt;back</div>
-    </details>
+    </details> -->
+    <a href="javascript: history.back()" style="color: inherit">&lt; Back</a>
+    <h1>gallery</h1>
     </div>
     <main>
 <!-- <figure><img onlick="window.open(this.src, '_blank');" src=".\pics\43F38D57-70EB-4515-A522-903B694E21D8.jpg"></figure>
@@ -171,7 +172,7 @@ details> summary::-webkit-details-marker {
 <center>
 <!-- <span style="font-size: xx-large;">&vellip;</span> -->
 </center>
-<pre style="font-size: 5px; margin-top: 10vh;">
+<pre style="font-size: 10px; margin-top: 10vh;">
 (C) Lingyu Zhou
 Photos from <a href="https://unsplash.com">Unsplash</a>
 dd3cc191-5bd0-42a4-a88f-a55d65cb240c
