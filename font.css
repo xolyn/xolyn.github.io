@@ -18,6 +18,10 @@
 @font-face {font-family:Neue Regrade; font-weight: normal; src:url("fonts/Neue Regrade Medium.otf");}
 @font-face {font-family:Neue Regrade; font-weight:bold;   src:url("fonts/Neue Regrade Bold.otf");}
 
+@font-face {font-family:RM Neue;  src:url("fonts/RMNeue-Regular.otf");}
+@font-face {font-family:basier; src:url("fonts/Basier\ Square\ Regular.otf");}
+
+
 @font-face {font-family:nhg;font-weight: normal;src:url("fonts/nhr.ttf");}
 @font-face {font-family:nhg;font-weight:bold;  src:url("fonts/nhm.ttf");}
 

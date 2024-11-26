@@ -23,6 +23,10 @@
     --hp: 4vw;
 }
 
+::selection{ background-color: rgb(182, 237, 255); }
+:root::-webkit-scrollbar { width: 4px; }
+:root::-webkit-scrollbar-thumb{ background-color: #ccc; }
+
 *,html,body{
     font-family: var(--ff);
     font-size: var(--fs);
@@ -397,15 +401,6 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <article id="beliefs">
     <h1 style="">beliefs</h1>
-    <!-- <p>
-
-    • Detail matters.<br>
-    • Never too late to act.<br>
-    • Simplicity is the ultimate sophistication.<br>
-    • Live in the present.<br>
-
-    </p> -->
-
     <ul>
         <li>Detail matters.</li>
         <li>Never too late to act.</li>
@@ -488,15 +483,15 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </article>
 </footer>
 
-<div class="modal" id="myModal" style="display: none; z-index: 999; width: 100dvw; height: 100dvh; left: 0; top:0; background-color: rgba(255,255,255,0.3);
+<!-- <div class="modal" id="myModal" style="display: none; z-index: 999; width: 100dvw; height: 100dvh; left: 0; top:0; background-color: rgba(255,255,255,0.3);
 backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);  position: fixed; cursor: pointer;
 ">
 <div style="background-color: #fff; margin: 5vh 5vw; border-radius: 3rem;">
 
 <div onclick="myModal.style.display='none'" style="text-align: right; font-family: inter; margin: 5vh 5vw; font-size: larger;"></div>
-<div style="margin: 5vh 5vw; overflow-y: auto; max-height: 80%;">
+<div style="margin: .5rem 2rem; overflow-y: auto; max-height: 80%;">
 <h1>Terms and conditions</h1>
-<p>
+<p style="border-radius: 3rem;">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quasi laudantium ipsa veritatis suscipit consectetur ipsam, delectus at unde, cum quisquam omnis doloribus culpa blanditiis repellat error itaque enim laboriosam, optio harum reprehenderit facilis. Fugiat architecto quod maiores iste unde repellat maxime! Animi aspernatur blanditiis odio ea sed autem facilis distinctio voluptate fugit laborum corporis obcaecati velit natus corrupti non sunt similique cum ipsam, minus ullam voluptates perspiciatis neque! Porro autem dicta labore quaerat aliquid atque eligendi suscipit voluptas, sequi cumque error odio magni a optio saepe provident sit nisi veritatis quibusdam? Neque a totam placeat dolor, eligendi architecto eum?
 
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus repellat est consequuntur provident eius cum, aperiam non! A laudantium, quia pariatur reprehenderit debitis quaerat illum, expedita, natus libero aut possimus qui assumenda! Consequatur error assumenda, voluptate dicta vero, vitae cupiditate aliquid quis accusantium magni quas doloremque amet accusamus fugit explicabo quasi iure saepe nobis quod ab quae aliquam repellendus! Unde eveniet, eius nobis blanditiis quae sit doloribus laborum iusto deleniti dolores? Ullam corporis autem doloribus ipsam exercitationem itaque sequi. Impedit, recusandae alias. Iste aliquam quibusdam illo veniam dolores hic possimus necessitatibus nesciunt impedit ex. Suscipit, dicta nulla in nostrum a ducimus beatae eius rem reprehenderit! Perspiciatis illum possimus ducimus delectus blanditiis libero! Totam autem alias ipsum sapiente nemo maiores ad delectus amet ut hic sit optio quaerat magni dolorum eum molestias inventore, ipsam incidunt quis natus beatae voluptatibus quas doloribus. Totam temporibus quo unde accusamus officia, aspernatur quia voluptatem dolores perferendis vero a, ea animi natus illum adipisci suscipit. Necessitatibus nam nisi soluta ea cumque sequi quia, praesentium doloribus, ducimus saepe placeat quibusdam nobis fugiat eaque harum eveniet, enim non unde corrupti veniam atque. Excepturi, itaque sed. Ullam iusto mollitia ipsam, ducimus, distinctio consequatur cumque aspernatur magnam officiis quasi neque soluta fugiat quam, iure corporis delectus? Ipsa fugit aliquam, tempora explicabo impedit ab assumenda quos nobis. Rerum vero dolore dolores nam, nulla quo illo saepe, fugit necessitatibus distinctio exercitationem quibusdam nemo molestiae fuga quae. Beatae mollitia alias voluptatem earum ipsam consectetur in et. Nostrum praesentium aperiam quia reiciendis tempore quos asperiores quibusdam aut ex omnis officiis dignissimos expedita illum, sunt doloremque, rerum consectetur. Dolorem blanditiis quidem perspiciatis cumque earum itaque doloribus natus cum ducimus non aliquam repudiandae esse aspernatur sit maiores impedit, eius eveniet ipsam officiis suscipit hic voluptatibus in! Corrupti eos eligendi iste voluptatum tenetur eaque sunt ab temporibus!
@@ -505,7 +500,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ex maiores? Earum
 </p>
 </div>
 </div>
-</div>
+</div> -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 <script>
@@ -566,6 +561,8 @@ const quotes =
     ['You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’', 'George Bernard Shaw'],
     ['Imagination is the one weapon in the war against reality.', "Jacob (<i>Pirates of the Caribbean: Dead Man's Chest</i>, 2006)"],
     ['And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it.', "Sylvia Plath (<i>The Bell Jar</i>)"],
+    ['Do not go where the path may lead, go instead where there is no path and leave a trail.', 'Ralph Waldo Emerson'],
+    ['The eagle that soars in the upper air does not worry itself how it is to cross rivers.','Issac Newton']
     // ['b', 'B'],
 ];
 const q = quotes[Math.floor(Math.random() * quotes.length)];
