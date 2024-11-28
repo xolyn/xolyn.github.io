@@ -6,7 +6,11 @@ I wrote a compiler that can handle the display of most recent articles, and tags
 {userDefinedDate}[tag1,...,tagN]Main title
 ``` 
 
-so that the parser can automatically organize all posts and show them in the blog index page. Isn't that great? 
+so that the parser can automatically organize all posts and show them in the blog index page. 
+
+If you want to set a blog to be private and not listed, just place a dot (`.`) in front of the file name.
+
+Isn't that great? 
 
 The only drawback for GP is no KaTeX support, but i have found out KaTeX is not that frequently used anyway. So I might be stick on GP for a period. And using markdown, I can immerse myself in content creation instead of unnecessary deployment process.
 
