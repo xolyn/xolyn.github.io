@@ -24,3 +24,5 @@ Click me
 </summary>
 This is an accordian.
 </details>
+
+<script src="index.js"></script>
