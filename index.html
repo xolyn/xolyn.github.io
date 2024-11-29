@@ -183,9 +183,10 @@ table, tr, td {
 }
 
 
+/* ---------------------------chem--------------------------- */
 div.chem{
-    min-width: 3rem;
-    width: 3rem;
+    min-width:  3rem;
+    width:      3rem;
     min-height: 3rem;
     /* box-sizing: border-box; */
     display: flex;
@@ -201,10 +202,10 @@ div.chem{
 div.chem:hover{
     margin-left: 1rem;
     margin-right: 1rem;
-    transform: rotate3d(0, 1 ,0 ,0deg) translateX(-15px);
-    min-width: 4rem;
-    width:     4rem;
-    min-height:4rem;
+    transform: rotate3d(0, 1 ,0 ,0deg) translateX(-10px);
+    min-width: 3.5rem;
+    width:     3.5rem;
+    min-height:3.5rem;
 }
 
 .chem div{
@@ -214,14 +215,17 @@ div.chem:hover{
 
 .chem div:first-child{
     display: flex;
-    font-size: 10px;
+
 }
 
 .chem div:first-child> span:first-child{
     margin-right: auto;
+    font-size: 10px;
 }
 
-
+#chemEle{
+    font-weight: bold;
+}
 @media (orientation: landscape) {
 #mobMenuTogg,#mobMenu{
     display: none;
@@ -285,9 +289,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <article id="about">
     <h1 style="">about</h1>
-    <p>Hello stranger. I am Lingyu Zhou 
-        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
-        , a student</a> at <a href="https://cornell.edu">Cornell University</a>,
+    <p>Hello stranger. My name is Lingyu Zhou, go by "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
+        I am a student</a> at <a href="https://cornell.edu">Cornell University</a>,
         also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
         I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
         Previously, I studied applied mathematics at 
@@ -523,20 +526,20 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     </p>
 </article>
 
-<div style="display: flex; width: auto; height: fit-content; margin: 2.5vh var(--hp); box-sizing: border-box; perspective: 800px;">
+<div translate="no" style="display: flex; width: auto; height: fit-content; margin: 2.5vh var(--hp); box-sizing: border-box; perspective: 800px;">
     <div class="chem" style="background-color: rgb(243,232,253);">
         <div><span>39</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span style="">Y</span><br><span style="font-size: 10px;">Yttrium</span></div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle">Y</span><br><span style="font-size: 10px;">Yttrium</span></div>
     </div>
     
     <div class="chem" style="background-color: rgb(255,230,212);">
         <div><span>92</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span style="">U</span><br><span style="font-size: 10px;">Uranium</span></div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle">U</span><br><span style="font-size: 10px;">Uranium</span></div>
     </div>
     
     <div class="chem" style="background-color: rgb(214,249,232);">
         <div><span>49</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span style="">In</span><br><span style="font-size: 10px;">Indium</span></div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle">In</span><br><span style="font-size: 10px;">Indium</span></div>
     </div>
 </div>
 
