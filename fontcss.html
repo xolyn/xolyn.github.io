@@ -18,10 +18,11 @@
 
 :root{
     --rm: 6vw;
+    --ff: 'Inter', sans-serif;
 }
 
 body{
-    font-family: Inter, sans-serif;
+    font-family: var(--ff);
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
@@ -243,7 +244,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 <div style="display: flex; flex-direction: column; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">    
 
     <div id="fontSearchWrapper" style="display: flex; width: 100%;">
-        <input id="fontSearch" style="background-color: transparent; font-size: 16px; margin: 0 auto 1rem 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="Look up font names..." >
+        <input id="fontSearch" style="font-family: var(--ff); background-color: transparent; font-size: 16px; margin: 0 auto 1rem 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="Look up font names..." >
         <!-- 🔍 -->
     </div>
 
@@ -262,7 +263,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     <input type="range" id="letterSpaceRange" name="letterSpaceRange" min="-3" max="5" step="0.1" value="0">
     <input type="color" id="colorPicker" style="margin:0 1rem;">
     <button title="reset all"
-    style="color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; font-family: inter; background-color: #eee; cursor: pointer;" 
+    style="color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; font-family: var(--ff); background-color: #eee; cursor: pointer;" 
     onclick='reset()' onmouseenter="this.style.backgroundColor='#ddd'" onmouseleave="this.style.backgroundColor='#eee'">↻</button>
 
     </div>
