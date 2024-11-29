@@ -35,6 +35,11 @@ fieldset{
     overflow-x:auto;
     margin: 2vh 0;
     padding-left:0;
+    display: none;
+}
+
+fieldset.visible {
+    display: block;
 }
 
 fieldset legend{
@@ -242,7 +247,14 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     You can click on names followed by an asterisk (＊) to see its bolder font weight.
 </p>
 
-<div style="display: flex; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">
+<div style="display: flex; flex-direction: column; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">    
+
+    <div id="fontSearchWrapper" style="display: flex; width: 100%;">
+        <input id="fontSearch" style="margin: 0 auto 1rem 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="🔍 Look up font names..." >
+        <!-- 🔍 -->
+    </div>
+
+    <div style="width: 100%; display: flex; align-items: center;">    
     <label translate="no" for="fontSizeRange" style="">A&updownarrow;</label>
     <!-- &#10530; -->
     <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="32">
@@ -255,10 +267,12 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         <!-- format_letter_spacing_2 -->
     </label>
     <input type="range" id="letterSpaceRange" name="letterSpaceRange" min="-3" max="5" step="0.1" value="0">
-
     <input type="color" id="colorPicker" style="margin:0 1vw;">
-    <!-- <span>Show bolder font weight if available:</span> <input id="showBold" type="checkbox"></input> -->
-    <!-- <span onclick=reset()>↻</span> -->
+    <button title="reset all"
+    style="padding: .5rem .75rem ; border: none; border-radius: 1rem; margin-left: 1rem; font-family: inter; background-color: #eee; cursor: pointer;" 
+    onclick='reset()' onmouseenter="this.style.backgroundColor='#ddd'" onmouseleave="this.style.backgroundColor='#eee'">↻</button>
+
+    </div>
 </div>
 
     
@@ -365,6 +379,13 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
             <legend>firamono</legend>
             <div style="font-family:firamono;" class="usrtxt" contenteditable ></div>
         </fieldset>
+
+        <fieldset>
+            <legend id="var">speedee</legend>
+            <div style="font-family:speedee;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+
+
         <fieldset>
             <legend>aptos</legend>
             <div style="font-family:aptos;" class="usrtxt" contenteditable ></div>
@@ -615,7 +636,40 @@ document.querySelectorAll('legend#var').forEach(function(legend) {
             };
         });
 
+function reset() {
+  document.querySelectorAll('.usrtxt').forEach(x => {
+    x.style.fontSize = '32px';
+    fontSizeRange.value=32;
+    x.style.letterSpacing = '0px';
+    letterSpaceRange.value=0;
+    x.style.color='black';
+    colorPicker.value='#000000';
+    x.innerHTML='The quick brown fox jumps over the lazy dog.';
+  });
+}
 
+const searchInput = document.getElementById('fontSearch');
+const fieldsets = document.querySelectorAll('fieldset');
+
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+
+    if (!query) {
+        fieldsets.forEach(fieldset => fieldset.classList.add('visible'));
+    } else {
+        fieldsets.forEach(fieldset => {
+            const legend = fieldset.querySelector('legend');
+            if (legend && legend.innerHTML.toLowerCase().includes(query)) {
+                fieldset.classList.add('visible');
+            } else {
+                fieldset.classList.remove('visible');
+            }
+        });
+    }
+});
+
+// Show all fieldsets by default when the page loads
+fieldsets.forEach(fieldset => fieldset.classList.add('visible'));
 </script>
 </body>
 </html>
