@@ -30,6 +30,8 @@
 @font-face {font-family:sf; font-weight: normal; src:url("fonts/sf_r.otf");}
 @font-face {font-family:sf; font-weight:bold;src: url("fonts/sf_b.otf");}
 
+@font-face {font-family:ebay; font-weight: normal; src:url("fonts/MarketSans-Regular.otf");}
+@font-face {font-family:ebay; font-weight: bold; src:url("fonts/MarketSans-Bold.otf");}
 
 @font-face {font-family:sig; src:url("fonts/sig.otf");}
 @font-face {font-family:sneak; src:url("fonts/sneak.ttf");}
