@@ -74,6 +74,7 @@ for post in allPosts:
 tempelateEnd=\
 '''
 <script src="index.js"></script>
+<script src="https://f.zly.vg/css/changeFont.js"></script>
 </body>
 </html>
 '''
