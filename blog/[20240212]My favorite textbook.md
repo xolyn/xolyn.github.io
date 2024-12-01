@@ -5,3 +5,4 @@ Anyway, its logic and way of explaining questions really make it a great book to
 
 [^1]：Later I found out the author is actually working in my graduate school. Such a coincidence!
  <script src="https://f.zly.vg/css/changeFont.js"></script>
+<script src="index.js"></script>
