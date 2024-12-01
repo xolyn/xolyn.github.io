@@ -11,7 +11,7 @@ document.body.innerHTML+=a11yPart;
 }
 
 const link = document.createElement('link');
-const fontName='inter'
+const fontName='inter';
 link.rel = 'stylesheet';
 link.href = 'https://xolyn.github.io/font.css';
 document.head.appendChild(link)
