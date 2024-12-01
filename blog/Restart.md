@@ -26,3 +26,4 @@ This is an accordian.
 </details>
 
 <script src="index.js"></script>
+ <script src="https://f.zly.vg/css/changeFont.js"></script>

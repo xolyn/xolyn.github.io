@@ -22,3 +22,5 @@ https://myDomain.com/font?name={xxx}
 
 > More to come...
 
+
+ <script src="https://f.zly.vg/css/changeFont.js"></script>
