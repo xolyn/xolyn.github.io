@@ -26,3 +26,4 @@ This is an accordian.
 </details>
 
 <script src="index.js"></script>
+<script src="index.js"></script>
