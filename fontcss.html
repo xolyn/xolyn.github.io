@@ -21,6 +21,11 @@
     --ff: 'Inter', sans-serif;
 }
 
+.usrtxt::selection{
+    background-color: black;
+    color:white;
+}
+
 body{
     font-family: var(--ff);
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
@@ -51,6 +56,10 @@ color: gray;
 div.usrtxt{
     width: 100%;
     font-size: 32px;
+}
+
+.usrtxt:focus{
+    outline: none;
 }
 
 article{
@@ -541,6 +550,17 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
             <legend id="var" >uber</legend>
             <div style="font-family:uber;" class="usrtxt" contenteditable ></div>
         </fieldset>
+
+        <fieldset>
+            <legend >national</legend>
+            <div style="font-family:national;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+
+        <fieldset>
+            <legend id="var" >untitled</legend>
+            <div style="font-family:untitled;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+        
     </div>
 
 </article>

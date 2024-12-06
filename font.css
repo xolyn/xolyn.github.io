@@ -24,6 +24,10 @@
 @font-face {font-family:uber; font-weight: normal; src:url("fonts/UberMove-Regular.woff2");}
 @font-face {font-family:uber; font-weight: bold; src:url("fonts/UberMove-Bold.woff2");}
 
+
+@font-face {font-family:untitled; font-weight: normal; src:url("fonts/untitled-sans-regular.woff2");}
+@font-face {font-family:untitled; font-weight: bold; src:url("fonts/untitled-sans-medium.woff2");}
+
 @font-face {font-family:nhg;font-weight: normal;src:url("fonts/nhr.ttf");}
 @font-face {font-family:nhg;font-weight:bold;  src:url("fonts/nhm.ttf");}
 
@@ -85,6 +89,7 @@
 @font-face {font-family:akkurat; font-weight: regular;src:url("fonts/Akkurat-Regular.otf")}
 @font-face {font-family:akkurat; font-weight: bold;src:url("fonts/Akkurat-Bold.otf")}
 @font-face {font-family:karla; src:url("fonts/karla.woff2")}
+@font-face {font-family:national; src:url("fonts/National2Web-Medium.woff2")}
 
 @font-face {font-family:speedee; font-weight: normal;src:url("fonts/Speedee-Regular.woff2")}
 @font-face {font-family:speedee; font-weight: bold;src:url("fonts/Speedee-Bold.woff2")}
