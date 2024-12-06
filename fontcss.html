@@ -112,6 +112,7 @@ input#colorPicker {
     -webkit-appearance: none;
     width: 1.5em;
     height: 1.5em; 
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 2.5px solid rgba(220,220,220,.8);
     cursor: pointer; 
@@ -244,14 +245,14 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 <div style="display: flex; flex-direction: column; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: 1em 0;">    
 
     <div id="fontSearchWrapper" style="display: flex; width: 100%;">
-        <input id="fontSearch" style="font-family: var(--ff); background-color: transparent; font-size: 16px; margin: 0 auto 1rem 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="Look up font names..." >
+        <input id="fontSearch" style="font-family: var(--ff); background-color: transparent; font-size: 16px; margin: 0 auto 1rem 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="Search font names..." >
         <!-- 🔍 -->
     </div>
 
-    <div style="width: 100%; display: flex; align-items: center;">    
+    <div style="width: 100%; display: flex; align-items: center; max-width: 100%; box-sizing: border-box; overflow-x: auto;">    
     <label translate="no" for="fontSizeRange" style="">A&updownarrow;</label>
     <!-- &#10530; -->
-    <input type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="32">
+    <input title="Font size" type="range" id="fontSizeRange" name="fontSizeRange" min="5" max="95" value="32">
     <!-- <span style="font-size: x-large;font-family: fsk;" translate="no">&nbsp;A</span> -->
     <label translate="no" for="letterSpaceRange" style="line-height: 60%; margin-left: 1em;">
         <div style="display: flex; flex-direction: column;">
@@ -260,9 +261,9 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         </div>
         <!-- format_letter_spacing_2 -->
     </label>
-    <input type="range" id="letterSpaceRange" name="letterSpaceRange" min="-3" max="5" step="0.1" value="0">
-    <input type="color" id="colorPicker" style="margin:0 1rem;">
-    <button title="reset all"
+    <input type="range" title="Letter spacing" id="letterSpaceRange" name="letterSpaceRange" min="-3" max="5" step="0.1" value="0">
+    <input type="color" id="colorPicker" style="margin:0 1rem;" title="Pick a color">
+    <button title="Reset all"
     style="color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; font-family: var(--ff); background-color: #eee; cursor: pointer;" 
     onclick='reset()' onmouseenter="this.style.backgroundColor='#ddd'" onmouseleave="this.style.backgroundColor='#eee'">↻</button>
 
@@ -534,6 +535,11 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         <fieldset>
             <legend >basier</legend>
             <div style="font-family:basier;" class="usrtxt" contenteditable ></div>
+        </fieldset>
+
+        <fieldset>
+            <legend id="var" >uber</legend>
+            <div style="font-family:uber;" class="usrtxt" contenteditable ></div>
         </fieldset>
     </div>
 
