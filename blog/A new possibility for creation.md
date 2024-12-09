@@ -34,23 +34,24 @@ author: admin
 excerpt: ''
 type: post
 ...
+---
 ```
 
-**However**, this might cause stress to **both** developers and content creator because developers either have to specify strict format to sparse these at ease, or come up with lots of code to consider many edge cases users might input those information, for example, format of date, use of quotation marks, what format should tags be in,... Content creator however, have to also rememeber these rules.
+**However**, this might cause stress to **both** developers and content creator because developers either have to specify strict format to parse these at ease, or come up with lots of code handling many edge cases users might type those information like format of date, use of quotation marks, what format should tags be in,... Content creator on the other side, have to also rememeber these rules.
 
-So my solution, although has compromises, yet creates a great way to distract content creator less and also pose less effor for developers (which in this case is me). Let's go thru each previously-mentioned field:
+So my solution, although has compromises, yet creates a great way to distract content creator less and also brings less workload for developers (which in this case is me). Let's go thru each previously-mentioned field:
 
 - **id (PK)**: this is combined with title, since almost any operating system that stores these files will not allow 2 files with the same name 
 - ***title**: ~
 - ***content**: just the content in markdown
 - **author**: for balance of simplicty and usefulness, this is omitted because in rarely casee (at least for personal blog), a blog is written by multiple persons
 - ***createTime**: almost any operating system has the meta data of creation time along with the file. Nice!
-- ***lastModifiedTime**: if user want to 'export' a old posts, which is quite common, they can just specify the date in curly brackets at the beginning of that markdown's name like:
+- ***lastModifiedTime**: if user want to 'import' a old posts, which is quite common, they can just specify the date in curly brackets at the beginning of that markdown's name like:
 
     ```
     {20170819}Main title
     ``` 
-I even set it to be all numbers so no symbols/deliminator needed to be remembered and considered
+I even set it to be all-numbers so no symbols/deliminator needed to be remembered and considered
 
 - **tags**: Similarly, users can specify tags in square brackets like this: 
 
@@ -58,7 +59,7 @@ I even set it to be all numbers so no symbols/deliminator needed to be remembere
     [life,travel]Main title
     ``` 
 
-    This is so convenient if you know `eval()` in python can literally just take in a string like `[life,travel]` and convert it into a list. Wow!
+    This is so convenient if you know `eval()` in python can literally take in a string like `[life,travel]` and convert it into a list. Wow!
 
 - isPublished: If you want to set a blog to be private and not listed, just place a dot (`.`) in front of the file name.
 
@@ -76,8 +77,9 @@ Isn't that great?
 However, there are also drawback for GP:
 1.  **GP has no KaTeX support**, but i have found out KaTeX is not that frequently used anyway. So I might be stick on GP for a period. And using markdown, I can immerse myself in content creation instead of unnecessary deployment process.
 2.  **Less probability for customization**, which in some extent is a good thing, it reduce hugely the time of content creators. 
+3.  Github Page has a delay for deployment
 
-But basically, if you are willing to invest more time in js and import them in each post, all these drawbacks can be solved anyway.
+But basically, if you are willing to invest more time in js and import them in each post, all these drawbacks except for the last one can be solved anyway.
 
 As for the article in previous blog, I will try to reset SSH password manually and download all them back, hopefully. Then I can gradually convert all them into markdown format.
 
