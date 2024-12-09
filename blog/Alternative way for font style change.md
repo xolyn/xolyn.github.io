@@ -21,5 +21,3 @@ https://myDomain.com/font?name={xxx}
 ```
 
 > More to come...
-
-<script src="index.js"></script>
