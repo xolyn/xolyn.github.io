@@ -21,6 +21,15 @@
 @font-face {font-family:RM Neue;  src:url("fonts/RMNeue-Regular.otf");}
 @font-face {font-family:basier; src:url("fonts/Basier\ Square\ Regular.otf");}
 
+@font-face { font-family: phonic; src: url('fonts/Phonic-Regular.woff2'); font-weight: normal; }
+@font-face { font-family: phonic; src: url('fonts/Phonic-Bold.woff2'); font-weight: bold; }
+
+@font-face { font-family: nm; src: url('fonts/NeueMontreal-Regular.woff2'); }
+@font-face { font-family: martina; src: url('fonts/martina.woff2'); }
+
+@font-face { font-family: capsule; src: url('fonts/CapsuleSansText-Medium.woff2'); font-weight: normal; }
+@font-face { font-family: capsule; src: url('fonts/CapsuleSansText-Bold.woff2'); font-weight: bold; }
+
 @font-face {font-family:uber; font-weight: normal; src:url("fonts/UberMove-Regular.woff2");}
 @font-face {font-family:uber; font-weight: bold; src:url("fonts/UberMove-Bold.woff2");}
 
