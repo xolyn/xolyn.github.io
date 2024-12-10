@@ -15,7 +15,11 @@
 
 <title>fonts repo</title>
 <style>
-
+@font-face {
+    font-family: semoji;
+    src: url('fonts/segoe-ui-emoji.ttf');
+    unicode-range: U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+1F900-1F9FF, U+1FA70-1FAFF, U+1F1E6-1F1FF;
+}
 :root{
     --rm: 6vw;
     --ff: 'Inter', sans-serif;
@@ -175,6 +179,23 @@ input[type=radio]+label:hover, input[type=radio]:checked+label {
     background-color: #eee;
 }
 
+input#fontSearch:focus{
+    opacity: .6;
+}
+
+#endBtn{
+    padding: .5rem .5rem;
+    border-radius: 999px;
+    display: block;
+    width: fit-content;
+    transition: background-color .3s;
+    margin-left: -.5rem;
+}
+
+#endBtn:hover{
+    background-color: rgba(200,200,200,.5);
+}
+
 </style>
 
 <script>
@@ -268,7 +289,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 <div style="display: flex; flex-direction: column; align-items: center; font-family: BDLifelessGrotesk;; position: sticky; top:0; background-color: white; padding: .75em 0;">    
 
     <div id="fontSearchWrapper" style="display: flex; width: 100%;">
-        <input id="fontSearch" style="font-family: var(--ff); background-color: transparent; font-size: 16px; margin: 0 auto 0 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="Search font names..." >
+        <input id="fontSearch" style="font-family:'semoji', 'inter'; background-color: transparent; font-size: 16px; margin: 0 auto 0 0; width: 100%; border: none; padding: .5rem 0;" type="search" name="" id="" placeholder="🔍 Search font names..." >
         <!-- 🔍 -->
     </div>
 
@@ -626,10 +647,10 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 
 <div style="padding: 1em 0; background-color: black; color: white;">
 <article>
-    <span style="color: #bbb;"><span id="nFonts"></span> font families in total.</span><br><br>
-    <a style="text-decoration: none;" href="javascript:history.back()">&larr; Back</a>
-    <br><br>
-    <a style="text-decoration: none;" href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">&uarr; Top</a> 
+    <div style="margin: 0 0 1rem 0 ; color: #bbb; font-size: smaller;"><span id="nFonts"></span> font families in total.</div>
+
+    <a id="endBtn" style="text-decoration: none;" href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">&uarr; Top</a> 
+    <a id="endBtn" style="text-decoration: none;" href="javascript:history.back()">&larr; Back</a>
 </article>
 
 </div>
