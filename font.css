@@ -77,7 +77,8 @@
 @font-face {font-family:fsk; src:url("fonts/FSKoopmanVF.woff2")}
 @font-face {font-family:helvnow; src:url("fonts/HelveticaNowDisplay-Regular.otf")}
 @font-face {font-family:segoe; src:url("fonts/Segoe\ Pro.ttf")}
-@font-face {font-family:gtamerica; src:url("fonts/GT\ America\ Regular.ttf")}
+@font-face {font-family:gta;font-weight: normal; src:url("fonts/GTA.woff")}
+@font-face {font-family:gta;font-weight: bold; src:url("fonts/GTAbold.woff")}
 @font-face {font-family:suisse; src:url("fonts/SuisseIntl-Regular.ttf")}
 @font-face {font-family:made; src:url("fonts/MADE.otf")}
 @font-face {font-family:georgia; font-weight: normal; src:url("fonts/georgia.ttf")}

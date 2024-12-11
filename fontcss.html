@@ -179,7 +179,7 @@ input[type=radio]+label:hover, input[type=radio]:checked+label {
     background-color: #eee;
 }
 
-input#fontSearch:focus{
+input#fontSearch:hover{
     opacity: .6;
 }
 
@@ -355,7 +355,7 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
             <div style="font-family:dtb;" class="usrtxt" contenteditable ></div>
         </fieldset>
         <fieldset>
-            <legend tag='' id="var">ere</legend>
+            <legend tag='serif' id="var">ere</legend>
             <div style="font-family:ere;" class="usrtxt" contenteditable ></div>
         </fieldset>
         <fieldset>
@@ -488,8 +488,8 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
                 <div style="font-family:segoe;" class="usrtxt" contenteditable ></div>
         </fieldset>
         <fieldset>
-                <legend tag=''>gtamerica</legend>
-                <div style="font-family:gtamerica;" class="usrtxt" contenteditable ></div>
+                <legend tag='' id="var">gta</legend>
+                <div style="font-family:gta;" class="usrtxt" contenteditable ></div>
         </fieldset>
         <fieldset>
             <legend tag='' id="var">atlas</legend>
@@ -793,9 +793,21 @@ searchInput.addEventListener('input', () => {
 // default: show
 fieldsets.forEach(fieldset => fieldset.classList.add('visible'));
 
+//-------------------------------------------------------------------------
 
+function updateFontCount() {
+    nFonts.innerHTML = document.querySelectorAll('fieldset.visible').length;
+}
+function updateLegendCount() {
+  const legendCount = document.querySelectorAll('legend').length;
+  nFonts.innerHTML = legendCount;
+}
 
-nFonts.innerHTML=document.querySelectorAll('legend').length
+updateLegendCount();
+// document.addEventListener('DOMContentLoaded', updateFontCount);
+fontSearch.addEventListener('input', updateFontCount);
+
+updateFontCount();
 </script>
 </body>
 </html>
