@@ -47,10 +47,9 @@
 #index{ font-weight: 400; } 
 #index:hover{ font-weight: 800; }
 
-ul{
-    padding: 0 1em;
-}
+h1,h2,h3,h4,h5{font-size:inherit;}
 
+ul{ padding: 0 1em; } 
 a{
     color: inherit;
     transition: opacity .35s;
@@ -65,17 +64,11 @@ a:hover::after{
 
 a.reg:hover::after{ content: none; }
 
-#pcMenu>a{
-    margin: 0 .5rem;
-}
+#pcMenu>a{ margin: 0 .5rem; }
 
-article{
-    margin: 2.5vh var(--hp);
-}
+article{ margin: 2.5vh var(--hp); }
 
-article>h1{
-text-decoration: underline;
-}
+article>h1{ text-decoration: underline; }
 
 #mobMenu{
     /* top:-100%; */
@@ -118,12 +111,18 @@ margin: .25rem 0;
   font-size: medium;
 }
 
-#projDesc{
-    padding-top: 1rem;
-}
-
 #proj{
     margin: 1rem 0;
+    position: relative;
+}
+
+#projDesc{
+    padding-top: 1rem;
+    position: absolute;
+    left:5%;
+    bottom: 5%;
+    color: white;
+    mix-blend-mode: difference;
 }
 
 #proj>img{
@@ -195,6 +194,7 @@ div.chem{
     transition: .3s;
     margin-left: -20px;
     transform: rotate3d(0, 1, 0, 45deg);
+    cursor:crosshair;
 }
 
 
@@ -230,6 +230,9 @@ div.chem:hover{
     display: none;
 }
 
+*,html,body{
+    font-size: 15px;
+}
 }
 
 @media (orientation: portrait) {
@@ -283,12 +286,12 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </nav>
 
 <div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
-    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%;" needPopulate></div>
+    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%; font-size: larger !important;" needPopulate></div>
 </div>
 
 <article id="about">
-    <h1 style="">about</h1>
-    <p>Hello stranger. My name is Lingyu Zhou, go by "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
+    <h1 >about</h1>
+    <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
         I am a student</a> at <a href="https://cornell.edu">Cornell University</a>,
         also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
         I also craft insightful data narratives from complex systems by blending applied mathematics and computer science technology.
@@ -451,7 +454,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <li>Detail matters.</li>
         <li>Never too late to act.</li>
         <li>Simplicity is the ultimate sophistication.</li>
-        <li>Life is now.</li>
+        <li>Life is present.</li>
     </ul>
 </article>
 
@@ -518,9 +521,9 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     &copy; Lingyu Zhou 2024
 
     <p style="line-height: 150%; width: fit-content;">
-        <a href="ghp-report@zly.vg" style="color: grey">Report a problem</a>
+        <a href="ghp-report@zly.vg" style="color: grey">Report</a>
         <br>
-        <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms and policies</a>
+        <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms</a>
     </p>
 </article>
 
@@ -569,26 +572,26 @@ const swiper = new Swiper('.swiper', {
 slidesPerView: 1,
   loop: true,   
   breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 0
-    },
+    // 320: {
+    //   slidesPerView: 1,
+    //   spaceBetween: 0
+    // },
     480: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 10
     },
     640: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 20
     },
     800: {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 30
     },
-    // 960: {
-    //   slidesPerView: 5,
-    //   spaceBetween: 40
-    // }
+     960: {
+       slidesPerView: 4,
+       spaceBetween: 40
+     }
   },
   navigation: {
     nextEl: '.swiper-button-next',
