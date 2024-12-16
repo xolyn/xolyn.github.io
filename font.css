@@ -22,7 +22,8 @@
 @font-face {font-family:basier; src:url("fonts/Basier\ Square\ Regular.otf");}
 @font-face {font-family:pretendard; src:url("fonts/PretendardVariable.woff2");}
 
-
+@font-face { font-family: ahrefs; font-weight: normal ;src: url('fonts/ahrefs_regular.woff2');}
+@font-face { font-family: ahrefs; font-weight: bold ;src: url('fonts/ahrefs_bold.woff2');}
 
 @font-face { font-family: phonic; src: url('fonts/Phonic-Regular.woff2'); font-weight: normal; }
 @font-face { font-family: phonic; src: url('fonts/Phonic-Bold.woff2'); font-weight: bold; }

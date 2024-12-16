@@ -23,8 +23,25 @@
 }
 
 ::selection{ background-color: rgb(182, 237, 255); }
-:root::-webkit-scrollbar { width: 4px; }
-:root::-webkit-scrollbar-thumb{ background-color: #ccc; }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ababab;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
 
 *,html,body{
     font-family: var(--ff);
@@ -117,7 +134,7 @@ margin: .25rem 0;
 }
 
 #projDesc{
-    padding-top: 1rem;
+    /* padding: .25rem .5rem; */
     position: absolute;
     left:5%;
     bottom: 5%;
