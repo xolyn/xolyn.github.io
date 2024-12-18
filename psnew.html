@@ -4,18 +4,23 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <title>Document</title>
 <style>
 html{
-    font-family: psu;
+    font-family: univ;
     --hp: 6vw;
     --vp: 1rem;
 }
 
+small.desc{color:#ccc;}
+
 a{color: inherit;}
 
 h1{ margin: 0; }
-
+p:first-child{margin-top: 0;}
 ul{padding-left: 1rem; margin: 0;}
 
 .hv{
@@ -23,11 +28,11 @@ display: flex;
 flex-direction: column;
 }
 
+td:last-child{text-align: right;}
 
 .hv div:first-child{
     margin-bottom: var(--vp);
 }
-
 
 section{
     padding: var(--vp) var(--hp);
@@ -53,24 +58,28 @@ flex-direction: row;
 }
 </style>
 </head>
-<body style="margin: 0; ">
-<header style="display: flex; font-size: larger; padding:var(--vp) var(--hp);; width: 100%; box-sizing: border-box;">
+<body style="margin: 0; font-size: smaller;">
+<header style="position: sticky; top:0; background-color: white; display: flex; font-size: larger; padding:var(--vp) var(--hp);; width: 100%; box-sizing: border-box;">
 <div id="index">
     LINGYUOHZ
 </div>
 <div style="margin: auto;"></div>
 <div>
-    <a style="font-size: inherit;" href="http://">&equiv;</a>
+    <a class="material-symbols-outlined" style="font-size: larger; text-decoration: none;" 
+    href="#" onclick="this.innerHTML=this.innerHTML==='close'?'more_horiz':'close'">more_horiz</a>
+
+    <!-- <a style="font-size: inherit; font-family:'Bootstrap-icons'; text-decoration: none;" 
+    href="#" onclick="this.innerHTML=this.innerHTML==='&#xF659;'?'&#xF5D4;':'&#xF659;'">&#xF5D4;</a> -->
 </div>
 </header>
 
-<section style=" background-position: 15% 5%;
-background-image: url('https://images.unsplash.com/photo-1604076984203-587c92ab2e58?q=80&w=2731&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<section style="">
 
     <div class="hv">
         <div>
-            <h1>About</h1>
-            <h1 style="color: #bbb">Personal information</h1>
+            <h1>about</h1>
+            <!-- <h1 style="color: #bbb">Personal information</h1> -->
+             <small class="desc">234.12.33.1</small>
         </div>
         <div>
             <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
@@ -97,8 +106,8 @@ background-image: url('https://images.unsplash.com/photo-1604076984203-587c92ab2
 <section>
     <div class="hv">
         <div>
-            <h1>Education</h1>
-            <h1 style="color: #bbb">Academic background</h1>
+            <h1>education</h1>
+            <!-- <h1 style="color: #bbb">Academic background</h1> -->
         </div>
         <div>
             <table id="edutable" style="border: none; width: 100%;">
@@ -128,8 +137,8 @@ background-image: url('https://images.unsplash.com/photo-1604076984203-587c92ab2
 <section >
     <div class="hv">
         <div>
-            <h1 style="margin: 0;">Publications</h1>
-            <h1 style="color: #bbb">Academic papers</h1>
+            <h1 style="margin: 0;">publications</h1>
+            <!-- <h1 style="color: #bbb">Academic papers</h1> -->
 
         </div>
         <div>
@@ -157,8 +166,8 @@ background-image: url('https://images.unsplash.com/photo-1604076984203-587c92ab2
 <section>
     <div class="hv">
         <div>
-            <h1 style="margin: 0;">Projects</h1>
-            <h1 style="color: #bbb">Previous work</h1>
+            <h1 style="margin: 0;">projects</h1>
+            <!-- <h1 style="color: #bbb">Previous work</h1> -->
         </div>
         <div>
             <center><img src="https://picsum.photos/1800/800" style="max-width: min(100%, 800px); border-radius: .5rem; border: 1px solid #ccc;" alt=""></center>
@@ -170,8 +179,8 @@ background-image: url('https://images.unsplash.com/photo-1604076984203-587c92ab2
 <section>
     <div class="hv">
         <div>
-            <h1>Beliefs</h1>
-            <h1 style="color: #bbb">Things I believe</h1>
+            <h1>beliefs</h1>
+            <!-- <h1 style="color: #bbb">Things I believe</h1> -->
         </div>
         <div>
             <ul>
