@@ -6,18 +6,21 @@
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-<title>Document</title>
+<title>Lingyu Zhou</title>
 <style>
 html{
     font-family: univ;
     --hp: 6vw;
     --vp: 1rem;
+    --mc: white;
+    --ac: black;
 }
+
+#index:hover{font-weight: bold;}
 
 small.desc{color:#ccc;}
 
-a{color: inherit;}
+a{color: inherit; transition: .2s;} a:hover{opacity: .5;}
 
 h1{ margin: 0; }
 p:first-child{margin-top: 0;}
@@ -25,8 +28,11 @@ ul{padding-left: 1rem; margin: 0;}
 
 .hv{
 display: flex;
-flex-direction: column;
+flex-direction: column; 
 }
+
+#mobMenuTogg{padding: .25rem; background-color: transparent; border-radius: 999px;}
+#mobMenuTogg:hover{background-color: #ddd;}
 
 td:last-child{text-align: right;}
 
@@ -38,11 +44,39 @@ section{
     padding: var(--vp) var(--hp);
 }
 
+#mobMenu{
+    position: fixed;
+    right: -100dvw;
+    transition: right .3s;
+    top:0;
+    z-index: 1;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: var(--mc);
+    padding-left: var(--hp); 
+    padding-top: 3.5rem !important;
+    box-sizing: border-box;
+    /* display: flex; */
+}
+
+#pcMenu{display: none;}
+
+#mobMenu a{display:block; clear: both; margin: .5rem 0; font-size: 20px; text-decoration: none; text-transform: lowercase;}
+
 @media (orientation: landscape) {
 html{
     --hp: 4vw;
     font-size: larger;
 }
+
+body{font-size: smaller;}
+#mobMenu{display: none}
+#mobMenuTogg{display: none;}
+
+#pcMenu{all:unset;}
+#pcMenu a{all:unset;  display: inline-block; padding: 0 .5rem; font-size: 15px; text-decoration: none; text-transform: lowercase;}
+#pcMenu a:last-child{padding-right: 0;}
+
 .hv{
 flex-direction: row;
 }
@@ -58,19 +92,29 @@ flex-direction: row;
 }
 </style>
 </head>
-<body style="margin: 0; font-size: smaller;">
-<header style="position: sticky; top:0; background-color: white; display: flex; font-size: larger; padding:var(--vp) var(--hp);; width: 100%; box-sizing: border-box;">
-<div id="index">
-    LINGYUOHZ
-</div>
-<div style="margin: auto;"></div>
-<div>
-    <a class="material-symbols-outlined" style="font-size: larger; text-decoration: none;" 
-    href="#" onclick="this.innerHTML=this.innerHTML==='close'?'more_horiz':'close'">more_horiz</a>
+<body style="overflow-x: hidden; margin: 0;" onload="year4.innerHTML = new Date().getFullYear(); mobMenu.innerHTML=pcMenu.innerHTML;">
+<div id="mobMenu"></div>
+<header style="z-index: 90; position: sticky; top:0; background-color: var(--mc); display: flex; font-size: larger; padding:calc(var(--vp) / 1.5) var(--hp); width: 100%; box-sizing: border-box; border-bottom: 1px solid #eee;">
+    <div id="index" style="font-size: 20px; transition: font-weight .5s; cursor:crosshair; text-transform: lowercase;">
+        LINGYUOHZ
+    </div>
+    <div style="margin: auto;"></div>
+    <div>
+        <a id="mobMenuTogg" class="material-symbols-outlined" style="font-size: larger; text-decoration: none; aspect-ratio: 1 / 1;" 
+        href="javascript: void(0)" onclick="this.innerHTML=this.innerHTML==='close'?'more_horiz':'close'; mobMenu.style.right=mobMenu.style.right==='0dvw'?'-100dvw':'0dvw'">more_horiz</a>
 
-    <!-- <a style="font-size: inherit; font-family:'Bootstrap-icons'; text-decoration: none;" 
-    href="#" onclick="this.innerHTML=this.innerHTML==='&#xF659;'?'&#xF5D4;':'&#xF659;'">&#xF5D4;</a> -->
-</div>
+        <div id="pcMenu">
+            <a href="https://xolyn.github.io/blog">Blog</a>
+            <!-- <a href="https://xolyn.github.io/proj">Project</a> -->
+            <a href="https://portfolio.zhoulingyu.net">Portfolio</a>
+            <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a>
+            <a href="https://xolyn.github.io/fg2.html">Font Studio</a>
+            <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
+            <a href="https://zly.vg/cv.pdf">Résumé</a> 
+        </div>
+        <!-- <a style="font-size: inherit; font-family:'Bootstrap-icons'; text-decoration: none;" 
+        href="#" onclick="this.innerHTML=this.innerHTML==='&#xF659;'?'&#xF5D4;':'&#xF659;'">&#xF5D4;</a> -->
+    </div>
 </header>
 
 <section style="">
@@ -79,7 +123,7 @@ flex-direction: row;
         <div>
             <h1>about</h1>
             <!-- <h1 style="color: #bbb">Personal information</h1> -->
-             <small class="desc">234.12.33.1</small>
+             <!-- <small class="desc">v.1.012.3.71</small> -->
         </div>
         <div>
             <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
@@ -96,7 +140,12 @@ flex-direction: row;
                 My specialties are software engineering, math, data analysis, and data visualization. My research interests are computational social science and affective computing, particularly in using data science methods and natural language processing to model and analyze emotional and behavioral trends within large-scale social networks. My goal is to explore how computational models can provide insights into social phenomena, group dynamics, and collective emotions, utilizing vast social media data to understand real-world interactions and sentiments. This area lies at the intersection of statistical modeling, machine learning, and NLP, with applications in prediction of social behavior, sentiment analysis, and trend forecasting.
             </p>    
             <p>
-                I am also interested in biology, botany, and etymology.          
+                I am also interested in biology, botany, and etymology.      
+                <span style="font-weight: 400;">&nbsp;</span>
+                <span style="font-weight: 500;">&nbsp;</span>
+                <span style="font-weight: 600;">&nbsp;</span>
+                <span style="font-weight: 700;">&nbsp;</span>
+                <span style="font-weight: 800;">&nbsp;</span>    
             </p>
         </div>
     </div>
@@ -192,5 +241,18 @@ flex-direction: row;
         </div>
     </div>
 </section>
+
+<section id='footer' style="background-color: var(--ac); margin: 0; color: var(--mc);">
+<p>
+    <h3>&copy; Lingyu Zhou <span id="year4"></span></h3>
+    <small>
+        <a href="">Terms and policies</a><br>
+        <a href="">Report an issue</a>
+    </small>
+</p>
+<p><small class="desc">v.1.012.3.71</small></p>
+
+</section>
+
 </body>
 </html>
