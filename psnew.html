@@ -74,7 +74,7 @@ body{font-size: smaller;}
 #mobMenuTogg{display: none;}
 
 #pcMenu{all:unset;}
-#pcMenu a{all:unset;  display: inline-block; padding: 0 .5rem; font-size: 15px; text-decoration: none; text-transform: lowercase;}
+#pcMenu a{all:unset; cursor: pointer; display: inline-block; padding: 0 .5rem; font-size: 15px; text-decoration: none; text-transform: lowercase;}
 #pcMenu a:last-child{padding-right: 0;}
 
 .hv{
@@ -95,12 +95,12 @@ flex-direction: row;
 <body style="overflow-x: hidden; margin: 0;" onload="year4.innerHTML = new Date().getFullYear(); mobMenu.innerHTML=pcMenu.innerHTML;">
 <div id="mobMenu"></div>
 <header style="z-index: 90; position: sticky; top:0; background-color: var(--mc); display: flex; font-size: larger; padding:calc(var(--vp) / 1.5) var(--hp); width: 100%; box-sizing: border-box; border-bottom: 1px solid #eee;">
-    <div id="index" style="font-size: 20px; transition: font-weight .5s; cursor:crosshair; text-transform: lowercase;">
+    <div translate="no" id="index" style="font-size: 1.2em; transition: font-weight .5s; cursor:crosshair; text-transform: lowercase;">
         LINGYUOHZ
     </div>
     <div style="margin: auto;"></div>
     <div>
-        <a id="mobMenuTogg" class="material-symbols-outlined" style="font-size: larger; text-decoration: none; aspect-ratio: 1 / 1;" 
+        <a translate="no" id="mobMenuTogg" class="material-symbols-outlined" style="font-size: larger; text-decoration: none; aspect-ratio: 1 / 1;" 
         href="javascript: void(0)" onclick="this.innerHTML=this.innerHTML==='close'?'more_horiz':'close'; mobMenu.style.right=mobMenu.style.right==='0dvw'?'-100dvw':'0dvw'">more_horiz</a>
 
         <div id="pcMenu">
@@ -242,7 +242,7 @@ flex-direction: row;
     </div>
 </section>
 
-<section id='footer' style="background-color: var(--ac); margin: 0; color: var(--mc);">
+<section id='footer' style="background-color: var(--ac); margin-top: 1rem; color: var(--mc);">
 <p>
     <h3>&copy; Lingyu Zhou <span id="year4"></span></h3>
     <small>
