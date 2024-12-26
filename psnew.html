@@ -9,11 +9,13 @@
 <title>Lingyu Zhou</title>
 <style>
 html{
-    font-family: univ;
+    /* font-family: univ; */
+    font-family: 'inter';
     --hp: 6vw;
     --vp: 1rem;
     --mc: white;
     --ac: black;
+    font-size: smaller;
 }
 
 #index:hover{font-weight: bold;}
@@ -69,7 +71,6 @@ html{
     font-size: larger;
 }
 
-body{font-size: smaller;}
 #mobMenu{display: none}
 #mobMenuTogg{display: none;}
 
@@ -95,7 +96,7 @@ flex-direction: row;
 <body style="overflow-x: hidden; margin: 0;" onload="year4.innerHTML = new Date().getFullYear(); mobMenu.innerHTML=pcMenu.innerHTML;">
 <div id="mobMenu"></div>
 <header style="z-index: 90; position: sticky; top:0; background-color: var(--mc); display: flex; font-size: larger; padding:calc(var(--vp) / 1.5) var(--hp); width: 100%; box-sizing: border-box; border-bottom: 1px solid #eee;">
-    <div translate="no" id="index" style="font-size: 1.2em; transition: font-weight .5s; cursor:crosshair; text-transform: lowercase;">
+    <div translate="no" id="index" style="font-size: 1.2em; transition: font-weight .5s; cursor:crosshair;">
         LINGYUOHZ
     </div>
     <div style="margin: auto;"></div>

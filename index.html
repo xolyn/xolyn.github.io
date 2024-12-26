@@ -64,7 +64,7 @@
 #index{ font-weight: 400; } 
 #index:hover{ font-weight: 800; }
 
-h1,h2,h3,h4,h5{font-size:inherit;}
+h1,h2,h3,h4,h5{font-size:larger; font-weight: bold;}
 
 ul{ padding: 0 1em; } 
 a{
@@ -85,7 +85,7 @@ a.reg:hover::after{ content: none; }
 
 article{ margin: 2.5vh var(--hp); }
 
-article>h1{ text-decoration: underline; }
+/* article>h1{ text-decoration: underline; } */
 
 #mobMenu{
     /* top:-100%; */
@@ -99,7 +99,7 @@ margin: .25rem 0;
 }
 
 .swiper {
-  width: 100%;
+  /* width: 100%; */
   height: fit-content;
   cursor: ew-resize;
 
@@ -143,8 +143,10 @@ margin: .25rem 0;
 }
 
 #proj>img{
-    aspect-ratio: 1/1;
+    aspect-ratio: 1.5 /1;
     object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #bbb;
     /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4); */
 }
 
@@ -242,7 +244,13 @@ div.chem:hover{
 #chemEle{
     font-weight: bold;
 }
+
 @media (orientation: landscape) {
+article{display: flex; }
+article> h1, article > div{
+    width: 50%;
+}
+
 #mobMenuTogg,#mobMenu{
     display: none;
 }
@@ -308,6 +316,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <article id="about">
     <h1 >about</h1>
+    <div>
     <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
         I am a student</a> at <a href="https://cornell.edu">Cornell University</a>,
         also the founder of <a href="https://khentmt.com">KH Entertainment</a>. I explore the numbers and their connections behind.
@@ -330,10 +339,12 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <span style="font-weight: 700;">&nbsp;</span>
         <span style="font-weight: 800;">&nbsp;</span>
     </p>
+</div>
 </article>
 
 <article id="education">
     <h1 style="">education</h1>
+    <div>
     <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
         <tbody>
         <tr>
@@ -354,6 +365,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         </tr>
         </tbody>
     </table>
+</div>
 </article>
 
 <article id="projects">
@@ -445,7 +457,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <article id="publications">
 <h1 style="">publications</h1>
-
+<div>
 <ul>
     <li>
         <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Analysis of the Hog Futures Market in China (BPS_0799)</a></span>
@@ -463,16 +475,19 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         </p>
     </li>
 </ul>
+</div>
 </article>
 
 <article id="beliefs">
-    <h1 style="">beliefs</h1>
+<h1 style="">beliefs</h1>
+<div>
     <ul>
         <li>Detail matters.</li>
         <li>Never too late to act.</li>
         <li>Simplicity is the ultimate sophistication.</li>
         <li>Life is present.</li>
     </ul>
+</div>
 </article>
 
 <article id="contact">
@@ -491,7 +506,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <div style="color:gray">weibo</div>
         <div> <a href="https://weibo.com/u/5663761733">@donth8</a></div><br>
     </p> -->
-
+<div>
     <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
         <tbody>
         <tr>    
@@ -524,6 +539,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         </tr>
         </tbody>
     </table>
+</div>
 </article>
 
 <article>
@@ -534,15 +550,16 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     <hr style="border: .5px solid lightgray;">
 
     <div style="width: 100%; display: flex;">
-    <article style="margin-right: auto;">
+
+<div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
     &copy; Lingyu Zhou 2024
 
     <p style="line-height: 150%; width: fit-content;">
-        <a href="ghp-report@zly.vg" style="color: grey">Report</a>
+        <a href="ghp-report@zly.vg" style="color: grey">Report questions</a>
         <br>
-        <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms</a>
+        <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms & policies</a>
     </p>
-</article>
+</div>
 
 <div translate="no" style="display: flex; width: auto; height: fit-content; margin: 2.5vh var(--hp); box-sizing: border-box; perspective: 800px;">
     <div class="chem" style="background-color: rgb(243,232,253);">
@@ -573,11 +590,6 @@ backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);  position: fixed
 <div style="margin: .5rem 2rem; overflow-y: auto; max-height: 80%;">
 <h1>Terms and conditions</h1>
 <p style="border-radius: 3rem;">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quasi laudantium ipsa veritatis suscipit consectetur ipsam, delectus at unde, cum quisquam omnis doloribus culpa blanditiis repellat error itaque enim laboriosam, optio harum reprehenderit facilis. Fugiat architecto quod maiores iste unde repellat maxime! Animi aspernatur blanditiis odio ea sed autem facilis distinctio voluptate fugit laborum corporis obcaecati velit natus corrupti non sunt similique cum ipsam, minus ullam voluptates perspiciatis neque! Porro autem dicta labore quaerat aliquid atque eligendi suscipit voluptas, sequi cumque error odio magni a optio saepe provident sit nisi veritatis quibusdam? Neque a totam placeat dolor, eligendi architecto eum?
-
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus repellat est consequuntur provident eius cum, aperiam non! A laudantium, quia pariatur reprehenderit debitis quaerat illum, expedita, natus libero aut possimus qui assumenda! Consequatur error assumenda, voluptate dicta vero, vitae cupiditate aliquid quis accusantium magni quas doloremque amet accusamus fugit explicabo quasi iure saepe nobis quod ab quae aliquam repellendus! Unde eveniet, eius nobis blanditiis quae sit doloribus laborum iusto deleniti dolores? Ullam corporis autem doloribus ipsam exercitationem itaque sequi. Impedit, recusandae alias. Iste aliquam quibusdam illo veniam dolores hic possimus necessitatibus nesciunt impedit ex. Suscipit, dicta nulla in nostrum a ducimus beatae eius rem reprehenderit! Perspiciatis illum possimus ducimus delectus blanditiis libero! Totam autem alias ipsum sapiente nemo maiores ad delectus amet ut hic sit optio quaerat magni dolorum eum molestias inventore, ipsam incidunt quis natus beatae voluptatibus quas doloribus. Totam temporibus quo unde accusamus officia, aspernatur quia voluptatem dolores perferendis vero a, ea animi natus illum adipisci suscipit. Necessitatibus nam nisi soluta ea cumque sequi quia, praesentium doloribus, ducimus saepe placeat quibusdam nobis fugiat eaque harum eveniet, enim non unde corrupti veniam atque. Excepturi, itaque sed. Ullam iusto mollitia ipsam, ducimus, distinctio consequatur cumque aspernatur magnam officiis quasi neque soluta fugiat quam, iure corporis delectus? Ipsa fugit aliquam, tempora explicabo impedit ab assumenda quos nobis. Rerum vero dolore dolores nam, nulla quo illo saepe, fugit necessitatibus distinctio exercitationem quibusdam nemo molestiae fuga quae. Beatae mollitia alias voluptatem earum ipsam consectetur in et. Nostrum praesentium aperiam quia reiciendis tempore quos asperiores quibusdam aut ex omnis officiis dignissimos expedita illum, sunt doloremque, rerum consectetur. Dolorem blanditiis quidem perspiciatis cumque earum itaque doloribus natus cum ducimus non aliquam repudiandae esse aspernatur sit maiores impedit, eius eveniet ipsam officiis suscipit hic voluptatibus in! Corrupti eos eligendi iste voluptatum tenetur eaque sunt ab temporibus!
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ex maiores? Earum inventore, quisquam eveniet culpa quibusdam, nisi veniam dicta eius eum dolore, atque illo molestiae velit sed voluptatem. Error, officia repellat cupiditate asperiores ullam nesciunt obcaecati dolor aliquid rem minima quibusdam accusamus nulla at sunt! Repellendus vero, doloribus magni nemo non error recusandae itaque nisi maiores rerum dolor enim perspiciatis ratione molestias corporis ea? Fuga deleniti, optio voluptas dolor molestias dolores dolorum, laborum, distinctio hic reprehenderit ad assumenda eveniet alias dignissimos cum doloremque magnam id aperiam sed enim odio ipsum quibusdam vero! Dolore vitae blanditiis cupiditate alias quaerat quae eum cum culpa nihil sunt sed perspiciatis aperiam possimus dicta officia nesciunt, consequuntur rem maxime autem iste accusantium tempore consequatur magni quidem! Perspiciatis, earum illo alias cumque vitae sit hic recusandae enim voluptatum eos corrupti sapiente natus! Est ut ipsa temporibus fuga fugit? Quas tempora sunt dolor numquam neque veritatis vero officiis incidunt voluptas quidem. Nihil fuga magni voluptates! Quas repudiandae quis aperiam voluptatem iusto veniam dolore iste distinctio. Nostrum ex, recusandae voluptatibus natus perspiciatis nesciunt qui blanditiis odio? Ipsam deleniti voluptate facilis aliquam eos dolor sapiente eius quisquam voluptates sit enim quae dignissimos vero repudiandae nobis quos voluptas harum veritatis, officia tempore, dolore consectetur voluptatibus? Explicabo quas perferendis atque fugiat iure facere aliquid dicta. Rem est fugit consequatur quas amet quisquam at voluptate voluptas reprehenderit autem quaerat eveniet aliquam pariatur ipsum earum optio nihil maxime ex, fuga accusantium. Aspernatur soluta rem eius nam sapiente incidunt numquam quo ea quibusdam nesciunt omnis maiores vero, nulla quas, reprehenderit earum eligendi blanditiis. Ab dicta itaque possimus maiores voluptatibus odit quia nostrum. Sint incidunt possimus similique maiores recusandae dolore voluptatem quo labore doloremque asperiores omnis harum, pariatur blanditiis voluptates culpa tenetur libero alias vero sapiente, totam aliquid temporibus unde repudiandae. Praesentium, laudantium aliquam?
 </p>
 </div>
 </div>
@@ -588,28 +600,24 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ex maiores? Earum
 const swiper = new Swiper('.swiper', {
 slidesPerView: 1,
   loop: true,   
-  breakpoints: {
-    // 320: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 0
-    // },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10
-    },
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    },
-    800: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    },
-     960: {
-       slidesPerView: 4,
-       spaceBetween: 40
-     }
-  },
+//   breakpoints: {
+//     480: {
+//       slidesPerView: 1,
+//       spaceBetween: 10
+//     },
+//     640: {
+//       slidesPerView: 2,
+//       spaceBetween: 20
+//     },
+//     800: {
+//       slidesPerView: 3,
+//       spaceBetween: 30
+//     },
+//      960: {
+//        slidesPerView: 4,
+//        spaceBetween: 40
+//      }
+//   },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
