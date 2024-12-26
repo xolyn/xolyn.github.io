@@ -129,7 +129,7 @@ margin: .25rem 0;
 }
 
 #proj{
-    margin: 1rem 0;
+    margin: 1rem .5rem;
     position: relative;
 }
 
@@ -143,10 +143,11 @@ margin: .25rem 0;
 }
 
 #proj>img{
-    aspect-ratio: 1.5 /1;
+    aspect-ratio: 1 /1;
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid #bbb;
+    box-sizing: border-box;
     /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4); */
 }
 
@@ -599,7 +600,7 @@ backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);  position: fixed
 <script>
 const swiper = new Swiper('.swiper', {
 slidesPerView: 1,
-  loop: true,   
+  loop: false,   
 //   breakpoints: {
 //     480: {
 //       slidesPerView: 1,
