@@ -248,8 +248,12 @@ div.chem:hover{
 
 @media (orientation: landscape) {
 article{display: flex; }
-article> h1, article > div{
+article> h1{
     width: 50%;
+}
+
+article > div{
+    flex:1;
 }
 
 #mobMenuTogg,#mobMenu{
@@ -292,7 +296,7 @@ article> h1, article > div{
 
 <nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
 background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
-    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s;" translate="no" 
+    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s; font-size: larger;" translate="no" 
     onclick="window.location.href='index.html'">LINGYUOHZ</div>
     <div style="margin: auto;">
     </div>
@@ -556,7 +560,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     &copy; Lingyu Zhou 2024
 
     <p style="line-height: 150%; width: fit-content;">
-        <a href="ghp-report@zly.vg" style="color: grey">Report questions</a>
+        <a href="mailto:report@zly.vg" style="color: grey">Report questions</a>
         <br>
         <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms & policies</a>
     </p>
