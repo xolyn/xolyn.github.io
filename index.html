@@ -324,7 +324,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     onclick="menuTogg()" translate="no" >menu</div>
 </nav>
 
-<div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column;">
+<div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
     <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%; font-size: larger !important;" needPopulate></div>
 </div>
 
@@ -493,7 +493,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </article>
 
 <article id="beliefs">
-<h1 style="">beliefs</h1>
+<h1 style="">things I believe</h1>
 <div>
     <ul>
         <li>Detail matters.</li>
@@ -568,7 +568,9 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 <div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
     &copy; Lingyu Zhou 2024
 
-    <p style="line-height: 150%; width: fit-content;">
+    <p style="line-height: 150%; width: fit-content;" >
+        <a style="color: grey" href="javascript: navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
+        <br>
         <a href="mailto:report@zly.vg" style="color: grey">Report questions</a>
         <br>
         <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms & policies</a>
