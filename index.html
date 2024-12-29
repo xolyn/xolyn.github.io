@@ -118,8 +118,10 @@ margin: .25rem 0;
 
 
 .swiper-button-prev,.swiper-button-next{
-    color: var(--bc);
-    mix-blend-mode: difference;
+    color: white;
+    /* background-color: rgba(220,220,220,.6);
+    border-radius: 10px; */
+    mix-blend-mode:difference;
     
 }
 .swiper-button-prev:after {
@@ -280,10 +282,10 @@ article > div{
     display: flex;
 }
 
-#mobMenuTogg{background-color: rgb(242, 241, 241);}
-#mobMenuTogg:hover{ background-color: lightgray; }
-}
+#mobMenuTogg{background-color: var(--bc); filter: brightness(95%); color:var(--tc)}
+#mobMenuTogg:hover{ filter: brightness(75%);}
 
+}
 
 </style>
 </head>
@@ -315,7 +317,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a class="noul" href="https://xolyn.github.io/fg2.html">Font Studio</a>
         <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
         <a class="noul" href="https://zly.vg/cv.pdf">Résumé</a>
-        <a style="font-family:'Bootstrap-icons';" href="javascript: themeTogg()" class="noarr noul">&#xF288;</a>
+        <a style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: themeTogg()" class="noarr noul">&#xF288;</a>
     </div>
 
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .3rem .5rem; transition: .3s;"
@@ -574,19 +576,19 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </div>
 
 <div translate="no" style="display: flex; width: auto; height: fit-content; margin: 2.5vh var(--hp); box-sizing: border-box; perspective: 800px;">
-    <div class="chem" style="background-color: rgb(243,232,253); color: var(--tc)">
-        <div><span>39</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle">Y</span><br><span style="font-size: 10px;">Yttrium</span></div>
+    <div class="chem" style="background-color: rgb(243,232,253);    color: black;">
+        <div><span style="    color: black;">39</span><span></span> </div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">Y</span><br><span style="font-size: 10px;    color: black;">Yttrium</span></div>
     </div>
     
-    <div class="chem" style="background-color: rgb(255,230,212); color: var(--tc)">
-        <div><span>92</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle">U</span><br><span style="font-size: 10px;">Uranium</span></div>
+    <div class="chem" style="background-color: rgb(255,230,212);    color: black;">
+        <div><span style="    color: black;">92</span><span></span> </div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">U</span><br><span style="font-size: 10px;    color: black;">Uranium</span></div>
     </div>
     
-    <div class="chem" style="background-color: rgb(214,249,232); color: var(--tc)">
-        <div><span>49</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle">In</span><br><span style="font-size: 10px;">Indium</span></div>
+    <div class="chem" style="background-color: rgb(214,249,232);    color: black;">
+        <div><span style="    color: black;">49</span><span></span> </div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">In</span><br><span style="font-size: 10px;    color: black;">Indium</span></div>
     </div>
 </div>
 
