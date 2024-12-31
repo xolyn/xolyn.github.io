@@ -38,6 +38,9 @@
 @font-face {font-family:uber; font-weight: bold; src:url("fonts/UberMove-Bold.woff2");}
 
 
+@font-face {font-family:abc; font-weight: normal; src:url("fonts/abc.r.woff2");}
+@font-face {font-family:abc; font-weight: bold; src:url("fonts/abc.b.woff2");}
+
 @font-face {font-family:untitled; font-weight: normal; src:url("fonts/untitled-sans-regular.woff2");}
 @font-face {font-family:untitled; font-weight: bold; src:url("fonts/untitled-sans-medium.woff2");}
 
