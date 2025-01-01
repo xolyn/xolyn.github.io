@@ -581,9 +581,9 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 <article style="margin-top: 2em;">
     <div id="quote"> <i></i> <p></p></div>
     <button id="resample" style="transition: .3s; cursor: pointer; border-radius: .5rem; border: 1px solid #eee; padding: .5rem; height: min-content;" 
-    onclick="var tempq = quotes[Math.floor(Math.random() * quotes.length)];
-    document.querySelector('#quote i').innerHTML=tempq[0];
-    document.querySelector('#quote p').innerHTML=tempq[1]">resample</button>
+    onclick="var temp = quotes[Math.floor(Math.random() * quotes.length)];
+    document.querySelector('#quote i').innerHTML=temp[0];
+    document.querySelector('#quote p').innerHTML=temp[1]">resample</button>
 </article>
 
 <footer>
