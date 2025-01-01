@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+button#su{background-color: rgba(255,255,255,0); transition: .5s;}
+button#su:hover{background-color: rgba(255,255,255,.3);}
+
+#greet {
+  transition: opacity 1s;
+}
+</style>
+</head>
+<body style="margin: 0;  font-family: 'pretendard', 'appletc'">
+<div style="display: flex; width: 100dvw; height: 100dvh;">
+<video style="object-fit:cover;position: fixed; top:0; left:0; width: 100%; height: 100%;pointer-events: none;" autoplay loop muted playsinline>
+    <source src="https://f.zly.vg/assets/gr.mp4" type="video/mp4">
+</video>
+
+<div id="greet" style="z-index: 2; margin: auto; padding: 2rem; font-size: 4rem; text-align: center; line-height: 95%; box-sizing: border-box; color:white; ">
+  
+<!-- Unlock your ultimate experience today -->
+    
+<!-- <br><button id="su" style="margin-top: 1.5rem; padding: 1rem; border: 1px solid rgba(255,255,255,.3); border-radius: 999rem; font-size: large; font-family: inherit; color:white;backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px)">Sign up</button> -->
+
+</div>
+</div>
+
+<script>
+   const greetings = [
+      'Hello',
+      '你好',
+      'Bonjour',
+      'Hola',
+      'Ciao',
+      'Hallo',
+      '안녕하세요',
+      'Γειά σου',
+      'שלום',
+      'こんにちは',
+      'Привет',
+      'مرحبًا',
+      'Olá',
+      'สวัสดี',
+      'Xin chào'
+    ];
+
+const lastingTime = 2000;
+const fadeTime = 1000;
+const greetDiv = document.getElementById('greet');
+let currentIndex = 0;
+
+greetDiv.innerHTML = greetings[currentIndex];
+
+setInterval(() => {
+  greetDiv.style.opacity = 0;
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % greetings.length;
+    greetDiv.innerHTML = greetings[currentIndex];
+    greetDiv.style.opacity = 1;
+  }, fadeTime);
+  
+}, lastingTime + fadeTime);
+</script>
+</body>
+</html>
