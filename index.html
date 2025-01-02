@@ -344,8 +344,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     onclick="menuTogg()" translate="no" >menu</div>
 </nav>
 
-<div id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
-    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%; font-size: larger !important;" needPopulate></div>
+<div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
+    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%; font-size: larger !important;"></div>
 </div>
 
 <article id="about">
@@ -581,9 +581,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 <article style="margin-top: 2em;">
     <div id="quote"> <i></i> <p></p></div>
     <button id="resample" style="transition: .3s; cursor: pointer; border-radius: .5rem; border: 1px solid #eee; padding: .5rem; height: min-content;" 
-    onclick="var temp = quotes[Math.floor(Math.random() * quotes.length)];
-    document.querySelector('#quote i').innerHTML=temp[0];
-    document.querySelector('#quote p').innerHTML=temp[1]">resample</button>
+    onclick="shuffleQuotes()">resample</button>
 </article>
 
 <footer>
@@ -695,16 +693,24 @@ const quotes =
     ['And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it.', "Sylvia Plath (<i>The Bell Jar</i>)"],
     ['Do not go where the path may lead, go instead where there is no path and leave a trail.', 'Ralph Waldo Emerson'],
     ['The eagle that soars in the upper air does not worry itself how it is to cross rivers.','Issac Newton'],
-    ['The world is your oyster.','William Shakespeare'],
-    ["Courage is grace under pressure.", 'Ernest Hemingway']
+    ['The world is your oyster.','William Shakespeare (<i>The Merry Wives of Windsor</i>, Act 2, Scene 2)'],
+    ["Courage is grace under pressure.", 'Ernest Hemingway'],
+    ["Not all those who wander are lost.", 'J.R.R. Tolkien (<i>The Fellowship of the Ring</i>)'],
+    ['I can do all this through him who gives me strength','Philippians 4:13 (NIV)'],
+    ['Silence is a source of great strength.','Laozi'],
+    // ['The world is your oyster.','William Shakespeare (<i>The Merry Wives of Windsor</i>, Act 2, Scene 2)'],
     // ['b', 'B'],
 ];
-const q = quotes[Math.floor(Math.random() * quotes.length)];
-const quoteContent = q[0];
-const quoteAuthor = q[1];
 
-document.querySelector('#quote i').innerHTML=quoteContent;
-document.querySelector('#quote p').innerHTML=quoteAuthor;
+function shuffleQuotes(){
+    const q = quotes[Math.floor(Math.random() * quotes.length)];
+    const quoteContent = q[0];
+    const quoteAuthor = q[1];
+    document.querySelector('#quote i').innerHTML=quoteContent;
+    document.querySelector('#quote p').innerHTML=quoteAuthor;
+}
+
+shuffleQuotes()
 
 swiper.el.addEventListener('wheel', (event) => {
   if (event.shiftKey) {
