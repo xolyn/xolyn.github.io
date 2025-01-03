@@ -265,8 +265,33 @@ div.chem:hover{
     font-family: inherit;
 } */
 
-#resample{background-color: transparent}
-#resample:hover{ background-color: #eee; }
+#resample{background-color: var(--bc);}
+#resample:hover{background-color: color-mix(in srgb, var(--bc) 90%,var(--tc) 10%);}
+
+.ctxMenu{
+position: fixed;
+min-width: fit-content;
+padding: 1rem;
+border-radius: .5rem;
+color: var(--tc);
+background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+top:10%;
+left:10%;
+border: 1px solid #bbb;
+z-index: 1000;
+display: none;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+text-wrap:nowrap;
+}
+
+.ctxMenu a{
+padding: .25rem;
+display: block;
+cursor: pointer;
+}
 
 @media (orientation: landscape) {
 article{display: flex; }
@@ -322,6 +347,14 @@ background: var(--bc); padding: 2rem var(--hp); border-top: 1px solid var(--tc);
     <div style="width: 10%;font-size: larger; text-align: right; cursor: pointer;" onclick="fest.style.display='none'" >&times;</div>
 </div> -->
 
+<div class="ctxMenu">
+    <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr; To top</a><hr>
+    <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr; To end</a><hr>
+    <a class="noarr noul" href="javascript:void(0)" onclick="history.back()">&larr; Back</a><hr>
+    <a class="noarr noul" href="javascript:void(0)" onclick="changeTheme()"><span translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;">&#xF288;</span> Theme</a>
+    <!-- <a class="noarr noul" href='javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()'>F12</a><hr> -->
+</div>
+
 <nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
 background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
     <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s; font-size: larger;" translate="no" 
@@ -337,7 +370,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a class="noul" href="https://xolyn.github.io/fg2.html">Font Studio</a>
         <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
         <a class="noul" href="https://zly.vg/cv.pdf">Résumé</a>
-        <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a>
+        <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
     </div>
 
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .3rem .5rem; transition: .3s;"
@@ -721,6 +754,50 @@ swiper.el.addEventListener('wheel', (event) => {
       swiper.slidePrev();
     }
   }
+});
+
+const ctxMenu = document.querySelector('.ctxMenu');
+
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault(); // Prevent the default context menu
+
+    // Get the mouse position
+    let mouseX = event.clientX;
+    let mouseY = event.clientY;
+
+    // Get the dimensions of the menu and the viewport
+    const menuWidth = ctxMenu.offsetWidth;
+    const menuHeight = ctxMenu.offsetHeight;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Adjust position to keep the menu inside the viewport
+    if (mouseX + menuWidth > viewportWidth) {
+        mouseX = viewportWidth - menuWidth;
+    }
+    if (mouseY + menuHeight > viewportHeight) {
+        mouseY = viewportHeight - menuHeight;
+    }
+
+    // Set the position of the menu
+    ctxMenu.style.top = `${mouseY}px`;
+    ctxMenu.style.left = `${mouseX}px`;
+    ctxMenu.style.display = 'block'; // Show the menu
+});
+
+// Add an event listener to the document
+document.addEventListener('click', (event) => {
+    // Check if the click was outside the context menu
+    if (!ctxMenu.contains(event.target)) {
+        ctxMenu.style.display = 'none'; // Hide the menu
+    }
+});
+
+// Add an event listener for the Escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        ctxMenu.style.display = 'none'; // Hide the menu
+    }
 });
 </script>
 
