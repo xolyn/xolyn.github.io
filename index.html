@@ -378,7 +378,16 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a class="noul" href="https://xolyn.github.io/fg2.html">Font Studio</a>
         <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
         <a class="noul" href="https://zly.vg/cv.pdf">Résumé</a>
-        <a hidden translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a>
+        <div class="onlyMob">
+            <hr>
+            <a href="">about</a>
+            <a href="">education</a>
+            <a href="">project</a>
+            <a href="">publications</a>
+            <a href="">things I believe</a>
+            <a href="">connect</a>
+        </div>
+        <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
     </div>
 
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .3rem .5rem; transition: .3s;"
@@ -631,7 +640,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     <div style="width: 100%; display: flex;">
 
 <div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
-    &copy; Lingyu Zhou 2024
+    &copy; Lingyu Zhou <span id="thisYear"></span>
 
     <p style="line-height: 150%; width: fit-content;" >
         <a style="color: grey" href="javascript: void(0)" onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
@@ -678,6 +687,7 @@ backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);  position: fixed
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 <script>
+thisYear.innerHTML=new Date().getFullYear();
 
 const swiper = new Swiper('.swiper', {
 slidesPerView: 1,
