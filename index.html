@@ -297,37 +297,27 @@ display: block;
 cursor: pointer;
 }
 
+/* --------------------------media queries-------------------------- */
 @media (orientation: landscape) {
 article{display: flex; }
-article> h1{
-    width: 50%;
-}
-
-article > div{
-    flex:1;
-}
-
-#mobMenuTogg,#mobMenu{
-    display: none;
-}
-
-*,html,body{
-    font-size: 15px;
-}
+article> h1{ width: 50%; }
+article > div{ flex:1; }
+#mobMenuTogg,#mobMenu{ display: none; }
+*,html,body{ font-size: 15px; }
+.onlyMob{display: none;}
 }
 
 @media (orientation: portrait) {
-#pcMenu{
-    display: none;
-}
-
-#mobMenu{
-    display: flex;
-}
-
+#pcMenu{ display: none; } 
+#mobMenu{ display: flex; }
 #mobMenuTogg{background-color: var(--bc); filter: brightness(95%); color:var(--tc)}
 #mobMenuTogg:hover{ filter: brightness(75%);}
 
+.onlyPC{display: none;}
+}
+
+@media (hover: hover) {
+    .onlyTouch{display: none;}
 }
 
 </style>
@@ -374,7 +364,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a class="noul" href="https://xolyn.github.io/fg2.html">Font Studio</a>
         <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
         <a class="noul" href="https://zly.vg/cv.pdf">Résumé</a>
-        <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
+        <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul onlyTouch">&#xF288;</a>
     </div>
 
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .3rem .5rem; transition: .3s;"
