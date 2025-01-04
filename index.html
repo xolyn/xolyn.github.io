@@ -283,7 +283,7 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 top:10%;
 left:10%;
-border: 1px solid #bbb;
+border: 1px solid color-mix(in srgb, var(--tc) 20%,var(--bc) 80%); 
 z-index: 1000;
 display: none;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -297,6 +297,10 @@ display: block;
 cursor: pointer;
 }
 
+#a11y div{width: 1rem; height: 1rem;  padding: 1rem; border-radius: 999rem; transition: background-color .3s; display: flex; cursor: pointer; align-items: center; justify-content: center;}
+
+#a11y div:hover{ padding: 1rem; background-color:color-mix(in srgb, var(--tc) 10%,var(--bc) 90% ); }
+
 /* --------------------------media queries-------------------------- */
 @media (orientation: landscape) {
 article{display: flex; }
@@ -304,7 +308,7 @@ article> h1{ width: 50%; }
 article > div{ flex:1; }
 #mobMenuTogg,#mobMenu{ display: none; }
 *,html,body{ font-size: 15px; }
-.onlyMob{display: none;}
+.onlyMob{display: none !important;}
 }
 
 @media (orientation: portrait) {
@@ -313,7 +317,7 @@ article > div{ flex:1; }
 #mobMenuTogg{background-color: var(--bc); filter: brightness(95%); color:var(--tc)}
 #mobMenuTogg:hover{ filter: brightness(75%);}
 
-.onlyPC{display: none;}
+.onlyPC{display: none !important;}
 }
 
 @media (hover: hover) {
@@ -335,13 +339,23 @@ article > div{ flex:1; }
     onclick="document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });">arrow_downward</div>
 </div> -->
 
+<div id="a11y" class="onlyMob" style=" padding: .5rem; background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%); transition: bottom .5s;
+backdrop-filter: blur(5px); 
+-webkit-backdrop-filter: blur(5px); border: 1px solid #ddd;
+border-radius: 100rem; position: fixed; bottom: 5%; left: 50%; transform: translateX(-50%) scale(100%); z-index: 999; display: flex;">
+<div onclick="history.back()">&larr;</div>
+<div onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr;</div>
+<div onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr;</div>
+<div onclick="changeTheme()" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;">&#xF288;</div>
+</div>
+
 <!-- <div id="fest" style="width: 100%; position: fixed; bottom: 0; left: 0; background-color: #0093E9; display: flex; box-sizing: border-box; z-index: 999;
 background: var(--bc); padding: 2rem var(--hp); border-top: 1px solid var(--tc);" >
     <div style="width: 90%;font-size: larger;">Celebrating Gregorian Calendar New Year!</div>
     <div style="width: 10%;font-size: larger; text-align: right; cursor: pointer;" onclick="fest.style.display='none'" >&times;</div>
 </div> -->
 
-<div class="ctxMenu">
+<div class="ctxMenu onlyPC">
     <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr; To top</a><hr>
     <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr; To end</a><hr>
     <a class="noarr noul" href="javascript:void(0)" onclick="history.back()">&larr; Back</a><hr>
@@ -364,7 +378,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <a class="noul" href="https://xolyn.github.io/fg2.html">Font Studio</a>
         <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
         <a class="noul" href="https://zly.vg/cv.pdf">Résumé</a>
-        <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul onlyTouch">&#xF288;</a>
+        <a hidden translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a>
     </div>
 
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .3rem .5rem; transition: .3s;"
@@ -793,12 +807,24 @@ document.addEventListener('keydown', (event) => {
         ctxMenu.style.display = 'none'; // Hide the menu
     }
 });
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos<currentScrollPos) {
+    document.getElementById("a11y").style.bottom = "5%";
+  } else {
+    document.getElementById("a11y").style.bottom = "-10%";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
 </script>
 
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 <script> $(function() { $("#widget").draggable(); }); </script> -->
-
 </body>
 </html>
