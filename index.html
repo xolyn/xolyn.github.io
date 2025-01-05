@@ -173,15 +173,11 @@ tr>td:nth-child(2){
     text-align: right;
 }
 
-#edutable{
-    width: 100%;
-}
+#edutable{ width: 100%; }
 
 td{padding: .25rem 0;}
 
-table, tr, td {
-    border: none;
-}
+table, tr, td { border: none; }
 
 #widgetItem{
     opacity: 0;
@@ -192,9 +188,7 @@ table, tr, td {
     color: var(--tc) */
 }
 
-#widget div{
-    font-size: large;
-}
+#widget div{ font-size: large; }
 
 #widgetItem:hover{color: lightgray}
 
@@ -255,9 +249,7 @@ div.chem:hover{
     font-size: 10px;
 }
 
-#chemEle{
-    font-weight: bold;
-}
+#chemEle{ font-weight: bold; }
 
 /* #mobMenuTogg::before{
     content: '[';
@@ -300,6 +292,11 @@ cursor: pointer;
 #a11y div{width: 1rem; height: 1rem;  padding: 1rem; border-radius: 999rem; transition: background-color .3s; display: flex; cursor: pointer; align-items: center; justify-content: center;}
 
 #a11y div:hover{ padding: 1rem; background-color:color-mix(in srgb, var(--tc) 10%,var(--bc) 90% ); }
+
+#footerLink a{ 
+    /* color: color-mix(in srgb, var(--ac) 70%, var(--tc) 30%); */
+    color: grey;
+    display: block; }
 
 /* --------------------------media queries-------------------------- */
 @media (orientation: landscape) {
@@ -642,12 +639,11 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 <div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
     &copy; Lingyu Zhou <span id="thisYear"></span>
 
-    <p style="line-height: 150%; width: fit-content;" >
-        <a style="color: grey" href="javascript: void(0)" onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
-        <br>
-        <a href="mailto:report@zly.vg" style="color: grey">Report questions</a>
-        <br>
-        <a href="javascript: void(0)" style="color: grey" onclick="myModal.style.display='flex'">Terms & policies</a>
+    <p style="width: fit-content;" id="footerLink">
+        <a href="javascript: void(0)"  onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
+        <a href="mailto:report@zly.vg">Report</a>
+        <a href="javascript: void(0)"  onclick="myModal.style.display='flex'">Legal</a>
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">CA</a>
     </p>
 </div>
 
