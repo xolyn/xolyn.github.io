@@ -399,25 +399,27 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
     </div>
 
-    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; padding: .3rem;"
+    <div   id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; background:none;"
     onclick="menuTogg()" translate="no" >
     
     <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="var(--tc)" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round"
-     style="cursor: pointer; width: 1.5rem; display: block; margin: auto 0; cursor: pointer;">
-        <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+        style="cursor: pointer; width: 1.75rem; display: block; margin: auto 0; cursor: pointer;">
+    <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" >
             <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
             <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
-        </path>
-        <rect width="10" height="10" stroke="none" >
+    </path>
+    <rect width="10" height="10" stroke="none" >
             <animate dur="2s" id="reverse" attributeName="width" begin="click" />
-        </rect>
-        <rect width="10" height="10" stroke="none" >
+    </rect>
+    <rect width="10" height="10" stroke="none" >
             <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
             <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
-        </rect>
+    </rect>
     </svg>
 
     </div>
+
+
 </nav>
 
 <div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
@@ -740,7 +742,7 @@ const quotes =
     ['And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it.', "Sylvia Plath (<i>The Bell Jar</i>)"],
     ['Do not go where the path may lead, go instead where there is no path and leave a trail.', 'Ralph Waldo Emerson'],
     ['The eagle that soars in the upper air does not worry itself how it is to cross rivers.','Issac Newton'],
-    ['The world is your oyster.','William Shakespeare (<i>The Merry Wives of Windsor</i>, Act 2, Scene 2)'],
+    ['The world is your oyster.','William Shakespeare'],
     ["Courage is grace under pressure.", 'Ernest Hemingway'],
     ["Not all those who wander are lost.", 'J.R.R. Tolkien (<i>The Fellowship of the Ring</i>)'],
     ['I can do all this through him who gives me strength','Philippians 4:13 (NIV)'],
