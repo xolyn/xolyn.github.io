@@ -324,6 +324,13 @@ article > div{ flex:1; }
     .onlyTouch{display: none;}
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tc: white;
+    --bc: black;
+  }
+}
+
 </style>
 </head>
 <body style="margin: 0; background-color: var(--bc); transition: background-color .5s;">
@@ -799,8 +806,18 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
-</script>
+window.matchMedia('(prefers-color-scheme: dark)')
+.addEventListener('change', (event) => {
+if (event.matches) {
+    document.documentElement.style.setProperty('--bc', 'black');
+    document.documentElement.style.setProperty('--tc', 'white');
+} else {
+    document.documentElement.style.setProperty('--bc', 'white');
+    document.documentElement.style.setProperty('--tc', 'black');
+}
+});
 
+</script>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
