@@ -392,7 +392,23 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     </div>
 
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; padding: .3rem .5rem; transition: .3s;"
-    onclick="menuTogg()" translate="no" >menu</div>
+    onclick="menuTogg()" translate="no" >
+    
+    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#000" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer; width: 1.5rem; margin: 0;display: block;">
+        <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+            <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+            <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+        </path>
+        <rect width="10" height="10" stroke="none">
+            <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+        </rect>
+        <rect width="10" height="10" stroke="none">
+            <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+            <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+        </rect>
+    </svg>
+    
+    </div>
 </nav>
 
 <div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
@@ -463,7 +479,6 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
         <div class="swiper-slide">
         <div id="proj">
-            <!-- https://chalmersindustriteknik.se/app/uploads/Optimering_overgripande.jpg -->
             <img src="https://images.unsplash.com/photo-1628268509381-c70293fa638d?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
             <div id="projDesc">
                 <a href="academic/opt.html">Optimization plyaground</a>
@@ -579,20 +594,6 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <article id="connect">
     <h1 style="">connect</h1>
-    <!-- <p>
-        <div style="color:gray">email</div>
-        <div>lz568 [at] cornell [dot] edu</div><br>
-        <div style="color:gray">github</div>
-        <div><a href="http://github.com/xolyn">@xolyn</a></div><br>
-        <div style="color:gray">linkedin</div>
-        <div> <a href="https://www.linkedin.com/in/lingyuzhou/">@lingyuzhou</a></div><br>
-        <div style="color:gray">instagram</div>
-        <div><a href="http://instagram.com/toqurdn">@toqurdn</a></div><br>
-        <div style="color:gray">X (fka. twitter)</div>
-        <div><a href="https://x.com/uygniluohz">@uygniluohz</a></div><br>
-        <div style="color:gray">weibo</div>
-        <div> <a href="https://weibo.com/u/5663761733">@donth8</a></div><br>
-    </p> -->
 <div>
     <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
         <tbody>
@@ -671,20 +672,6 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </div>
 </footer>
 
-<!-- <div class="modal" id="myModal" style="display: none; z-index: 999; width: 100dvw; height: 100dvh; left: 0; top:0; background-color: rgba(255,255,255,0.3);
-backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);  position: fixed; cursor: pointer;
-">
-<div style="background-color: #fff; margin: 5vh 5vw; border-radius: 3rem;">
-
-<div onclick="myModal.style.display='none'" style="text-align: right; font-family: inter; margin: 5vh 5vw; font-size: larger;"></div>
-<div style="margin: .5rem 2rem; overflow-y: auto; max-height: 80%;">
-<h1>Terms and conditions</h1>
-<p style="border-radius: 3rem;">
-</p>
-</div>
-</div>
-</div> -->
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
 <script>
 thisYear.innerHTML=new Date().getFullYear();
@@ -720,7 +707,7 @@ slidesPerView: 1,
 mobMenu1.innerHTML=pcMenu.innerHTML;
 
 function menuTogg(){
-    mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
+    // mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
     mobMenu.style.transform=mobMenu.style.transform==='translateY(0%)'?'translateY(-100%)':'translateY(0%)';
 }
 
@@ -777,46 +764,26 @@ swiper.el.addEventListener('wheel', (event) => {
 const ctxMenu = document.querySelector('.ctxMenu');
 
 document.addEventListener('contextmenu', (event) => {
-    event.preventDefault(); // Prevent the default context menu
-
-    // Get the mouse position
+    event.preventDefault();
     let mouseX = event.clientX;
     let mouseY = event.clientY;
-
-    // Get the dimensions of the menu and the viewport
     const menuWidth = ctxMenu.offsetWidth;
     const menuHeight = ctxMenu.offsetHeight;
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-
-    // Adjust position to keep the menu inside the viewport
     if (mouseX + menuWidth > viewportWidth) {
         mouseX = viewportWidth - menuWidth;
     }
     if (mouseY + menuHeight > viewportHeight) {
         mouseY = viewportHeight - menuHeight;
     }
-
-    // Set the position of the menu
     ctxMenu.style.top = `${mouseY}px`;
     ctxMenu.style.left = `${mouseX}px`;
-    ctxMenu.style.display = 'block'; // Show the menu
+    ctxMenu.style.display = 'block';
 });
 
-// Add an event listener to the document
-document.addEventListener('click', (event) => {
-    // Check if the click was outside the context menu
-    if (!ctxMenu.contains(event.target)) {
-        ctxMenu.style.display = 'none'; // Hide the menu
-    }
-});
-
-// Add an event listener for the Escape key
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        ctxMenu.style.display = 'none'; // Hide the menu
-    }
-});
+document.addEventListener('click', (event) => { if (!ctxMenu.contains(event.target)) { ctxMenu.style.display = 'none'; } }); 
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { ctxMenu.style.display = 'none'; } });
 
 
 var prevScrollpos = window.pageYOffset;
