@@ -314,8 +314,8 @@ article > div{ flex:1; }
 @media (orientation: portrait) {
 #pcMenu{ display: none; } 
 #mobMenu{ display: flex; }
-#mobMenuTogg{background-color: var(--bc); filter: brightness(95%); color:var(--tc)}
-#mobMenuTogg:hover{ filter: brightness(75%);}
+#mobMenuTogg{background-color: color-mix(in srgb, var(--bc) 90%, var(--tc) 10%); color:var(--tc)}
+#mobMenuTogg:hover{background-color: color-mix(in srgb, var(--bc) 80%, var(--tc) 20%);}
 
 .onlyPC{display: none !important;}
 }
@@ -395,7 +395,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; padding: .3rem;"
     onclick="menuTogg()" translate="no" >
     
-    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#000" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round"
+    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="var(--tc)" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round"
      style="cursor: pointer; width: 1.5rem; display: block; margin: auto 0; cursor: pointer;">
         <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
             <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
@@ -566,7 +566,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     <li>
         <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Analysis of the Hog Futures Market in China (BPS_0799)</a></span>
         <p>
-            <i>Applied Economics and Policy Studies</i>(ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (Print ISSN 2754-1169) <br>
+            <i>Applied Economics and Policy Studies</i> (ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (Print ISSN 2754-1169) <br>
             Chen Xu, Lingyu Zhou, Anshi Lou, Manqi Qiu & Mengyu Cao 
         </p>
         
