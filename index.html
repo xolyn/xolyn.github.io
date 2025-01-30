@@ -307,11 +307,12 @@ article{display: flex; }
 article> h1{ width: 50%; }
 article > div{ flex:1; }
 #mobMenuTogg,#mobMenu{ display: none; }
-*,html,body{ font-size: 15px; }
+/* *,html,body{ font-size: 15px; } */
 .onlyMob{display: none !important;}
 }
 
 @media (orientation: portrait) {
+*,html,body{ font-size: 13px; }
 #pcMenu{ display: none; } 
 #mobMenu{ display: flex; }
 #mobMenuTogg{background-color: color-mix(in srgb, var(--bc) 90%, var(--tc) 10%); color:var(--tc)}
@@ -378,17 +379,16 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     </div>
     <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
         <!-- <a href="" id="contact">Contact</a> -->
-        <span class="onlyMob" style="font-size: medium;">external links</span>
-        <a class="noul" href="https://xolyn.github.io/blog">blog</a>
-        <!-- <a href="https://xolyn.github.io/proj">Project</a> -->
-        <a class="noul" href="https://portfolio.zhoulingyu.net">portfolio</a>
-        <a class="noul" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
-        <a class="noul" href="https://xolyn.github.io/fg2.html">font studio</a>
-        <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
-        <a class="noul" href="https://zly.vg/cv.pdf">résumé</a>
+        <!-- <span class="onlyMob" style="font-size: medium;">external links</span> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/blog">blog</a>
+        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/proj">Project</a> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://portfolio.zhoulingyu.net">portfolio</a>
+        <a class="noul" style="font-size: 15.5px;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
+        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/fg2.html">font studio</a>
+        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/widgets">Gadgetz</a> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://zly.vg/cv.pdf">résumé</a>
 
-        <div class="onlyMob">
-            <!-- <hr style="border: .5px solid var(--tc);">   --><br>
+        <!-- <div class="onlyMob"><br>
         <span class="onlyMob" style="font-size: medium;">catalog</span>
             <a class="noul noarr" href="#about" onclick="mobMenu.style.transform='translateY(-100%)'">about</a>
             <a class="noul noarr" href="#education" onclick="mobMenu.style.transform='translateY(-100%)'">education</a>
@@ -396,7 +396,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
             <a class="noul noarr" href="#publications" onclick="mobMenu.style.transform='translateY(-100%)'">publications</a>
             <a class="noul noarr" href="#beliefs" onclick="mobMenu.style.transform='translateY(-100%)'">things I believe</a>
             <a class="noul noarr" href="#connect" onclick="mobMenu.style.transform='translateY(-100%)'">connect</a>
-        </div>
+        </div> -->
+
         <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
     </div>
 
