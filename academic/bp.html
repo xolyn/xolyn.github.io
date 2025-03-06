@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Paradox Simulation</title>
+    <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        input, button{
+            font-family: inherit;
+        }
+        .main{
+            margin: 1.5rem 10vw;
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+    <div id="title" style="display: flex; width: 100%; height: 70dvh;">
+        <div style="margin: auto; text-align: center; max-width: 60%;">
+            <h1 style="font-size: 3rem;">Birthday Paradox Simulation</h1>
+            <h3 style="color: gray">Exploration of probability principles through simulation of a counterintuitive phenomenon</h3>
+        </div>
+    </div>
+
+    <div class="main" style="">
+        <h2>Proem</h2>
+        <p>
+            In your class or any small group, have there ever been a case where two people had the same birthday? Recall how big the group was?
+            In fact, most groups where you found out and realize having at least one duplicate birthday are large enough that there's more than just one duplicate birthday occurring.
+            So how small that value actually is?
+        </p>
+
+        <h2>Where we headin', Captain?</h2>
+
+        Considering the world without leap years. How many people exactly we need in a room to have so that there is 50% probability there are at least 2 people (1 pair) having the same birthday?
+
+        <h2>
+            Give it a shot:
+        </h2>
+
+        <p>
+            Try some number to see if there is actually at least 1 pair of people having the same birthday. 
+        </p>
+
+        <p>
+            What does the previous 50% mean here? If you try 10 times, 
+            theoretically there should be 5 times you witness having at least 1 pair of people having the same birthday; If you try 100 times, that should be 50, etc.
+            Though not to be exactly, the number you get should be not too far away around these values.
+        </p>
+
+        <h2>
+            Revelation from simulations:
+        </h2>
+
+        <p>
+            Remember law of large number? When the sample size is large enough, empirical probability, or frequency will approach probability! 
+        </p>
+
+        <p>
+            In the simulation below, you can choose your own sample size (Num of trials) to see starting from which number of people, probability of having at least 1 pair of people having the same birthday begin to exceed 50%. You may hover or touch the 
+            dots to see its more precise value.
+        </p>
+
+        <p>Increase sample size to get more accurate result and hence a smoother plot!</p>
+
+        <div style="width: 100%; display: flex; box-sizing: border-box; padding: 3rem 10vw;">
+            <!-- <label for="sample-size">Number of Simulations:</label> -->
+            <input type="number" id="sample-size" min="100" max="10000" placeholder="Num of trails" 
+            style="border: 1px solid #ddd;  border-radius:  905rem; flex:1; padding: 1rem;">
+            <button id="run-simulation" style="border-radius: 905rem; padding: 1rem; border: 1px solid transparent; cursor: pointer; margin-left: 1rem;">
+                Simulate</button>
+        </div>
+    </div>
+
+    <div style="width: 100%; display: flex; padding: 1rem 1rem;  box-sizing: border-box;">
+        <div id="loading" style="display: none;">Running simulation...</div>
+        <div id="chart-container" style="max-width: 100%; overflow-x: auto; margin: 0 auto;"></div>
+    </div>
+
+    <div class="main">
+        <h2>The math behind</h2>
+        
+        <p>Think of the event we care:</p>
+
+        <p style="text-align: center;">
+            <b>Two people having the same birthday</b>
+        </p>
+
+        <p>
+            The probability of this seems not intuitive to calculate. Fortunately, by law of probability, we know that the probability of some event is just 1 minus the probability of its complementary event.
+            .. So , what shall be the complementary event of "Two people having the same birthday"?
+        </p>
+
+        <p style="text-align: center;">
+            <b>Not a single pair of people having the same birthday</b>
+        </p>
+
+        <p>
+            Transfer that into math notation:
+        </p>
+
+        <p >
+            $$B_i \neq B_j ,\forall i \neq j \in \mathcal{P}, $$
+
+            and
+
+           <div style="max-width: 100%; overflow-x: auto;">
+            $$ (\exists i \neq j: B_i = B_j) = (B_i \neq B_j ,\forall i \neq j)^C , \forall i \neq j \in \mathcal{P} \text{  }$$
+           </div>
+        </p>
+
+
+        <p>
+            Starting from an basic example, if there is only 2 people, the probability of not having a single pair of people with the same birthday is strightforward: 
+            Fix the first person's birthday to be \(B_1\), there remains 364 options to avoid shared birthday with the first person, i.e. 
+            $$\mathbb{P}=1\times \frac{365-1}{365}$$
+
+            When you add more people, remember the new people need to have birthday that is different than <b>any</b> of the people before. Do you already feel something? Based on the speculation,
+            the probability of \(n\) people <b>all</b> having different birthday is, hold tight:
+
+            $$1- 1\times \prod_{n=1}^{365} \frac{365-n}{365}$$
+        </p>
+
+        <center style="color: gray;" role="placeholder">Construction afoot...</center>
+        <h2>.. And relationship with hash collision</h2>
+        <center style="color: gray;" role="placeholder">Construction afoot...</center>
+
+    </div>
+
+    <script>
+        const fontFamily= 'univ';
+        const margin = {top: 50, right: 50, bottom: 70, left: 80};
+        const width = 800 - margin.left - margin.right;
+        const height = 500 - margin.top - margin.bottom;
+        
+        const svg = d3.select("#chart-container")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+        
+        const x = d3.scaleLinear()
+            .domain([0, 100])
+            .range([0, width]);
+        
+        const xAxis = svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x));
+        
+        const xLabel = svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("x", width / 2)
+            .attr("y", height + 40)
+            .text("Number of People");
+        
+        const y = d3.scaleLinear()
+            .domain([0, 1])
+            .range([height, 0]);
+        
+        const yAxis = svg.append("g")
+            .call(d3.axisLeft(y).tickFormat(d3.format(".0%")));
+        
+        const yLabel = svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -60)
+            .attr("x", -height / 2)
+            .text("Probability of Shared Birthday");
+        
+        const title = svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("x", width / 2)
+            .attr("y", -20)
+            .attr("font-size", "18px")
+            .text("Birthday Paradox Simulation");
+        
+        svg.append("line")
+            .attr("x1", 0)
+            .attr("y1", y(0.5))
+            .attr("x2", width)
+            .attr("y2", y(0.5))
+            .attr("stroke", "red")
+            .attr("stroke-dasharray", "5,5");
+        
+        // Create tooltip
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("padding", "10px")
+            .style("background", "white")
+            .style("border", "1px solid #ddd")
+            .style("border-radius", "8px")
+            .style("pointer-events", "none")
+            .style("opacity", 0)
+            .style("box-shadow", "0 4px 8px rgba(0,0,0,0.1)")
+            .style("z-index", 10);
+        
+        
+        function runBirthdayParadoxSimulation(sampleSize) {
+            document.getElementById("loading").style.display = "block";
+            
+            setTimeout(() => {
+                const maxPeople = 100;
+                const collisionCounts = Array(maxPeople).fill(0);
+                
+                for (let s = 0; s < sampleSize; s++) {
+                    const birthdays = Array(maxPeople).fill().map(() => Math.floor(Math.random() * 365));
+                    
+                    for (let i = 1; i < maxPeople; i++) {
+                        const subset = birthdays.slice(0, i + 1);
+                        const birthdayCounts = new Map();
+                        
+                        let hasCollision = false;
+                        for (const birthday of subset) {
+                            birthdayCounts.set(birthday, (birthdayCounts.get(birthday) || 0) + 1);
+                            if (birthdayCounts.get(birthday) > 1) {
+                                hasCollision = true;
+                                break;
+                            }
+                        }
+                        
+                        if (hasCollision) {
+                            for (let j = i; j < maxPeople; j++) {
+                                collisionCounts[j]++;
+                            }
+                            break;
+                        }
+                    }
+                }
+                
+                const probabilities = collisionCounts.map(count => count / sampleSize);
+                
+                updateChart(probabilities);
+                
+                document.getElementById("loading").style.display = "none";
+            }, 10);
+        }
+        
+        function updateChart(data) {
+            svg.selectAll("path.simulation-line").remove();
+            svg.selectAll(".data-point").remove();
+            
+            svg.append("path")
+                .datum(data)
+                .attr("class", "simulation-line")
+                .attr("fill", "none")
+                .attr("stroke", "black")
+                .attr("stroke-width", 1.5)
+                .attr("d", d3.line()
+                    .x((d, i) => x(i))
+                    .y(d => y(d)));
+            
+            svg.selectAll(".data-point")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("class", "data-point")
+                .attr("cx", (d, i) => x(i))
+                .attr("cy", d => y(d))
+                .attr("r", 3)
+                .attr("fill", "black")
+                .on("mouseover", function(event, d) {
+                    const i = data.indexOf(d);
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(`People: ${i}<br>Probability: ${(d * 100).toFixed(2)}%`)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                    
+                    d3.select(this)
+                        .transition()
+                        .duration(200)
+                        .attr("r", 6)
+                        .attr("fill", "orange");
+                })
+                .on("mouseout", function() {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                    
+                    d3.select(this)
+                        .transition()
+                        .duration(200)
+                        .attr("r", 3)
+                        .attr("fill", "black");
+                });
+        }
+        
+        document.getElementById("run-simulation").addEventListener("click", function() {
+            const sampleSize = parseInt(document.getElementById("sample-size").value);
+            if (sampleSize >= 100 && sampleSize <= 10000) {
+                runBirthdayParadoxSimulation(sampleSize);
+            } else {
+                alert("Please enter a sample size between 100 and 10000.");
+            }
+        });
+        
+        // document.getElementById("font-select").addEventListener("change", function() {
+        //     updateFont(this.value);
+        // });
+        
+        d3.select("body").style("font-family", fontFamily);
+            xAxis.selectAll("text").style("font-family", fontFamily);
+            yAxis.selectAll("text").style("font-family", fontFamily);
+            xLabel.style("font-family", fontFamily);
+            yLabel.style("font-family", fontFamily);
+            title.style("font-family", fontFamily);
+            tooltip.style("font-family", fontFamily);
+        
+        // Initial simulation
+        runBirthdayParadoxSimulation(1000);
+    </script>
+
+    <script id="tex">
+            window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</body>
+</html>
