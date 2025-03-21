@@ -20,6 +20,7 @@
     --ac: lightgray;
     /* --ff: Inter, sans-serif; */
     --ff: 'univ';
+    /* --ff: 'Google Sans Text'; */
     --fs: small;
     --hp: 4vw;
 }
@@ -157,6 +158,9 @@ margin: .25rem 0;
     color: white;
     mix-blend-mode: difference;
 }
+
+
+#projDesc a{font-size: large; display: block; width: 60%; text-decoration: none;}
 
 #proj>img{
     aspect-ratio: 1 /1;
@@ -307,11 +311,12 @@ article{display: flex; }
 article> h1{ width: 50%; }
 article > div{ flex:1; }
 #mobMenuTogg,#mobMenu{ display: none; }
-*,html,body{ font-size: 15px; }
+/* *,html,body{ font-size: 15px; } */
 .onlyMob{display: none !important;}
 }
 
 @media (orientation: portrait) {
+*,html,body{ font-size: 13px; }
 #pcMenu{ display: none; } 
 #mobMenu{ display: flex; }
 #mobMenuTogg{background-color: color-mix(in srgb, var(--bc) 90%, var(--tc) 10%); color:var(--tc)}
@@ -378,16 +383,16 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
     </div>
     <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
         <!-- <a href="" id="contact">Contact</a> -->
-        <span class="onlyMob" style="font-size: medium;">external links</span>
-        <a class="noul" href="https://xolyn.github.io/blog">blog</a>
-        <!-- <a href="https://xolyn.github.io/proj">Project</a> -->
-        <a class="noul" href="https://portfolio.zhoulingyu.net">portfolio</a>
-        <a class="noul" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
-        <a class="noul" href="https://xolyn.github.io/fg2.html">font studio</a>
-        <!-- <a href="https://xolyn.github.io/widgets">Gadgetz</a> -->
-        <a class="noul" href="https://zly.vg/cv.pdf">résumé</a>
-        <div class="onlyMob">
-            <!-- <hr style="border: .5px solid var(--tc);">   --><br>
+        <!-- <span class="onlyMob" style="font-size: medium;">external links</span> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/blog">blog</a>
+        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/proj">Project</a> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://portfolio.zhoulingyu.net">portfolio</a>
+        <a class="noul" style="font-size: 15.5px;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
+        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/fg2.html">font studio</a>
+        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/widgets">Gadgetz</a> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://zly.vg/cv.pdf">résumé</a>
+
+        <!-- <div class="onlyMob"><br>
         <span class="onlyMob" style="font-size: medium;">catalog</span>
             <a class="noul noarr" href="#about" onclick="mobMenu.style.transform='translateY(-100%)'">about</a>
             <a class="noul noarr" href="#education" onclick="mobMenu.style.transform='translateY(-100%)'">education</a>
@@ -395,7 +400,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
             <a class="noul noarr" href="#publications" onclick="mobMenu.style.transform='translateY(-100%)'">publications</a>
             <a class="noul noarr" href="#beliefs" onclick="mobMenu.style.transform='translateY(-100%)'">things I believe</a>
             <a class="noul noarr" href="#connect" onclick="mobMenu.style.transform='translateY(-100%)'">connect</a>
-        </div>
+        </div> -->
+
         <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
     </div>
 
@@ -516,6 +522,16 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
       <div class="swiper-slide">
         <div id="proj">
+            <img   src="https://images.unsplash.com/photo-1669502067440-6a09729d072d?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             style="width: 100%;">
+            <div id="projDesc">
+                <a href="/academic/bp.html">Birthday paradox</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div id="proj">
             <img   src="https://images.ctfassets.net/kftzwdyauwt9/7i9gjVSZuEn0yoN8rbG3KR/1dc876729a6b7a4baafbc4a848055e81/guides.gif?w=828&q=90&fm=webp&fit=pad" style="width: 100%;">
             <div id="projDesc">
                 <a href="https://aqmn.github.io/cmd">CLI personal webpage</a>
@@ -595,9 +611,10 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 <div>
     <ul>
         <li>Detail matters.</li>
-        <li>Never too late to act.</li>
+        <!-- <li>Never too late to act.</li> -->
         <li>Simplicity is the ultimate sophistication.</li>
         <li>Life is present.</li>
+        <li>Embrace mediocrity.</li>
     </ul>
 </div>
 </article>

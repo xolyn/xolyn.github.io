@@ -5,6 +5,29 @@
   -webkit-text-stroke-width: 0;
 }
 
+@font-face {
+  font-family: "Google Sans Text";
+  font-weight: bold;
+  src: url("https://db.onlinewebfonts.com/t/5a31e8d3d403b8ac139b5fc019589b00.eot");
+  src: url("https://db.onlinewebfonts.com/t/5a31e8d3d403b8ac139b5fc019589b00.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/5a31e8d3d403b8ac139b5fc019589b00.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/5a31e8d3d403b8ac139b5fc019589b00.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/5a31e8d3d403b8ac139b5fc019589b00.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/5a31e8d3d403b8ac139b5fc019589b00.svg#Google Sans Text")format("svg");
+}
+
+@font-face {
+  font-family: "Google Sans Text";
+  font-weight: regular;
+  src: url("https://db.onlinewebfonts.com/t/41cdafd19e156a1f74759f9c88b878ff.eot");
+  src: url("https://db.onlinewebfonts.com/t/41cdafd19e156a1f74759f9c88b878ff.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/41cdafd19e156a1f74759f9c88b878ff.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/41cdafd19e156a1f74759f9c88b878ff.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/41cdafd19e156a1f74759f9c88b878ff.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/41cdafd19e156a1f74759f9c88b878ff.svg#Google Sans Text Regular")format("svg");
+}
+
+
 @font-face {font-family:BDLifelessGrotesk; src:url("fonts/BDLifelessGrotesk.ttf");}
 @font-face {font-family:casmono; src:url("fonts/CascadiaMono-Regular.ttf");}
 @font-face {font-family:courier; src:url("fonts/cour.ttf");}
@@ -19,6 +42,8 @@
 @font-face {font-family:Neue Regrade; font-weight:bold;   src:url("fonts/Neue Regrade Bold.otf");}
 
 @font-face {font-family:RM Neue;  src:url("fonts/RMNeue-Regular.otf");}
+@font-face {font-family:'snr';  src:url("fonts/snw.woff");}
+
 @font-face {font-family:basier; src:url("fonts/Basier\ Square\ Regular.otf");}
 @font-face {font-family:pretendard; src:url("fonts/PretendardVariable.woff2");}
 
@@ -106,6 +131,7 @@
 @font-face {font-family:akkurat; font-weight: regular;src:url("fonts/Akkurat-Regular.otf")}
 @font-face {font-family:akkurat; font-weight: bold;src:url("fonts/Akkurat-Bold.otf")}
 @font-face {font-family:karla; src:url("fonts/karla.woff2")}
+@font-face {font-family:oai; src:url("fonts/OpenAISans-Regular.woff2")}
 @font-face {font-family:national; src:url("fonts/National2Web-Medium.woff2")}
 
 @font-face {font-family:speedee; font-weight: normal;src:url("fonts/Speedee-Regular.woff2")}
