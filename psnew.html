@@ -94,6 +94,19 @@ flex-direction: row;
 </style>
 </head>
 <body style="overflow-x: hidden; margin: 0;" onload="year4.innerHTML = new Date().getFullYear(); mobMenu.innerHTML=pcMenu.innerHTML;">
+
+<div id="botnot" style="z-index: 999; position: fixed; bottom: 5%; width: 80dvw; padding: 1rem; border-radius: 1rem; left: 50%; transform: translateX(-50%);
+ background-color: rgba(255,255,255,.6); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);">
+    <div style="display: flex;">
+        <div id="title" style="margin-right: auto; font-weight: bold;">Cookie notification</div>
+        <div style="width: fit-content; cursor: pointer;" onclick="remember(document.getElementById('botnot'), {'display':'none'})">&times;</div>
+    </div>
+
+    <div id="content" style="margin-top: 1rem;">
+        See our recently updated cookie policies <a href="#">here</a> 
+    </div>
+</div>
+
 <div id="mobMenu"></div>
 <header style="z-index: 90; position: sticky; top:0; background-color: var(--mc); display: flex; font-size: larger; padding:calc(var(--vp) / 1.5) var(--hp); width: 100%; box-sizing: border-box; border-bottom: 1px solid #eee;">
     <div translate="no" id="index" style="font-size: 1.2em; transition: font-weight .5s; cursor:crosshair;">
@@ -255,5 +268,45 @@ flex-direction: row;
 
 </section>
 
+
+<script>
+function remember(divElement, styles) {
+    if (!divElement.id) {
+        console.warn('Element has no id; cannot remember styles.');
+        return;
+    }
+    const key = `remember_style_${divElement.id}`;
+    
+    // apply
+    for (const [prop, val] of Object.entries(styles)) {
+        divElement.style[prop] = val;
+    }
+    
+    // write in
+    localStorage.setItem(key, JSON.stringify(styles));
+}
+
+
+function checkRemember() {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('remember_style_')) {
+            const elementId = key.replace('remember_style_', '');
+            const element = document.getElementById(elementId);
+            if (element) {
+                const storedStyles = JSON.parse(localStorage.getItem(key));
+                for (const [prop, val] of Object.entries(storedStyles)) {
+                    if (element.style[prop] !== val) {
+                        element.style[prop] = val;
+                    }
+                }
+            }
+        }
+    }
+}
+
+checkRemember()
+
+</script>
 </body>
 </html>
