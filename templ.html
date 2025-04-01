@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='font.css'>
+<!-- <link rel="shortcut icon" href="https://f.zly.vg/assets/kDisk.png"> -->
+<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/105/105113.png">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Liter&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,ght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="widgets/hamb.css">
+<link rel="stylesheet" href="widgets/widgets.css">
+<title>Lingyu Zhou</title>
+<style>
+:root{
+    --tc:black;
+    --bc: white;
+    --ac: lightgray;
+    /* --ff: Inter, sans-serif; */
+    --ff: 'univ';
+    /* --ff: 'Public Sans'; */
+    /* --ff: 'Google Sans Text'; */
+    --fs: small;
+    --hp: 4vw;
+}
+
+
+::selection{
+     /* background-color: rgb(182, 237, 255); */
+     background-color: var(--tc);
+     color:var(--bc);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ababab;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*,html,body{
+    font-family: var(--ff);
+    font-size: var(--fs);
+    line-height: 120%;
+    color:var(--tc);
+    letter-spacing: .035vw;
+    font-feature-settings: "ss15";
+    -webkit-font-smoothing: antialiased;
+    
+    scroll-padding-top: 5rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 20
+}
+
+#index{ font-weight: 400; } 
+#index:hover{ font-weight: 800; }
+
+h1,h2,h3,h4,h5{font-size:larger; font-weight: bold;}
+
+ul{ padding: 0 1em; } 
+
+a{
+    color: inherit;
+    transition: opacity .35s;
+}
+
+a:hover{ opacity: .5; }
+
+a:hover::after{
+    content: '↗';
+    font-family: inter;
+}
+
+a.noarr:hover::after{ content: none; }
+
+a.noul{text-decoration: none;}
+
+#pcMenu>a{ margin: 0 .5rem; }
+
+article{ margin: 2.5vh var(--hp); }
+
+article h1{transition: .3s; font-size: large}
+
+#mobMenu{
+    /* top:-100%; */
+    transform: translateY(-100%);
+    transition: transform .5s;
+}
+
+#mobMenu a{
+display: block;
+margin: .25rem 0;
+}
+
+
+tr>td:first-child{
+    width: 35%;
+}
+
+tr>td:nth-child(2){
+    width: 65%;
+    text-align: right;
+}
+
+#edutable{ width: 100%; }
+
+td{padding: .25rem 0;}
+
+table, tr, td { border: none; }
+
+/* ---------------------------chem--------------------------- */
+div.chem{
+    min-width:  3rem;
+    width:      3rem;
+    min-height: 3rem;
+    /* box-sizing: border-box; */
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .3s;
+    margin-left: -20px;
+    transform: rotate3d(0, 1, 0, 45deg);
+    cursor:crosshair;
+}
+
+
+div.chem:hover{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    transform: rotate3d(0, 1 ,0 ,0deg) translateX(-10px);
+    min-width: 3.5rem;
+    width:     3.5rem;
+    min-height:3.5rem;
+}
+
+.chem div{
+    width: 100%;
+    max-width: 100%;
+}
+
+.chem div:first-child{
+    display: flex;
+
+}
+
+.chem div:first-child> span:first-child{
+    margin-right: auto;
+    font-size: 10px;
+}
+
+#chemEle{ font-weight: bold; }
+
+.ctxMenu{
+position: fixed;
+min-width: fit-content;
+padding: 1rem;
+border-radius: .5rem;
+color: var(--tc);
+background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+top:10%;
+left:10%;
+border: 1px solid color-mix(in srgb, var(--tc) 20%,var(--bc) 80%); 
+z-index: 1000;
+display: none;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+text-wrap:nowrap;
+}
+
+.ctxMenu a{
+padding: .25rem;
+display: block;
+cursor: pointer;
+}
+
+summary{
+    font-size: larger;
+    padding: .5rem 0;
+}
+
+details{
+    padding: .5rem 0;
+}
+
+
+#a11y div{width: 1rem; height: 1rem;  padding: 1rem; border-radius: 999rem; transition: background-color .3s; display: flex; cursor: pointer; align-items: center; justify-content: center;}
+
+#a11y div:hover{ padding: 1rem; background-color:color-mix(in srgb, var(--tc) 10%,var(--bc) 90% ); }
+
+#footerLink a{ 
+    /* color: color-mix(in srgb, var(--ac) 70%, var(--tc) 30%); */
+    color: grey;
+    display: block; }
+
+/* --------------------------media queries-------------------------- */
+@media (orientation: landscape) {
+article{display: flex; }
+article> h1{ width: 50%; }
+article > div{ flex:1; }
+#mobMenuTogg,#mobMenu{ display: none; }
+/* *,html,body{ font-size: 15px; } */
+.onlyMob{display: none !important;}
+}
+
+@media (orientation: portrait) {
+*,html,body{ font-size: 13px; }
+#pcMenu{ display: none; } 
+#mobMenu{ display: flex; }
+#mobMenuTogg{background-color: color-mix(in srgb, var(--bc) 90%, var(--tc) 10%); color:var(--tc)}
+#mobMenuTogg:hover{background-color: color-mix(in srgb, var(--bc) 80%, var(--tc) 20%);}
+
+.onlyPC{display: none !important;}
+}
+
+@media (hover: hover) {
+    .onlyTouch{display: none;}
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tc: white;
+    --bc: black;
+  }
+}
+
+</style>
+</head>
+<body style="margin: 0; background-color: var(--bc); transition: background-color .5s;">
+
+<div id="a11y" class="onlyMob" style=" padding: .5rem; background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%); transition: bottom .5s;
+backdrop-filter: blur(5px); 
+-webkit-backdrop-filter: blur(5px); border: 1px solid #ddd;
+border-radius: 100rem; position: fixed; bottom: 5%; left: 50%; transform: translateX(-50%) scale(100%); z-index: 999; display: flex;">
+<div onclick="history.back()">&larr;</div>
+<div onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr;</div>
+<div onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr;</div>
+<div onclick="changeTheme()" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;">&#xF288;</div>
+</div>
+
+<div class="ctxMenu onlyPC">
+    <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr; To top</a><hr>
+    <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr; To end</a><hr>
+    <a class="noarr noul" href="javascript:void(0)" onclick="history.back()">&larr; Back</a><hr>
+    <a class="noarr noul" href="javascript:void(0)" onclick="changeTheme()"><span translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;">&#xF288;</span> Theme</a>
+    <!-- <a class="noarr noul" href='javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()'>F12</a><hr> -->
+</div>
+
+<nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
+background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
+    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s; font-size: larger;" translate="no" 
+    onclick="window.location.href='index.html'">LINGYUOHZ</div>
+    <div style="margin: auto;">
+    </div>
+    <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
+        <!-- <a href="" id="contact">Contact</a> -->
+        <!-- <span class="onlyMob" style="font-size: medium;">external links</span> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/blog">blog</a>
+        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/proj">Project</a> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://portfolio.zhoulingyu.net">portfolio</a>
+        <a class="noul" style="font-size: 15.5px;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
+        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/fg2.html">font studio</a>
+        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/widgets">Gadgetz</a> -->
+        <a class="noul" style="font-size: 15.5px;" href="https://zly.vg/cv.pdf">résumé</a>
+
+</div>
+
+    <div   id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; background:none;"
+    onclick="menuTogg()" translate="no" >
+    
+    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="var(--tc)" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round"
+        style="cursor: pointer; width: 1.75rem; display: block; margin: auto 0; margin-right: -.4rem; cursor: pointer;">
+    <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" >
+            <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+            <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+    </path>
+    <rect width="10" height="10" stroke="none" >
+            <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+    </rect>
+    <rect width="10" height="10" stroke="none" >
+            <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+            <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+    </rect>
+    </svg>
+
+    </div>
+
+</nav>
+
+<div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
+    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%; font-size: larger !important; max-height: 80%; overflow-y: auto;"></div>
+</div>
+
+<article id="faq">
+    <h1>FAQ</h1>
+    <div>
+    <details class="line"><summary class="narrow far">Website tech stack?</summary>Vanilla HTML, CSS, JS(ES6).</details>
+    <details class="line"><summary class="narrow far">Website style</summary>For this website specifically I try to deliver a radical yet simple styling that show users some of the niche and exquisite components.</details>
+    <details class="line"><summary class="narrow far">Website font family?</summary>Universal Sans Variable, used also by <a href='https://telsa.com'>Tesla</a>.</details>
+    <details class="line"><summary class="narrow far">What is this?</summary>An accordian.</details>
+    </div>
+</article>
+
+
+<footer>
+    <hr style="border: .5px solid lightgray;">
+
+    <div style="width: 100%; display: flex;">
+
+<div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
+    &copy; Lingyu Zhou <span id="thisYear"></span>
+
+    <p style="width: fit-content;" id="footerLink">
+        <a href="javascript: void(0)"  onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
+        <a href="mailto:report@zly.vg">Report</a>
+        <!-- <a href="javascript: void(0)"  onclick="myModal.style.display='flex'">Legal</a> -->
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">Terms</a>
+        <a href="javascript: void(0)" onclick="this.innerHTML=this.innerHTML==='CA'?'v.1.100003RAD00MIN012':'CA'">CA</a>
+    </p>
+</div>
+
+<div translate="no" style="display: flex; width: auto; height: fit-content; margin: 2.5vh var(--hp); box-sizing: border-box; perspective: 800px;">
+    <div class="chem" style="background-color: rgb(243,232,253);    color: black;">
+        <div><span style="    color: black;">39</span><span></span> </div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">Y</span><br><span style="font-size: 10px;    color: black;">Yttrium</span></div>
+    </div>
+    
+    <div class="chem" style="background-color: rgb(255,230,212);    color: black;">
+        <div><span style="    color: black;">92</span><span></span> </div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">U</span><br><span style="font-size: 10px;    color: black;">Uranium</span></div>
+    </div>
+    
+    <div class="chem" style="background-color: rgb(214,249,232);    color: black;">
+        <div><span style="    color: black;">49</span><span></span> </div>
+        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">In</span><br><span style="font-size: 10px;    color: black;">Indium</span></div>
+    </div>
+</div>
+
+</div>
+</footer>
+
+
+<script>
+thisYear.innerHTML=new Date().getFullYear();
+
+mobMenu1.innerHTML=pcMenu.innerHTML;
+
+function menuTogg(){
+    // mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
+    mobMenu.style.transform=mobMenu.style.transform==='translateY(0%)'?'translateY(-100%)':'translateY(0%)';
+}
+
+
+function changeTheme(){
+    document.documentElement.style.setProperty('--tc', getComputedStyle(document.documentElement).getPropertyValue('--tc')=== 'black' ? 'white' : 'black');
+    document.documentElement.style.setProperty('--bc', getComputedStyle(document.documentElement).getPropertyValue('--bc')=== 'white' ? 'black' : 'white');
+}
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos<currentScrollPos) {
+    document.getElementById("a11y").style.bottom = "5%";
+  } else {
+    document.getElementById("a11y").style.bottom = "-10%";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+window.matchMedia('(prefers-color-scheme: dark)')
+.addEventListener('change', (event) => {
+if (event.matches) {
+    document.documentElement.style.setProperty('--bc', 'black');
+    document.documentElement.style.setProperty('--tc', 'white');
+} else {
+    document.documentElement.style.setProperty('--bc', 'white');
+    document.documentElement.style.setProperty('--tc', 'black');
+}
+});
+
+</script>
+</body>
+</html>
