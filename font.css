@@ -81,7 +81,7 @@
 @font-face {font-family:ebay; font-weight: bold; src:url("fonts/MarketSans-Bold.otf");}
 
 @font-face {font-family:sig; src:url("fonts/sig.otf");}
-@font-face {font-family:sneak; src:url("fonts/sneak.ttf");}
+@font-face {font-family:sneak; src:url("fonts/sneak.ttf"); }
 @font-face {font-family:sohne; src:url("fonts/sohne.otf");}
 @font-face {font-family:appletc; src:url("fonts/apple_tc.ttf");}
 @font-face {font-family:diag; font-weight: normal; src:url("fonts/diag_r.ttf");}

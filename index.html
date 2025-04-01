@@ -23,8 +23,9 @@
     --bc: white;
     --ac: lightgray;
     /* --ff: Inter, sans-serif; */
-    --ff: 'univ';
+    /* --ff: 'univ'; */
     /* --ff: 'Public Sans'; */
+    --ff: 'sneak';
     /* --ff: 'Google Sans Text'; */
     --fs: small;
     --hp: 4vw;
@@ -57,14 +58,14 @@
 }
 
 *,html,body{
+    /* font-feature-settings: "ss15"; */
+    font-feature-settings: "calt", "dlig", "liga", "ss03";
     font-family: var(--ff);
     font-size: var(--fs);
     line-height: 120%;
     color:var(--tc);
     letter-spacing: .035vw;
-    font-feature-settings: "ss15";
     -webkit-font-smoothing: antialiased;
-    
     scroll-padding-top: 5rem;
 }
 
