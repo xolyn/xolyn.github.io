@@ -86,6 +86,7 @@
 @font-face {font-family:appletc; src:url("fonts/apple_tc.ttf");}
 @font-face {font-family:diag; font-weight: normal; src:url("fonts/diag_r.ttf");}
 @font-face {font-family:diag; font-weight: bold; src:url("fonts/diag_b.ttf");}
+@font-face {font-family:'3x3'; font-weight: normal; src:url("fonts/3x3.woff");}
 
 @font-face {font-family:chirp;  font-weight: normal; src:url("fonts/ChirpRegular.ttf");}
 @font-face {font-family:chirp; font-weight: bold; src:url("fonts/ChirpMedium.ttf");}
