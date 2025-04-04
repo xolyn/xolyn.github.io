@@ -7,25 +7,35 @@
 <link rel='stylesheet' href='https://xolyn.github.io/widgets/widgets.css'>
 
 <link rel="shortcut icon" href="https://www.shareicon.net/download/2017/04/19/884243_dice.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Liter&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
 <title>Pseudo lexicon generator</title>
 <style>
 button, input{
     font-family: inherit;
 }
+
+details{
+    margin: .5rem 0 !important;
+}
 </style>
 </head>
-<body style="margin: 0; font-family: ahrefs;">
+<body style="margin: 0; font-family: 'Cousine';">
 <nav style="position: sticky; top:0; background-color: white; width: 100%; display: flex; border-bottom: 1px solid #ccc; padding: .1rem; box-sizing: border-box;">
 <button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="location.href='https://xolyn.github.io/'">
-    home
+    [home]
 </button>
 
 <button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="location.href=location.href">
-    refresh
+    [refresh]
 </button>
 
 <button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="share()">
-    share
+    [share]
 </button>
 
 </nav>
@@ -109,7 +119,7 @@ button, input{
     <center style="padding: 2rem 0;" id="start">
         <hr>
         <button id="btn" style="font-size: larger; border: none; padding: 5px; border-radius: 3px; background-color: #ccc;" onclick="generateWords()" >
-            Generate!
+            [Generate]
         </button>
     </center>
 
@@ -172,7 +182,7 @@ button, input{
     btn.addEventListener('click', function () {
       if (firstClick) {
         firstClick = false;
-        btn.textContent = 'Regenerate';
+        btn.textContent = '[Regenerate]';
       }
     });
 
