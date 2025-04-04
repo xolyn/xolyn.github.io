@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://xolyn.github.io/widgets/widgets.css'>
+
+<link rel="shortcut icon" href="https://www.shareicon.net/download/2017/04/19/884243_dice.ico">
+<title>Pseudo lexicon generator</title>
+<style>
+button, input{
+    font-family: inherit;
+}
+</style>
+</head>
+<body style="margin: 0; font-family: ahrefs;">
+<nav style="position: sticky; top:0; background-color: white; width: 100%; display: flex; border-bottom: 1px solid #ccc; padding: .1rem; box-sizing: border-box;">
+<button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="location.href='https://xolyn.github.io/'">
+    home
+</button>
+
+<button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="location.href=location.href">
+    refresh
+</button>
+
+<button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="share()">
+    share
+</button>
+
+</nav>
+
+<main style="padding: 5vh 10vw;">
+
+    <center >
+        <h1>Pseudo lexicon generator</h1>
+        <br>
+        <h2>Introduction</h2>
+    </center>
+
+    
+    <details class="line"  open>
+        <summary class="narrow far">What is a pseudo lexicon?</summary>
+        <!-- <hr> -->
+        <p>
+            What is a pseudo lexicon? A pseudo lexicon is a list of words that are not real but are generated based on certain rules or patterns. 
+            This can be useful for various purposes, such as creating fictional languages, generating your handles, etc.
+        </p>
+    </details>
+
+    <details class="line" open>
+        <summary class="narrow far">How does it work?</summary>
+        <!-- <hr> -->
+        <p>
+            The pseudo lexicon dynamically change the weights of vowels and consonants in the generated words.
+            The algorithm uses a set of rules to generate words that follow the patterns of real languages, but are not actual words.
+            For example, it will decrease the weight of consonants at the beginning of a word, and increase the weight of vowels at the end of a word.
+            This creates a more natural flow to the generated words, making them sound more like real words.
+        </p>
+    </details>
+
+    <details class="line" >
+        <summary class="narrow far">Source code</summary>
+        <!-- <hr> -->
+         <a href="#">Github &nearr;</a>
+<pre hidden style="background-color: #ddd; padding: 1rem; border-radius: 5px;">
+</pre>
+    </details>
+    
+    <center>
+        <h2>Try</h2>
+    </center>
+
+    <div>
+        Enter the length of the word you want to generate:
+        <input type="number" id="length" value="5" min="1" max="20" style="width: 50px; text-align: center;">
+        <p></p>
+        Enter the quantity of words you want to generate:
+        <input type="number" id="quantity" value="10" min="1" max="20" style="width: 50px; text-align: center;">
+        <p></p>
+
+       <details class="line" >
+        <summary class="far narrow">
+            <span style="color: grey;display: inline-block;">[ Advanced fine-tuning ]</span></summary>
+
+            <p style="color:red">
+            Not recommended unless comprehend the source code!
+            </p>
+
+            <!-- 
+        <div style=" padding: 1rem; border: 1px solid #ddd; border-left: 10px solid #ccc; margin: 1rem 0;">
+            Not recommended unless comprehend the source code!
+        </div> -->
+
+        Vowel spacing bias:
+        <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a consonant.</p>
+        <input type="number" id="weight1" value="0.4" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
+        <p></p>
+
+        Consecutive vowel chance:
+        <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a vowel.</p>
+        <input type="number" id="weight2" value="0.1" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
+        
+       </details>
+
+    </div>
+ 
+    
+    <center style="padding: 2rem 0;" id="start">
+        <hr>
+        <button id="btn" style="font-size: larger; border: none; padding: 5px; border-radius: 3px; background-color: #ccc;" onclick="generateWords()" >
+            Generate!
+        </button>
+    </center>
+
+
+    <div id="output"></div>
+
+</main>
+
+
+<footer>
+    <hr>
+    <p style="color: grey; font-size: smaller; text-align: center;">&copy; 2025 <a href="https://xolyn.github.io">Lingyu Zhou</a></p>
+</footer>
+
+<script>
+
+    const vowels = 'aeiou';
+    const consonants = [...'abcdefghijklmnopqrstuvwxyz'].filter(c => !vowels.includes(c));
+
+    function generatePseudoWord(length, weight1=0.4, weight2=0.1) {
+        let word = '';
+        let lastVowelDistance = 1 / (length ** 2);
+
+        for (let i = 0; i < length; i++) {
+            let vowelWeight = Math.min(1.0, 0.1 + weight1 * lastVowelDistance);
+            if (word && vowels.includes(word[word.length - 1])) {
+                vowelWeight = weight2;
+            }
+
+            if (Math.random() < vowelWeight) {
+                word += vowels[Math.floor(Math.random() * vowels.length)];
+                lastVowelDistance = 0;
+            } else {
+                word += consonants[Math.floor(Math.random() * consonants.length)];
+                lastVowelDistance += 1;
+            }
+        }
+
+        return word;
+    }
+
+    function generateWords() {
+        const length = parseInt(document.getElementById('length').value, 10);
+        const quantity = parseInt(document.getElementById('quantity').value, 10);
+        const w1 = parseFloat(document.getElementById('weight1').value, 0.4);
+        const w2 = parseFloat(document.getElementById('weight2').value, 0.1);
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = '';
+
+        for (let i = 0; i < quantity; i++) {
+            const word = generatePseudoWord(length,w1,w2);
+            const p = document.createElement('p');
+            p.textContent = word;
+            outputDiv.appendChild(p);
+        }
+    }
+
+    let firstClick = true;
+
+    btn.addEventListener('click', function () {
+      if (firstClick) {
+        firstClick = false;
+        btn.textContent = 'Regenerate';
+      }
+    });
+
+
+    function share(){
+        if (navigator.share) {
+            navigator.share({
+                title: 'Pseudo lexicon generator',
+                text: 'Generate fake english word for you!',
+                url: location.href,
+            })
+            .then(() => {})
+            .catch((error) => console.error('Error sharing:', error));
+        } else {
+            alert('Web Share API not supported in this browser.');
+        }
+    }
+
+</script>
+</body>
+</html>
