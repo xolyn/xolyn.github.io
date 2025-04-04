@@ -10,6 +10,7 @@
 :root{
   --mc: white;
   --ac: black;
+
   /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" ><text fill="white"  x="0" y="20" font-size="20">↑</text></svg>') 0 0, auto; */
 }
 
@@ -53,7 +54,7 @@ h2{border-top: .5px solid #ddd; padding: .5rem 0;}
   top: 0;
   height: min-content;
   flex:1;
-  background-color: black;  
+  background-color: var(--ac);  
 }
 
 .content {
@@ -71,7 +72,30 @@ tr>td:nth-child(2){
     padding: .5rem 0;
 }
 
+menu.onlymob{
+  right: -100dvw
+}
+
+@media (orientation: landscape) {
+.onlymob{
+  display: none;
+}
+
+.onlyPC{
+  display: block;
+}
+}
+
 @media (orientation: portrait) {
+.onlymob{
+  display: block;
+}
+
+.onlyPC{
+  display: none;
+}
+
+
 .row {
   flex-direction: column;
 }
@@ -88,17 +112,34 @@ h2{margin: 0; padding-bottom: 0;}
 </head>
 <body style="margin: 0;">
 
-<nav style="width: 100%; height: 8dvh; position: fixed; top:0; display: flex;">
-<h1 style="margin: 0; height: min-content; margin: auto 1rem;">
+<nav style="width: 100%; height: 8dvh; position: fixed; top:0; display: flex; z-index: 999;">
+<h1 style="margin: 0; height: min-content; margin: auto auto auto 1rem;">
   LINGYUOHZ
 </h1>
 
-<div class="material-symbols-outlined" 
-onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'"
-style="margin: auto 1rem auto auto; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
+<menu class="onlyPC" style="margin: auto 1rem; ">
+  <div id="pcmenu" style="display: flex; font-size: larger;">
+    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/blog">blog</a>
+    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://portfolio.zhoulingyu.net">portfolio</a>
+    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
+    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/fg2.html">font studio</a>
+    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://zly.vg/cv.pdf">résumé</a>
+  </div>
+</menu>
 
-
+<!-- ; mobmenuwrapper.innerHTML=pcmenu.innerHTML; -->
+<div class="material-symbols-outlined onlymob" 
+onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'; mobmenu.style.right=mobmenu.style.right==='0px'?'-100dvw':'0px'; mobmenuwrapper.innerHTML=pcmenu.innerHTML; "
+style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
 </nav>
+
+<menu class="onlymob" id="mobmenu" style="transition: right .3s; margin: 0; box-sizing: border-box; padding: 1rem .5rem; z-index: 98; width: 100dvw; height: 100dvh; position: fixed; top:0; background-color: var(--ac);">
+  <div style="width: 100%; height: 100%; display: flex; flex-direction: column;" >
+    <div style="width: 100%; margin-top: auto; font-size: x-large;" id="mobmenuwrapper">
+    </div>
+  </div>
+</menu>
+
 
 <div class="wrapper" style="margin-top: 8dvh; box-sizing: border-box;">
         <div class="row">
@@ -209,7 +250,9 @@ style="margin: auto 1rem auto auto; font-weight: 300; cursor:pointer ">&#xe5d2;<
           <p>
             &copy; Lingyu Zhou 2025
           </p>
-          <p hidden>◐&nbsp;&nbsp;|&nbsp;&nbsp;
+          <p ><span onclick="
+          document.documentElement.style.setProperty('--ac', getComputedStyle(document.documentElement).getPropertyValue('--ac')=== 'black' ? 'white' : 'black');
+          document.documentElement.style.setProperty('--mc', getComputedStyle(document.documentElement).getPropertyValue('--mc')=== 'white' ? 'black' : 'white');" style="cursor: pointer;">◐</span>&nbsp;&nbsp;|&nbsp;&nbsp;
             Legal&nbsp;&nbsp;|&nbsp;&nbsp;
             Share&nbsp;&nbsp;|&nbsp;&nbsp;
             Report</p>
@@ -218,6 +261,9 @@ style="margin: auto 1rem auto auto; font-weight: 300; cursor:pointer ">&#xe5d2;<
 </div .wrapper>
     
 </div>
-    
+
+
 </body>
+
+
 </html>
