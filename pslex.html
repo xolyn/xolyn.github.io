@@ -17,6 +17,7 @@
 <style>
 button, input{
     font-family: inherit;
+    cursor: pointer;
 }
 
 details{
@@ -24,7 +25,7 @@ details{
 }
 </style>
 </head>
-<body style="margin: 0; font-family: 'Cousine';">
+<body style="margin: 0; font-family: 'Cousine'; letter-spacing: -.5px;">
 <nav style="position: sticky; top:0; background-color: white; width: 100%; display: flex; border-bottom: 1px solid #ccc; padding: .1rem; box-sizing: border-box;">
 <button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="location.href='https://xolyn.github.io/'">
     [home]
@@ -53,8 +54,9 @@ details{
         <summary class="narrow far">What is a pseudo lexicon?</summary>
         <!-- <hr> -->
         <p>
-            What is a pseudo lexicon? A pseudo lexicon is a list of words that are not real but are generated based on certain rules or patterns. 
+            Staggered consonants and vowels is the key of natural-sounding English words. A pseudo lexicon is a list of words that are not real but are generated based on this patterns. 
             This can be useful for various purposes, such as creating fictional languages, generating your handles, etc.
+            I found this especially friendly and helpful as a person who is hesitant about naming.
         </p>
     </details>
 
@@ -91,7 +93,7 @@ details{
 
        <details class="line" >
         <summary class="far narrow">
-            <span style="color: grey;display: inline-block;">[ Advanced fine-tuning ]</span></summary>
+            <span style="color: grey;display: inline-block;">[Advanced fine-tuning]</span></summary>
 
             <p style="color:red">
             Not recommended unless comprehend the source code!
@@ -116,7 +118,7 @@ details{
     </div>
  
     
-    <center style="padding: 2rem 0;" id="start">
+    <center style="padding: 1rem 0;" id="start">
         <hr>
         <button id="btn" style="font-size: larger; border: none; padding: 5px; border-radius: 3px; background-color: #ccc;" onclick="generateWords()" >
             [Generate]
@@ -124,7 +126,7 @@ details{
     </center>
 
 
-    <div id="output"></div>
+    <div id="output" translate="no"></div>
 
 </main>
 
