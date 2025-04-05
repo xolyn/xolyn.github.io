@@ -89,10 +89,12 @@ summary{font-weight: bold;}
 
     <div>
         Enter the length of the word you want to generate:
-        <input type="number" id="length" value="8" min="1" max="20" style="width: 50px; text-align: center;">
+        <input type="number" id="length" value="5" min="1" max="20" style="width: 50px; text-align: center;">
+        &in;[1,20]
         <p></p>
         Enter the quantity of words you want to generate:
-        <input type="number" id="quantity" value="10" min="1" max="20" style="width: 50px; text-align: center;">
+        <input type="number" id="quantity" value="10" min="1" max="50" style="width: 50px; text-align: center;">
+        &in;[1,50]
         <p></p>
 
        <details class="line" >
@@ -103,23 +105,16 @@ summary{font-weight: bold;}
             Read the source code before using this!<br>
             </p>
 
-
-            
-
-            <!-- 
-        <div style=" padding: 1rem; border: 1px solid #ddd; border-left: 10px solid #ccc; margin: 1rem 0;">
-            Not recommended unless comprehend the source code!
-        </div> -->
-
         Vowel spacing bias:
         <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a consonant.</p>
-        <input type="number" id="weight1" value="0.55" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
+        <input type="number" id="weight1" value="0.6" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
+        &in;[0,1]
         <p></p>
 
         Consecutive vowel chance:
         <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a vowel.</p>
         <input type="number" id="weight2" value="0.1" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
-        
+        &in;[0,1]
        </details>
 
     </div>
