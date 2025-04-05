@@ -85,7 +85,7 @@ details{
 
     <div>
         Enter the length of the word you want to generate:
-        <input type="number" id="length" value="5" min="1" max="20" style="width: 50px; text-align: center;">
+        <input type="number" id="length" value="8" min="1" max="20" style="width: 50px; text-align: center;">
         <p></p>
         Enter the quantity of words you want to generate:
         <input type="number" id="quantity" value="10" min="1" max="20" style="width: 50px; text-align: center;">
@@ -106,7 +106,7 @@ details{
 
         Vowel spacing bias:
         <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a consonant.</p>
-        <input type="number" id="weight1" value="0.4" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
+        <input type="number" id="weight1" value="0.55" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
         <p></p>
 
         Consecutive vowel chance:
@@ -166,8 +166,8 @@ details{
     function generateWords() {
         const length = parseInt(document.getElementById('length').value, 10);
         const quantity = parseInt(document.getElementById('quantity').value, 10);
-        const w1 = parseFloat(document.getElementById('weight1').value, 0.4);
-        const w2 = parseFloat(document.getElementById('weight2').value, 0.1);
+        const w1 = parseFloat(document.getElementById('weight1').value,);
+        const w2 = parseFloat(document.getElementById('weight2').value,);
         const outputDiv = document.getElementById('output');
         outputDiv.innerHTML = '';
 
