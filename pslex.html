@@ -27,7 +27,7 @@ details{
 summary{font-weight: bold;}
 </style>
 </head>
-<body style="margin: 0; font-family: 'Cousine'; letter-spacing: -.5px;">
+<body style="margin: 0; font-family: 'Cousine'; letter-spacing: -.5px; ">
 <nav style="position: sticky; top:0; background-color: white; width: 100%; display: flex; border-bottom: 1px solid #ccc; padding: .1rem; box-sizing: border-box;">
 <button style="border: none; margin: 2px; padding: 3px; border-radius: 3px; background-color: #ccc;" onclick="location.href='https://xolyn.github.io/'">
     [home]
@@ -90,11 +90,11 @@ summary{font-weight: bold;}
     <div>
         Enter the length of the word you want to generate:
         <input type="number" id="length" value="5" min="1" max="20" style="width: 50px; text-align: center;">
-        &in;[1,20]
+        &in;[1,20]&cap;ℕ
         <p></p>
         Enter the quantity of words you want to generate:
         <input type="number" id="quantity" value="10" min="1" max="50" style="width: 50px; text-align: center;">
-        &in;[1,50]
+        &in;[1,50]&cap;ℕ
         <p></p>
 
        <details class="line" >
@@ -108,13 +108,13 @@ summary{font-weight: bold;}
         Vowel spacing bias:
         <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a consonant.</p>
         <input type="number" id="weight1" value="0.6" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
-        &in;[0,1]
+        &in;[0,1]&cap;ℝ
         <p></p>
 
         Consecutive vowel chance:
         <p style="color:grey; font-size: smaller">Somehow controls the frequency of vowels after a vowel.</p>
         <input type="number" id="weight2" value="0.1" min="0" max="1" step="0.1" style="width: 50px; text-align: center;">
-        &in;[0,1]
+        &in;[0,1]&cap;ℝ
        </details>
 
     </div>

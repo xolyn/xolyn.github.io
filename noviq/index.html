@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+
+<title>Document</title>
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate {
+  animation: spin 4s linear infinite;
+}
+</style>
+</head>
+<body style="font-family: vulf; margin: 0;">
+
+<nav style="width: 100%; box-sizing: border-box; position: sticky; top:0; display: flex; border-bottom: 1px solid #ddd;">
+    <h1 style="margin: auto auto auto 1rem">NOVIQ</h1>
+
+    <button class="material-symbols-rounded" style="padding: 0; background-color: transparent; border: none; color: inherit; margin: auto 1rem">
+        &#xf5d2;
+    </button>
+</nav>
+
+
+<div style="width: 100%; display: flex;">
+    <div id="upload" style="display: flex; margin: 2rem auto; padding: 0 1rem; box-sizing: border-box;">
+        <div id="audio-upload" style="text-align: center;  border: 1px dashed #ccc; padding: 5vh 5vw; cursor: pointer; border-radius: 1rem;">
+            <span class="material-symbols-rounded">
+                upload
+                </span><br>
+            Drag and drop or select music file
+          <input type="file" id="audio-input" accept="audio/*" style="display: none;" />
+        </div>
+        
+        <div id="lrc-upload" style="text-align: center; margin-left:1rem; border: 1px dashed #ccc; padding: 5vh 5vw; cursor: pointer; border-radius: 1rem;">
+            <span class="material-symbols-rounded">
+                upload
+                </span><br>
+            Drag and drop or select <code>.lrc</code> file
+          <input type="file" id="lrc-input" accept=".lrc" style="display: none;" />
+        </div>
+      </div>
+</div>
+
+
+
+<div style="width: 100%; display: flex; position: fixed; bottom: 0; width: 100%; height: 10vh; border-top: 1px solid #ddd;">
+    <img src="" id="thumbnail" style=" height: 100%; margin: auto 1rem auto 0;"/>
+    <div style="height: 100%; display: flex; flex:1">
+        
+        <audio id="player" style=" margin: auto 0 auto auto;" controls ></audio>
+        <button id="fs" class="material-symbols-rounded" style="padding: 0; background-color: transparent; border: none; color: inherit; margin: auto 1rem">
+            &#xe5d0;
+        </button>
+    </div>
+    <!-- <div style="display: flex; width: fit-content; margin:0 auto">
+        
+        </div> -->
+</div>
+
+  
+
+<script src="noviq.js"></script>
+</body>
+</html>
