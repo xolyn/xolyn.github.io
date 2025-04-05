@@ -108,3 +108,66 @@ details[open] > summary.pm::after {
     content: '\F2EA';
     font-size: larger;
 }
+
+.note-g{
+    --color: green;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-b{
+    --color: dodgerblue;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-y{
+    --color: gold;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-r{
+    --color: red;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-e{
+    --color: grey;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-k{
+    --color: black;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-o{
+    --color: orange;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-p{
+    --color: pink;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}
+
+.note-u{
+    --color: purple;
+    border-left: 5px solid var(--color);
+    background-color: color-mix(in srgb, white 60%, var(--color) 40%);
+    padding: 1rem;
+}

@@ -23,6 +23,8 @@ button, input{
 details{
     margin: .5rem 0 !important;
 }
+
+summary{font-weight: bold;}
 </style>
 </head>
 <body style="margin: 0; font-family: 'Cousine'; letter-spacing: -.5px;">
@@ -60,14 +62,16 @@ details{
         </p>
     </details>
 
-    <details class="line" open>
+    <details class="line">
         <summary class="narrow far">How does it work?</summary>
         <!-- <hr> -->
         <p>
             The pseudo lexicon dynamically change the weights of vowels and consonants in the generated words.
             The algorithm uses a set of rules to generate words that follow the patterns of real languages, but are not actual words.
-            For example, it will decrease the weight of consonants at the beginning of a word, and increase the weight of vowels at the end of a word.
+            For example, it will increase the weight of consonants at the beginning of a word, and adjust dynamically the weight of vowels based on the distance from last vowel.
             This creates a more natural flow to the generated words, making them sound more like real words.
+
+            For the complete algorithm, please refer to the source code below.
         </p>
     </details>
 
@@ -96,8 +100,11 @@ details{
             <span style="color: grey;display: inline-block;">[Advanced fine-tuning]</span></summary>
 
             <p style="color:red">
-            Not recommended unless comprehend the source code!
+            Read the source code before using this!<br>
             </p>
+
+
+            
 
             <!-- 
         <div style=" padding: 1rem; border: 1px solid #ddd; border-left: 10px solid #ccc; margin: 1rem 0;">
@@ -120,13 +127,13 @@ details{
     
     <center style="padding: 1rem 0;" id="start">
         <hr>
-        <button id="btn" style="font-size: larger; border: none; padding: 5px; border-radius: 3px; background-color: #ccc;" onclick="generateWords()" >
+        <button id="btn" style=" border: none; padding: 5px; border-radius: 3px; background-color: #ccc;" onclick="generateWords()" >
             [Generate]
         </button>
     </center>
 
 
-    <div id="output" translate="no"></div>
+    <div id="output" translate="no" style="max-width: 100%;"></div>
 
 </main>
 
@@ -173,8 +180,10 @@ details{
 
         for (let i = 0; i < quantity; i++) {
             const word = generatePseudoWord(length,w1,w2);
-            const p = document.createElement('p');
+            const p = document.createElement('span');
             p.textContent = word;
+            p.style.margin = '0.5rem';
+            p.style.display = 'inline-block';
             outputDiv.appendChild(p);
         }
     }

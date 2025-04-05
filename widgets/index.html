@@ -19,13 +19,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
 /* h1:hover::after, */
+
 :root{
 /* font-family: "zilla", serif; */
 font-family: "ahrefs";
 /* font-family: Inter, sans-serif; */
 /* font-feature-settings: 'liga' 1, 'calt' 1, 'ccmp' 1;  */
 -webkit-font-smoothing: antialiased;
-font-size: smaller;
+/* font-size: smaller; */
 }
 h2:hover::after,h3:hover::after,h4:hover::after,h5:hover::after{content: '\00a0 \F470'; font-family:'Bootstrap-icons'; font-size: smaller;}
 
@@ -36,7 +37,7 @@ h2:hover::after,h3:hover::after,h4:hover::after,h5:hover::after{content: '\00a0 
     border-radius: .5rem;
 }
 
-.note p{
+.note>*{
     margin: 2vh 2vw;
 }
 
@@ -174,6 +175,98 @@ pre{
     &lt;/div>
 &lt;/details>
 </pre>
+
+<h2>Notes</h2>
+
+<p>
+    Notes can be used to notify the user about something special.
+    Use the universal color <code>code</code> for theme of the notes. 
+    <!-- (<b>g</b>reen, <b>y</b>ellow, <b>r</b>ed, <b>b</b>lue)<br> -->
+    in this syntax:
+</p>
+
+<pre>
+&lt;div class="note-${code}"&gt;
+&lt;/div&gt;
+</pre>
+
+
+<div class="note">
+    <h3>Predefined parameters</h3>
+    <span style="color:grey">Use <code>!important</code> or inline style to override.</span>
+    <ul>
+    <li><code>border-left</code></li>
+    <li><code>background-color</code></li>
+    <li><code>padding</code>: <code>1rem</code></li>
+    </ul>
+</div>
+
+
+
+
+<p>
+<!-- Green for tips, yellow for warning, red for error, blue for information. -->
+</p>
+
+<div class="note-g">
+    <h3>This is a tips.</h3>
+    Use color code <code>g</code> for <b>g</b>reen. 
+</div>
+<br>
+<div class="note-y">
+    <h3>This is a warning.</h3>
+    Use color code <code>y</code> for <b>y</b>ellow.
+</div>
+<br>
+<div class="note-r">
+    <h3>This is an error.</h3>
+    <p>Use color code <code>r</code> for <b>r</b>ed.</p>
+</div>
+<br>
+<div class="note-b">
+    <h3>This is an info.</h3>
+    <p>Use color code <code>b</code> for <b>b</b>lue.</p>
+</div>
+
+
+<h3>More themes</h3>
+
+<p>We dont know what do these color represent, but they are available for use.</p>
+
+<div class="note-e">
+    <h3>This is an note of some kind.</h3>
+    Use color code <code>e</code> for gr<b>e</b>y.
+</div>
+
+<br>
+
+<div class="note-k">
+    <h3>This is an note of some kind.</h3>
+    Use color code <code>k</code> for blac<b>k</b>.
+</div>
+
+<br>
+
+<div class="note-o">
+    <h3>This is an note of some kind.</h3>
+    Use color code <code>o</code> for <b>o</b>range.
+</div>
+
+<br>
+
+<div class="note-p">
+    <h3>This is an note of some kind.</h3>
+    Use color code <code>p</code> for <b>p</b>ink.
+</div>
+<br>
+
+<div class="note-u">
+    <h3>This is an note of some kind.</h3>
+    Use color code <code>u</code> for p<b>u</b>rple.
+</div>
+
+
+
 
 </body>
 <script>
