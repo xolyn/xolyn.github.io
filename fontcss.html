@@ -193,7 +193,7 @@ input#fontSearch:hover{
 }
 
 #endBtn:hover{
-    background-color: rgba(200,200,200,.5);
+    background-color: rgba(200,200,200,.4);
 }
 
 </style>
@@ -247,10 +247,12 @@ const csstxt='<link rel="preconnect" href="https://xolyn.github.io/"> <!-- exped
 
 
 <div style="position:relative ;">
-    <svg style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem;" onclick="navigator.clipboard.writeText(wkadapt); "
-width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
+    <span title="copy css"  style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem; font-family:'Bootstrap-icons'; font-size: small" 
+    onclick="navigator.clipboard.writeText(wkadapt); this.innerHTML='&#xF725;'; setTimeout(() => this.innerHTML='&#xF733;', 400)">&#xF733;</span>
+    <!-- <svg style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem;" onclick=" "
+width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg> -->
 
-<pre class="prettyprint lang-html" style="border: 0px; padding: 1.5rem 1rem; border-radius: .5rem;" translate="no" onclick="navigator.clipboard,writeText(wkadapt)">
+<pre class="prettyprint lang-html" style="border: 0px; padding: 2rem 1rem 1rem 1rem; border-radius: .5rem;" translate="no" onclick="navigator.clipboard,writeText(wkadapt)">
 :root{
     -webkit-font-smoothing: antialiased;
     font-synthesis-weight: none;
@@ -273,10 +275,12 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
     </p>
 
     <div style="position:relative ;">
-        <svg style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem;" onclick="navigator.clipboard.writeText(csstxt); "
-    width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg>
+        <span title="copy css" style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem; font-family:'Bootstrap-icons'; font-size: small" 
+        onclick="navigator.clipboard.writeText(csstxt); this.innerHTML='&#xF725;'; setTimeout(() => this.innerHTML='&#xF733;', 400)">&#xF733;</span>
+        <!-- <svg style="cursor: pointer; transition: .3s; position: absolute; right: .5rem; top:.5rem;" onclick="navigator.clipboard.writeText(csstxt); "
+    width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="copy" fill="#000000" transform="translate(85.333333, 42.666667)"> <path d="M341.333333,85.3333333 L341.333333,405.333333 L85.3333333,405.333333 L85.3333333,85.3333333 L341.333333,85.3333333 Z M298.666667,128 L128,128 L128,362.666667 L298.666667,362.666667 L298.666667,128 Z M234.666667,7.10542736e-15 L234.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L1.42108547e-14,298.666667 L1.42108547e-14,7.10542736e-15 L234.666667,7.10542736e-15 Z"> </path> </g> </g> </g></svg> -->
 
-<pre class="prettyprint lang-html" style="border: 0px; padding: 1.5rem 1rem; border-radius: .5rem;" translate="no">
+<pre class="prettyprint lang-html" style="border: 0px; padding: 2rem 1rem 1rem 1rem; border-radius: .5rem;" translate="no">
 &lt;link rel="preconnect" href="https://xolyn.github.io/"> &lt;!-- expedite loading, optional -->
 &lt;link rel="stylesheet" href="https://xolyn.github.io/font.css">
 </pre>
@@ -293,8 +297,11 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 
 <b>Add your own font family to preview:</b>
 
-<div id="dropzone" style="font-size: smaller; color:gray; cursor: pointer; height:20dvh;border:2px dashed gray;display:flex;align-items:center;justify-content:center;margin:5dvh 0; border-radius: .5rem;">
+<div id="dropzone" style="font-size: smaller; color:gray; cursor: pointer; height:20dvh;border:2px dashed gray;display:flex;margin:5dvh 0; border-radius: .5rem;">
+<div style="margin: auto; text-align: center;">
+    <span style="font-family:'Bootstrap-icons'; font-size: large;">&#xF2C0;</span><br>
     Drop/Choose font file here
+</div>
 </div>
 <input type="file" id="fileInput" accept=".otf,.ttf,.eot,.woff,.woff2" style="display:none">
 <div id="preview"></div>
@@ -338,13 +345,9 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         style=" margin: auto 1rem; color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; font-family: var(--ff); background-color: #eee; cursor: pointer;" 
         onclick='reset()' onmouseenter="this.style.backgroundColor='#ddd'" onmouseleave="this.style.backgroundColor='#eee'">↻</button>
     </div>
-        
 
     </div>
 </div>
-
-
-
     
     <div id="fontset" style="max-width: 100vw;
     overflow-x: auto;">
@@ -696,10 +699,6 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 
 </article>
 
-<article hidden style="font-size: small;">
-    ＊<code>bold</code> font weight available for font family with asterisk suffix.
-</article>
-
 <div style="padding: 1em 0; background-color: black; color: white;">
 <article>
     <div style="margin: 0 0 1rem 0 ; color: #bbb; font-size: smaller;"><span id="nFonts"></span> font families in total.</div>
@@ -714,6 +713,10 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
 <script src="https://f.zly.vg/jq.js"></script>
 <script src="js/fontDrop.js"></script>
 <script>
+function delay(){
+    setTimeout(function(){}, 400);
+}
+
 function showInstant() {
     var instantElement = document.getElementById('instant');
     instantElement.classList.remove('fade-out');
