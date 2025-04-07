@@ -36,7 +36,7 @@ button:hover{
   background-color: #ccc;
 }
 
-#tb_ctrl:hover> #thumbnail{
+#tb_ctrl:hover{
   background-color: color-mix(in srgb, #ccc 60%, black 40%)
 }
 
@@ -46,6 +46,14 @@ button:hover{
 
 .material-symbols-rounded{
   font-size: 3vh;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
 }
 </style>
 </head>
@@ -95,25 +103,20 @@ button:hover{
 
 <div style="width: 100%; display: flex; position: fixed; bottom: 0; width: 100%; height: 8vh; border-top: 1px solid #ddd;">
     
-  <div style="position: relative; margin-right: .5rem;" id="tb_ctrl">
-    <img src="tn.png" id="thumbnail" style="transition: .5s; height: 100%; margin: auto 0; border-right: 1px solid #ddd; "/>
-    <!-- <button style="font-size: xx-large; padding: 0; background-color: transparent; border: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; mix-blend-mode: difference;"
-    class="material-symbols-rounded">&#xe037;</button> -->
-  </div>
+    <img src="tn.png" id="tb_ctrl" style="transition: .5s; height: 100%; object-fit: contain; aspect-ratio:1/1 ;margin: auto .5rem auto 0; border-right: 1px solid #ddd; "/>
 
     <div style="display: flex; flex-direction: column; justify-content: center; margin: auto 1rem auto 0;">
         <div id="songInfo">
-          <span id="title" class="autoscroll" style="max-width: 33vw;  font-size:1rem;display: inline-block; font-weight: bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, aperiam.</span>
+          <span id="title" class="ellipsis" style="max-width: 33vw;  font-size:1rem;display: inline-block; font-weight: bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, aperiam.</span>
           <br>
-          <span id="artist" class="autoscroll" style="max-width: 20vw; font-size: .8rem;display: inline-block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, alias!</span>
-          <!-- <span style="margin: 0; font-size: .8rem;display: inline-block;">-</span> -->
-          <span id="album" class="autoscroll" style="max-width: 20vw; font-style: italic; display: inline-block; color: grey; font-size: .8rem; padding: 0 2px;">Lorem</span>
+          <span id="artist" class="ellipsis" style="max-width: 15vw; font-size: .8rem; display: inline-block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, alias</span>
+          <span id="album" class="ellipsis" style="max-width: 20vw; font-style: italic; display: inline-block; color: grey; font-size: .8rem; padding: 0 2px;">Lorem</span>
         </div>
         </div>
 
     <div style="height: 100%; display: flex; flex:1">
         
-        <audio id="player" style="display: none; margin: auto 0 auto auto;" controls ></audio>
+        <!-- <audio id="player" style="display: none; margin: auto 0 auto auto;" controls ></audio> -->
         <!-- <button id="fs" class="material-symbols-rounded" style="padding: 0; background-color: transparent; border: none; color: inherit; margin: auto 1rem">
             &#xe5d0;
         </button> -->
@@ -129,7 +132,7 @@ button:hover{
       <!-- <button id="theme" class="material-symbols-rounded uictrl" > &#xe20c; </button> -->
       <button id="fs" title="Full screen" class="material-symbols-rounded uictrl" > &#xe5d0; </button>
 
-      <div id="placeholder" style="margin-right: 2vh;"></div>
+      <div id="placeholder" style="margin-right: 1vh;"></div>
         
     </div>
     <!-- <div style="display: flex; width: fit-content; margin:0 auto">

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
   -webkit-font-smoothing: antialiased;
   /* font-synthesis: none; */
@@ -40,6 +42,7 @@
 @font-face {font-family:Neue Kaine Variable; src:url("fonts/Neue Kaine Variable.ttf");}
 @font-face {font-family:Neue Regrade; font-weight: normal; src:url("fonts/Neue Regrade Medium.otf");}
 @font-face {font-family:Neue Regrade; font-weight:bold;   src:url("fonts/Neue Regrade Bold.otf");}
+@font-face {font-family:ytf; font-weight:normal;   src:url("fonts/ytf.woff2");}
 
 @font-face {font-family:RM Neue;  src:url("fonts/RMNeue-Regular.otf");}
 @font-face {font-family:'snr';  src:url("fonts/snw.woff");}
@@ -343,3 +346,4 @@
     src: url(https://fonts.gstatic.com/s/zillaslab/v11/dFa5ZfeM_74wlPZtksIFYoEf6HOpWw.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
+
