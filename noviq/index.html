@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,1,0" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <link rel="stylesheet" href="overlay.css">
+<link rel="stylesheet" href="ovfl_ausc.css">
 
 <title>Document</title>
 <style>
@@ -36,7 +37,7 @@ button:hover{
 }
 
 #tb_ctrl:hover> #thumbnail{
-  filter: brightness(0.5);
+  background-color: color-mix(in srgb, #ccc 60%, black 40%)
 }
 
 .rotate {
@@ -94,7 +95,7 @@ button:hover{
 
 <div style="width: 100%; display: flex; position: fixed; bottom: 0; width: 100%; height: 8vh; border-top: 1px solid #ddd;">
     
-  <div style="position: relative; margin-right: 1rem;" id="tb_ctrl">
+  <div style="position: relative; margin-right: .5rem;" id="tb_ctrl">
     <img src="tn.png" id="thumbnail" style="transition: .5s; height: 100%; margin: auto 0; border-right: 1px solid #ddd; "/>
     <!-- <button style="font-size: xx-large; padding: 0; background-color: transparent; border: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; mix-blend-mode: difference;"
     class="material-symbols-rounded">&#xe037;</button> -->
@@ -102,13 +103,14 @@ button:hover{
 
     <div style="display: flex; flex-direction: column; justify-content: center; margin: auto 1rem auto 0;">
         <div id="songInfo">
-          <span id="title" style="margin: 0; font-size:large;display: inline-block; font-weight: bold;">Mask off</span>
+          <span id="title" class="autoscroll" style="max-width: 33vw;  font-size:1rem;display: inline-block; font-weight: bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, aperiam.</span>
           <br>
-          <span id="artist" style="margin: 0; font-size: medium;display: inline-block;">Future</span>
-          -
-          <span id="album" style="font-style: italic; display: inline-block; color: grey; font-size: medium;">DS2</span>
+          <span id="artist" class="autoscroll" style="max-width: 20vw; font-size: .8rem;display: inline-block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, alias!</span>
+          <!-- <span style="margin: 0; font-size: .8rem;display: inline-block;">-</span> -->
+          <span id="album" class="autoscroll" style="max-width: 20vw; font-style: italic; display: inline-block; color: grey; font-size: .8rem; padding: 0 2px;">Lorem</span>
         </div>
         </div>
+
     <div style="height: 100%; display: flex; flex:1">
         
         <audio id="player" style="display: none; margin: auto 0 auto auto;" controls ></audio>
@@ -126,7 +128,6 @@ button:hover{
       
       <!-- <button id="theme" class="material-symbols-rounded uictrl" > &#xe20c; </button> -->
       <button id="fs" title="Full screen" class="material-symbols-rounded uictrl" > &#xe5d0; </button>
-
 
       <div id="placeholder" style="margin-right: 2vh;"></div>
         

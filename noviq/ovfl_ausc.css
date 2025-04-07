@@ -1,0 +1,10 @@
+.autoscroll {
+    overflow-x: auto;
+    white-space: nowrap;    
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+.autoscroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
