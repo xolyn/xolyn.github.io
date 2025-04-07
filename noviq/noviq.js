@@ -1,81 +1,41 @@
 var jsmediatags = window.jsmediatags;
 
 //-------------------------------------------------- AUDIO --------------------------------------------------
-const audioUpload = document.getElementById('audio-upload');
-const audioInput = document.getElementById('audio-input');
-const player = document.getElementById('player');
-const thumbnail = document.getElementById('thumbnail');
+const overlay = document.getElementById('overlay');
+let dragCounter = 0;
+window.addEventListener('dragenter', (e) => {
+    e.preventDefault();
+    dragCounter++;
+    const items = e.dataTransfer?.items;
+    if (items && items.length > 0) {
+    const item = items[0];
+    const name = item.getAsFile()?.name.toLowerCase() || "";
+    const type = item.type;
+    if (type.startsWith('audio/')) {
+        ultxt.textContent = 'Upload audio file here';
+    } else {
+        ultxt.textContent = 'Upload lyrics file here';
+    }
+    overlay.classList.add('show');
 
-function handleAudioFile(file) {
-  if (!file || !file.type.startsWith('audio/')) {
-    alert('Not a valid audio file.');
-    return;
-  }
-  const audioURL = URL.createObjectURL(file);
-  player.src = audioURL;
-}
-
-audioUpload.addEventListener('click', () => audioInput.click());
-
-audioUpload.addEventListener('dragover', (e) => {
-  e.preventDefault();
-  audioUpload.style.backgroundColor = '#eee';
+    }
+});
+window.addEventListener('dragover', (e) => {
+    e.preventDefault(); // important 
 });
 
-audioUpload.addEventListener('dragleave', () => {
-  audioUpload.style.backgroundColor = '';
+window.addEventListener('dragleave', (e) => {
+    dragCounter--;
+    if (dragCounter <= 0) {
+    overlay.classList.remove('show');
+    }
 });
-
-audioUpload.addEventListener('drop', (e) => {
-  e.preventDefault();
-  audioUpload.style.backgroundColor = '';
-  const file = e.dataTransfer.files[0];
-  handleAudioFile(file);
-  extractAndDisplayThumbnail(file);
+window.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dragCounter = 0;
+    overlay.classList.remove('show');
+    // deal
 });
-
-audioInput.addEventListener('change', (e) => {
-  const file = e.target.files[0];
-  handleAudioFile(file);
-  extractAndDisplayThumbnail(file);
-});
-
-
-// --------------------------------------------------LYRICS --------------------------------------------------
-const lrcUpload = document.getElementById('lrc-upload');
-const lrcInput = document.getElementById('lrc-input');
-
-lrcUpload.addEventListener('click', () => lrcInput.click());
-
-lrcUpload.addEventListener('dragover', (e) => {
-  e.preventDefault();
-  lrcUpload.style.backgroundColor = '#eee';
-});
-
-lrcUpload.addEventListener('dragleave', () => {
-  lrcUpload.style.backgroundColor = '';
-});
-
-lrcUpload.addEventListener('drop', (e) => {
-  e.preventDefault();
-  lrcUpload.style.backgroundColor = '';
-  const file = e.dataTransfer.files[0];
-  handleLrcFile(file);
-});
-
-lrcInput.addEventListener('change', (e) => {
-  const file = e.target.files[0];
-  handleLrcFile(file);
-});
-
-function handleLrcFile(file) {
-  if (!file || !file.name.endsWith('.lrc')) {
-    alert('请上传有效的 .lrc 歌词文件');
-    return;
-  }
-  // 这里暂时不做歌词处理
-  console.log('歌词文件已上传:', file.name);
-}
 
 // --------------------------------------------------THUMBNAIL --------------------------------------------------
 
@@ -83,6 +43,14 @@ function extractAndDisplayThumbnail(file) {
   jsmediatags.read(file, {
     onSuccess: function(tag) {
       const picture = tag.tags.picture;
+      const songName = tag.tags.title || 'Upload';
+      const artistName = tag.tags.artist || 'Unknown Artist';
+      const albumName = tag.tags.album || 'Unknown Album';
+
+      title.innerText = songName;
+      artist.innerText = artistName;  
+      album.innerText = albumName;
+
       if (picture) {
         const { data, format } = picture;
         let base64String = "";
@@ -130,3 +98,5 @@ fsBtn.addEventListener('click', () => {
     document.exitFullscreen();
   }
 });
+
+
