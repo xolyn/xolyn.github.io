@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<style>
+#progressBall{
+    width: 4px;
+    height: 10px;
+    /* border-radius: 50%; */
+    background-color: black;
+    position: absolute;
+    top: -6px; /* 使球重叠在 nav 上边缘 */
+    left: 0;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+</style>
+</head>
+<body style="margin: 0;">
+    <button id="playPauseBtn">⯈</button>
+<!-- <input type="range" id="progressBar" min="0" max="100" value="0" step="0.1" /> -->
+
+<nav id="audioNav" style="width: 100%; position: fixed; bottom: 0; left:0; height: 10vh; background-color: white; border-top: 1px solid #ccc;">
+    <div class="progress-ball" id="progressBall"></div>
+
+</nav>
+
+
+<!-- <audio src="f.zly.vg/assets/sample.mp3" crossorigin="anonymous"></audio> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+<script>
+  const sound = new Howl({
+    src: ['sample.mp3'],
+    html5: true,
+    onplay: () => {
+      requestAnimationFrame(updateBallPosition);
+    }
+  });
+    
+      const playPauseBtn = document.getElementById('playPauseBtn');
+    
+      let isPlaying = false;
+    
+      playPauseBtn.addEventListener('click', () => {
+        if (!isPlaying) {
+          sound.play();
+          playPauseBtn.textContent = '⏸︎';
+        } else {
+          sound.pause();
+          playPauseBtn.textContent = '⯈';
+        }
+        isPlaying = !isPlaying;
+      });
+    
+ 
+      var nav = document.getElementById('audioNav');
+    var ball = document.getElementById('progressBall');
+    var isDragging = false;
+
+    // 根据播放进度自动更新小球位置
+    function updateBallPosition() {
+      if (!isDragging) {
+        var current = sound.seek() || 0;
+        var duration = sound.duration();
+        var progress = current / duration;
+        var navWidth = nav.offsetWidth;
+        // 计算小球的水平位置
+        var newLeft = progress * navWidth;
+        ball.style.left = newLeft + 'px';
+      }
+      requestAnimationFrame(updateBallPosition);
+    }
+    requestAnimationFrame(updateBallPosition);
+
+    // 鼠标拖拽事件
+    ball.addEventListener('mousedown', function(e) {
+      isDragging = true;
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (isDragging) {
+        var rect = nav.getBoundingClientRect();
+        // 计算小球在 nav 中的相对 x 坐标
+        var x = e.clientX - rect.left;
+        // 限制 x 的范围
+        x = Math.max(0, Math.min(x, rect.width));
+        ball.style.left = x + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', function(e) {
+      if (isDragging) {
+        isDragging = false;
+        var rect = nav.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        var progress = x / rect.width;
+        // 根据拖动位置设置音频播放进度
+        sound.seek(progress * sound.duration());
+      }
+    });
+
+    // 触摸事件（支持移动设备）
+    ball.addEventListener('touchstart', function(e) {
+      isDragging = true;
+    });
+
+    document.addEventListener('touchmove', function(e) {
+      if (isDragging) {
+        var touch = e.touches[0];
+        var rect = nav.getBoundingClientRect();
+        var x = touch.clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        ball.style.left = x + 'px';
+      }
+    });
+
+    document.addEventListener('touchend', function(e) {
+      if (isDragging) {
+        isDragging = false;
+        var rect = nav.getBoundingClientRect();
+        var touch = e.changedTouches[0];
+        var x = touch.clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        var progress = x / rect.width;
+        sound.seek(progress * sound.duration());
+      }
+    });
+
+</script>
+    
+</body>
+</html>
