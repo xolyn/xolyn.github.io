@@ -17,23 +17,19 @@
   to { transform: rotate(360deg); }
 }
 
-button.uictrl{
-  border: none; 
-  /* color: inherit; margin: auto 1vw;
-  cursor: pointer; */
-}
-
 button{
   margin: auto .1vw;
   background-color: transparent;
   padding: .3rem;
   border-radius: .5rem;
-  transition: .3s;
+  /* transition: .3s; */
   cursor: pointer;
+  border: 1.5px solid transparent;
 }
 
 button:hover{
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  border: 1.5px solid black;
 }
 
 #tb_ctrl:hover{
@@ -107,24 +103,24 @@ button:hover{
 
     <div style="display: flex; flex-direction: column; justify-content: center; margin: auto 1rem auto 0;">
         <div id="songInfo">
-          <span id="title" class="ellipsis" style="max-width: 33vw;  font-size:1rem;display: inline-block; font-weight: bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, aperiam.</span>
+          <span id="title" class="ellipsis" style="max-width: 35vw;  font-size:.8rem;display: inline-block; font-weight: bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, aperiam.</span>
           <br>
-          <span id="artist" class="ellipsis" style="max-width: 15vw; font-size: .8rem; display: inline-block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, alias</span>
-          <span id="album" class="ellipsis" style="max-width: 20vw; font-style: italic; display: inline-block; color: grey; font-size: .8rem; padding: 0 2px;">Lorem</span>
+          <span id="artist" class="ellipsis" style="max-width: 15vw; font-size: .6rem; display: inline-block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, alias</span>
+          <span id="album" class="ellipsis" style="max-width: 15vw; font-style: italic; display: inline-block; color: grey; font-size: .6rem; padding: 0 2px;">Lorem</span>
         </div>
         </div>
 
-    <div style="height: 100%; display: flex; flex:1">
+    <div style="height: 100%; display: flex; margin-left: auto;">
         
         <!-- <audio id="player" style="display: none; margin: auto 0 auto auto;" controls ></audio> -->
         <!-- <button id="fs" class="material-symbols-rounded" style="padding: 0; background-color: transparent; border: none; color: inherit; margin: auto 1rem">
             &#xe5d0;
         </button> -->
-        <div id="placeholder" style="margin: auto;"></div>
+        <!-- <div id="placeholder" style="margin: auto;"></div> -->
 
         <input type="file" id="audio-input" accept="audio/*" style="display: none;" />
 
-        <button id="audioUpload" title="Upload music"  class="material-symbols-rounded uictrl" > &#xf391; </button>
+        <button id="audioUpload" style="margin-left: 0" title="Upload music"  class="material-symbols-rounded uictrl" > &#xf391; </button>
         <button id="lrcUpload"  title="Upload lyrics" class="material-symbols-rounded uictrl" > &#xf0f3; </button>
 
       <div style="margin: auto .5rem">|</div>

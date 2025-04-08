@@ -293,12 +293,18 @@ display: none;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
 text-wrap:nowrap;
+/* width: 15dvw; */
 }
 
-.ctxMenu a{
+.ctxMenu div{
+display: flex;
 padding: .25rem;
-display: block;
+/* display: block; */
 cursor: pointer;
+}
+
+.ctxMenu div>div:first-child{
+    width: 1.5rem;
 }
 
 #a11y div{width: 1rem; height: 1rem;  padding: 1rem; border-radius: 999rem; transition: background-color .3s; display: flex; cursor: pointer; align-items: center; justify-content: center;}
@@ -363,7 +369,7 @@ border-radius: 100rem; position: fixed; bottom: 5%; left: 50%; transform: transl
 <div onclick="history.back()">&larr;</div>
 <div onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr;</div>
 <div onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr;</div>
-<div onclick="changeTheme()" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;">&#xF288;</div>
+<div onclick="changeTheme()" style="font-family:'Bootstrap-icons'; font-size: smaller;">&#xF288;</div>
 </div>
 
 <!-- <div id="fest" style="width: 100%; position: fixed; bottom: 0; left: 0; background-color: #0093E9; display: flex; box-sizing: border-box; z-index: 999;
@@ -373,10 +379,22 @@ background: var(--bc); padding: 2rem var(--hp); border-top: 1px solid var(--tc);
 </div> -->
 
 <div class="ctxMenu onlyPC">
-    <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr; To top</a><hr>
-    <a class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr; To end</a><hr>
-    <a class="noarr noul" href="javascript:void(0)" onclick="history.back()">&larr; Back</a><hr>
-    <a class="noarr noul" href="javascript:void(0)" onclick="changeTheme()"><span translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;">&#xF288;</span> Theme</a>
+    <div class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior: 'smooth'})">
+        <div>&uarr;</div> <div>To top</div>
+    </div>
+    <div class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">
+        <div>&darr;</div> <div> To end</div>
+    </div>
+    <div class="noarr noul" href="javascript:void(0)" onclick="history.back()">
+        <div>&larr;</div> <div> Back</div>
+    </div>
+    <div class="noarr noul" href="javascript:void(0)" onclick="window.location.href=window.location.origin + window.location.pathname; ">
+        <div>↺</div> <div>Reload</div>
+    </div>
+    <hr style="border: .5px solid #ccc;">
+    <div class="noarr noul" href="javascript:void(0)" onclick="changeTheme()">
+        <div>◐</div> <div> Change theme</div>
+    </div>
     <!-- <a class="noarr noul" href='javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()'>F12</a><hr> -->
 </div>
 
