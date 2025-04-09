@@ -101,9 +101,9 @@ a.noul{text-decoration: none;}
 
 #pcMenu>a{ margin: 0 .5rem; }
 
-article{ margin: 2.5vh var(--hp); }
+article{ margin: 2.5vh var(--hp);}
 
-article h1{transition: .3s; font-size: large}
+article h1{transition: .3s; font-size: large; position: sticky; top:0}
 
 /* article>h1{ text-decoration: underline; } */
 
@@ -415,20 +415,9 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
         <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/widgets">Gadgetz</a> -->
         <a class="noul" style="font-size: 15.5px;" href="https://zly.vg/cv.pdf">résumé</a>
 
-        <!-- <div class="onlyMob"><br>
-        <span class="onlyMob" style="font-size: medium;">catalog</span>
-            <a class="noul noarr" href="#about" onclick="mobMenu.style.transform='translateY(-100%)'">about</a>
-            <a class="noul noarr" href="#education" onclick="mobMenu.style.transform='translateY(-100%)'">education</a>
-            <a class="noul noarr" href="#projects" onclick="mobMenu.style.transform='translateY(-100%)'">projects</a>
-            <a class="noul noarr" href="#publications" onclick="mobMenu.style.transform='translateY(-100%)'">publications</a>
-            <a class="noul noarr" href="#beliefs" onclick="mobMenu.style.transform='translateY(-100%)'">things I believe</a>
-            <a class="noul noarr" href="#connect" onclick="mobMenu.style.transform='translateY(-100%)'">connect</a>
-        </div> -->
-
-        <!-- <a translate="no" style="font-family:'Bootstrap-icons'; font-size: smaller; width: fit-content;" href="javascript: void(0)" onclick="changeTheme()" class="noarr noul">&#xF288;</a> -->
     </div>
 
-    <div   id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; background:none;"
+    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; background:none;"
     onclick="menuTogg()" translate="no" >
     
     <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="var(--tc)" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round"
@@ -451,7 +440,24 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 </nav>
 
 <div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
-    <div id="mobMenu1" style="margin: 0 var(--hp); line-height: 150%; font-size: larger !important; max-height: 80%; overflow-y: auto;"></div>
+    <div id="mobMenu1" style="margin: auto var(--hp) 0 var(--hp); line-height: 150%; font-size: larger !important; max-height: 80%; overflow-y: auto;"></div>
+    <div style="margin: 1rem var(--hp); letter-spacing: 5px; display: none;">
+        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href="mailto:lz568@cornell.edu">&#xF32C;</a>
+        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
+        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://github.com/xolyn>&#xF3ED;</a> 
+        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://instagram.com/toqurdn>&#xF437;</a> 
+        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
+        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
+    </div>
+
+    <div id="alignBottomPlaceholder" style="margin-bottom: 5rem;"></div>
+    <!-- <div style="margin: 1rem var(--hp); border-top: 1px solid #ccc; ">
+        <p ><a style="font-size: larger !important" href="">Test1</a></p>
+        <p ><a style="font-size: larger !important" href="">Test2</a></p>
+        <p ><a style="font-size: larger !important" href="">Test3</a></p>
+        <p ><a style="font-size: larger !important" href="">Test4</a></p>
+    </div> -->
+
 </div>
 
 <article id="about">
@@ -521,7 +527,16 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <div class="swiper">
     <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div id="proj">
+                <img src="https://images.unsplash.com/photo-1595325093677-422a41bcf51c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
+                <div id="projDesc">
+                    <a href="pslex.html">Pseudo lexicon</a>
+                </div>
+            </div>
+            </div>
 
+        
         <div class="swiper-slide">
         <div id="proj">
             <img src="https://images.unsplash.com/photo-1628268509381-c70293fa638d?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
@@ -554,7 +569,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
             <img   src="https://images.unsplash.com/photo-1669502067440-6a09729d072d?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
              style="width: 100%;">
             <div id="projDesc">
-                <a href="/academic/bp.html">Birthday paradox</a>
+                <a href="academic/bp.html">Birthday paradox</a>
             </div>
         </div>
       </div>
@@ -699,7 +714,8 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 <div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
     &copy; Lingyu Zhou <span id="thisYear"></span>
-
+<br>
+<p style="font-size: smaller; color: grey">Images partly from <a href="https://unsplash.com/">Unplash</a>.</p>
     <p style="width: fit-content;" id="footerLink">
         <a href="javascript: void(0)"  onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
         <a href="mailto:report@zly.vg">Report</a>
