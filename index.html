@@ -365,7 +365,7 @@ article > div{ flex:1; }
 <div id="a11y" class="onlyMob" style=" padding: .5rem; background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%); transition: bottom .5s;
 backdrop-filter: blur(5px); 
 -webkit-backdrop-filter: blur(5px); border: 1px solid #ddd;
-border-radius: 100rem; position: fixed; bottom: 5%; left: 50%; transform: translateX(-50%) scale(100%); z-index: 999; display: flex;">
+border-radius: 100rem; position: fixed; bottom: 5%; left: 50%; transform: translateX(-50%) scale(100%); z-index: 2; display: flex;">
 <div onclick="history.back()">&larr;</div>
 <div onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr;</div>
 <div onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr;</div>
@@ -399,7 +399,7 @@ background: var(--bc); padding: 2rem var(--hp); border-top: 1px solid var(--tc);
 </div>
 
 <nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
-background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;">
+background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 4;">
     <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s; font-size: larger;" translate="no" 
     onclick="window.location.href='index.html'">LINGYUOHZ</div>
     <div style="margin: auto;">
@@ -439,7 +439,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 
 </nav>
 
-<div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 2; background-color: var(--bc); flex-direction: column; transition: .5s ;">
+<div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 3; background-color: var(--bc); flex-direction: column; transition: .5s ;">
     <div id="mobMenu1" style="margin: auto var(--hp) 0 var(--hp); line-height: 150%; font-size: larger !important; max-height: 80%; overflow-y: auto;"></div>
     <div style="margin: 1rem var(--hp); letter-spacing: 5px; display: none;">
         <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href="mailto:lz568@cornell.edu">&#xF32C;</a>
@@ -715,7 +715,7 @@ background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 3;
 <div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
     &copy; Lingyu Zhou <span id="thisYear"></span>
 <br>
-<p style="font-size: smaller; color: grey">Images partly from <a href="https://unsplash.com/">Unplash</a>.</p>
+<p style="font-size: smaller; color: grey">Images partly from <a href="https://unsplash.com/" style="font-size: inherit;">Unplash</a>.</p>
     <p style="width: fit-content;" id="footerLink">
         <a href="javascript: void(0)"  onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
         <a href="mailto:report@zly.vg">Report</a>
