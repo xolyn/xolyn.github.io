@@ -90,12 +90,20 @@ a{
 }
 
 a:hover{ opacity: .5; }
-
-a:hover::after{
-    content: '↗';
-    font-family: inter;
+a::after {
+  content: '↗';
+  font-family: Inter;
+  display: inline-block;
+  vertical-align:sub;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width .3s cubic-bezier(0.85, 0, 0.15, 1);
+  white-space: nowrap;
 }
 
+a:hover::after {
+max-width: 100px;
+}
 a.noarr:hover::after{ content: none; }
 
 a.noul{text-decoration: none;}
