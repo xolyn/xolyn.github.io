@@ -6,22 +6,17 @@
 <link rel='stylesheet' href='font.css'>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<title>Document</title>
+<title>lingyu zhou</title>
 <style>
 :root{
-  --mc: white;
-  --ac: black;
+  --mc: black;
+  --ac: white;
   --sidebarWidth:40%;
-
   /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" ><text fill="white"  x="0" y="20" font-size="20">↑</text></svg>') 0 0, auto; */
 }
 
 html{
-    font-family: 'md';
-
-    /* font-family: 'sneak';
-    font-feature-settings: "calt", "dlig", "liga", "ss03"; */
-    
+    font-family: 'md';    
     font-size: smaller;
     background-color: var(--ac);
     color:var(--mc);
@@ -140,29 +135,27 @@ h2{margin: 0; padding-bottom: 0;}
 <body style="margin: 0;">
 
 <nav style="width: 100%; height: 8dvh; position: fixed; top:0; display: flex; z-index: 999;">
-<h1 style="margin: 0; height: min-content; margin: auto auto auto 1rem;">
-  LINGYUOHZ
-</h1>
 
-<menu class="onlyPC" style="margin: auto 1rem; ">
-  <div id="pcmenu" style="display: flex; font-size: larger;">
-    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/blog">blog</a>
-    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://portfolio.zhoulingyu.net">portfolio</a>
-    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
-    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/fg2.html">font studio</a>
-    <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://zly.vg/cv.pdf">résumé</a>
-  </div>
-</menu>
+  <h1 style="margin: 0; height: min-content; margin: auto auto auto 1rem; font-size: large; "> LINGYUOHZ </h1>
+  <menu class="onlyPC" style="margin: auto 1rem; ">
+    <div id="pcmenu" style="display: flex; font-size: larger;">
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/blog">blog</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://portfolio.zhoulingyu.net">portfolio</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/fg2.html">font studio</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://zly.vg/cv.pdf">résumé</a>
+    </div>
+  </menu>
 
-<!-- ; mobmenuwrapper.innerHTML=pcmenu.innerHTML; -->
-<div class="material-symbols-outlined onlymob" 
-onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'; mobmenu.style.right=mobmenu.style.right==='0px'?'-100dvw':'0px'; mobmenuwrapper.innerHTML=pcmenu.innerHTML; "
-style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
+  <div class="material-symbols-outlined onlymob" 
+  onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'; mobmenu.style.right=mobmenu.style.right==='0px'?'-100dvw':'0px'; mobmenuwrapper.innerHTML=pcmenu.innerHTML; "
+  style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
+
 </nav>
 
 <menu class="onlymob" id="mobmenu" style="transition: right .3s; margin: 0; box-sizing: border-box; padding: 1rem .5rem; z-index: 98; width: 100dvw; height: 100dvh; position: fixed; top:0; background-color: var(--ac);">
   <div style="width: 100%; height: 100%; display: flex; flex-direction: column;" >
-    <div style="width: 100%; margin-top: auto; font-size: x-large;" id="mobmenuwrapper">
+    <div style="width: 100%; margin-top: auto; font-size: large;" id="mobmenuwrapper">
     </div>
   </div>
 </menu>
@@ -240,8 +233,8 @@ style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
           </div>
         </div>
 
-        <div style="display: flex; width: 100%;">
-          <div class="prev" style="margin-right: 1rem;">&larr;</div>
+        <div style="display: flex; width: 100%; margin-top: .5rem;">
+          <div class="prev" style="margin-right: 1.5rem;">&larr;</div>
           <div class="next">&rarr;</div>
           <div class="swiper-pagination" style="margin-left: auto; width: fit-content; display: block; position: initial;"></div>
         </div>
@@ -254,10 +247,10 @@ style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
         </div>
         <div class="column content">
           <ul style="padding: 0 1em;">
-            <li style="padding: .5rem 0;">Detail matters.</li>
-            <li style="padding: .5rem 0;">Simplicity is the ultimate sophistication.</li>
-            <li style="padding: .5rem 0;">Life is present.</li>
-            <li style="padding: .5rem 0;">Embrace mediocrity.</li>
+            <li style="padding:.5rem 0;">Detail matters.</li>
+            <li style="padding:.5rem 0;">Simplicity is the ultimate sophistication.</li>
+            <li style="padding:.5rem 0;">Life is present.</li>
+            <li style="padding:.5rem 0;">Embrace mediocrity.</li>
         </ul>
         </div>
       </div .row>
@@ -269,19 +262,22 @@ style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
         <div class="column content">
           <ul style="padding: 0 1em;">
             <li>
-                <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Analysis of the Hog Futures Market in China (BPS_0799)</a></span>
-                <p>
-                    <i>Applied Economics and Policy Studies</i> (ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (Print ISSN 2754-1169) <br>
+                <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96" style="font-weight: bold;">Analysis of the Hog Futures Market in China</a></span><br>
+                <!-- <p> -->
+                    <i>Applied Economics and Policy Studies</i> (ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (ISSN 2754-1169) <br>
+            <br>
                     Chen Xu, Lingyu Zhou, Anshi Lou, Manqi Qiu & Mengyu Cao 
-                </p>
+                <!-- </p> -->
                 
             </li>
+            <br>
             <li>
-                <span>Purchasing Practices and Labor Outcomes in Global Supply Chains</span>
-                <p>
+                <span style="font-weight: bold;">Purchasing Practices and Labor Outcomes in Global Supply Chains</span><br>
+                <!-- <p> -->
                     <i>British Journal of Industrial Relations</i>, <span style="color: grey;">under review</span><br>
+            <br>
                     Sarosh Kuruvilla, Chunyun Li, Lingyu Zhou
-                </p>
+                <!-- </p> -->
             </li>
         </ul>
         </div>
@@ -295,22 +291,22 @@ style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
           <p>
             &copy; Lingyu Zhou 2025
           </p>
-          <p ><span onclick="
+          <p>
+            <span onclick="
           document.documentElement.style.setProperty('--ac', getComputedStyle(document.documentElement).getPropertyValue('--ac')=== 'black' ? 'white' : 'black');
-          document.documentElement.style.setProperty('--mc', getComputedStyle(document.documentElement).getPropertyValue('--mc')=== 'white' ? 'black' : 'white');" style="cursor: pointer;">◐</span>&nbsp;&nbsp;|&nbsp;&nbsp;
-            Legal&nbsp;&nbsp;|&nbsp;&nbsp;
-            Share&nbsp;&nbsp;|&nbsp;&nbsp;
-            Report</p>
+          document.documentElement.style.setProperty('--mc', getComputedStyle(document.documentElement).getPropertyValue('--mc')=== 'white' ? 'black' : 'white');" 
+          style="cursor: pointer;">◐</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <span onclick="window.location.href='https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1'">Legal</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <span onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <span onclick="window.location.href='mailto:report@zly.vg'">Report</span></p>
         </div>
 
 </div .wrapper>
     
 </div>
 
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="proj/proj.js"></script>
 </body>
-
 
 </html>
