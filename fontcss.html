@@ -203,6 +203,20 @@ input#fontSearch:hover{
     background-color: rgba(200,200,200,.4);
 }
 
+
+a.hrefsWaterfall{
+    font-family:'Bootstrap-icons'; cursor: pointer;  padding: .2rem;
+    display: none;
+    /* border: 1px solid #ddd; border-radius: 8px; */
+}
+
+a.hrefsWaterfall::after{
+    content: '';
+    font-family: 'inter';
+    font-size: smaller;
+}
+
+
 </style>
 
 <script>
@@ -347,19 +361,26 @@ width="15px" height="15px" viewBox="0 0 512 400" version="1.1" xmlns="http://www
         <input type="color" id="colorPicker" style="margin:auto 0;" title="Pick a color">
     </div>
 
-    <div style="margin:auto 0;">
+    <div style="margin:auto 0 auto 1rem;">
         <button title="Reset all"
-        style=" margin: auto 1rem; color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; font-family: var(--ff); background-color: #eee; cursor: pointer;" 
+        style=" margin: auto .5rem; color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; font-family: var(--ff); background-color: #eee; cursor: pointer;" 
         onclick='reset()' onmouseenter="this.style.backgroundColor='#ddd'" onmouseleave="this.style.backgroundColor='#eee'">↻</button>
     </div>
 
+        <button 
+        onclick=' document.querySelectorAll("a.hrefsWaterfall").forEach(link => { link.style.display = (link.style.display === "inline-block") ? "none" : "inline-block"; });' 
+        title="Preview in waterfall"
+        onmouseenter="this.style.backgroundColor='#ddd'" onmouseleave="this.style.backgroundColor='#eee'" style="font-family:'Bootstrap-icons';
+         margin: auto .5rem; color:inherit; padding: .5rem .75rem ; border: none; border-radius: 1rem; background-color: #eee; cursor: pointer;">
+            &#xF228;
+        </button>
     </div>
 </div>
     
     <div id="fontset" style="max-width: 100vw;
     overflow-x: auto;">
         <fieldset>
-            <legend tag=''>BDLifelessGrotesk</legend>
+            <legend tag=''>BDLifelessGrotesk </legend>
             <div style="font-family:BDLifelessGrotesk;" class="usrtxt" id="orig" contenteditable >The quick brown fox jumps over the lazy dog.</div>
         </fieldset>
         <fieldset>
@@ -874,6 +895,18 @@ updateLegendCount();
 fontSearch.addEventListener('input', updateFontCount);
 
 updateFontCount();
+
+
+//-------------------------------------------------------------------------
+const legends = document.querySelectorAll("legend");
+
+  legends.forEach(legend => {
+    const font = encodeURIComponent(legend.innerHTML);
+    const a = document.createElement("a");
+    a.className = "hrefsWaterfall";
+    a.href = `./waterfall.html?font=${font}`;
+    legend.appendChild(a);
+  });
 </script>
 </body>
 </html>

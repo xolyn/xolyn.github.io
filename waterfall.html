@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<script>
+    window.onload = function() {
+ if (!window.location.search.includes("?")) { document.body.innerHTML = ""; }
+      const params = new URLSearchParams(window.location.search);
+      const font = params.get("font") || "sans-serif";
+
+      document.body.style.fontFamily = decodeURIComponent(font);
+      fontName.innerHTML = font;
+    };
+  </script>
+<style>
+p{margin: .5rem 0; 
+ /* max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+button{all:unset; background-color: white;}
+button:hover{
+  background-color: #ddd;
+}
+</style>
+</head>
+<body>
+
+<nav style="display: flex; position: sticky; top:0; background-color: white;">
+<button onclick="history.back()" style="transition:.3s; border: 1px solid #ddd; border-radius: 10px; cursor: pointer; padding: .5em 1rem; margin: auto 0;">&larr;</button>
+
+<h3 id="fontName" style="margin-left: auto; display: inline-block;">Karla</h3>
+</nav>
+
+<div id="main" style=""></div>
+
+<script>
+    const text = "The quick brown fox jumps over the lazy dog.";
+    const maxSize = '4.5'; 
+    const minSize = '1'; 
+    const step = .2;      
+
+    for (let size = maxSize; size >= minSize; size -= step) {
+      const p = document.createElement("p");
+      p.textContent = text;
+      p.style.fontSize = size + "vw";
+      document.getElementById('main').appendChild(p);
+    }
+</script>
+
+</body>
+</html>
