@@ -15,7 +15,7 @@
 }
 
 html{
-    font-family: '3x3';
+    font-family: 'md';
 
     /* font-family: 'sneak';
     font-feature-settings: "calt", "dlig", "liga", "ss03"; */
@@ -25,7 +25,9 @@ html{
     color:var(--mc);
 }
 
-a{color:inherit;}
+a{color:var(--mc);}
+
+a:hover{color: color-mix(in srgb, var(--mc) 65%, var(--ac) 35%)}
 
 h2{border-top: .5px solid #ddd; padding: .5rem 0; font-size: medium;}
 
