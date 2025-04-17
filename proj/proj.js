@@ -13,16 +13,16 @@ renderCustom: function (swiper, current, total) {
 
 
 const projs=[
-{
-  "name": "Gambler's Ruin",
-  "url": "https://xolyn.github.io/grd.html",
-  "img": "https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-},
 
 {
   "name":"NOVIQ",
   "url": "https://xolyn.github.io/noviq",
   "img":"https://images.unsplash.com/photo-1565656898731-61d5df85f9a7?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+},
+{
+  "name": "Gambler's Ruin",
+  "url": "https://xolyn.github.io/grd.html",
+  "img": "https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 },
 {
   "name": "Pseudo Lexicon",

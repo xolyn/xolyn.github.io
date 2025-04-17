@@ -59,14 +59,17 @@ function handleFiles(files){
       music = file;
       loadMetadata(file);
       initPlayer(file);
+      showNotif('Music uploaded!');
 
     }
     else if (ext === 'lrc') {
       lrc = file;
       loadLyrics(file);
+      showNotif('Lyrics uploaded, ready to play!');
+      
     }
     else {
-      alert('Invalid format');
+      showNotif('Invalid format!');
     }
   }
 }
@@ -203,29 +206,30 @@ function loadLyrics(file) {
   }
   
   // 2. 把 LRC 文本转成 [{time, text}] 数组
-  function parseLrcText(text) {
-    const lineRe = /\[(\d+):(\d+(?:\.\d+)?)\]/g;
-    const result = [];
-    text.split(/\r?\n/).forEach(line => {
-      let match;
-      const times = [];
-      while ((match = lineRe.exec(line)) !== null) {
-        const min = parseInt(match[1], 10);
-        const sec = parseFloat(match[2]);
-        times.push(min * 60 + sec);
-      }
-      const content = line.replace(lineRe, '').trim();
-      times.forEach(t => result.push({ time: t, text: content }));
-    });
-    return result;
-  }
+function parseLrcText(text) {
+  const lineRe = /\[(\d+):(\d+(?:\.\d+)?)\]/g;
+  const result = [];
+  text.split(/\r?\n/).forEach(line => {
+    let match;
+    const times = [];
+    while ((match = lineRe.exec(line)) !== null) {
+      const min = parseInt(match[1], 10);
+      const sec = parseFloat(match[2]);
+      times.push(min * 60 + sec);
+    }
+    const content = line.replace(lineRe, '').trim();
+    times.forEach(t => result.push({ time: t, text: content }));
+  });
+  return result;
+}
   
   // 3. 渲染：
   let lastHighlightedEl = null;
 
   function renderLyrics(currentIndex) {
     const container = document.getElementById('lrcShow');
-  
+    container.innerHTML='';
+
     if (container.children.length === 0) {
       lyrics.forEach((line, i) => {
         const lineEl = document.createElement('div');
@@ -259,3 +263,41 @@ function loadLyrics(file) {
       });
     }
   }
+
+//=====================================notif=====================================
+
+function showNotif(text, dur=1000) {
+  const notif = document.getElementById('notif');
+  const  exitCurve= 'transform 0.3s cubic-bezier(0.42, 0, 1, 1)';
+  const  enterCurve= 'transform 0.5s cubic-bezier(0.25, 1.5, 0.5, 1)';
+  if (!notif) return;
+
+  notif.innerHTML = text;
+  notif.style.transition = enterCurve;
+  notif.style.transform = 'translate(-50%, 0)';
+
+  setTimeout(() => {
+    notif.style.transition = exitCurve;
+    notif.style.transform = 'translate(-50%, -10rem)';
+  }, dur);
+}
+
+//=====================================demo=====================================
+function startDemo(){
+  Promise.all([
+    fetch('./song.mp3').then(res => res.blob()),
+    fetch('./song.lrc').then(res => res.blob())
+  ]).then(([mp3Blob, lrcBlob]) => {
+    const mp3File = new File([mp3Blob], 'song.mp3', { type: 'audio/mp3' });
+    const lrcFile = new File([lrcBlob], 'song.lrc', { type: 'text/plain' });
+
+    handleFiles([mp3File, lrcFile]);
+
+    document.getElementById('play').click();
+  });
+
+  setTimeout(()=>{showNotif(`
+    <span style='color:gold'>2018 Grammy's Award winner
+    </span>
+    `, 5000)}, 5000);
+}

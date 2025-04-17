@@ -31,29 +31,39 @@ cursor: pointer;
 
 .btn:hover{ border: 1.5px solid black; }
 
-#uploads{display: none;}
+#uploads{display: none ; }
 
 #uploadMask{
 width: 100dvw; height: 100dvh; display: flex; position: fixed; top:0; left:0; background-color: transparent;
 visibility: hidden; opacity: 0;
 backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 99; transition: .3s;
 }
-.lrcLine{transition: .3s;}
-.blur{filter: blur(3px);}
 #lrcShow{
-  /* background: linear-gradient(230deg,rgba(106, 184, 155, 1) 0%, rgba(235, 168, 96, 1) 50%, rgba(31, 2, 2, 1) 100%); */
+  /* background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(45, 253, 156, 1) 100%); */
 }
-
+.lrcLine{transition: .3s; margin: 1.5rem 0;}
+.blur{filter: blur(3px);}
 #seekBall{transition: .2s;outline:0px solid #ccc}
 #seekBall:hover{outline:2px solid #ccc}
-
-
+button{all:unset; transition: .3s; border-radius: 10px; background-color: #eee; font-size: x-small; cursor: pointer; border: 1px solid #ddd; padding: .5rem; margin: 1rem;}
+button:hover{background-color: #ddd;}
+#notif{transition: transform 0.5s cubic-bezier(0.25, 1.5, 0.5, 1); text-align: center; width: fit-content; max-width: 70dvw;
+  position: fixed; top:2rem; left:50%; transform: translate(-50%, -10rem); background-color: #eee; border: 1px solid #eee; padding: 2.5dvh 3.5dvw; font-size: 3vmin; border-radius: 99rem;}
 /* uploadMask.style.visibility='initial'; uploadMask.style.opacity=1 */
 </style>
 </head>
 <body style="margin: 0;">
 
-<div id="lrcShow" style="padding: 5dvh 5dvw; height: 100dvh; max-height: 100dvh; overflow-y: auto; box-sizing: border-box;"></div>
+<div id="lrcShow" style="padding: 5dvh 5dvw; height: 100dvh; max-height: 100dvh; overflow-y: auto; box-sizing: border-box;">
+  <div style="text-align: center; margin-top: 30dvh;">
+    <span style="font-size: 5vmax; font-family: Neue Regrade; font-weight: bold; pointer-events: none;" translate="no">NOViQ</span><br>
+    <span style="font-size: small; color:gray">Drop files here or choose files from below.<br>Uploaded lyrics will be displayed here.</span><br>
+    <button onclick="startDemo()" >Try demo</button>
+    <button >About this project</button>
+  </div>
+</div>
+
+<div id="notif"></div>
 
 <div id="uploadMask">
     <div style="margin: auto; text-align: center; font-size: x-large;">
@@ -62,14 +72,25 @@ backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 99; tra
     </div>
 </div>
 
-<div id="control" style="background-color: rgba(255,255,255,.7);
+<!-- <div id="restrict" style="width: 100dvw; height: 100dvh; position: fixed; top:0; left:0; background-color: rgba(255,255,255,.4);
+backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 99; transition: .3s; z-index: 9999;">
+<div style="width: 100%; height: 100%; display: flex">
+
+  <center style="margin: auto;">
+    <span style="font-size: 5vmax; font-family: Neue Regrade; font-weight: bold; pointer-events: none;" translate="no">NOViQ</span><br>
+    <p>Due to browser restriction, </p>
+  </center>
+</div>
+</div> -->
+
+<div id="control" style="background-color: rgba(255,255,255,.0);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 position: relative; height: 8dvh; display: flex; position: fixed; bottom: 0; left:0; width: 100%; border-top: 1px solid #ddd;">
 
 <div style=" height: 100%; position: relative;" id="tnAndControl">
     <img src="tn.png" style="height: 100%;" id="thumbnail" alt="">
-    <div id="play" style="color:white; mix-blend-mode: difference; font-size: xx-large; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);" class="material-symbols-outlined">&#xf137;</div>
+    <div id="play" style="cursor: pointer; color:white; mix-blend-mode: difference; font-size: xx-large; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);" class="material-symbols-outlined">&#xf137;</div>
 </div>
 
 <div id="songInfo" style="margin: auto .5rem; max-width: 70dvw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
