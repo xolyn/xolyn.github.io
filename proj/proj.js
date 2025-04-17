@@ -14,6 +14,16 @@ renderCustom: function (swiper, current, total) {
 
 const projs=[
 {
+  "name": "Gambler's Ruin",
+  "url": "https://xolyn.github.io/grd.html",
+  "img": "https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+},
+{
+  "name": "Pseudo Lexicon",
+  "url": "https://xolyn.github.io/pslex",
+  "img": "https://images.unsplash.com/photo-1595325093677-422a41bcf51c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+},
+{
 "name": "Optimization plyaground",
 "url": "https://xolyn.github.io/academic/opt.html",
 "img": "https://images.unsplash.com/photo-1628268509381-c70293fa638d?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -27,11 +37,6 @@ const projs=[
 "name": "beamer2ppt",
 "url": "https://github.com/xolyn/beamer2ppt",
 "img": "https://f.zly.vg/assets/b2p.jpg"
-},
-{
-"name": "Gambler's Ruin",
-"url": "https://xolyn.github.io/grd.html",
-"img": "https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 },
 {
 "name": "Birthday paradox",
@@ -57,11 +62,6 @@ const projs=[
 "name": "The bug index",
 "url": "https://f.zly.vg/bug",
 "img": "https://f.zly.vg/assets/bug.png"
-},
-{
-"name": "Pseudo Lexicon",
-"url": "https://xolyn.github.io/pslex",
-"img": "https://images.unsplash.com/photo-1595325093677-422a41bcf51c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 }
 ]
 

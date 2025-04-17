@@ -4,914 +4,310 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' href='font.css'>
-<!-- <link rel="shortcut icon" href="https://f.zly.vg/assets/kDisk.png"> -->
-<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/105/105113.png">
-<link rel="preconnect" href="https://rsms.me/">
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Liter&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,ght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel="stylesheet" href="widgets/hamb.css">
-<link rel="stylesheet" href="widgets/widgets.css">
-
-<title>Lingyu Zhou</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<title>lingyu zhou</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 :root{
-    --tc:black;
-    --bc: white;
-    --ac: lightgray;
-    /* --ff: Inter, sans-serif; */
-    --ff: 'univ';
-    /* --ff: 'Public Sans'; */
-    /* --ff: 'Google Sans Text'; */
-    --fs: small;
-    --hp: 4vw;
+  --mc: black;
+  --ac: white;
+  --sidebarWidth:40%;
+  /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" ><text fill="white"  x="0" y="20" font-size="20">↑</text></svg>') 0 0, auto; */
 }
 
-
-::selection{
-     /* background-color: rgb(182, 237, 255); */
-     background-color: var(--tc);
-     color:var(--bc);
+html{
+    font-family: 'md';    
+    font-size: smaller;
+    background-color: var(--ac);
+    color:var(--mc);
 }
 
-::-webkit-scrollbar {
-    width: 8px;
+a{color:var(--mc);}
+
+a:hover{color: color-mix(in srgb, var(--mc) 65%, var(--ac) 35%)}
+
+h2{border-top: .5px solid #ddd; padding: .5rem 0; font-size: medium;}
+
+.wrapper {
+  height: 90dvh;
+  overflow-y: auto;
+  overflow: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #ababab;
-    border-radius: 10px;
-    border: 3px solid transparent;
-    background-clip: padding-box;
+.wrapper::-webkit-scrollbar {
+  display: none;               /* Safari and Chrome */
 }
 
-::-webkit-scrollbar-thumb:hover{
-    border: 0;
+.row {
+  display: flex;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
+.column {
+  padding: 0.5rem 1rem;
 }
 
-*,html,body{
-    font-feature-settings: "ss15";
-    /* font-feature-settings: "calt", "dlig", "liga", "ss03"; */
-    font-family: var(--ff);
-    font-size: var(--fs);
-    line-height: 120%;
-    color:var(--tc);
-    letter-spacing: .035vw;
-    -webkit-font-smoothing: antialiased;
-    scroll-padding-top: 5rem;
+.sidebar {
+  z-index: 9;
+  position: sticky;
+  top: 0;
+  height: min-content;
+  flex:1;
+  background-color: var(--ac);  
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 20
-}
-
-#index{ font-weight: 400; } 
-#index:hover{ font-weight: 800; }
-
-h1,h2,h3,h4,h5{font-size:larger; font-weight: 600;}
-
-ul{ padding: 0 1em; } 
-
-a{
-    color: inherit;
-    transition: opacity .35s;
-}
-
-a:hover{ opacity: .5; }
-a::after {
-  content: '↗';
-  font-family: Inter;
-  display: inline-block;
-  vertical-align:sub;
-  max-width: 0;
-  overflow: hidden;
-  transition: max-width .3s cubic-bezier(0.85, 0, 0.15, 1);
-  white-space: nowrap;
-}
-
-a:hover::after {
-max-width: 100px;
-}
-a.noarr:hover::after{ content: none; }
-
-a.noul{text-decoration: none;}
-
-#pcMenu>a{ margin: 0 .5rem; }
-
-article{ margin: 2.5vh var(--hp);}
-
-article h1{transition: .3s; font-size: large; position: sticky; top:0; text-transform: capitalize;}
-
-/* article>h1{ text-decoration: underline; } */
-
-#mobMenu{
-    /* top:-100%; */
-    transform: translateY(-100%);
-    transition: transform .5s;
-}
-
-#mobMenu a{
-display: block;
-margin: .25rem 0;
-}
-
-.swiper {
-  /* width: 100%; */
-  height: fit-content;
-  cursor: ew-resize;
-
-}
-
-.swiper-slide{
-    background-color: transparent;
-    color: var(--tc);
-}
-
-
-.swiper-button-prev,.swiper-button-next{
-    color: white;
-    /* background-color: rgba(220,220,220,.6);
-    border-radius: 10px; */
-    mix-blend-mode:difference;
-    
-}
-.swiper-button-prev:after {
-  content: '←';
-  font-family: inter;
-  font-size: medium;
-}
-
-.swiper-button-next:after {
-  content: '→';
-  font-family: inter;
-  font-size: medium;
-}
-
-#proj{
-    margin: 1rem .5rem;
-    position: relative;
-}
-
-#projDesc{
-    /* padding: .25rem .5rem; */
-    position: absolute;
-    left:5%;
-    bottom: 5%;
-    color: white;
-    mix-blend-mode: difference;
-}
-
-
-#projDesc a{font-size: large; display: block; width: 60%; text-decoration: none;}
-
-#proj>img{
-    aspect-ratio: 1 /1;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid #bbb;
-    box-sizing: border-box;
-    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4); */
+.content {
+  flex:2;
 }
 
 tr>td:first-child{
     width: 35%;
+    padding: .5rem 0;
 }
 
 tr>td:nth-child(2){
     width: 65%;
     text-align: right;
+    padding: .5rem 0;
 }
 
-#edutable{ width: 100%; }
-
-td{padding: .25rem 0;}
-
-table, tr, td { border: none; }
-
-#widgetItem{
-    opacity: 0;
-    transition: .3s;
-    cursor: pointer;
-    visibility:hidden;
-    /* mix-blend-mode: difference;
-    color: var(--tc) */
+menu.onlymob{
+  right: -100dvw
 }
 
-#widget div{ font-size: large; }
-
-#widgetItem:hover{color: lightgray}
-
-/* #widget:hover #widgetItem{ opacity: 1; } */
-
-#quote i::before,#quote i::after{
-    content: '"';
-    font-family: var(--ff);
-}
-
-#quote p::before{
-    content: '—\00a0';
-}
-
-#quote>p, #quote>i, #quote>p>i{
-    color:grey;
-}
-
-
-/* ---------------------------chem--------------------------- */
-div.chem{
-    min-width:  3rem;
-    width:      3rem;
-    min-height: 3rem;
-    /* box-sizing: border-box; */
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    border-radius: 5px;
-    transition: .3s;
-    margin-left: -20px;
-    transform: rotate3d(0, 1, 0, 45deg);
-    cursor:crosshair;
-}
-
-
-div.chem:hover{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    transform: rotate3d(0, 1 ,0 ,0deg) translateX(-10px);
-    min-width: 3.5rem;
-    width:     3.5rem;
-    min-height:3.5rem;
-}
-
-.chem div{
-    width: 100%;
-    max-width: 100%;
-}
-
-.chem div:first-child{
-    display: flex;
-
-}
-
-.chem div:first-child> span:first-child{
-    margin-right: auto;
-    font-size: 10px;
-}
-
-#chemEle{ font-weight: bold; }
-
-/* #mobMenuTogg::before{
-    content: '[';
-    font-family: inherit;
-}
-
-#mobMenuTogg::after{
-    content: ']';
-    font-family: inherit;
-} */
-
-#resample{background-color: var(--bc);}
-#resample:hover{background-color: color-mix(in srgb, var(--bc) 90%,var(--tc) 10%);}
-
-.ctxMenu{
-position: fixed;
-min-width: fit-content;
-padding: 1rem;
-border-radius: .5rem;
-color: var(--tc);
-background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-top:10%;
-left:10%;
-border: 1px solid color-mix(in srgb, var(--tc) 20%,var(--bc) 80%); 
-z-index: 1000;
-display: none;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
-text-wrap:nowrap;
-/* width: 15dvw; */
-}
-
-.ctxMenu div{
-display: flex;
-padding: .25rem;
-/* display: block; */
-cursor: pointer;
-}
-
-.ctxMenu div>div:first-child{
-    width: 1.5rem;
-}
-
-#a11y div{width: 1rem; height: 1rem;  padding: 1rem; border-radius: 999rem; transition: background-color .3s; display: flex; cursor: pointer; align-items: center; justify-content: center;}
-
-#a11y div:hover{ padding: 1rem; background-color:color-mix(in srgb, var(--tc) 10%,var(--bc) 90% ); }
-
-#footerLink a{ 
-    /* color: color-mix(in srgb, var(--ac) 70%, var(--tc) 30%); */
-    color: grey;
-    display: block; }
-
-/* --------------------------media queries-------------------------- */
+/* swiper */
+.prev,.next{cursor: pointer;}
+.prev::selection,.next::selection{background-color: transparent;}
+.prev.swiper-button-disabled,.next.swiper-button-disabled {color: grey; cursor: not-allowed;}
+.swiper-wrapper img{aspect-ratio: 1 / 1;}
 @media (orientation: landscape) {
-article{display: flex; }
-article> h1{ width: 50%; }
-article > div{ flex:1; }
-#mobMenuTogg,#mobMenu{ display: none; }
-/* *,html,body{ font-size: 15px; } */
-.onlyMob{display: none !important;}
+.onlymob{
+  display: none;
+}
+
+.onlyPC{
+  display: block;
+}
+
+.sidebar{
+  width: var(--sidebarWidth)
+}
+
+.content{
+  max-width: calc(100% - var(--sidebarWidth));
+}
+
+.swiper{
+  margin-top: 2rem;
+}
+
+.swiper-wrapper img{aspect-ratio: 1.5 / 1;  object-fit: cover;}
+
 }
 
 @media (orientation: portrait) {
-*,html,body{ font-size: 13px; }
-#pcMenu{ display: none; } 
-#mobMenu{ display: flex; }
-#mobMenuTogg{background-color: color-mix(in srgb, var(--bc) 90%, var(--tc) 10%); color:var(--tc)}
-#mobMenuTogg:hover{background-color: color-mix(in srgb, var(--bc) 80%, var(--tc) 20%);}
-
-.onlyPC{display: none !important;}
+.onlymob{
+  display: block;
 }
 
-@media (hover: hover) {
-    .onlyTouch{display: none;}
+.onlyPC{
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --tc: white;
-    --bc: black;
-  }
+
+.row {
+  flex-direction: column;
+}
+
+.column{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h2{margin: 0; padding-bottom: 0;}
+
+.swiper-wrapper img{aspect-ratio: 1 / 1;  object-fit: cover;}
 }
 
 </style>
 </head>
-<body style="margin: 0; background-color: var(--bc); transition: background-color .5s;">
+<body style="margin: 0;">
 
-<!-- <div id="widget" style="position: fixed; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; z-index: 9; ;">
-    <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem" onclick="window.scrollTo({top:0, behavior: 'smooth'})">arrow_upward</div>
-    <div>
-        <div class="material-symbols-outlined" id="widgetItem" onclick="window.history.back()">arrow_back</div>
-        <div class="material-symbols-outlined" onclick="showAccess()" style="border-radius: 999px; border: 1.5px solid var(--tc);">accessibility_new</div>
-        <div class="material-symbols-outlined" id="widgetItem" onclick="changeTheme()">contrast</div>
-    </div>
-    <div class="material-symbols-outlined" style="margin: 0 auto;" id="widgetItem"
-    onclick="document.querySelector('#end').scrollIntoView({ behavior: 'smooth' });">arrow_downward</div>
-</div> -->
+<nav style="width: 100%; height: 8dvh; position: fixed; top:0; display: flex; z-index: 999;">
 
-<div id="a11y" class="onlyMob" style=" padding: .5rem; background-color: color-mix(in srgb, var(--bc) 20%,transparent 80%); transition: bottom .5s;
-backdrop-filter: blur(5px); 
--webkit-backdrop-filter: blur(5px); border: 1px solid #ddd;
-border-radius: 100rem; position: fixed; bottom: 5%; left: 50%; transform: translateX(-50%) scale(100%); z-index: 2; display: flex;">
-<div onclick="history.back()">&larr;</div>
-<div onclick="window.scrollTo({top:0, behavior: 'smooth'})">&uarr;</div>
-<div onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">&darr;</div>
-<div onclick="changeTheme()" style="font-family:'Bootstrap-icons'; font-size: smaller;">&#xF288;</div>
-</div>
+  <h1 style="margin: 0; height: min-content; margin: auto auto auto 1rem; font-size: large; "> LINGYUOHZ </h1>
+  <menu class="onlyPC" style="margin: auto 1rem; ">
+    <div id="pcmenu" style="display: flex; font-size: larger;">
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/blog">blog</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://portfolio.zhoulingyu.net">portfolio</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/fg2.html">font studio</a>
+      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://zly.vg/cv.pdf">résumé</a>
+    </div>
+  </menu>
 
-<!-- <div id="fest" style="width: 100%; position: fixed; bottom: 0; left: 0; background-color: #0093E9; display: flex; box-sizing: border-box; z-index: 999;
-background: var(--bc); padding: 2rem var(--hp); border-top: 1px solid var(--tc);" >
-    <div style="width: 90%;font-size: larger;">Celebrating Gregorian Calendar New Year!</div>
-    <div style="width: 10%;font-size: larger; text-align: right; cursor: pointer;" onclick="fest.style.display='none'" >&times;</div>
-</div> -->
-
-<div class="ctxMenu onlyPC">
-    <div class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior: 'smooth'})">
-        <div>&uarr;</div> <div>To top</div>
-    </div>
-    <div class="noarr noul" href="javascript:void(0)" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">
-        <div>&darr;</div> <div> To end</div>
-    </div>
-    <div class="noarr noul" href="javascript:void(0)" onclick="history.back()">
-        <div>&larr;</div> <div> Back</div>
-    </div>
-    <div class="noarr noul" href="javascript:void(0)" onclick="window.location.href=window.location.origin + window.location.pathname; ">
-        <div>↺</div> <div>Reload</div>
-    </div>
-    <hr style="border: .5px solid #ccc;">
-    <div class="noarr noul" href="javascript:void(0)" onclick="changeTheme()">
-        <div>◐</div> <div> Change theme</div>
-    </div>
-    <!-- <a class="noarr noul" href='javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()'>F12</a><hr> -->
-</div>
-
-<nav style="display: flex; margin: 0; position: sticky; top:0; transition: background-color .5s;
-background-color: var(--bc); color:var(--tc); padding: 2vh var(--hp);z-index: 4;">
-    <div id="index" style="cursor: pointer;margin: auto 0; transition: .5s; font-size: larger;" translate="no" 
-    onclick="window.location.href='index.html'">LINGYUOHZ</div>
-    <div style="margin: auto;">
-    </div>
-    <div id="pcMenu" style="max-width: 75%; overflow-x:auto; text-wrap: nowrap; margin: auto 0;">
-        <!-- <a href="" id="contact">Contact</a> -->
-        <!-- <span class="onlyMob" style="font-size: medium;">external links</span> -->
-        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/blog">blog</a>
-        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/proj">Project</a> -->
-        <a class="noul" style="font-size: 15.5px;" href="https://portfolio.zhoulingyu.net">portfolio</a>
-        <a class="noul" style="font-size: 15.5px;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
-        <a class="noul" style="font-size: 15.5px;" href="https://xolyn.github.io/fg2.html">font studio</a>
-        <!-- <a href="htstyle="font-size: 15.5px;" tps://xolyn.github.io/widgets">Gadgetz</a> -->
-        <a class="noul" style="font-size: 15.5px;" href="https://zly.vg/cv.pdf">résumé</a>
-
-    </div>
-
-    <div id="mobMenuTogg" style="margin: auto 0; cursor: pointer; border-radius: .2rem; transition: .3s; background:none;"
-    onclick="menuTogg()" translate="no" >
-    
-    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="var(--tc)" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round"
-        style="cursor: pointer; width: 1.75rem; display: block; margin: auto 0; margin-right: -.4rem; cursor: pointer;">
-    <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" >
-            <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
-            <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
-    </path>
-    <rect width="10" height="10" stroke="none" >
-            <animate dur="2s" id="reverse" attributeName="width" begin="click" />
-    </rect>
-    <rect width="10" height="10" stroke="none" >
-            <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
-            <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
-    </rect>
-    </svg>
-
-    </div>
+  <div class="material-symbols-outlined onlymob" 
+  onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'; mobmenu.style.right=mobmenu.style.right==='0px'?'-100dvw':'0px'; mobmenuwrapper.innerHTML=pcmenu.innerHTML; "
+  style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
 
 </nav>
 
-<div needPopulate id="mobMenu" style="width: 100dvw; height: 100dvh; position: fixed; left:0; z-index: 3; background-color: var(--bc); flex-direction: column; transition: .5s ;">
-    <div id="mobMenu1" style="margin: auto var(--hp) 0 var(--hp); line-height: 150%; font-size: larger !important; max-height: 80%; overflow-y: auto;"></div>
-    <div style="margin: 1rem var(--hp); letter-spacing: 8px; ">
-        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: large;" class="noul noarr" href="mailto:lz568@cornell.edu">&#xF32C;</a>
-        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: large;" class="noul noarr" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
-        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: large;" class="noul noarr" href=https://github.com/xolyn>&#xF3ED;</a> 
-        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: large;" class="noul noarr" href=https://instagram.com/toqurdn>&#xF437;</a> 
-        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: large;" class="noul noarr" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
-        <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: large;" class="noul noarr" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
+<menu class="onlymob" id="mobmenu" style="transition: right .3s; margin: 0; box-sizing: border-box; padding: 1rem .5rem; z-index: 98; width: 100dvw; height: 100dvh; position: fixed; top:0; background-color: var(--ac);">
+  <div style="width: 100%; height: 100%; display: flex; flex-direction: column;" >
+    <div style="width: 100%; margin-top: auto; font-size: large;" id="mobmenuwrapper">
     </div>
+  </div>
+</menu>
 
-    <div style="margin: 1rem calc(var(--hp)/2); display: none; background-color: #ddd; padding: 1rem calc(var(--hp)/2); border-radius: .5rem;">
-        <details class="">
-            <summary class="far narrow" style="font-size: medium;">subscribe</summary>
-            <div style="letter-spacing: 10px; margin-top: 1rem;">
-            <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href="mailto:lz568@cornell.edu">&#xF32C;</a>
-            <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
-            <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://github.com/xolyn>&#xF3ED;</a> 
-            <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://instagram.com/toqurdn>&#xF437;</a> 
-            <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
-            <a style="display: inline-block; font-family:'Bootstrap-icons'; font-size: larger;" class="noul noarr" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
 
-            <input type="email" name="" id="" placeholder="Subscribe to my newsletter" style="width: 100%; padding: .5rem; border: none; background-color: transparent; box-sizing: border-box;" required>
-        </div>
-        </details>
-    </div>
-
-    <div id="alignBottomPlaceholder" style="margin-bottom: 5rem;"></div>
-    <!-- <div style="margin: 1rem var(--hp); border-top: 1px solid #ccc; ">
-        <p ><a style="font-size: larger !important" href="">Test1</a></p>
-        <p ><a style="font-size: larger !important" href="">Test2</a></p>
-        <p ><a style="font-size: larger !important" href="">Test3</a></p>
-        <p ><a style="font-size: larger !important" href="">Test4</a></p>
-    </div> -->
-
-</div>
-
-<article id="about">
-    <h1>about</h1>
-    <div>
-    <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
-        I am a now graduated student</a> from <a href="https://cornell.edu">Cornell University</a>,
-        also the founder of <a href="https://khentmt.com">KH Entertainment</a>. 
-        </p>
-
-    <p>
-        I try to deliver the best UX from data analysis, also explore the numbers and their connections behind, using applied mathematics and computer engineering.
-    </p>    
-
-    <p> 
-        Previously, I studied applied mathematics at 
-        <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
-        I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
-        Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
-        <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
-    </p>
-    <p>
-        My specialties are software engineering, math, data analysis, and data visualization.
+<div class="wrapper" style="margin-top: 8dvh; box-sizing: border-box;">
+        <div class="row">
+            <div class="column sidebar">
+              <h2>About</h2>
+            </div>
+            <div class="column content">
+              <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
+                I am a now graduated student</a> from <a href="https://cornell.edu">Cornell University</a>,
+                also the founder of <a href="https://khentmt.com">KH Entertainment</a>. 
+                </p>
         
-        <!-- My research interests are computational social science and affective computing, particularly in using data science methods and natural language processing to model and analyze emotional and behavioral trends within large-scale social networks. My goal is to explore how computational models can provide insights into social phenomena, group dynamics, and collective emotions, utilizing vast social media data to understand real-world interactions and sentiments. This area lies at the intersection of statistical modeling, machine learning, and NLP, with applications in prediction of social behavior, sentiment analysis, and trend forecasting. -->
-    </p>
-
-    <p>
-        I am also interested in etymology, biology, and botany.
-        <span style="font-weight: 400;">&nbsp;</span>
-        <span style="font-weight: 500;">&nbsp;</span>
-        <span style="font-weight: 600;">&nbsp;</span>
-        <span style="font-weight: 700;">&nbsp;</span>
-        <span style="font-weight: 800;">&nbsp;</span>
-    </p>
-</div>
-</article>
-
-<article id="education">
-    <h1 style="">education</h1>
-    <div>
-    <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>
-            <td>Master's</td>
-            <td> <a href="http://cornell.edu/">Cornell University</a></td>
-        </tr>
-        <tr>
-            <td>Bachelor's</td>
-            <td><a href="http://wisc.edu/">University of Wisconsin - Madison</a></td>
-        </tr>
-        <tr>
-            <td>High School</td>
-            <td><a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a></td>
-        </tr>
-        <tr>
-            <td>Middle School</td>
-            <td><a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</article>
-
-<article id="projects">
-    <h1 style="">projects</h1>
-
-<div class="swiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div id="proj">
-                <img src="https://images.unsplash.com/photo-1595325093677-422a41bcf51c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
-                <div id="projDesc">
-                    <a href="pslex.html">Pseudo lexicon</a>
-                </div>
-            </div>
-            </div>
-
+            <p>
+                I try to deliver the best UX from data analysis, also explore the numbers and their connections behind, using applied mathematics and computer engineering.
+            </p>    
         
-        <div class="swiper-slide">
-        <div id="proj">
-            <img src="https://images.unsplash.com/photo-1628268509381-c70293fa638d?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
-            <div id="projDesc">
-                <a href="academic/opt.html">Optimization plyaground</a>
-            </div>
-        </div>
-        </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://f.zly.vg/assets/yafiwg.jpg" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://github.com/xolyn/yafiwg">YAFIWG</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://f.zly.vg/assets/b2p.jpg" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://github.com/xolyn/beamer2ppt">beamer2ppt</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://images.unsplash.com/photo-1669502067440-6a09729d072d?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-             style="width: 100%;">
-            <div id="projDesc">
-                <a href="academic/bp.html">Birthday paradox</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://images.ctfassets.net/kftzwdyauwt9/7i9gjVSZuEn0yoN8rbG3KR/1dc876729a6b7a4baafbc4a848055e81/guides.gif?w=828&q=90&fm=webp&fit=pad" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://aqmn.github.io/cmd">CLI personal webpage</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://xolyn.github.io/grd.html">Gambler's Ruin</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://images.unsplash.com/photo-1700157710823-2e9e58414802?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://xolyn.github.io/5999proj">Time Series Analysis</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://i.pinimg.com/originals/30/8d/fd/308dfd052f050d31b8c05c6a63c0831f.gif" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://xolyn.github.io/widgets">Gadgetz</a>
-            </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div id="proj">
-            <img   src="https://f.zly.vg/assets/bug.png" style="width: 100%;">
-            <div id="projDesc">
-                <a href="https://f.zly.vg/bug">Bugs index</a>
-            </div>
-        </div>
-      </div>
-
-    </div>
-  
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-</div>
-
-</article>
-
-<article id="publications">
-<h1 style="">publications</h1>
-<div>
-<ul>
-    <li>
-        <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96">Analysis of the Hog Futures Market in China (BPS_0799)</a></span>
-        <p>
-            <i>Applied Economics and Policy Studies</i> (ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (Print ISSN 2754-1169) <br>
-            Chen Xu, Lingyu Zhou, Anshi Lou, Manqi Qiu & Mengyu Cao 
-        </p>
+            <p> 
+                Previously, I studied applied mathematics at 
+                <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+                I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
+                Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
+                <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
+            </p>
+            <p>
+                My specialties are software engineering, math, data analysis, and data visualization.               
+            </p>
         
-    </li>
-    <li>
-        <span>Purchasing Practices and Labor Outcomes in Global Supply Chains</span>
-        <p>
-            <i>British Journal of Industrial Relations</i>, <span style="color: grey;">under review</span><br>
-            Sarosh Kuruvilla, Chunyun Li, Lingyu Zhou
-        </p>
-    </li>
-</ul>
-</div>
-</article>
-
-<article id="beliefs">
-<h1 style="">things I believe</h1>
-<div>
-    <ul>
-        <li>Detail matters.</li>
-        <!-- <li>Never too late to act.</li> -->
-        <li>Simplicity is the ultimate sophistication.</li>
-        <li>Life is present.</li>
-        <li>Embrace mediocrity.</li>
-    </ul>
-</div>
-</article>
-
-<article id="connect">
-    <h1 style="">connect</h1>
-<div>
-    <table id="edutable" style="border: none;" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>    
-            <td>email</td>
-            <td>lz568 [at] cornell [dot] edu</td>
-        </tr>
-
-        <tr>
-            <td>github</td>
-            <td><a href="https://github.com/xolyn">@xolyn</a></td>
-        </tr>
-
-        <tr>
-            <td>linkedin</td>
-            <td> <a href="https://www.linkedin.com/in/lingyuzhou/">@lingyuzhou</a></td>
-        </tr>
-
-        <tr>
-            <td>instagram</td>
-            <td><a href="https://instagram.com/toqurdn">@toqurdn</a></td>
-        </tr>
-        <tr>
-            <td>X (fka. twitter)</td>
-            <td><a href="https://x.com/uygniluohz">@uygniluohz</a></td>
-        </tr>
-
-        <tr>
-            <td>weibo</td>
-            <td> <a href="https://weibo.com/u/5663761733">@donth8</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</article>
-
-<article style="margin-top: 2em;">
-    <div id="quote"> <i></i> <p></p></div>
-    <!-- <button id="resample" style="transition: .3s; cursor: pointer; border-radius: .5rem; border: 1px solid #eee; padding: .5rem; height: min-content;" 
-    onclick="shuffleQuotes()">resample</button> -->
-</article>
-
-<footer>
-    <hr style="border: .5px solid lightgray;">
-
-    <div style="width: 100%; display: flex;">
-
-<div style=" margin: 2.5vh var(--hp);  margin-right: auto;">
-    &copy; Lingyu Zhou <span id="thisYear"></span>
-<br>
-<p style="font-size: smaller; color: grey">Images partly from <a href="https://unsplash.com/" style="font-size: inherit;">Unplash</a>.</p>
-    <p style="width: fit-content;" id="footerLink">
-        <a href="javascript: void(0)"  onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</a>
-        <a href="mailto:report@zly.vg">Report</a>
-        <!-- <a href="javascript: void(0)"  onclick="myModal.style.display='flex'">Legal</a> -->
-        <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">Terms</a>
-        <a href="javascript: void(0)" onclick="this.innerHTML=this.innerHTML==='CA'?'v.1.100003RAD00MIN012':'CA'">CA</a>
-    </p>
-</div>
-
-<div translate="no" style="display: flex; width: auto; height: fit-content; margin: 2.5vh var(--hp); box-sizing: border-box; perspective: 800px;">
-    <div class="chem" style="background-color: rgb(243,232,253);    color: black;">
-        <div><span style="    color: black;">39</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">Y</span><br><span style="font-size: 10px;    color: black;">Yttrium</span></div>
-    </div>
+            <p>
+                I am also interested in etymology, biology, and botany.
+            </p>    
+            </div>
+        </div .row>
     
-    <div class="chem" style="background-color: rgb(255,230,212);    color: black;">
-        <div><span style="    color: black;">92</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">U</span><br><span style="font-size: 10px;    color: black;">Uranium</span></div>
-    </div>
+        <div class="row">
+            <div class="column sidebar">
+              <h2>Education</h2>
+            </div>
+            <div class="column content">
+              <p>
+                <table id="edutable" style="border: none; width: 100%;" cellspacing="0" cellpadding="0">
+                  <tbody>
+                  <tr>
+                      <td>Master's</td>
+                      <td> <a href="http://cornell.edu/">Cornell University</a></td>
+                  </tr>
+                  <tr>
+                      <td>Bachelor's</td>
+                      <td><a href="http://wisc.edu/">University of Wisconsin - Madison</a></td>
+                  </tr>
+                  <tr>
+                      <td>High School</td>
+                      <td><a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a></td>
+                  </tr>
+                  <tr>
+                      <td>Middle School</td>
+                      <td><a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a></td>
+                  </tr>
+                  </tbody>
+              </table>
+              </p>
+            </div>
+      </div .row>
+
+      <div class="row">
+        <div class="column sidebar">
+          <h2>Projects</h2>
+      </div>
+      <div class="column content" >
+        <div class="swiper" style="">
+          <div class="swiper-wrapper" style="width: 100%; height: 100%" id="swiper-wrapper">
+          </div>
+        </div>
+
+        <div style="display: flex; width: 100%; margin-top: .5rem;">
+          <div class="prev" style="margin-right: 1.5rem;">&larr;</div>
+          <div class="next">&rarr;</div>
+          <div class="swiper-pagination" style="margin-left: auto; width: fit-content; display: block; position: initial;"></div>
+        </div>
+      </div>
+    </div .row>
+
+      <div class="row">
+          <div class="column sidebar">
+            <h2>Things I believe</h2>
+        </div>
+        <div class="column content">
+          <ul style="padding: 0 1em;">
+            <li style="padding:.5rem 0;">Detail matters.</li>
+            <li style="padding:.5rem 0;">Simplicity is the ultimate sophistication.</li>
+            <!-- <li style="padding:.5rem 0;">Life is present.</li> -->
+            <li style="padding:.5rem 0;">Carpe diem.</li>
+            <li style="padding:.5rem 0;">Embrace mediocrity.</li>
+        </ul>
+        </div>
+      </div .row>
+
+      <div class="row">
+        <div class="column sidebar">
+          <h2>Publication</h2>
+        </div>
+        <div class="column content">
+          <ul style="padding: 0 1em;">
+            <li>
+                <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96" style="font-weight: bold;">Analysis of the Hog Futures Market in China</a></span><br>
+                <!-- <p> -->
+                    <i>Applied Economics and Policy Studies</i> (ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (ISSN 2754-1169) <br>
+            <br>
+                    Chen Xu, Lingyu Zhou, Anshi Lou, Manqi Qiu & Mengyu Cao 
+                <!-- </p> -->
+                
+            </li>
+            <br>
+            <li>
+                <span style="font-weight: bold;">Purchasing Practices and Labor Outcomes in Global Supply Chains</span><br>
+                <!-- <p> -->
+                    <i>British Journal of Industrial Relations</i>, <span style="color: grey;">under review</span><br>
+            <br>
+                    Sarosh Kuruvilla, Chunyun Li, Lingyu Zhou
+                <!-- </p> -->
+            </li>
+        </ul>
+        </div>
+      </div .row>
+
+
+
+
+        <div style="width: 100%; padding: 0 1rem; box-sizing: border-box; text-align: center;">
+          <hr style="border: .25px solid #ddd;">
+          <p>
+            &copy; Lingyu Zhou 2025
+          </p>
+          <p>
+            <span onclick="
+          document.documentElement.style.setProperty('--ac', getComputedStyle(document.documentElement).getPropertyValue('--ac')=== 'black' ? 'white' : 'black');
+          document.documentElement.style.setProperty('--mc', getComputedStyle(document.documentElement).getPropertyValue('--mc')=== 'white' ? 'black' : 'white');" 
+          style="cursor: pointer;">◐</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <span onclick="window.location.href='https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1'">Legal</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <span onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <span onclick="window.location.href='mailto:report@zly.vg'">Report</span></p>
+        </div>
+
+</div .wrapper>
     
-    <div class="chem" style="background-color: rgb(214,249,232);    color: black;">
-        <div><span style="    color: black;">49</span><span></span> </div>
-        <div style="margin-top: auto; width: 100%; text-align: center;"><span id="chemEle" style="    color: black;">In</span><br><span style="font-size: 10px;    color: black;">Indium</span></div>
-    </div>
 </div>
 
-</div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
-<script>
-thisYear.innerHTML=new Date().getFullYear();
-
-const swiper = new Swiper('.swiper', {
-slidesPerView: 1,
-  loop: false,   
-//   breakpoints: {
-//     480: {
-//       slidesPerView: 1,
-//       spaceBetween: 10
-//     },
-//     640: {
-//       slidesPerView: 2,
-//       spaceBetween: 20
-//     },
-//     800: {
-//       slidesPerView: 3,
-//       spaceBetween: 30
-//     },
-//      960: {
-//        slidesPerView: 4,
-//        spaceBetween: 40
-//      }
-//   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
-
-});
-
-mobMenu1.innerHTML=pcMenu.innerHTML;
-
-function menuTogg(){
-    // mobMenuTogg.innerHTML=mobMenuTogg.innerHTML==='menu'?'close':'menu';
-    mobMenu.style.transform=mobMenu.style.transform==='translateY(0%)'?'translateY(-100%)':'translateY(0%)';
-}
-
-function showAccess(){
-    document.querySelectorAll('#widgetItem').forEach((element) => {
-        element.style.opacity=element.style.opacity==='1'?'0':'1';
-        element.style.visibility=element.style.visibility==='initial'?'hidden':'initial';
-    })
-    
-}
-
-function changeTheme(){
-    document.documentElement.style.setProperty('--tc', getComputedStyle(document.documentElement).getPropertyValue('--tc')=== 'black' ? 'white' : 'black');
-    document.documentElement.style.setProperty('--bc', getComputedStyle(document.documentElement).getPropertyValue('--bc')=== 'white' ? 'black' : 'white');
-}
-
-const quotes = 
-[
-    ['You see things; and you say, ‘Why?’ But I dream things that never were; and I say, ‘Why not?’', 'George Bernard Shaw'],
-    ['Imagination is the one weapon in the war against reality.', "Jacob (<i>Pirates of the Caribbean: Dead Man's Chest</i>, 2006)"],
-    ['And by the way, everything in life is writable about if you have the outgoing guts to do it, and the imagination to improvise it.', "Sylvia Plath (<i>The Bell Jar</i>)"],
-    ['Do not go where the path may lead, go instead where there is no path and leave a trail.', 'Ralph Waldo Emerson'],
-    ['The eagle that soars in the upper air does not worry itself how it is to cross rivers.','Issac Newton'],
-    ['The world is your oyster.','William Shakespeare'],
-    ["Courage is grace under pressure.", 'Ernest Hemingway'],
-    ["Not all those who wander are lost.", 'J.R.R. Tolkien (<i>The Fellowship of the Ring</i>)'],
-    ['I can do all this through him who gives me strength','Philippians 4:13 (NIV)'],
-    ['Silence is a source of great strength.','Laozi'],
-    // ['The world is your oyster.','William Shakespeare (<i>The Merry Wives of Windsor</i>, Act 2, Scene 2)'],
-    // ['b', 'B'],
-];
-
-function shuffleQuotes(){
-    const q = quotes[Math.floor(Math.random() * quotes.length)];
-    const quoteContent = q[0];
-    const quoteAuthor = q[1];
-    document.querySelector('#quote i').innerHTML=quoteContent;
-    document.querySelector('#quote p').innerHTML=quoteAuthor;
-}
-
-shuffleQuotes()
-
-swiper.el.addEventListener('wheel', (event) => {
-  if (event.shiftKey) {
-    event.preventDefault();
-    if (event.deltaY > 0) {
-      swiper.slideNext();
-    } else {
-      swiper.slidePrev();
-    }
-  }
-});
-
-const ctxMenu = document.querySelector('.ctxMenu');
-
-document.addEventListener('contextmenu', (event) => {
-    event.preventDefault();
-    let mouseX = event.clientX;
-    let mouseY = event.clientY;
-    const menuWidth = ctxMenu.offsetWidth;
-    const menuHeight = ctxMenu.offsetHeight;
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    if (mouseX + menuWidth > viewportWidth) {
-        mouseX = viewportWidth - menuWidth;
-    }
-    if (mouseY + menuHeight > viewportHeight) {
-        mouseY = viewportHeight - menuHeight;
-    }
-    ctxMenu.style.top = `${mouseY}px`;
-    ctxMenu.style.left = `${mouseX}px`;
-    ctxMenu.style.display = 'block';
-});
-
-document.addEventListener('click', (event) => { if (!ctxMenu.contains(event.target)) { ctxMenu.style.display = 'none'; } }); 
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { ctxMenu.style.display = 'none'; } });
-
-
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos<currentScrollPos) {
-    document.getElementById("a11y").style.bottom = "5%";
-  } else {
-    document.getElementById("a11y").style.bottom = "-10%";
-  }
-  prevScrollpos = currentScrollPos;
-}
-
-window.matchMedia('(prefers-color-scheme: dark)')
-.addEventListener('change', (event) => {
-if (event.matches) {
-    document.documentElement.style.setProperty('--bc', 'black');
-    document.documentElement.style.setProperty('--tc', 'white');
-} else {
-    document.documentElement.style.setProperty('--bc', 'white');
-    document.documentElement.style.setProperty('--tc', 'black');
-}
-});
-
-</script>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-<script> $(function() { $("#widget").draggable(); }); </script> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="proj/proj.js"></script>
 </body>
+
 </html>
