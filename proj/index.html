@@ -78,7 +78,7 @@
         bottom: 0;
         content: "";
         display: block;
-        height: 2px;
+        height: 1.5px;
         left: 0;
         position: absolute;
         background:black;
@@ -156,75 +156,7 @@
 <body>
     <p style="font-size: 2.5rem; font-family: martina;  margin: 5vh 0vh 5vh 5vw;">Projects</p>
 
-    <div class="proj" >
-        <div class="thumbnail">
-            <img src="https://f.xoy.one/assets/yafiwg.jpg">
-        </div>
-        <div class="desc">
-            <p style="font-size: large;">YAFIWG</p>
-            Introducing YAFIWG (<b>Y</b>et <b>A</b>nother <b>F</b>ile <b>I</b>ndex <b>W</b>ebpage <b>G</b>enerator), a simple file index webpage generator designed for static webpage hosting services
-             such as GitHub Pages and Cloudflare R2. 
-             This tool effortlessly creates an organized, user-friendly index of your files, making it easy to navigate 
-             and access content hosted on your site.
-            <br>
-            <br>
-            <a style="font-size: small;" href="https://github.com/xolyn/yafiwg">Explore</a>
-        </div>
-    </div>
-
-    <div class="proj" >
-        <div class="thumbnail">
-            <img src="https://f.xoy.one/assets/b2p.jpg">
-        </div>
-        <div class="desc">
-            <p style="font-size: large;">beamer2ppt</p>
-            Can't convert beamer into Powerpoint? Losing format and font after using all kinds of conversion tools? 
-            Try beamer2ppt, a python script converting LaTeX beamer in <code>.pdf</code> file to <code>.ppt</code> / <code>.pptx</code> file, perfectly maintaining formulae and slides formatting.
-            <br>
-            <br>
-            <a style="font-size: small;" href="https://github.com/xolyn/beamer2ppt">Explore</a>
-        </div>
-    </div>
-
-    <div class="proj">
-        <div class="thumbnail">
-            <img src="https://shorturl.at/anrE3">
-        </div>
-        <div class="desc">
-            <p style="font-size: large;">CLI personal webpage</p>
-            Tired of traditional graphic UX? Step into the realm of binary strings, where the CLI morphs into a digital canvas, 
-            echoing the rhythmic cadence of terminal commands!
-            <!-- Here, the keystrokes replace brushstrokes, painting a tapestry of information and discovery.  -->
-            Embark on a journey where every command unlocks hidden treasures, revealing surprises that dance beneath the surface. 
-            <!-- Embrace the novelty of this digital sanctuary, where innovation and creativity intertwine to redefine the boundaries of user experience. 
-            Welcome to a world where interaction transcends convention, inviting you to explore, learn, and delight in the artistry of the CLI. -->
-            <br>
-            <br>
-            <a style="font-size: small;" href="https://aqmn.github.io/cmd">Explore</a>
-        </div>
-    </div>
-
-    <div class="proj">
-        <div class="thumbnail">
-            <img src="https://xolyn.github.io/assets/gam.webp">
-        </div>
-        <div class="desc">
-            <p style="font-size: large;">Gambler's Ruin</p>
-            <!-- This is a world of stochastic simulations!  -->
-            In this digital playground, the abstract dance of probabilities comes to life, 
-            showcasing the delicate balance of fortune and risk. 
-            Watch as the threads of fate weave through peaks and nadirs, where a stories,
-            and simulations are told and used to reveal the hidden patterns of seeming randomness.
-
-            
-            <br>
-            <br>
-            <a style="font-size: small;" href="grd.html">Explore</a>
-        </div>
-    </div>
-
-    
-
+    <div id="inject" style="width: 100%;"></div>
 
     <div class="proj">
         <div class="thumbnail">
@@ -234,8 +166,8 @@
         </div>
         <div class="desc">
             <p style="font-size: large;">HTML Demo</p>
-            <details open class="line">
-                <summary class="far narrow">List of work</summary>
+            <details open class="">
+                <summary class="narrow">List of work</summary>
                 <ul style=" margin-top: 5px;">
                     <li><a href="https://aqmn.github.io/guess">bugs index</a><br></li>
                     <li><a href="me.html">demo0</a><br></li>
@@ -250,5 +182,46 @@
         </div>
     </div>
 <script src='https://f.zly.vg/js/newurl.js'></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+    var allprojs=[]
+    const supabaseUrl = 'https://vuqcoijjybmcujzdybdi.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1cWNvaWpqeWJtY3VqemR5YmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI3OTA4NTIsImV4cCI6MjA1ODM2Njg1Mn0.HN4XbQDEg2pKhxgCCaZjFqI_FYExGV0QZIX0Gn5Tios';
+    const client  = supabase.createClient(supabaseUrl, supabaseKey);
+    async function fetchData() {
+  const { data, error } = await client
+    .from('projinfo')
+    .select('name, url, img, desc');
+
+  if (error) {
+    console.error('查询失败：', error);
+    return;
+  }
+  allprojs=data;
+
+  allprojs.forEach(proj => {
+    var injection = document.createElement("div");
+    injection.classList.add('proj')
+    injection.innerHTML=`
+        <div class="thumbnail">
+            <img src="${proj.img}">
+        </div>
+        <div class="desc">
+            <p>${proj.name}</p> 
+            <p style='font-size:smaller'>${proj.desc || ''}</p>
+            <a style="font-size: small;" href="${proj.url}">Explore</a>
+        </div>
+    `
+    document.getElementById('inject').appendChild(injection);
+}
+)
+}
+
+window.onload = fetchData;
+
+
+
+</script>
 </body>
 </html>
