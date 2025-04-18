@@ -16,28 +16,30 @@
     };
   </script>
 <style>
-p{margin: .5rem 0; 
+p{margin: 1rem 0; 
  /* max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; */
 }
 
-button{all:unset; background-color: white;}
+button{all:unset; background-color: rgba(255,255,255,0); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); color: white;}
 button:hover{
-  background-color: #ddd;
+  background-color: rgba(255,255,255,.4)
 }
 </style>
 </head>
-<body>
+<body style="margin: 0;">
 
-<nav style="display: flex; position: sticky; top:0; background-color: white;">
-<button onclick="history.back()" style="transition:.3s; border: 1px solid #ddd; border-radius: 10px; cursor: pointer; padding: .5em 1rem; margin: auto 0;">&larr;</button>
+<div style="background-color: black; height: 20dvh;">
+</div>
 
-<h3 id="fontName" style="margin-left: auto; display: inline-block;">Karla</h3>
+<nav style="display: flex; position: sticky; top:0; height:10dvh; padding: 1rem; background-color: black;">
+  <button onclick="history.back()" style="transition:.3s; border-radius: 10px; cursor: pointer; padding: .5em 1rem; margin: auto 0; font-family: inter;">&larr;</button>
+  <h2 id="fontName" style="margin-left: auto; font-weight: normal; display: inline-block; color:white; font-family: inter;">Karla</h2>
 </nav>
 
-<div id="main" style=""></div>
+<div id="main" style="padding: 2rem; box-sizing: border-box;"></div>
 
 <script>
     const text = "The quick brown fox jumps over the lazy dog.";
