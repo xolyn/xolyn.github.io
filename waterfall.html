@@ -27,6 +27,14 @@ button{all:unset; background-color: rgba(255,255,255,0); backdrop-filter: blur(5
 button:hover{
   background-color: rgba(255,255,255,.4)
 }
+
+@media (orientation: landscape) {
+#por{display: none;}
+}
+.noof{max-width: 100%;
+  white-space: nowrap;      /* 不允许换行 */
+overflow: hidden;         /* 超出容器就隐藏 */
+text-overflow:clip;  /* 超出的用省略号显示 */}
 </style>
 </head>
 <body style="margin: 0;">
@@ -34,23 +42,28 @@ button:hover{
 <div style="background-color: black; height: 20dvh;">
 </div>
 
-<nav style="display: flex; position: sticky; top:0; height:10dvh; padding: 1rem; background-color: black;">
+<nav style="display: flex; position: sticky; top:0; height:5dvh; padding: 1rem; background-color: black;">
   <button onclick="history.back()" style="transition:.3s; border-radius: 10px; cursor: pointer; padding: .5em 1rem; margin: auto 0; font-family: inter;">&larr;</button>
-  <h2 id="fontName" style="margin-left: auto; font-weight: normal; display: inline-block; color:white; font-family: inter;">Karla</h2>
+  <div id="fontName" style="margin: auto 0 auto auto; font-weight: normal; display: inline-block; color:white; font-family: inter;">Karla</div>
 </nav>
+
+<div id="por" style="font-family: inter;padding: 3rem 2rem 0 2rem; box-sizing: border-box; color: gray;">
+  Get better visual effects on horizontal (landscape) display devices.
+</div>
 
 <div id="main" style="padding: 2rem; box-sizing: border-box;"></div>
 
 <script>
     const text = "The quick brown fox jumps over the lazy dog.";
-    const maxSize = '4.5'; 
+    const maxSize = '5'; 
     const minSize = '1'; 
-    const step = .2;      
+    const step = .1;      
 
     for (let size = maxSize; size >= minSize; size -= step) {
       const p = document.createElement("p");
       p.textContent = text;
-      p.style.fontSize = size + "vw";
+      p.classList.add('noof');
+      p.style.fontSize = size + "vmax";
       document.getElementById('main').appendChild(p);
     }
 </script>
