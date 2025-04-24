@@ -1,3 +1,4 @@
+{/* <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script> */}
 var allprojs=[]
 const supabaseUrl = 'https://vuqcoijjybmcujzdybdi.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1cWNvaWpqeWJtY3VqemR5YmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI3OTA4NTIsImV4cCI6MjA1ODM2Njg1Mn0.HN4XbQDEg2pKhxgCCaZjFqI_FYExGV0QZIX0Gn5Tios';

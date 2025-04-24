@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="shortcut icon" href="https://f.zly.vg/assets/logo.png" type="image/png">
+<title>lingyu zhou</title>
+<style>
+html{
+    cursor: none;
+    --tc: black;
+    --bc: white;
+}
+
+#invertedcursor {
+  position: absolute;
+  width:  1rem;
+  height: 1rem;
+  background: #fff;
+  border-radius: 50%;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  transform: translate(50%, 50%);
+  /* margin-left: -2px; */
+  z-index: 99;
+  mix-blend-mode: difference;
+  transition: transform .06s, width .2s, height .2s;
+  pointer-events: none;
+}
+
+.cctx{
+margin: auto;
+color: var(--tc);
+}
+
+a{
+    color:inherit;
+    text-transform: capitalize;
+    cursor: none;
+}
+
+.infobox:first-child{
+    text-align: left;
+}
+.infobox:last-child{
+    text-align: right;
+}
+
+a:hover{
+animation-name:blink;
+animation-duration:.5s;
+animation-timing-function:ease-in;
+animation-iteration-count:Infinite;
+cursor: none;
+}
+
+@keyframes blink{
+    0%{color:var(--tc)}
+    50%{color:transparent;}
+    100%{color:var(--tc);}}
+
+span#email{
+    display: none;
+}
+
+@media (pointer: coarse) { 
+    #invertedcursor{
+        display: none;
+    }
+ }
+</style>
+</head>
+<body style="font-family: passenger; margin: 0; font-size: large; overflow: hidden;   cursor: none;
+color: var(--tc); background-color: var(--bc);
+">
+
+    <div id="invertedcursor"></div>
+    <div class="infobox" style="display: flex; position: absolute; top:5vh; width: 100%; color: inherit; ">
+
+        <div class="cctx" id="nic" style=" margin-left: 5vw;vertical-align: text-top; margin-top: 0;">
+            <span style="font-size: x-large;"><b>Lingyu Zhou</b></span><br>
+        </div>
+        <div class="cctx" id="contact" style="margin-right: 5vw; vertical-align: text-top; text-align: right ;">
+            <a href="https://blog.zhoulingyu.net">blog</a><br>
+            <a href="https://portfolio.zhoulingyu.net">portfolio</a><br>
+            <a href="https://drive.zhoulingyu.net">zDrive</a><br>
+            <a href="//xolyn.github.io/proj">projects</a><br>
+            <a href="//xolyn.github.io/fg2.html">font studio</a><br>
+            <a href="//f.zly.vg/bug">bugs</a><br>
+        </div>
+        </div>
+
+    <div  style="display: flex; position: absolute; bottom:5vh; width:100%">
+        <div class="cctx" style="margin-left: 5vw;">
+            <a href="javascript: void(0)" style="text-decoration: underline;" id="aemail" onclick="javascript:document.getElementById('aemail').style.display='none';document.getElementById('email').style.display='inline-block'">email</a>
+            <span id="email" onclick="document.getElementById('email').style.display='none';document.getElementById('aemail').style.display='inline-block';">lz568 [at] cornell [dot] edu</span><br>
+            <a href=https://www.linkedin.com/in/lingyuzhou>linkedIn</a> <br>
+            <a href=https://github.com/xolyn>github</a> <br>
+            <a href=https://instagram.com/toqurdn>instagram</a> <br>
+            <a href=https://twitter.com/uygniluohz>x&nbsp;</a> <br>
+            <a href=https://weibo.com/u/5663761733>weibo</a><br>
+        </div>
+        <div class="cctx" id="xx" style="margin-right: 5vw; margin-bottom: 0;">
+            <a href="https://zly.vg/cv.pdf">CV</a>
+        </div>
+    </div>
+
+<script>
+
+
+    const cursor = document.getElementById("invertedcursor");
+    let mouseX = 0, mouseY = 0;
+    let isMoving = false;
+
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX + window.scrollX;
+        mouseY = e.clientY + window.scrollY;
+        if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(updateCursor);
+        }
+    });
+
+    function updateCursor() {
+        cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        isMoving = false;
+    }
+
+    document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+            cursor.style.width = "1.5rem"; 
+            cursor.style.height = "1.5rem";
+        });
+
+        link.addEventListener("mouseleave", () => {
+            cursor.style.width = "1rem";  // default
+            cursor.style.height = "1rem";
+        });
+    });
+
+
+    // color theme
+    function updateColorScheme() {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (isDarkMode) {
+        document.documentElement.style.setProperty('--tc', 'white');
+        document.documentElement.style.setProperty('--bc', 'black');
+    } else {
+        document.documentElement.style.setProperty('--tc', 'black');
+        document.documentElement.style.setProperty('--bc', 'white');
+        }
+    }
+
+    updateColorScheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateColorScheme);
+    </script>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!--
+Author: Lingyu Zhou
+Version: v.11221
+-->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M3C3T1ZPZV"></script>
+<meta charset='UTF-8'>
+<meta name="keywords" content="lingyu zhou cornell uw madison kh entertainment">
+<meta name="description" content="Cornell student and founder of KH Entertainment, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology." />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0'>
+<title>Lingyu Zhou</title>
+
+<meta property="og:title" content="Lingyu Zhou" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://zhoulingyu.net" />
+<meta property="og:image" content="https://f.zly.vg/assets/metabanner.jpg" />
+<meta property="og:description" content="Cornell student and founder of KH Entertainment, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology."/>
+<meta property="og:site_name" content="Lingyu Zhou" />
+
+<meta property="twitter:card" content="https://f.zly.vg/assets/metabanner.jpg" />
+<meta property="twitter:url" content="https://zhoulingyu.net" />
+<meta property="twitter:site" content="@uygniluohz" />
+<meta property="twitter:creator" content="@uygniluohz" />
+<meta property="twitter:title" content="Lingyu Zhou" />
+<meta property="twitter:description" content="Cornell student and founder of KH Entertainment, exploring the numbers and the connections behind. Crafting insightful data narratives from complex systems by blending applied mathematics and computer science technology."/>
+<meta property="twitter:image" content="https://f.zly.vg/assets/metabanner.jpg"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="apple-mobile-web-app-title" content="Lingyu Zhou"/>
+
+<link rel="shortcut icon" href="https://f.zly.vg/assets/logo.png" type="image/x-icon">
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+
+
+<link href="https://xolyn.github.io/widgets/widgets.css " rel="stylesheet">
+
+
+<style>
+
+</style>
+</head>
+<body id="body">
+
+<div id="overhead" style="position: fixed; top:0; width: 100% ;">
+    <div onclick="window.location.href=window.location.href;" style=" cursor: pointer; margin: auto auto auto 1em; "><img id="logo" src="https://f.zly.vg/assets/logo.png" style="width: 20px; object-fit: contain;" ></div>
+
+    <div class="material-symbols-outlined " style="padding:0 .2em; margin:.5em .5em .5em auto; font-family: casmono; font-size: x-large; cursor: pointer; width: min-content;"
+    onclick="showMenu(); toggmenu()">
+    <!-- document.getElementById('menu').style.top='0'; -->
+    &equiv;
+</div ☰>
+</div>
+
+<div id="menu">
+    <div style="border-bottom: 1px; border-bottom-color: inherit; display: flex; width: 100%;">
+        <div onclick="window.location.href=window.location.href;"  style="cursor: pointer; margin: auto auto auto 1em; "><img id="logo" src="https://f.zly.vg/assets/logo.png" style="width: 20px; object-fit: contain;" ></div>
+        
+        <div class="material-symbols-outlined" style="padding:0 .2em; margin:.5em .5em .5em auto; font-family: casmono; font-size: x-large; cursor: pointer; width: min-content;" 
+            onclick="hideMenu(); toggmenu(); undoDisableScroll();">
+            &times;
+        </div>
+    </div>
+
+<div id="olink" style="width: min-content;  margin: auto; font-size: x-large; z-index: 1000; text-align: center; line-height: 140%;" >
+    <a href="https://zly.vg/cv.pdf">Résumé</a><br>
+    <a href="https://blog.zhoulingyu.net">Blog</a><br>
+    <!-- <a href="https://xolyn.github.io/proj">projects</a><br> -->
+    <a href="https://portfolio.zhoulingyu.net">Portfolio</a><br>
+    <a href="https://drive.zhoulingyu.net" translate="no">ZDrive</a><br>
+    <a href="https://xolyn.github.io/fg2.html">Font&nbsp;Studio</a><br>
+    <!-- <a href="//f.zly.vg/bug">bugs</a><br> -->
+    </div>
+
+    <div class="network">
+        <a id="social" href="mailto:lz568@cornell.edu">&#xF32C;</a>
+        <a id="social" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
+        <a id="social" href=https://github.com/xolyn>&#xF3ED;</a> 
+        <a id="social" href=https://instagram.com/toqurdn>&#xF437;</a> 
+        <a id="social" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
+        <a id="social" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
+    </div>
+</div>
+
+<!-- <div id="vidwarning" class="top notif">
+<div style="background-color: rgba(220,220,220,0.65); backdrop-filter: blur(5px); margin: 0 1em; padding-top:2em; border-radius: 1.5em; font-size: smaller; ">
+<div style="margin: 0em 1em;">
+     Video loading timeout, please check your DNS settings, or contact your ISP if this keeps showing up.
+</div>
+<div style="width: 100%; border-top: 1px solid white; margin-top: 1.5em; padding: 1em 0; cursor: pointer;">
+    <div style="width: 50%; display: inline-block; border-right: .5px solid white; box-sizing: border-box;"  onclick="vidwarning.style.top='-200px';">
+        Ignore
+    </div><div style="width: 50%;display: inline-block; border-left: .5px solid white;box-sizing: border-box;"  onclick="window.location.href=window.location.href;">
+        Refresh
+    </div>
+</div> -->
+
+<div id="fest" class="top notif">
+
+</div>
+
+</div>
+
+</div>
+
+<div id="vidText" style="width: 100%; height: 100vh; position: relative; z-index: 999; display: flex;">
+<video id="backgroundVideo" autoplay loop muted playsinline preload="auto" poster="https://i.gifer.com/ZKZg.gif" 
+style="margin: auto;" loading="eager">
+<!-- src="https://zhoulingyu.net/bgv2.mp4" poster='https://f.zly.vg/assets/loading.gif' -->
+</video>
+<div style="position: absolute; top:0; left: 0; display: flex; width: 100%; height: 100vh;">
+<div id="name" 
+style=" paint-order: stroke fill; font-family: made; margin: auto; mix-blend-mode: difference; max-width: 80%; text-align: center;">
+LINGYU ZHOU<br>
+    <!-- <div style="width: min-content; cursor: pointer; border: .3vw solid white; border-radius: 999px; padding: 0 .5em 1em .5em; font-family: sf-round; font-size: 1.5vw; display:inline-block;"
+     onclick="window.scrollTo({top:window.innerHeight, behavior: 'smooth'})">
+        |</div> -->
+        <!-- <svg id="scroll" style="height:min-content; cursor: pointer;" onclick="window.scrollTo({top:window.innerHeight, behavior: 'smooth'})" 
+        width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z" stroke="black" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 6V14" stroke="black" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M15 11L12 14L9 11" stroke="black" stroke-width="0.696" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> -->
+    
+</div>
+</div>
+</div vidText>
+
+<div class="section" id="about">
+    <div id="half">
+        <h1>about</h1>
+    </div>
+
+    <div id="half" style="letter-spacing: 0.005rem;">
+        <!-- <p style="font: xx-large 'appletc';">你好！</p> -->
+        <!-- <ruby style="font-family:'appletc'; font-weight: 500;">周<rt>ʈʂoʊˉ</rt>&nbsp;凌<rt>&nbsp;lɪŋˊ</rt>宇<rt> yˇ</rt></ruby> -->
+        <p>Hello stranger. My name is Lingyu Zhou (<span style="font-family:'appletc'">周凌宇</span>).        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
+            I am a now graduated student</a> from <a href="https://cornell.edu">Cornell University</a>,
+            also the founder of <a href="https://khentmt.com">KH Entertainment</a>. 
+            </p>
+    
+        <p>
+            I try to deliver the best UX from data analysis, also explore the numbers and their connections behind, using applied mathematics and computer engineering.
+        </p>    
+    
+        <p> 
+            Previously, I studied applied mathematics at 
+            <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
+            I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
+            Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
+            <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
+        </p>
+        <p>
+            My specialties are software engineering, math, data analysis, and data visualization.
+            
+            <!-- My research interests are computational social science and affective computing, particularly in using data science methods and natural language processing to model and analyze emotional and behavioral trends within large-scale social networks. My goal is to explore how computational models can provide insights into social phenomena, group dynamics, and collective emotions, utilizing vast social media data to understand real-world interactions and sentiments. This area lies at the intersection of statistical modeling, machine learning, and NLP, with applications in prediction of social behavior, sentiment analysis, and trend forecasting. -->
+        </p>
+    
+        <p>
+            I am also interested in etymology, biology, and botany.
+        </p>
+    </div>
+</div>
+
+
+<div class="section" id="edu">
+    <div id="half">
+        <h1>education</h1>
+    </div>
+    <div id="half">
+          <div class="timeline" style="transition: .5s;">
+            <div class="outer">
+
+                <div class="card">
+                    <div class="info">
+                      <h3 class="title">2023.8-2025.1
+                        <br><span style="font-size: smaller;">Master's</span>
+                    </h3>
+                        <a href="http://cornell.edu/">Cornell Univeristy</a>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="info">
+                      <h3 class="title">2020.9-2023.5
+                        <br><span style="font-size: smaller;">Bachelor's</span>
+                      </h3>
+                        <a href="http://wisc.edu/">University of Wisconsin - Madison</a>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="info">
+                      <h3 class="title">2017.9-2020.6
+                        <br><span style="font-size: smaller;">High School</span>
+                      </h3>
+                        <a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a>
+                    </div>
+                  </div>
+
+                <!-- <div class="card">
+                    <div class="info">
+                    <h3 class="title">2014.9-2017.6
+                        <br><span style="font-size: smaller;">Middle School</span>
+                    </h3>
+                        <a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a>
+                    </div>
+                </div> -->
+
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="section" id="proj">
+    <div id="half">
+        <h1>projects</h1>
+    </div>
+    <div id="half" style="display: flex; padding: 0;">
+
+    <div class="splide" role="group" style="width: 100%;">
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev" style="margin-left: -1em; color:white" id="slidearr">
+                &larr;
+            </button>
+            <button class="splide__arrow splide__arrow--next" style="margin-right:-1em; color:white" id="slidearr">
+                &rarr;
+            </button>
+      </div>
+        <div class="splide__track">
+              <ul class="splide__list" style="font-size: medium !important;">
+                <li class="splide__slide">
+                    <img id="projimg" src="https://f.zly.vg/assets/yafiwg.jpg" >
+                    <a href="https://github.com/xolyn/yafiwg">YAFIWG</a>
+                </li>
+
+                <li class="splide__slide">
+                    <img id="projimg" src="https://i.pinimg.com/originals/30/8d/fd/308dfd052f050d31b8c05c6a63c0831f.gif" >
+                    <a href="https://xolyn.github.io/widgets">Gadgetz</a>
+                </li>
+
+                <li class="splide__slide">
+                    <img id="projimg" src="https://images.unsplash.com/photo-1628268509381-c70293fa638d?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" >
+                    <a href="https://xolyn.github.io/academic/opt.html">Optimization plyaground</a>
+                </li>
+                  <li class="splide__slide">
+                    <img id="projimg" src="https://images.unsplash.com/photo-1700157710823-2e9e58414802?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" >
+                    <a href="https://xolyn.github.io/5999proj">Time Series Analysis</a>
+                </li>
+                <li class="splide__slide">
+                    <img src="https://f.zly.vg/assets/b2p.jpg" >
+                    <a href="https://github.com/xolyn/beamer2ppt">beamer2ppt</a>
+                </li>
+                <li class="splide__slide">
+                    <img src="https://images.unsplash.com/photo-1726004592905-dc5cd794bda6?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" >
+                    <a href="https://xolyn.github.io/grd.html">Gambler's Ruin</a>
+                </li>
+                <li class="splide__slide">
+                    <img src="https://f.zly.vg/assets/bug.png" >
+                    <a href="https://f.zly.vg/bug">Bugs index</a>
+                </li>
+                <li class="splide__slide">
+                    <img src="https://shorturl.at/anrE3" >
+                    <a href="https://aqmn.github.io/cmd">CLI personal webpage</a>
+                </li>
+
+                <li class="splide__slide">
+                <img src="https://images.unsplash.com/photo-1669502067440-6a09729d072d?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <a href="https://xolyn.github.io/academic/bp.html">Birthday paradox</a>
+                </li>
+                   
+                <!-- <li class="splide__slide">
+                    <img src="https://assets-global.website-files.com/63860a6c68b9e86f413fdb22/65a70861be364ef5f29c2790_mike-hindle-a4szJ_sBfiU-unsplash.jpg" >
+                    <details style="text-align: center !important;"><summary>HTML Demo</summary>
+                        <a href="https://xolyn.github.io/file_tree">collections</a><br>
+                        <a href="https://aqmn.github.io">demo1</a><br>
+                        <a href="https://aqmn.github.io/index-code">demo2</a><br>
+                        <a href="https://aqmn.github.io/index0">demo3</a><br>
+                        <a href="https://aqmn.github.io/comm2">demo4</a><br>
+                        <a href="https://aqmn.github.io/guess">fun</a><br>
+                    </details>
+                </li> -->
+              </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="section" id="publications">
+    <div id="half">
+        <h1>publications</h1>
+    </div>
+    <div id="half">
+        <ul style="font-size: inherit; padding: 1em; line-height: 150%;">
+            <li>
+                <b>
+                    <a href="http://doi.org/10.1007/978-981-99-6441-3_96">
+                        Analysis of the Hog Futures Market in China (BPS_0799)
+                    </a>
+                </b>
+                <p>Oct, 2023</p>
+                <p>
+                    <i>Applied Economics and Policy Studies</i>(ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (Print ISSN 2754-1169)
+                </p>
+                <p>
+                    Chen Xu, <u>Lingyu Zhou</u>, Anshi Lou, Manqi Qiu & Mengyu Cao 
+                </p>
+                
+            </li>
+            <li>
+                <b>
+                    Purchasing practices and labor outcomes in global supply chains
+                </b>
+                <p>Jan, 2025</p>
+                <p>
+                    <i>British Journal of Industrial Relations</i>, <span style="color: grey;">under review</span><br>
+                </p>
+
+                <p>
+                    Sarosh Kuruvilla, Chunyun Li, <u>Lingyu Zhou</u>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section" id="beliefs">
+<div id="half">
+    <h1>Things I believe</h1>
+</div>
+
+<div id="half">
+    <ul style="padding: 1em; line-height: 180%;">
+        <li>Detail matters.</li>
+        <!-- <li>Never too late to act.</li> -->
+        <li>Simplicity is the ultimate sophistication.</li>
+        <li>Life is present.</li>
+        <li>Embrace mediocrity.</li>
+    </ul>
+</div>
+</div>
+
+<div class="section" id="faq">
+    <div id="half">
+        <h1>FAQ</h1>
+    </div>
+
+    <div id="half">
+        <details>
+            <summary class="far narrow">Does this website collect HTTP cookies?</summary>
+            Unfortunately, yes. When you visit our website, cookies data such as your location, device information, 
+            etc may be collcted by our analytics partner Google. We unswervingly recognize the importance of data privacy.
+            Rest assured, this information is solely used for the purpose of website analytics and 
+            enhancing user experience. We are committed to ensuring that your data is handled securely 
+            and will never be disclosed to third parties. 
+            <!-- For more information please check <a href="cookie.html">here</a>. -->
+        </details>
+        <hr>
+        <details>
+            <summary class="far narrow">Why .NET instead of .COM?</summary>
+            The pervasive misappropriation of the ".com" domain for personal websites represents a linguistic and conceptual misunderstanding, 
+                indicative of a lexical disregard for the commercial connotation inherent in this TLD. 
+                The ubiquitous adoption of ".com" for non-commercial pursuits commit a departure from the etymological underpinnings of the abbreviation, 
+                where "com" ostensibly denotes <b>com</b>mercial endeavors. Such lexical transgressions, seems subtle, illuminate the nuanced and evolving nature of language in the virtual epoch, 
+                where lexical boundaries are often porous and subject to the whims of cultural appropriation. I strongly condemn misbehavior of this kind. 
+                <s>Totally not because I didn't manage to snap up the .com website of my name.</s> 
+        </details>
+        <hr>
+        <details>
+            <summary class="far narrow">What are licensing agreements and sharing rules for this website?</summary>
+            You can share by copying and redistributing the content under this second level domain in any medium or format with appropriate credit given.
+            No commercial uses and derivatives of any kind are allowed.
+            All contents are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.
+        
+        </details>
+        <hr>
+        <details>
+            <summary class="far narrow">How to use this website?</summary>
+            You can always go back to the homepage by clicking the website logo on the overhead menu bar. 
+            You are also able to go to the top at the bottom of the page by clicking "<a href="#demotop" onclick="highlightDiv()">Top &uarr;</a>" botton.     
+            <br>
+            Besides, if possible, link my website to your personal website or social media platform. This helps to increase this website's
+            <a href="https://en.wikipedia.org/wiki/PageRank">Page Rank</a>.
+        </details>
+        <hr>
+        <details>
+            <summary class="far narrow">How was this website made?</summary>
+            Sometimes people overuse JavaScript frameworks, spending more time on building projects and forgetting the original purpose of the website: to deliver information. 
+            In fact, the logic of most personal websites is not even a little bit close to the complexity that necessitates large JavaScript frameworks.
+            So this website is constructed by vanilla HTML5, CSS3, and JavaScript (ES6), with the only assist of JavaScript library: <a href="http://splidejs.com">Splide</a>.
+            <!-- to comply the responsiveness and cross-browser compatibility design principal. -->
+            It's hosted on <a href="https://www.cloudflare.com/developer-platform/products/r2/">Cloudflare R2</a>. 
+        </details>
+        <hr>
+        <details>
+            <summary class="far narrow">What if I found a problem or glitch in the website?</summary>
+            Feel free to report problems of any kind, especially styling or device adapting problem to <a href="/cdn-cgi/l/email-protection#1d7c797074735d677572687174737a646833737869">administrator</a>.
+            You may also found this in the footer of this website. 
+            Thank you for making effort to improve the website.  
+        </details>
+
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="sub">
+        Sections
+        <p style="font-size: smaller">
+            <a href="#about">about</a><br>
+            <a href="#edu">education</a><br>
+            <a href="#proj">projects</a><br>
+            <a href="#publications">publications</a><br>
+            <a href="#beliefs">things I believe</a><br>
+            <!-- <a href="#proj">projects</a><br> -->
+            <a href="#faq">faq</a><br>
+        </p>
+    </div>
+    <div class="sub">
+        Support
+        <p style="font-size: smaller">
+            <a href="mailto:report@zly.vg">report an issue</a><br>
+            <a href="https://status.zhoulingyu.net">status page</a><br>
+        </p>
+    </div>
+    <div class="sub">
+        Terms and policies
+        <p style="font-size: smaller">
+            <a href="cookie.html">cookies policies</a><br>
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">creative commons</a><br>
+        </p>
+    </div>
+</div>
+
+<!-- <button 
+id="themetogg" title="theme toggle" onclick="this.style.transform=this.style.transform=='rotate(180deg)'?'rotate(-180deg)':'rotate(180deg)';">
+&#xF288;</button> -->
+
+
+<div id="themetoggOuter"
+style=" display: flex; position: fixed; bottom: 1em; right:1em ; background-color: var(--bbgc); width: 5vh; height: 5vh; z-index: 998; border-radius:10px; ">
+
+<img src="https://cdn-icons-png.flaticon.com/512/108/108931.png"
+id="themetogg" title="theme toggle" onclick="this.style.transform=this.style.transform=='rotate(180deg)'?'rotate(-180deg)':'rotate(180deg)';">
+
+</div>
+
+<div style="text-align: right; padding: 1em ; font-size: medium;">
+    <a id="demotop" href="javascript:window.scrollTo({top:0, behavior: 'smooth'})">Top &uarr; </a><br>
+    <a href="javascript:share()">Share &nearr; </a>
+
+    <!-- <button onclick="vidwarning.style.top=vidwarning.style.top==='2%'?'-250px':'2%';">test</button> -->
+
+</div>
+
+<div id="end" style="font-size: small !important; text-align: center; padding: 2em ;">
+    <span translate="no" style="font-family: 'Libre Barcode 39'; font-size: xx-large;">ZHOULINGYU</span><br>
+
+    <!-- <div id="nic" style="display: inline-block; transition: 1s; width: 100%; font-family: 'Azeret Mono'; font-weight:  bold; width: min-content; white-space: nowrap;">
+        &nbsp;&nbsp;ZHO<span style="color:orangered">U</span><span style="display: inline-block; 
+        -moz-transform:      scaleX(-1);
+        -o-transform:      scaleX(-1); 
+        -webkit-transform: scaleX(-1); 
+        transform:         scaleX(-1); 
+        filter: FlipH;">LINGY</span>
+    </div><br> -->
+
+    &copy; Lingyu Zhou, under license to <a href="https://khentmt.com">KH Entertainment</a> (2014-<span id="currYear"></span>)
+
+</div>
+
+
+<!-- <div id="cookiesOpt" style="position: fixed; z-index: 99999; background-color: white; bottom: 0; width: 100%; text-align: center; padding: 2em 0 1em 0; border-top: 1px solid black;">
+This site <a href="cookie.html">uses http cookies</a> to enhance users' experiences.&nbsp; <br>
+<div onclick="localStorage.setItem('cookieConsent', 'accepted');hideCookies();" style="padding: 1em; cursor: pointer; display: inline-block;"><u>accept all</u></div>
+<div onclick="localStorage.setItem('cookieConsent', 'accepted');hideCookies();" style="padding: 1em; cursor: pointer; display: inline-block;"><u>reject unneccesary</u></div>
+</div> -->
+<script src="https://zhoulingyu.net/notifControl.js"></script>
+<script>
+currYear.innerText=new Date().getFullYear();
+
+const button = document.getElementById('themetogg');
+
+let theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'bright'; //init.
+
+let bbgc, btc, btca;
+
+function setThemeVariables() {
+  bbgc = theme === 'bright' ? 'rgb(255,255,255)' : 'rgba(0,0,0,1)';
+  btc = theme === 'bright' ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)';
+  btca = theme === 'bright' ? 'rgba(0,0,0,0.7)' : 'rgba(255,255,255,0.7)';
+  _filter= theme=== 'bright' ? 'invert(0)':'invert(1)';
+  
+  document.documentElement.style.setProperty('--bbgc', bbgc);
+  document.documentElement.style.setProperty('--btc', btc);
+  document.documentElement.style.setProperty('--btca', btca);
+  themetogg.style.filter=_filter;
+  document.querySelectorAll("#logo").forEach(e => e.style.filter=_filter);
+}
+
+button.addEventListener('click', () => {
+  theme = theme === 'bright' ? 'dark' : 'bright';
+  setThemeVariables();
+});
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+  theme = event.matches ? 'dark' : 'bright';
+  setThemeVariables();
+});
+
+setThemeVariables();
+
+// video loading:
+
+var videoLoadedFlag=0
+
+document.addEventListener("DOMContentLoaded", function () {
+    var videoFiles = [ "bgv2.mp4", "bgv3.mp4", "bgv4.mp4","bgv.mp4" ];
+    var randomVideo = videoFiles[Math.floor(Math.random() * videoFiles.length)];
+    var videoElement = document.getElementById("backgroundVideo");
+    videoElement.src = randomVideo;
+    // videoElement.load(); // force load to show overhead menu bar
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("backgroundVideo");
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && videoLoadedFlag===0) {
+                videoLoadedFlag=1;
+                // document.getElementById('overhead').style.display='none';
+                document.getElementById('backgroundVideo').addEventListener('play', function() {
+                document.getElementById('overhead').style.zIndex='998';
+                vid=document.getElementById('backgroundVideo');
+                vid.style.width='100%';
+                vid.style.height='100vh';
+                vid.style.objectFit='cover';
+                vid.poster='https://f.zly.vg/assets/whiteXXS.png';
+                
+                setTimeout(function (){
+                    document.getElementById('overhead').style.display='flex';
+                }, 300);
+
+                setTimeout(function (){
+                document.getElementById('name').style.opacity=1;
+                }, 300);
+                });
+            }
+            else{
+                document.getElementById('overhead').style.display='flex';
+            }
+        });
+        }, { threshold: 0.01 });
+    observer.observe(video);
+});
+
+// vid loading warning:
+
+document.addEventListener("DOMContentLoaded", function() {
+    var videoElement = document.getElementById('backgroundVideo');
+    var warningElement = document.getElementById('vidwarning');
+
+    var timeout = setTimeout(function() {
+        warningElement.style.top = '2%';
+    }, 100);
+
+    videoElement.addEventListener('loadeddata', function() {
+        clearTimeout(timeout);
+    });
+});
+
+// demo top:
+function highlightDiv() {
+var div = document.getElementById('demotop');
+div.classList.add('highlight');
+
+setTimeout(function() {
+div.classList.remove('highlight');
+}, 1000);
+}
+
+// share:
+function share(){ navigator.share({title:'Lingyu Zhou',text:"Lingyu Zhou's homepage",url:'https://zhoulingyu.net'}); }
+
+//fest:
+
+setTimeout(function (){
+    fest.style.top = '2%';
+}, 500);
+
+// splide:
+var lastOri=window.innerWidth > window.innerHeight;
+
+const firstPadding=lastOri===true?"15%":"0";
+
+var splide = new Splide('.splide',{ type:'loop',perPage:1,padding:firstPadding, perMove:1, keyboard:true, pagination:false });splide.mount();
+
+document.addEventListener('DOMContentLoaded', function() {
+    function initializeSplide(padding) {
+        var splide = new Splide('.splide', {
+            // perPage: nPerPage,
+            type:'loop',
+            perPage: 1,
+            perMove: 1,
+            padding:padding,
+            keyboard: true,
+            pagination: false
+        });
+
+        splide.mount();
+    }
+
+    function updateSplide() {
+        var currOri=window.innerWidth > window.innerHeight;
+        if (currOri!=lastOri){
+            lastOri=currOri;
+            // var nPerPage=currOri ? 2 : 1
+            var padding=currOri ? '15%':'0';
+            // initializeSplide(nPerPage);
+            initializeSplide(padding);}
+    }
+
+    window.addEventListener('resize', updateSplide);
+});
+
+// // fixed arrow:
+document.addEventListener('DOMContentLoaded', function() {
+    var image = document.getElementById('projimg');
+    var buttons = document.querySelectorAll('button#slidearr');
+    function updateButtonPosition() {
+        var imageHeight = image.offsetHeight / 2;
+        buttons.forEach((btn) => {
+            btn.style.top = imageHeight + 'px';});}
+    updateButtonPosition();
+
+var resizeObserver = new ResizeObserver(updateButtonPosition);
+resizeObserver.observe(image);});
+
+// // open the details when img clicked:
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('li.splide__slide > img');
+    
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            const details = this.nextElementSibling;
+            if (details && details.tagName.toLowerCase() === 'details') {
+                if (details.hasAttribute('open')) {
+                    details.removeAttribute('open');
+                } else {
+                    details.setAttribute('open', '');
+                }
+            }
+        });
+    });
+});
+
+// menu:
+function showMenu(){
+    // window.scrollBy({ top: 300, left: 0, behavior: "smooth", });
+    document.getElementById("menu").style.visibility="visible";
+    setTimeout(function (){
+        document.getElementById("menu").style.opacity="1";
+    }, 10);
+}
+
+function hideMenu(){
+    // window.scrollBy({ top: -300, left: 0, behavior: "smooth", });
+    document.getElementById("menu").style.opacity="0";
+    setTimeout(function (){  
+        document.getElementById("menu").style.visibility="hidden";
+    }, 10);
+}
+
+function toggmenu(){
+    // document.getElementById("body").style.overflowY=document.getElementById("body").style.overflowY==="hidden"?"scroll":"hidden";
+    disableScroll();
+}
+
+function preventDefault(evnt) {evnt.preventDefault();}
+
+function disableScroll() {
+        document.addEventListener('touchmove', preventDefault, { passive: false });
+        document.addEventListener('wheel', preventDefault, { passive: false });
+}
+
+function undoDisableScroll() {
+    document.removeEventListener('touchmove', preventDefault, { passive: false });
+    document.removeEventListener('wheel', preventDefault, { passive: false });
+}
+
+// cookies:
+// function hideCookies(){
+//     document.getElementById('cookiesOpt').style.display='none';
+// }
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//         const cookieConsent = localStorage.getItem('cookieConsent');
+//         if (cookieConsent) {
+//             hideCookies();
+//         }
+//     });
+
+</script>
+</body>
+</html>
