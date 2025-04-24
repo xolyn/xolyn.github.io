@@ -17,14 +17,14 @@ const calendarMap = {
   'default': 'en.usa%23holiday%40group.v.calendar.google.com'
 };
 
-const today = new Date("2023-12-24");
+const today = new Date("2025-12-24");
 const isoDate = today.toISOString().split("T")[0];
 const timeMin = `${isoDate}T00:00:00Z`;
 const timeMax = `${isoDate}T23:59:59Z`;
 
-const calendarId = calendarMap[lang] || calendarMap['default'];
+// const calendarId = calendarMap[lang] || calendarMap['default'];
 // for debugging: //
-// const calendarId = calendarMap["en-gb"]
+const calendarId = calendarMap["en-us"]
 
 function showFest(){
     setTimeout(()=>{
@@ -39,7 +39,7 @@ function showFest(){
 }
 
 const festHTML = `
-<div id="fest" style="
+<div id="fest" style=" border: 1px solid #eee;
   width: 80dvw; position: fixed; top: 1rem; left: 50%;
   transform: translate(-50%,-30rem);
   background-color: rgba(255,255,255,0);
@@ -48,10 +48,26 @@ const festHTML = `
   padding: 4dvh 0; border-radius: 1.5rem;
 ">
   <div style="text-align: center; width: 100%; color: black;">
-    Celebrating <span id="holidays" style="font-style: italic;"></span> !
+    Today is <span id="holidays" style="font-style: italic;"></span> !
   </div>
 </div>
 `;
+
+// another style (no pop-up)//
+/* <div id="fest" style="
+  width: 100dvw; position: fixed; bottom: 0; left: 50%;
+  transform: translate(-50%,0); display:flex;
+  background-color: rgba(255,255,255,0);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  padding: 4dvh 0;
+">
+  <div style="text-align: center; margin: auto 0 auto 1rem; color: black;">
+    Today is <span id="holidays" style="font-style: italic;"></span> !
+  </div>
+    <div style="margin: auto 1rem auto auto; font-size:larger" onclick="fest.style.display='none';">&times;
+  </div>
+</div> */
 
 const wrapper = document.createElement('div');
 wrapper.innerHTML = festHTML;
