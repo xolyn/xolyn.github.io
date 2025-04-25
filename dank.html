@@ -17,11 +17,12 @@ div#comment{
 }
 
 div#comment::before{
-    content: ''; /* 必须有内容，否则 before 元素不会生成 */
+    content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0User123:'; /* 必须有内容，否则 before 元素不会生成 */
     display: inline-block;
+    font-style: italic;
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: .5rem;
+    margin-right: 6rem;
     background-image: url('https://picsum.photos/200');
     background-size: cover; /* 让图片铺满，不变形 */
     background-position: center center; /* 让图片居中 */
@@ -32,9 +33,9 @@ div#comment::before{
 
 </style>
 </head>
-<body>
+<body style="font-family: inter;">
 <h2>Comments:</h2>
-<div id="comments" style="width: 80%; max-width: 80%; overflow-y: auto; background-color: orange; max-height: 80dvh;">
+<div id="comments" style="width: 100%; max-width: 100%; overflow-y: auto; background-color: orange; max-height: 80dvh;">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/lorem-ipsum@2.0.8/dist/bundle.min.js"></script>
