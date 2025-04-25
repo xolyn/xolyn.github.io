@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<style>
+div#comment{
+    border-radius: 1rem;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: larger;
+}
+
+div#comment::before{
+    content: ''; /* 必须有内容，否则 before 元素不会生成 */
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .5rem;
+    background-image: url('https://picsum.photos/200');
+    background-size: cover; /* 让图片铺满，不变形 */
+    background-position: center center; /* 让图片居中 */
+    background-repeat: no-repeat; /* 不要平铺 */
+    border-radius: 999rem;
+}
+
+
+</style>
+</head>
+<body>
+<h2>Comments:</h2>
+<div id="comments" style="width: 80%; max-width: 80%; overflow-y: auto; background-color: orange; max-height: 80dvh;">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lorem-ipsum@2.0.8/dist/bundle.min.js"></script>
+<script>
+  const sourceText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, eaque quae officiis ipsam facere dicta voluptas omnis hic est molestias. Similique corporis iste eveniet iusto, nostrum aliquid et. Aut laboriosam necessitatibus, ipsa aperiam consequatur unde quibusdam esse ex, fugit dicta labore voluptatem quisquam ducimus vero sint ratione iure doloremque. At voluptatum adipisci odio reiciendis! Sint ipsum provident minima, consectetur cumque qui rerum cupiditate animi eos sapiente dolorem veritatis a, illum asperiores autem! Sit doloremque inventore voluptas fuga? Fugit voluptas, architecto odit laborum, illo aut nobis vero perferendis pariatur necessitatibus reprehenderit nam rem ea? Id, reiciendis neque adipisci minus cupiditate voluptatibus.`;
+
+function lorem(n = 10) {
+  const words = sourceText.split(/\s+/); // 按空格分词
+  return words.slice(0, n).join(' ');
+}
+
+
+const commentsContainer = document.getElementById('comments');
+
+function addComment() {
+  const comment = document.createElement('div');
+  comment.id = 'comment';
+
+  // 生成随机单词数 5 ~ 30
+  const wordCount = Math.floor(Math.random() * 26) + 5;
+  comment.textContent = lorem(wordCount);
+
+  commentsContainer.appendChild(comment);
+
+  const atBottom = commentsContainer.scrollTop + commentsContainer.clientHeight >= commentsContainer.scrollHeight * 0.9;
+
+    if (atBottom) {
+    commentsContainer.scrollTop = commentsContainer.scrollHeight;
+    }
+
+  // 随机等待 0 < n <= 2秒
+  const nextDelay = Math.random() * 2000;
+  setTimeout(addComment, nextDelay);
+}
+
+addComment();
+</script>
+
+</body>
+</html>
