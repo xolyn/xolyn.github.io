@@ -17,14 +17,15 @@ const calendarMap = {
   'default': 'en.usa%23holiday%40group.v.calendar.google.com'
 };
 
-const today = new Date("2025-12-24");
+// const today = new Date("2025-12-24");
+const today = new Date();
 const isoDate = today.toISOString().split("T")[0];
 const timeMin = `${isoDate}T00:00:00Z`;
 const timeMax = `${isoDate}T23:59:59Z`;
 
-// const calendarId = calendarMap[lang] || calendarMap['default'];
+const calendarId = calendarMap[lang] || calendarMap['default'];
 // for debugging: //
-const calendarId = calendarMap["en-us"]
+// const calendarId = calendarMap["en-us"]
 
 function showFest(){
     setTimeout(()=>{
