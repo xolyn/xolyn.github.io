@@ -52,7 +52,8 @@ const projs=[
 {
 "name": "CLI personal webpage",
 "url": "https://aqmn.github.io/cmd",
-"img": "https://shorturl.at/anrE3"
+"img": "https://xolyn.github.io/assets/cli.gif"
+
 },
 {
 "name": "Time Series Analysis",

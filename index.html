@@ -141,7 +141,7 @@ ul{margin:0}
 
   <div class="material-symbols-outlined onlymob" 
   onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'; mobmenu.style.right=mobmenu.style.right==='0px'?'-100dvw':'0px'; mobmenuwrapper.innerHTML=pcmenu.innerHTML; "
-  style="margin: auto 1rem; font-weight: 300; cursor:pointer ">&#xe5d2;</div>
+  style="margin: auto 1rem; font-weight: 300; cursor:pointer" translate="no">&#xe5d2;</div>
 
 </nav>
 
@@ -400,10 +400,10 @@ ul{margin:0}
           <span onclick="window.location.href='https://status.zhoulingyu.net'">Status</span>
         </p>
         <div  style="margin: auto;"></div>
-        <p>
-          <!-- <label for="region">Your region:</label> -->
+        <p style="display: flex;">
+          <label for="region" class="material-symbols-outlined" style="margin: auto .5rem auto 0; font-weight: 300; font-size: medium;" translate="no">&#xe894;</label>
 
-          <select name="region" id="region" style="font-family: inherit; background-color: var(--ac); color: var(--mc); border-radius: 5px; border:1px solid #ddd">
+          <select name="region" id="region" style="margin: auto 0; font-family: inherit; background-color: var(--ac); color: var(--mc); border-radius: 5px; border:1px solid #ddd">
             <option value="en-us">US (Default)</option>
             <option value="en-gb">UK</option>
             <option value="en-au">AU</option>
