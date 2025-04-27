@@ -103,6 +103,8 @@ summary{font-size: small !important; padding: 1rem 0;}
 }
 
 @media (orientation: portrait) {
+#footer{flex-direction: column;}
+
 .onlymob{ display: block; }
 
 .onlyPC{ display: none; }
@@ -372,8 +374,9 @@ ul{margin:0}
       </div>
     </div .row>
 
-      <div style="width: 100%; padding: 0 1rem; box-sizing: border-box; text-align: center;">
-        <hr>
+    <hr>
+      <div id="footer" style="width: 100%; padding: 0 1rem; box-sizing: border-box; text-align: left; display: flex;">
+        
         <p>
           &copy; Lingyu Zhou <span id="thisYear"></span>
           <!-- <br>
@@ -384,8 +387,9 @@ ul{margin:0}
             <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://instagram.com/toqurdn>&#xF437;</a> 
             <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
             <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
-        </p> -->
-        <p>
+            -->
+          <br>
+          <br>
           <span onclick="
         document.documentElement.style.setProperty('--ac', getComputedStyle(document.documentElement).getPropertyValue('--ac')=== 'black' ? 'white' : 'black');
         document.documentElement.style.setProperty('--mc', getComputedStyle(document.documentElement).getPropertyValue('--mc')=== 'white' ? 'black' : 'white');" 
@@ -393,7 +397,29 @@ ul{margin:0}
           <span onclick="window.location.href='https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1'">Terms</span>&nbsp;&nbsp;|&nbsp;&nbsp;
           <span onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</span>&nbsp;&nbsp;|&nbsp;&nbsp;
           <span onclick="window.location.href='mailto:report@zly.vg'">Report</span>&nbsp;&nbsp;|&nbsp;&nbsp;
-          <span onclick="window.location.href='https://status.zhoulingyu.net'">Status</span></p>
+          <span onclick="window.location.href='https://status.zhoulingyu.net'">Status</span>
+        </p>
+        <div  style="margin: auto;"></div>
+        <p>
+          <!-- <label for="region">Your region:</label> -->
+
+          <select name="region" id="region" style="font-family: inherit; background-color: var(--ac); color: var(--mc); border-radius: 5px;">
+            <option value="en-us">US (Default)</option>
+            <option value="en-gb">UK</option>
+            <option value="en-au">AU</option>
+            <option value="en-ca">CA</option>
+            <option value="de-de">DE</option>
+            <option value="en-in">IN</option>
+            <option value="en-sg">SG</option>
+            <option value="en-my">MY</option>
+            <option value="vi-vn">VN</option>
+            <option value="zh-cn">CN</option>
+            <option value="zh-tw">TW</option>
+            <option value="fr-fr">FR</option>
+            <option value="ja-jp">JP</option>
+            <option value="ko-kr">KR</option>
+          </select>
+        </p>
 
       </div>
 
@@ -404,6 +430,34 @@ ul{margin:0}
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="proj/proj.js"></script>
 <script src="js/fest.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let savedLang = localStorage.getItem('lang');
+  const regionSelect = document.getElementById('region');
+
+  // default
+  if (!savedLang) {
+    savedLang = (navigator.language || 'en-US').toLowerCase();
+    localStorage.setItem('lang', savedLang);
+  } else {
+  }
+
+  // sync select#region
+  if (regionSelect) {
+    regionSelect.value = savedLang;
+  }
+
+  // listen to change local storage
+  regionSelect.addEventListener('change', function() {
+    const selectedLang = this.value;
+    localStorage.setItem('lang', selectedLang);
+    // console.log('语言已更新为:', selectedLang);
+    window.location.href=window.location.href;
+  });
+});
+
+</script>
 </body>
 
 </html>

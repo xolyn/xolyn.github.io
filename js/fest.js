@@ -1,4 +1,6 @@
-const lang = (navigator.language || 'en-US').toLowerCase();
+// const lang = (navigator.language || 'en-US').toLowerCase();
+const lang=localStorage.getItem('lang')
+
 const calendarMap = {
   'en-us': 'en.usa%23holiday%40group.v.calendar.google.com',
   'en-gb': 'en.uk%23holiday%40group.v.calendar.google.com',        
