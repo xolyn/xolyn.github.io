@@ -30,7 +30,7 @@ const projs=[
   "img": "https://images.unsplash.com/photo-1595325093677-422a41bcf51c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 },
 {
-"name": "Optimization plyaground",
+"name": "Optimization playground",
 "url": "https://xolyn.github.io/academic/opt.html",
 "img": "https://images.unsplash.com/photo-1628268509381-c70293fa638d?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 },
