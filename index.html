@@ -3,461 +3,51 @@
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<!-- <meta http-equiv="refresh" content="3; url=https://zhoulingyu.net/"> -->
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel='stylesheet' href='https://xolyn.github.io/widgets/widgets.css'>
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
-<!-- https://icons.getbootstrap.com/ -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<title>lingyu zhou</title>
+<title>Document</title>
 <style>
-:root{
-  --mc: black;
-  --ac: white;
-  --sidebarWidth:40%;
-  /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" ><text fill="white"  x="0" y="20" font-size="20">↑</text></svg>') 0 0, auto; */
+button{
+    margin-top: 1em;
+    font-family: inherit;
+    border: #eee 1px solid;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: .5s;
+    cursor: pointer;
 }
 
-html{
-    font-family: 'md';    
-    font-size: smaller;
-    background-color: var(--ac);
-    color:var(--mc);
+button:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+
 }
-
-a{color:var(--mc);}
-
-a:hover{color: color-mix(in srgb, var(--mc) 65%, var(--ac) 35%)}
-
-h2{border-top: .5px solid #ddd; padding: .5rem 0; font-size: medium;}
-
-.wrapper {
-  height: 90dvh;
-  overflow-y: auto;
-  overflow: auto;
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;
-}
-
-.wrapper::-webkit-scrollbar {
-  display: none;               /* Safari and Chrome */
-}
-
-.row {
-  display: flex;
-}
-
-.column {
-  padding: 0.5rem 1rem;
-}
-
-.sidebar {
-  z-index: 9;
-  position: sticky;
-  top: 0;
-  height: min-content;
-  flex:1;
-  background-color: var(--ac);  
-}
-
-.content {
-  flex:2;
-}
-
-tr>td:first-child{
-    width: 35%;
-    padding: .5rem 0;
-}
-
-tr>td:nth-child(2){
-    width: 65%;
-    text-align: right;
-    padding: .5rem 0;
-}
-
-hr{ border: .25px solid #ddd}
-
-menu.onlymob{ right: -100dvw }
-details{font-size: x-small;}
-summary{font-size: small !important; padding: 1rem 0;}
-#hero:hover{font-weight: 100;}
-/* swiper */
-.prev,.next{cursor: pointer;}
-.prev::selection,.next::selection{background-color: transparent;}
-.prev.swiper-button-disabled,.next.swiper-button-disabled {color: grey; cursor: not-allowed;}
-.swiper-wrapper img{aspect-ratio: 1 / 1;border-radius: 4px;}
-@media (orientation: landscape) {
-.onlymob{ display: none; }
-
-.onlyPC{ display: block; }
-
-.sidebar{ width: var(--sidebarWidth) }
-
-.content{ max-width: calc(100% - var(--sidebarWidth)); }
-
-.swiper{ margin-top: 2rem; }
-
-.swiper-wrapper img{aspect-ratio: 1.5 / 1;  object-fit: cover; }
-
-/* ul{margin-top: 2rem;} */
-}
-
-@media (orientation: portrait) {
-#footer{flex-direction: column;}
-
-.onlymob{ display: block; }
-
-.onlyPC{ display: none; }
-
-.row { flex-direction: column; }
-
-.column{ width: 100%; box-sizing: border-box; }
-
-h2{margin: 0; padding-bottom: 0;}
-
-.swiper-wrapper img{aspect-ratio: 1 / 1;  object-fit: cover;}
-
-ul{margin:0}
-}
-
 </style>
 </head>
-<body style="margin: 0;">
+<body style="background-color: black; color: white; display: flex; font-family: zilla, monospace; height: 100dvh; margin: 0;">
+<center style="margin: auto; width: 70%;">
+This page will be no longer maintained and will only be used as a blog repository.<br>
+Redirect to homepage in <span id="countdown">3</span> seconds...
 
-<nav style="width: 100%; height: 8dvh; position: fixed; top:0; display: flex; z-index: 999;">
-
-  <h1 id="hero" style="transition: font-weight .8s; margin: 0; height: min-content; margin: auto auto auto 1rem; font-size: large; "> LINGYUOHZ </h1>
-  <menu class="onlyPC" style="margin: auto 1rem; ">
-    <div id="pcmenu" style="display: flex; font-size: larger;">
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/blog">blog</a>
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://portfolio.zhoulingyu.net">portfolio</a>
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://drive.zhoulingyu.net" translate="no">zDrive</a>
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/proj">projects</a>
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://xolyn.github.io/fg2.html">font studio</a>
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="https://zly.vg/cv.pdf">résumé</a>
-      <a style="margin: 0 .5rem; font-size: inherit; display: block; width: fit-content;" href="#">rss</a>
-    </div>
-  </menu>
-
-  <div class="material-symbols-outlined onlymob" 
-  onclick="this.innerHTML=this.innerHTML==='&#xe5cd;'? '&#xe5d2;':'&#xe5cd;'; mobmenu.style.right=mobmenu.style.right==='0px'?'-100dvw':'0px'; mobmenuwrapper.innerHTML=pcmenu.innerHTML; "
-  style="margin: auto 1rem; font-weight: 300; cursor:pointer" translate="no">&#xe5d2;</div>
-
-</nav>
-
-<menu class="onlymob" id="mobmenu" style="transition: right .3s; margin: 0; box-sizing: border-box; padding: 1rem .5rem; z-index: 98; width: 100dvw; height: 100dvh; position: fixed; top:0; background-color: var(--ac);">
-  <div style="width: 100%; height: 100%; display: flex; flex-direction: column;" >
-    <div style="width: 100%; margin-top: auto; font-size: large;" id="mobmenuwrapper">
-    </div>
-  </div>
-</menu>
-
-
-<div class="wrapper" style="margin-top: 8dvh; box-sizing: border-box;">
-        <div class="row">
-            <div class="column sidebar">
-              <h2>About</h2>
-            </div>
-            <div class="column content">
-              <p>Hello stranger. My name is Lingyu Zhou, aka "Yuin".        <!-- (/ʈʂoʊˉ lɪŋˊ yˇ/) -->
-                I am a now graduated student</a> from <a href="https://cornell.edu">Cornell University</a>,
-                also the founder of <a href="https://khentmt.com">KH Entertainment</a>. 
-                </p>
-        
-            <p>
-                I try to deliver the best UX from data analysis, also explore the numbers and their connections behind, using applied mathematics and computer engineering.
-            </p>    
-        
-            <p> 
-                Previously, I studied applied mathematics at 
-                <a href="https://wisc.edu"> University of Wisconsin-Madison</a> for my bachelor's degree.
-                I am now working as a data analyst who works mainly on labor compliance survey data in east Asia for Professor <a href="https://www.ilr.cornell.edu/people/sarosh-kuruvilla">Sarosh Kuruvilla</a> at <a href="https://www.ilr.cornell.edu/">Cornell IRL</a>.
-                Previously I worked at <a href="https://seagrant.sunysb.edu/">New York Sea Grant</a> as a data assistant,
-                <a href="http://m.hoperun.com/news.html">Jiangsu Hoperun Software Co. Ltd.</a> as a data engineer intern, and Shanghai Sino Environmental Technology Co., Ltd as a data analyst</a>.     
-            </p>
-            <p>
-                My specialties are software engineering, math, data analysis, and data visualization.               
-            </p>
-        
-            <p>
-                I am also interested in etymology, biology, and botany.
-            </p>    
-            </div>
-        </div .row>
-    
-        <div class="row">
-            <div class="column sidebar">
-              <h2>Education</h2>
-            </div>
-            <div class="column content">
-                <table id="edutable" style="border: none; width: 100%;" cellspacing="0" cellpadding="0">
-                  <tbody>
-                  <tr>
-                      <td>Master's</td>
-                      <td> <a href="http://cornell.edu/">Cornell University</a></td>
-                  </tr>
-                  <tr>
-                      <td>Bachelor's</td>
-                      <td><a href="http://wisc.edu/">University of Wisconsin - Madison</a></td>
-                  </tr>
-                  <tr>
-                      <td>High School</td>
-                      <td><a href="http://www.jzhx.net/">Jinling High School Hexi Campus</a></td>
-                  </tr>
-                  <tr>
-                      <td>Middle School</td>
-                      <td><a href="http://njjlhw.njgljy.com/">Nanjing Jinling Huiwen School</a></td>
-                  </tr>
-                  </tbody>
-              </table>
-            </div>
-      </div .row>
-
-      <div class="row">
-        <div class="column sidebar">
-          <h2>Featured projects</h2>
-      </div>
-      <div class="column content" >
-        <p></p>
-        <div class="swiper" style="">
-          <div class="swiper-wrapper" style="width: 100%; height: 100%" id="swiper-wrapper">
-          </div>
-        </div>
-
-        <div style="display: flex; width: 100%; margin-top: .5rem;">
-          <div class="prev" style="margin-right: 1.5rem;">&larr;</div>
-          <div class="next">&rarr;</div>
-          <div class="swiper-pagination" style="margin-left: auto; width: fit-content; display: block; position: initial;"></div>
-        </div>
-      </div>
-    </div .row>
-
-      <div class="row">
-          <div class="column sidebar">
-            <h2>Things I believe</h2>
-        </div>
-        <div class="column content">
-          <ul style="padding: 0.5rem 1em;">
-            <li>Detail matters.</li><br>
-            <li>Simplicity is the ultimate sophistication.</li><br>
-            <!-- <li style="padding:.5rem 0;">Life is present.</li> -->
-            <li>Carpe diem.</li><br>
-            <li>Embrace mediocrity.</li><br>
-        </ul>
-        </div>
-      </div .row>
-
-      <div class="row">
-        <div class="column sidebar">
-          <h2>Publication</h2>
-        </div>
-        <div class="column content">
-          <ul style="padding: 0.5rem 1em;">
-            <li>
-                <span><a href="http://doi.org/10.1007/978-981-99-6441-3_96" style="font-weight: bold;">Analysis of the Hog Futures Market in China</a></span><br>
-                <!-- <p> -->
-                    <i>Applied Economics and Policy Studies</i> (ISSN 2731-4006), <i>Advances in Economics Management and Political Sciences</i> (ISSN 2754-1169) <br>
-            <br>
-                    Chen Xu, Lingyu Zhou, Anshi Lou, Manqi Qiu & Mengyu Cao 
-                <!-- </p> -->
-                
-            </li>
-            <br>
-            <li>
-                <span style="font-weight: bold;">Purchasing Practices and Labor Outcomes in Global Supply Chains</span><br>
-                <!-- <p> -->
-                    <i>British Journal of Industrial Relations</i>, <span style="color: grey;">under review</span><br>
-            <br>
-                    Sarosh Kuruvilla, Chunyun Li, Lingyu Zhou
-                <!-- </p> -->
-            </li>
-        </ul>
-        </div>
-      </div .row>
-
-      <div class="row">
-        <div class="column sidebar">
-          <h2>Social</h2>
-        </div>
-        <div class="column content">
-          
-          <table style="border: none; width: 100%;" cellspacing="0" cellpadding="0">
-            <tbody>
-            <tr>    
-                <td>email</td>
-                <td>lz568 [at] cornell [dot] edu</td>
-            </tr>
-    
-            <tr>
-                <td>github</td>
-                <td><a href="https://github.com/xolyn">@xolyn</a></td>
-            </tr>
-    
-            <tr>
-                <td>linkedin</td>
-                <td> <a href="https://www.linkedin.com/in/lingyuzhou/">@lingyuzhou</a></td>
-            </tr>
-    
-            <tr>
-                <td>instagram</td>
-                <td><a href="https://instagram.com/toqurdn">@toqurdn</a></td>
-            </tr>
-            <tr>
-                <td>X (fka. twitter)</td>
-                <td><a href="https://x.com/uygniluohz">@uygniluohz</a></td>
-            </tr>
-    
-            <tr>
-                <td>weibo</td>
-                <td> <a href="https://weibo.com/u/5663761733">@donth8</a></td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-    </div .row>
-
-
-    <div class="row">
-        <div class="column sidebar">
-          <h2>FAQ</h2>
-      </div>
-      <div class="column content">
-      <details>
-            <summary class="far narrow">Does this website collect HTTP cookies?</summary>
-            Unfortunately, yes. When you visit our website, cookies data such as your location, device information, 
-            etc may be collcted by our analytics partner Google. We unswervingly recognize the importance of data privacy.
-            Rest assured, this information is solely used for the purpose of website analytics and 
-            enhancing user experience. We are committed to ensuring that your data is handled securely 
-            and will never be disclosed to third parties. 
-            <!-- For more information please check <a href="cookie.html">here</a>. -->
-        </details>
-        <hr>
-        <details>
-            <summary class="far narrow">Why .NET instead of .COM?</summary>
-            The pervasive misappropriation of the ".com" domain for personal websites represents a linguistic and conceptual misunderstanding, 
-                indicative of a lexical disregard for the commercial connotation inherent in this TLD. 
-                The ubiquitous adoption of ".com" for non-commercial pursuits commit a departure from the etymological underpinnings of the abbreviation, 
-                where "com" ostensibly denotes <b>com</b>mercial endeavors. Such lexical transgressions, seems subtle, illuminate the nuanced and evolving nature of language in the virtual epoch, 
-                where lexical boundaries are often porous and subject to the whims of cultural appropriation. I strongly condemn misbehavior of this kind. 
-                <s>Totally not because I didn't manage to snap up the .com website of my name.</s> 
-        </details>
-        <hr>
-        <details>
-            <summary class="far narrow">What are licensing agreements and sharing rules for this website?</summary>
-            You can share by copying and redistributing the content under this second level domain in any medium or format with appropriate credit given.
-            No commercial uses and derivatives of any kind are allowed.
-            All contents are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.
-        
-        </details>
-        <hr>
-        <details>
-            <summary class="far narrow">How to use this website?</summary>
-            If possible, link my website to your personal website or social media platform. This helps to increase this website's
-            <a href="https://en.wikipedia.org/wiki/PageRank">Page Rank</a>.
-        </details>
-        <hr>
-        <details>
-            <summary class="far narrow">How was this website made?</summary>
-            Sometimes people overuse JavaScript frameworks, spending more time on building projects and forgetting the original purpose of the website: to deliver information. 
-            In fact, the logic of most personal websites is not even a little bit close to the complexity that necessitates large JavaScript frameworks.
-            So this website is constructed by vanilla HTML5, CSS3, and JavaScript (ES6), with the only assist of JavaScript library: <a href="http://splidejs.com">Splide</a>.
-            <!-- to comply the responsiveness and cross-browser compatibility design principal. -->
-            It's hosted on <a href="https://www.cloudflare.com/developer-platform/products/r2/">Cloudflare R2</a>. 
-        </details>
-        <hr>
-        <details>
-            <summary class="far narrow">What if I found a problem or glitch in the website?</summary>
-            Feel free to report problems of any kind, especially styling or device adapting problem to <a href="/cdn-cgi/l/email-protection#1d7c797074735d677572687174737a646833737869">administrator</a>.
-            You may also found this in the footer of this website. 
-            Thank you for making effort to improve the website.  
-        </details>
-      </div>
-    </div .row>
-
-    <hr>
-      <div id="footer" style="width: 100%; padding: 0 1rem; box-sizing: border-box; text-align: left; display: flex;">
-        
-        <p>
-          &copy; Lingyu Zhou <span id="thisYear"></span>
-          <!-- <br>
-          <br>
-            <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href="mailto:lz568@cornell.edu">&#xF32C;</a>
-            <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://www.linkedin.com/in/lingyuzhou>&#xF472;</a> 
-            <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://github.com/xolyn>&#xF3ED;</a> 
-            <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://instagram.com/toqurdn>&#xF437;</a> 
-            <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://twitter.com/uygniluohz>&#xF8DB;</a> 
-            <a style="margin:0 .5rem; text-decoration: none; font-family:'Bootstrap-icons'; font-size: medium;" href=https://weibo.com/u/5663761733>&#xF8CA;</a>
-            -->
-          <br>
-          <br>
-          <span onclick="
-        document.documentElement.style.setProperty('--ac', getComputedStyle(document.documentElement).getPropertyValue('--ac')=== 'black' ? 'white' : 'black');
-        document.documentElement.style.setProperty('--mc', getComputedStyle(document.documentElement).getPropertyValue('--mc')=== 'white' ? 'black' : 'white');" 
-        style="cursor: pointer;">◐</span>&nbsp;&nbsp;|&nbsp;&nbsp;
-          <span style="cursor: pointer;" onclick="window.location.href='https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1'">Terms</span>&nbsp;&nbsp;|&nbsp;&nbsp;
-          <span style="cursor: pointer;" onclick="navigator.share({title:'Lingyu Zhou',text:`Lingyu Zhou's Homepage`,url:'https://xolyn.github.io'});">Share</span>&nbsp;&nbsp;|&nbsp;&nbsp;
-          <span style="cursor: pointer;" onclick="window.location.href='mailto:report@zly.vg'">Report</span>&nbsp;&nbsp;|&nbsp;&nbsp;
-          <span style="cursor: pointer;" onclick="window.location.href='https://status.zhoulingyu.net'">Status</span>
-        </p>
-        <div  style="margin: auto;"></div>
-        <p style="display: flex;">
-          <label for="region" class="material-symbols-outlined" style="margin: auto .5rem auto 0; font-weight: 300; font-size: medium;" translate="no">&#xe894;</label>
-
-          <select name="region" id="region" style="margin: auto 0; font-family: inherit; background-color: var(--ac); color: var(--mc); border-radius: 5px; border:1px solid #ddd">
-            <option value="en-us">US (Default)</option>
-            <option value="en-gb">UK</option>
-            <option value="en-au">AU</option>
-            <option value="en-ca">CA</option>
-            <option value="de-de">DE</option>
-            <option value="en-in">IN</option>
-            <option value="en-sg">SG</option>
-            <option value="en-my">MY</option>
-            <option value="vi-vn">VN</option>
-            <option value="zh-cn">CN</option>
-            <option value="zh-tw">TW</option>
-            <option value="fr-fr">FR</option>
-            <option value="ja-jp">JP</option>
-            <option value="ko-kr">KR</option>
-          </select>
-        </p>
-
-      </div>
-
-</div .wrapper>
-    
-</div>
-<script>thisYear.innerHTML=new Date().getFullYear();</script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="proj/proj.js"></script>
-<script src="js/fest.js"></script>
+<br>
+<button onclick="window.location.href='https://zhoulingyu.net'">Redirect now &rarr;</button>
+</center>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  let savedLang = localStorage.getItem('lang');
-  const regionSelect = document.getElementById('region');
-
-  // default
-  if (!savedLang) {
-    savedLang = (navigator.language || 'en-US').toLowerCase();
-    localStorage.setItem('lang', savedLang);
-  } else {
-  }
-
-  // sync select#region
-  if (regionSelect) {
-    regionSelect.value = savedLang;
-  }
-
-  // listen to change local storage
-  regionSelect.addEventListener('change', function() {
-    const selectedLang = this.value;
-    localStorage.setItem('lang', selectedLang);
-    // console.log('语言已更新为:', selectedLang);
-    window.location.href=window.location.href;
-  });
-});
-
+// after loading,  go to the homepage after 3 seconds
+let countdown = 3;
+const countdownElement = document.getElementById('countdown');  
+const interval = setInterval(() => {
+    countdown--;
+    countdownElement.textContent = countdown;
+    if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = 'https://zhoulingyu.net';
+    }
+}, 1000);
 </script>
 </body>
-
 </html>
