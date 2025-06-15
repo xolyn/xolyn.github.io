@@ -64,6 +64,16 @@ pre{
     max-width: 100%;
     overflow-x: auto;
 }
+
+select{
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); 
+    font-family: inherit;
+}
+
 </style>
 </head>
 <body style=" margin: 5vh 3.5vw;">
@@ -72,8 +82,16 @@ pre{
     </h1>
 
     <p>Some predefined widgets for web.</p>
+    
+    <select onchange="location.href = this.value;this.selectedIndex = 0;" style="position: fixed; right:1rem; bottom: 1rem; border: 1px solid #eee">
+        <option value="" disabled selected>Quick goto</option>
+        <option value="#horizontal-scrollable">Horizontal scrollable</option>
+        <option value="#accordion">Accordion</option>
+        <option value="#notes">Notes</option>
+        <option value="#a11y">Accessories</option>
+    </select>
 
-    <h2>Horizontal scrollable</h2>
+    <h2 id="horizontal-scrollable">Horizontal scrollable</h2>
     
     <div class="note">
         <p>
@@ -134,7 +152,7 @@ pre{
 &lt;/div&gt;
 </pre>
 
-    <h2>Accordion</h2>
+    <h2 id="accordion">Accordion</h2>
     
     <h3 style="color: grey;">Parameters
          <!-- in <samp>class</samp> -->
@@ -176,7 +194,7 @@ pre{
 &lt;/details>
 </pre>
 
-<h2>Notes</h2>
+<h2 id="notes">Notes</h2>
 
 <p>
     Notes can be used to notify the user about something special.
@@ -209,7 +227,7 @@ pre{
 </p>
 
 <div class="note-g">
-    <h3>This is a tips.</h3>
+    <h3>This is a tip.</h3>
     Use color code <code>g</code> for <b>g</b>reen. 
 </div>
 <br>
@@ -220,12 +238,12 @@ pre{
 <br>
 <div class="note-r">
     <h3>This is an error.</h3>
-    <p>Use color code <code>r</code> for <b>r</b>ed.</p>
+    Use color code <code>r</code> for <b>r</b>ed.
 </div>
 <br>
 <div class="note-b">
     <h3>This is an info.</h3>
-    <p>Use color code <code>b</code> for <b>b</b>lue.</p>
+    Use color code <code>b</code> for <b>b</b>lue.
 </div>
 
 
@@ -266,6 +284,41 @@ pre{
 </div>
 
 
+<h2 id="a11y">Accessibility (A11y)</h2>
+<h3>Integrated navigation bar</h3>
+<p>
+    A small widget to help users better use the website, including 'back', 'to top', 'to bottom', 'home', 'refresh', and more..
+</p>
+
+<h3>
+    Sqaure type
+</h3>
+
+<iframe src="./a11y-1.html" frameborder="0" style="width: 100%; border: 1px solid #bbb;"></iframe>
+
+
+<h4>More types coming soon..</h4>
+
+<h3>
+    Content menu (meZu &trade;)
+</h3>
+
+<pre>
+&lt;script src="https://xolyn.github.io/widgets/mezu.js">&lt;/script>
+</pre>
+
+<p>
+    Simply adding the js code above in your website. You can create a context menu that list all <code>h</code> elements 
+    with hierarchical structure at the right bottom of your webpage! Easy as pie!</p>
+
+<center>
+    <img src="ctxmenu.png" style="width: 60%; aspect-ratio: initial;">
+</center>
+
+<div class="note">
+    <h3>Predefined parameters</h3>
+    <p>Too many CSS rules defined, check js source code above and use <code>!important</code> for custom styling purpose! </p>
+</div>
 
 
 </body>
