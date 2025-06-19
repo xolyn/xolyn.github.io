@@ -83,11 +83,13 @@ button{
 }
 
 button:hover{
-    background-color: #ddd;
+    background-color: #ddd;;
 }
+
+
 </style>
 </head>
-<body style=" margin: 5vh 3.5vw;">
+<body style="margin: 5vh 5vw;">
     <h1>
         Gadgetz
     </h1>
@@ -363,6 +365,9 @@ Inheriting the features and robustness of meZu, the context menu now can indicat
 
 </body>
 <script src="./mezu2.js"></script>
+<script>
+    document.querySelectorAll('summary')[1].className='far narrow';
+</script>
 
 <script>
 document.getElementById('summaryFar').addEventListener('change', function () {

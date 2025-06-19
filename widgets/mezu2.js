@@ -26,6 +26,7 @@
     details.style.zIndex = '10000';
     details.style.fontFamily = 'inherit';
     details.style.background = 'rgba(255,255,255,0.5)';
+    details.style.boxSizing = 'border-box'; // 让 padding 生效
     details.style.backdropFilter = 'blur(10px)';
     details.style.borderRadius = '.2rem';
     details.style.boxShadow = '2px 2px 8px rgba(0,0,0,0.1)';
@@ -33,6 +34,7 @@
 
     // 5. summary 始终为当前在 viewport 的 heading 文本
     const summary = document.createElement('summary');
+    summary.style.boxSizing = 'border-box';
     summary.textContent = headers[0].textContent;
     summary.style.cursor = 'pointer';
     summary.style.fontWeight = 'bold';
