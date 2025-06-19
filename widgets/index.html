@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Liter&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
+<link href="https://db.onlinewebfonts.com/c/7b7a625024c0f39cbca2cf9674f51d94?family=General+Sans+Variable" rel="stylesheet">
 
 <!-- https://icons.getbootstrap.com/ -->
 <link rel="stylesheet" href="widgets.css">
@@ -22,8 +23,7 @@
 
 :root{
 /* font-family: "zilla", serif; */
-font-family: "passenger";
-/* font-family: Inter, sans-serif; */
+font-family: "inter";
 /* font-feature-settings: 'liga' 1, 'calt' 1, 'ccmp' 1;  */
 -webkit-font-smoothing: antialiased;
 /* font-size: smaller; */
@@ -74,6 +74,19 @@ select{
     font-family: inherit;
 }
 
+button{
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+button:hover{
+    background-color: #ddd;
+}
 </style>
 </head>
 <body style=" margin: 5vh 3.5vw;">
@@ -83,13 +96,13 @@ select{
 
     <p>Some predefined widgets for web.</p>
     
-    <select onchange="location.href = this.value;this.selectedIndex = 0;" style="position: fixed; right:1rem; bottom: 1rem; border: 1px solid #eee">
+    <!-- <select onchange="location.href = this.value;this.selectedIndex = 0;" style="position: fixed; right:1rem; bottom: 1rem; border: 1px solid #eee">
         <option value="" disabled selected>Quick goto</option>
         <option value="#horizontal-scrollable">Horizontal scrollable</option>
         <option value="#accordion">Accordion</option>
         <option value="#notes">Notes</option>
         <option value="#a11y">Accessories</option>
-    </select>
+    </select> -->
 
     <h2 id="horizontal-scrollable">Horizontal scrollable</h2>
     
@@ -227,22 +240,22 @@ select{
 </p>
 
 <div class="note-g">
-    <h3>This is a tip.</h3>
+    <p><b>This is a tip.</b></p>
     Use color code <code>g</code> for <b>g</b>reen. 
 </div>
 <br>
 <div class="note-y">
-    <h3>This is a warning.</h3>
+    <p><b>This is a warning.</b></p>
     Use color code <code>y</code> for <b>y</b>ellow.
 </div>
 <br>
 <div class="note-r">
-    <h3>This is an error.</h3>
+    <p><b>This is an error.</b></p>
     Use color code <code>r</code> for <b>r</b>ed.
 </div>
 <br>
 <div class="note-b">
-    <h3>This is an info.</h3>
+    <p><b>This is an info.</b></p>
     Use color code <code>b</code> for <b>b</b>lue.
 </div>
 
@@ -252,34 +265,34 @@ select{
 <p>We dont know what do these color represent, but they are available for use.</p>
 
 <div class="note-e">
-    <h3>This is an note of some kind.</h3>
+    <p><b>This is an note of some kind.</b></p>
     Use color code <code>e</code> for gr<b>e</b>y.
 </div>
 
 <br>
 
 <div class="note-k">
-    <h3>This is an note of some kind.</h3>
+    <p><b>This is an note of some kind.</b></p>
     Use color code <code>k</code> for blac<b>k</b>.
 </div>
 
 <br>
 
 <div class="note-o">
-    <h3>This is an note of some kind.</h3>
+    <p><b>This is an note of some kind.</b></p>
     Use color code <code>o</code> for <b>o</b>range.
 </div>
 
 <br>
 
 <div class="note-p">
-    <h3>This is an note of some kind.</h3>
+    <p><b>This is an note of some kind.</b></p>
     Use color code <code>p</code> for <b>p</b>ink.
 </div>
 <br>
 
 <div class="note-u">
-    <h3>This is an note of some kind.</h3>
+    <p><b>This is an note of some kind.</b></p>
     Use color code <code>u</code> for p<b>u</b>rple.
 </div>
 
@@ -290,19 +303,19 @@ select{
     A small widget to help users better use the website, including 'back', 'to top', 'to bottom', 'home', 'refresh', and more..
 </p>
 
-<h3>
-    Sqaure type
-</h3>
-
 <iframe src="./a11y-1.html" frameborder="0" style="width: 100%; border: 1px solid #bbb;"></iframe>
 
 
-<h4>More types coming soon..</h4>
+<p><i>
+    More types coming soon..
+</i></p>
 
 <h3>
-    Content menu (meZu &trade;)
+    Content menu
 </h3>
-
+<h4>
+    meZu
+</h4>
 <pre>
 &lt;script src="https://xolyn.github.io/widgets/mezu.js">&lt;/script>
 </pre>
@@ -315,24 +328,45 @@ select{
         This context menu works robustly! No matter when you start with non-h1 elements, or already predefined class name for any h elemets.
     </b>
 
-<center style="position: relative;">
+<!-- <center style="position: relative;">
     <a href="./ctxdemo_all.html">
         <img src="ctxmenu.png" style="width: 60%; margin-top: 1rem; aspect-ratio: initial;">
     </a>
-    <!-- <a href="./ctxmenudemo.html" style="position: absolute; bottom: 0; right:30%; background-color: rgba(255,255,255,0.5); padding: .2rem;
-    backdrop-filter: blur(8px);-webkit-backdrop-filter: blur(8px);">See this demo &rarr;</a> -->
-</center>
+</center> -->
 
+<p><button onclick="location.href='./ctxdemo_all_2.html'">
+    See a demo &rarr;
+</button></p>
+
+<h4>
+    meZu2
+</h4>
+
+<pre>
+&lt;script src="https://xolyn.github.io/widgets/mezu2.js">&lt;/script>
+</pre>
+
+
+Simply adding the js code above in your website to use the new meZu2! 
+
+Inheriting the features and robustness of meZu, the context menu now can indicate the section you are in by highlighting! ..and with more aethestic-obeying animations!
+
+<p><button onclick="location.href='./ctxdemo_all_2.html'">
+    See a demo &rarr;
+</button></p>
+
+
+    
 <div class="note">
-    <h3>Predefined parameters</h3>
-    <p>Too many CSS rules defined, check js source code above and use <code>!important</code> for custom styling purpose! </p>
+    <p><b>Predefined parameters</b></p>
+    <p>Too many CSS rules defined in <code>mezu.js</code> and <code>mezu2.js</code>, check js source code above and use <code>!important</code> for custom styling purpose! </p>
 </div>
 
 
 </body>
+<script src="./mezu2.js"></script>
+
 <script>
-
-
 document.getElementById('summaryFar').addEventListener('change', function () {
     const dDemo = document.getElementById('dDemo');
     const dCtx = document.getElementById('dCtx');
