@@ -12,6 +12,7 @@ const a11yPart=`
             <a style="padding: 0 .5rem; font-family:inherit" href="javascript: window.location.href=window.location.origin">HOME</a>
             <a style="padding: 0 .5rem; font-family:inherit" href="javascript: history.back()">BACK</a>
             <a style="padding: 0 .5rem; font-family:inherit" href="javascript: window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});">END</a> 
+            <a style="padding: 0 .5rem; font-family:inherit" href="javascript: window.location.href=window.location.href">REFRESH</a>
         </center>
     </div>
 </div>`
