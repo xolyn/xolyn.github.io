@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<title>Document</title>
+<style>
+    .material-symbols-outlined{
+        transition: .15s; 
+        cursor: pointer;
+        user-select: none;
+    }
+.change:hover {
+    background-color: #6F6198 !important;
+    border-radius: 1rem !important;
+}
+
+.pill{
+    padding: .5rem;
+    border-radius: 99rem; 
+        transition: .15s; 
+        cursor: pointer;
+        margin: 0 .25rem;
+
+}
+
+
+.pill:hover{
+        background-color: #6F6198 !important;
+
+}
+
+
+
+</style>
+</head>
+<body style="margin: 2rem 8vw; font-size: 1.5vmax;">
+<h1>Reappear Material Design</h1>
+<p>
+    Since its debut in 2014 at Google I/O, Material Design has been Google's comprehensive design language aimed at bringing digital interfaces to life through tactile metaphors inspired by paper and ink. It emphasizes depth, lighting, motion, and bold typography to create intuitive and consistent experiences across Android, web, iOS, and beyond.
+    By organizing UI elements into layers that cast realistic shadows and using fluid transitions, it guides users naturally through interactions .
+
+Building on that foundation, Material 3, also known as Material You, introduced dynamic theming in 2021—automatically generating palettes from the user’s wallpaper and elevating personalization with adaptive shapes and updated components 
+
+
+Fast forward to 2025: Material 3 Expressive marks the most significant evolution yet. Officially announced as part of Android 16 and Wear OS 6, it pushes design expressiveness through vibrant, bolder color schemes, lively springy animations, refined typography, and purposeful motion effects for delightful, touch-responsive interfaces 
+
+. Notably, dismissing notifications now triggers subtle elastic animations, haptic feedback, and blurred background layers, while updated Quick Settings and Live Updates streamline interaction and contextual awareness 
+
+</p>
+
+<p>I am gonna reappear some of the designing in here using pure CSS and try to get the gist of the design itself and try to understand why such a easy design that can simply be fulfilled by CSS didn't
+    get widely accepted by the web developers and designers few years before. 
+</p>
+
+<center>
+    <div style="width: 80%; background-color: #CDC9F3; border-radius: 1rem; padding: 1rem">
+
+<div class="material-symbols-outlined" style="padding: 1rem .5rem; border-radius: 99rem; background-color: #E2E0F9; margin: 0rem .25rem;">
+&#xe855;
+</div>
+
+<div class="material-symbols-outlined change" style="padding: 1rem 2rem; border-radius: 1.4rem; background-color: #E2E0F9; margin: 0rem .25rem;">
+    &#xe16f;
+</div>
+<div class="material-symbols-outlined change" style="padding: 1rem 1rem; border-radius: 1.2rem; background-color: #E2E0F9; margin: 0rem .25rem;">
+    &#xe1ba;
+</div>
+<br>
+
+<div  style="padding: 1rem 1rem; border-radius: 99rem; background-color: #C7B3FC; margin:1rem .5rem; display: flex; width: fit-content;">
+    <span class="material-symbols-outlined" style="margin: auto .5rem auto 0">&#xe66d;</span><span style="margin: auto 0; font-family: 'Google Sans Text'; font-size: medium;">Document</span>
+</div>
+
+<div  style="padding: 1rem 1rem; border-radius: 99rem; background-color: #C7B3FC; margin:1rem .25rem; display: flex; width: fit-content;">
+    <span class="material-symbols-outlined" style="margin: auto .5rem auto 0">&#xe0b7;</span><span style="margin: auto  0; font-family: 'Google Sans Text'; font-size: medium;">Message</span>
+</div>
+
+
+    </div>
+</center>
+<p></p>
+<center>
+    <div id="outer" style="background-color: #D7D2DA; width: fit-content; padding: .5rem;border-radius: 99rem; display: flex; transition: .4s ; ">
+        <div id="left" style=" max-width: 5000px;overflow: hidden; transition: .4s ; text-wrap: nowrap; ">
+            <div onclick="window.scrollTo({top:0, behavior: 'smooth'})" class="material-symbols-outlined pill small">&#xe5d8;</div>
+            <div onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});" class="material-symbols-outlined pill small">&#xe5db;</div></div>
+        <div id="toggle" 
+        onclick="left.style.maxWidth=left.style.maxWidth=='0px'?'300px':'0px'; right.style.maxWidth=right.style.maxWidth=='0px'?'300px':'0px';"
+        class="material-symbols-outlined" style="display: flex; 
+        justify-content: center; align-items: center;
+        padding: .5rem 1rem; border-radius: 99rem;  background-color: #685496;">
+            <!-- &#xe88a; -->
+             <!-- onclick="window.location.href=window.location.origin"  -->
+             &#xe5d3;
+        </div>
+        <div id="right" style=" max-width: 5000px;overflow: hidden; transition: .4s ; text-wrap: nowrap; ">
+            <div onclick="history.back()" class="material-symbols-outlined pill small">&#xe5c4;</div>
+            <div onclick="window.location.reload()" class="material-symbols-outlined pill small">&#xe5d5;</div>
+        </div>
+    </div>
+</center>
+
+<script>
+
+</script>
+</body>
+</html>
