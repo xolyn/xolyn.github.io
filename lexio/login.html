@@ -20,11 +20,27 @@ button{
     transition: .3s ease;
     margin: .5rem 0;
     width: fit-content;
+    color:inherit;
 }
 
 button:hover{
     background-color: white;
 }
+
+.typing {
+white-space: nowrap;
+}
+.cursor {
+display: inline-block;
+/* animation: blink .75s steps(1) infinite; */
+color: white;
+}
+
+/* @keyframes blink {
+0%, 50% { display:inline-block }
+50.01%, 100% { display: none;}
+} */
+
 @media (orientation: landscape) {
 .half{
     width:50%;
@@ -51,11 +67,14 @@ button:hover{
 
 <div id="all" style="width: 100dvw; height: 100dvh; display: flex;">
 <div class="half" id="banner" style=" background-color: #33CCCC; display: flex">
-    <div translate="no" style="height: min-content; width: min-width; margin: auto; color:white; font-size: 4vmax; text-align: center;">LEXiO<br>/ˈlɛk.si.oʊ/</div>
+    
+    <div translate="no" style="height: min-content; width: min-width; margin: auto;color:white; font-size: 4vmax; text-align: center; display: flex;">
+        <div class="typing" id="typeArea" style="color: white;"></div><div class="cursor">●</div>
+        </div>
 </div>
 <div class="half"  style="display: flex;">
 
-<div id="login" style=" padding: 20dvh 0; width: 80%; margin:auto; text-align: center;  border: 2px solid #33CCCC; border-radius: 1rem;">
+<div id="login" style=" padding: 20dvh 0; width: 80%;margin: auto; box-sizing: border-box; text-align: center;">
 
     <h2 id="logininfo">You are not logged in.</h2>
 
@@ -95,6 +114,39 @@ button:hover{
   window.location.reload();
 }
 
+
+const texts = ["LEXiO", "/ˈlɛk.si.oʊ/"];
+const typeArea = document.getElementById('typeArea');
+let textIndex = 0; // 当前文字在数组中的下标
+let charIndex = 0; // 当前显示到第几个字符
+let isDeleting = false;
+
+function typeEffect() {
+    const currentText = texts[textIndex];
+
+    if (!isDeleting) {
+        typeArea.textContent = currentText.slice(0, charIndex);
+        charIndex++;
+        if (charIndex > currentText.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1000); // 打完后停顿
+            return;
+        }
+    } else {
+        charIndex--;
+        typeArea.textContent = currentText.slice(0, charIndex);
+        if (charIndex === 0) {
+            isDeleting = false;
+            // 切换到下一个文本，循环
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(typeEffect, 500); // 删除完后停顿
+            return;
+        }
+    }
+    setTimeout(typeEffect, 100); // 打字/删除速度
+}
+
+typeEffect();
 
 </script>
 </body>
