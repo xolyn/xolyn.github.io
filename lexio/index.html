@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<title>LEXIO</title>
+<style>
+.card{
+    display: flex;
+    width: 70%;
+    margin: 3rem auto;
+}
+
+
+img{
+    /* width: 20%; */
+    /* aspect-ratio: initial; */
+    object-fit: cover;   /* 避免图片变形，超出会裁切 */
+    display: block;      /* 推荐block，避免inline影响 */
+    height: auto;
+    max-width: 300px;
+}
+
+.card div{
+    height: fit-content;
+    margin: auto 0;
+}
+
+button{
+    background-color: rgba(255,255,255,.3);
+    border: 1px solid #ddd;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.card div h2{
+    font-size:xx-large;
+}
+
+.card div p{
+    font-size:large;
+}
+
+button:hover{
+    background-color: white;
+}
+
+a{
+    color:inherit;
+}
+
+@media (orientation: portrait) {
+.card{
+    flex-direction: column;
+    padding: 1rem 0;
+}
+img{
+    width:100%;
+    max-width: 500px;
+}
+
+.card div{
+    width:100%
+} 
+
+.card img:nth-child(3){
+    display: none;
+}
+}
+
+@media (orientation: landscape) {
+.card:nth-child(odd) img:first-of-type{
+    display: none;
+}
+
+.card:nth-child(even) img:last-of-type{
+    display: none;
+}
+}
+</style>
+</head>
+<body style="margin: 0; font-family: Inter, sans-serif; font-feature-settings: 'liga' 1, 'calt' 1; ">
+<center id="banner" style="padding: 30dvh 0; background-color: #33CCCC;">
+    <h1 style="font-size: 5vmax; font-family: 'Neue Regrade'; margin: 0 0">
+        LEXiO
+    </h1>
+    <p style="font-size: 3vmin;">
+        Minimalist H5 word card application.<br>
+        Simple, easy to use, yet powerful.
+    </p>
+    <button 
+    onclick="window.location.href='./list.html'"
+    style="font-size: large; width: fit-content; padding: 1rem 1.5rem; border-radius: 1.5rem;">
+        Try now
+    </button>
+  
+</center>
+
+<main style="padding: 2rem 8vw; display: flex; flex-direction: column; ">
+    <div class="card">
+             <!-- <div> -->
+        <h1 >Why <span style="font-family: 'Neue Regrade';">LEXiO</span>?</h1>
+     <!-- </div> -->
+    </div>
+    <div class="card">
+            <img src="thunder.gif" alt="">
+        <div>
+            <h2>Swiftness</h2>
+            <p>
+                Lightning-fast. With exceptionally streamlined code, LEXiO lets you focus solely on learning, delivering an immersive experience without distractions or delays.
+            </p>
+        </div>
+            <img src="thunder.gif" alt="">
+    </div>
+
+    <div class="card">
+        <img src="unlocked.gif" alt="">
+        <div>
+        <h2>Privacy</h2>
+        <p>
+            Your data, your control. LEXiO never collects or uploads your information—everything stays on your device, ensuring absolute privacy and peace of mind as you learn.
+        </p>
+        </div>
+        <img src="unlocked.gif" alt="">
+    </div>
+
+    <div class="card">
+        <img src="transfer.gif" alt="">
+        <div>
+            <h2>Portability</h2>
+            <p>
+            Seamless integration. Easily import vocabulary from CSV files or export your collections at any time—LEXiO ensures your learning materials are always portable and accessible.
+            </p>
+        </div>
+        <img src="transfer.gif" alt="">
+
+    </div>
+
+
+    <div class="card">
+        <img src="file.gif" alt="">
+        <div>
+            <h2>Sharing</h2>
+            <p>
+            Share knowledge effortlessly. LEXiO lets you generate shareable links or QR codes in one click, making it simple to exchange word lists with friends and classmates.
+            </p>
+        </div>
+        <img src="file.gif" alt="">
+    </div>
+
+</main>
+
+<center id="ender" style="padding-top: 15dvh ; background-color: #33CCCC;">
+        <h1>Feel like to study?</h1>
+    <button onclick="window.location.href='./list.html'" style="font-size: large; width: fit-content; padding: 1rem; border-radius: 1.5rem;">
+        Start today!
+    </button>
+<p>
+        <small><i>
+        Try LEXiO at <b>no cost</b>!
+    </i></small>
+</p>
+
+
+<div style="padding: 10dvh 0 2rem 0">
+    <hr style="border: .3px solid rgba(255,255,255,.5); margin-bottom: 2rem;">
+    <span style="font-family: 'Neue Regrade';">LEXiO</span>&trade;, a product of <a href="https://zhoulingyu.net">Lingyu Zhou</a>
+</div>
+</center>
+
+<script>
+
+    function parseRGB(str) {
+  // 兼容 rgb(x,y,z) 或 rgba(x,y,z,a)
+  let arr = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+  if (!arr) return { r: 0, g: 0, b: 0 };
+  return {
+    r: parseInt(arr[1]),
+    g: parseInt(arr[2]),
+    b: parseInt(arr[3])
+  };
+}
+const startColor =parseRGB(getComputedStyle(banner).backgroundColor); // #3498db
+const endColor = { r: 255, g: 255, b: 255 };  // 白色
+
+window.addEventListener('scroll', () => {
+  // 当前滚动距离（最多到60vh时完全变成白色）
+  const maxScroll = window.innerHeight * 0.7;
+  let scroll = Math.min(window.scrollY, maxScroll);
+  let ratio = scroll / maxScroll;
+
+  // 线性插值
+  let r = Math.round(startColor.r + (endColor.r - startColor.r) * ratio);
+  let g = Math.round(startColor.g + (endColor.g - startColor.g) * ratio);
+  let b = Math.round(startColor.b + (endColor.b - startColor.b) * ratio);
+
+  banner.style.background = `rgb(${r},${g},${b})`;
+});
+
+
+
+</script>
+</body>
+</html>

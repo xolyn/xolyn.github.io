@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<title>Document</title>
+<style>
+#user{
+    cursor: pointer;
+    border-radius: 999rem;
+}
+#user:hover{
+    background-color:#228a8a;
+}
+
+button{
+    padding: 1vmax 1.5vmax;
+    background-color:#33CCCC;
+    border-radius: 999rem;
+    display: flex; justify-content: center; align-items: center;
+    color: white;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    margin: 0 .5rem;
+    transition: .4s;
+}
+
+button:hover{
+    background-color:#228a8a;
+}
+
+.disabled{
+    filter:grayscale(1);
+    cursor:not-allowed;
+}
+</style>
+</head>
+<body style="margin: 0; font-family: Inter, sans-serif; font-feature-settings: 'liga' 1, 'calt' 1; ">
+
+    <div id="outer" style="position: fixed; left:50%; bottom: 2rem; transform: translateX(-50%); z-index: 9999; background-color: #ffffff; border: 2px solid #eee; width: fit-content; padding: .5rem;border-radius: 99rem; display: flex; transition: .45s ; ">
+        <div id="left" style=" max-width: 5000px;overflow: hidden; transition: .45s ; text-wrap: nowrap; ">
+            <div   onmouseover="this.style.backgroundColor='#33CCCC';" onmouseout="this.style.backgroundColor='transparent';"  class="material-symbols-outlined" style=" padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin: 0;cursor: pointer; user-select: none;">&#xe745;</div>
+            <div   onmouseover="this.style.backgroundColor='#33CCCC';" onmouseout="this.style.backgroundColor='transparent';" class="material-symbols-outlined" style=" padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin-right:0.5rem; cursor: pointer; user-select: none;">&#xe915;</div></div>
+        <div id="toggle" 
+        onclick="left.style.maxWidth=left.style.maxWidth=='0px'?'300px':'0px'; right.style.maxWidth=right.style.maxWidth=='0px'?'300px':'0px';"
+        class="material-symbols-outlined" 
+        style="display: flex;user-select: none; cursor: pointer; justify-content: center; align-items: center; padding: .5rem 1rem; border-radius: 99rem; background-color: #33CCCC;">
+    
+             &#xe5d3;
+        </div>
+        <div id="right" style=" max-width: 5000px;overflow: hidden; transition: .45s ; text-wrap: nowrap; ">
+            <div   onmouseover="this.style.backgroundColor='#33CCCC';" onmouseout="this.style.backgroundColor='transparent';" class="material-symbols-outlined " style=" cursor: pointer; user-select: none; padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin-left: .5rem;">&#xf70e;</div>
+            <div   onmouseover="this.style.backgroundColor='#33CCCC';" onmouseout="this.style.backgroundColor='transparent';"  class="material-symbols-outlined " style=" cursor: pointer; user-select: none; padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin: 0;">&#xf613;</div>
+        </div>
+    </div>
+
+    <nav style="background-color: #33CCCC; height: 6dvh; display: flex; position: sticky; top:0">
+        <div id="hero" style=" font-family: 'Neue Regrade'; font-weight: bold; display: flex; justify-content: center; align-items: center; margin: auto 1rem; color: white; font-size: 3.5dvh;">LEXiO</div>
+        <div style="margin-right:auto;"></div>
+        <div style="display: flex; justify-content: center; align-items: center; padding: .5rem; color: white; margin: .2rem .5rem;" id="user" class="material-symbols-outlined">
+            &#xe7fd;
+        </div>
+    </nav>
+
+    <div style="text-align: center; display: flex; flex-direction: column;">
+        
+    <h1 style="font-size: 3vmax;">
+        <span id="greeting"></span>
+    </h1>
+
+    <div style="display: flex; margin: 0 auto; max-width: 100%; overflow-x: auto;">
+
+    <button>
+        <span class="material-symbols-outlined">&#xe16d;</span> Sequential
+    </button>
+
+    <button>
+        <span class="material-symbols-outlined">&#xe043;</span> Shuffle
+    </button>
+
+        <button>
+        <span class="material-symbols-outlined">&#xe923;</span> Chronological  
+    </button>
+    </div>
+    </div>
+
+    <div id="words" style="margin: 1rem 5dvw 0rem 5dvw; background-color: #33CCCC; border-radius: 3rem 3rem 0 0; padding: 5dvw;">
+    </div>
+
+    <script>
+        let lexioid= localStorage['lexioID'];
+        if (lexioid){
+            greeting.innerHTML=`Hi, <code style='padding:.5rem; background-color:#ddd; border-radius:.5rem;'>${lexioid}</code>. Let's start learning!`
+        }
+        else{
+            window.location.href='./login.html'
+        }
+        
+    </script>
+</body>
+</html>

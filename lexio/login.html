@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<title>Document</title>
+<style>
+button{
+    background-color: rgba(255,255,255,.3);
+    border: 1px solid #ddd;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .3s ease;
+    margin: .5rem 0;
+    width: fit-content;
+}
+
+button:hover{
+    background-color: white;
+}
+@media (orientation: landscape) {
+.half{
+    width:50%;
+}
+
+}
+@media (orientation: portrait) {
+#all{
+    flex-direction: column;
+}
+
+.half{
+    width: 100%;
+    height: 70%;
+}
+
+#banner{
+    height: 30%;
+}
+}
+</style>
+</head>
+<body style="margin: 0;  font-family: Inter, sans-serif;">
+
+<div id="all" style="width: 100dvw; height: 100dvh; display: flex;">
+<div class="half" id="banner" style=" background-color: #33CCCC; display: flex">
+    <div translate="no" style="height: min-content; width: min-width; margin: auto; color:white; font-size: 4vmax; text-align: center;">LEXiO<br>/ˈlɛk.si.oʊ/</div>
+</div>
+<div class="half"  style="display: flex;">
+
+<div id="login" style=" padding: 20dvh 0; width: 80%; margin:auto; text-align: center;  border: 2px solid #33CCCC; border-radius: 1rem;">
+
+    <h2 id="logininfo">You are not logged in.</h2>
+
+    <button id="claimer" style="display: none;"  onclick="claimId()">Claim your LEXiO zone id.</button>
+    <button id="enter"  style="display: none;" onclick="window.location.href='./list.html'">Enter your LEXiO zone.</button>
+    <button id=""  style="display: inline-block; background-color: #33CCCC; color: white;" onclick="localStorage.removeItem('lexioID'); window.location.reload();">[Testing only] Clear cache</button>
+    
+    <p style="font-size: x-small;">
+        <br>
+        Each user can only claim 1 LEXiO zone.
+    </p>
+
+<form action=""></form>
+</div>
+    
+</div>
+</div>
+
+<script>
+    let lexioid=localStorage['lexioID'];
+    if(lexioid!=null & lexioid!=''){
+        logininfo.innerHTML=`Welcome, <code style='padding:.5rem; background-color:#ddd; border-radius:.5rem;'>${lexioid}</code>!`
+        enter.style.display='inline-block';
+    }
+
+    else{claimer.style.display='inline-block';}
+
+    function claimId() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let id = '';
+  for (let i = 0; i < 5; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    id += chars[randomIndex];
+  }
+  localStorage.setItem('lexioID', id);
+  window.prompt('Your LEXiO ID:', id);
+  window.location.reload();
+}
+
+
+</script>
+</body>
+</html>
