@@ -24,9 +24,9 @@ outputDir=os.path.join(relativeDir, 'index.html')
 allPosts=[]
 
 for mdFile in [x for x in os.listdir(relativeDir) if x.strip().endswith('.md') and not x.strip().startswith('.')]:
-    # with open(mdFile, 'a') as file:
-    #         file.write('\n<script src="index.js"></script>')
-    # file.close()
+    with open(mdFile, 'a') as file:
+            file.write('\n<script src="../widgets/a11y-m.js"></script>')
+    file.close()
 
     postRelDir=os.path.join(relativeDir, mdFile)
     postTitle=mdFile.rsplit('.md',maxsplit=1)[0].strip()

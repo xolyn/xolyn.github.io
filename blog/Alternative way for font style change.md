@@ -21,3 +21,5 @@ https://myDomain.com/font?name={xxx}
 ```
 
 > More to come...
+
+<script src="../widgets/a11y-m.js"></script>

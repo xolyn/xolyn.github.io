@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+
+<title>Document</title>
+<style>
+    button{
+        border: 1px solid #ddd;
+        background-color: #eee;
+        transition: .3s;
+        padding: .25rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #ddd;
+
+    }
+    input{
+        border: 1px solid #ddd;
+        /* background-color: #eee; */
+        padding: .25rem;
+    font-family: 'courierprime';
+        border-radius: 5px;
+    }
+
+    #color-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    ul{
+      display: flex;
+      flex-direction: column;
+    }
+    #color-list li {
+      
+    font-family: 'courierprime';
+      display: flex;
+      align-items: center;
+      text-align: center;
+    margin: .25rem auto;
+    }
+    .color-box {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    }
+    .remove-btn {
+      margin-left: 10px;
+      cursor: pointer;
+      color: black;
+    }
+
+    #colorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #ddd;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    overflow: hidden;
+    }
+
+#colorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 50%;
+}
+
+#colorPicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+#colorPicker::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+#imgResult {
+aspect-ratio: 2 / 1;
+}
+
+@media (orientation: landscape) {
+#imgResult {
+aspect-ratio: 4 / 1;
+}
+}
+</style>
+</head>
+<body style="margin: 0;">
+<div style="display: flex;">
+<img id="imgResult" style="width: 100vw; height: auto; display: block;"/>
+</div>
+
+<center style="margin: 1rem 0;">
+  <label>Grid Size:
+    <input type="number" id="gridSize" value="1" min="1" max="50" step="0.5"></label>
+  <button onclick="render()">Render</button>&nbsp;
+  <!-- <button id="dl">&DownArrowBar;</button> -->
+
+  <div style="margin: 1rem 0;"></div>
+  <input type="color" id="colorPicker">
+  <input type="text" id="colorCode" placeholder="#000000" maxlength="7" value="#000000">
+  <button id="addColor">&nbsp;+&nbsp;</button>
+  <p>Added color(s):</p>
+  <ul id="color-list"></ul>
+</center>
+
+<script src="https://cdn.jsdelivr.net/npm/noisejs@2.1.0/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://unpkg.com/chroma-js@3.1.2/dist/chroma.min.cjs"></script>
+<script>
+let palatte=['#ffffff', "#00E1FF","#C800FF","#FBFF00"];
+const colorPicker = document.getElementById('colorPicker');
+    const colorCode = document.getElementById('colorCode');
+    const addColorBtn = document.getElementById('addColor');
+    const colorList = document.getElementById('color-list');
+
+    colorPicker.addEventListener('input', () => {
+      colorCode.value = colorPicker.value.toUpperCase();
+    });
+
+    colorCode.addEventListener('input', () => {
+      const value = colorCode.value;
+      if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
+        colorPicker.value = value;
+      }
+    });
+
+    addColorBtn.addEventListener('click', () => {
+      const hex = colorCode.value.toUpperCase();
+      if (!/^#[0-9A-F]{6}$/.test(hex)) {
+        alert('请输入有效的十六进制颜色代码');
+        return;
+      }
+      if (palatte.includes(hex)) {
+//        alert('颜色已添加');
+        return;
+      }
+      palatte.push(hex);
+      renderList();
+    });
+
+    // show colors
+    function renderList() {
+      colorList.innerHTML = '';
+      palatte.forEach((color, index) => {
+        const li = document.createElement('li');
+
+        const box = document.createElement('div');
+        box.className = 'color-box';
+        box.style.backgroundColor = color;
+
+        const text = document.createTextNode(color.toUpperCase());
+
+        const remove = document.createElement('span');
+        remove.className = 'remove-btn';
+        remove.innerHTML = '&times;';
+        remove.addEventListener('click', () => {
+          palatte.splice(index, 1);
+          renderList();
+        });
+
+        li.appendChild(box);
+        li.appendChild(text);
+        li.appendChild(remove);
+        colorList.appendChild(li);
+      });
+    }
+
+function render() {
+  if (palatte.length < 2){
+    alert('At least two colors are required');
+    return;
+  }
+
+  if (palatte.length > 10){
+    alert('At most ten colors are allowed');
+    return;
+  }
+
+  const width = 1000, height = 500;
+  const gridSize = parseInt(document.getElementById('gridSize').value);
+  const noise = new window.Noise(Math.random());
+
+  const canvas = document.createElement('canvas');
+  canvas.width = width; canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  const img = ctx.createImageData(width, height);
+
+  const colorScale = d3.interpolateRgbBasis(palatte.slice().sort(
+  (a, b) => chroma(a).luminance() - chroma(b).luminance()));
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const nx = x / width * gridSize;
+      const ny = y / height * gridSize;
+      let val = noise.perlin2(nx, ny);
+      val = (val + 1) / 2;
+      let color = colorScale(val);
+      const rgb = color.match(/\d+(\.\d+)?/g).map(Number);
+      const idx = (y * width + x) * 4;
+      img.data[idx] = rgb[0];
+      img.data[idx + 1] = rgb[1];
+      img.data[idx + 2] = rgb[2];
+      img.data[idx + 3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+
+  // 直接赋值给img元素
+  const imgElem = document.getElementById('imgResult');
+  imgElem.src = canvas.toDataURL("image/png");
+
+  // for download
+  imgElem._imgData = canvas.toDataURL("image/png");
+  imgElem._canvas = canvas;
+  // SVG导出功能（如果需要，可以在这里生成字符串或Blob）
+}
+
+renderList();
+render();
+</script>
+</body>
+</html>

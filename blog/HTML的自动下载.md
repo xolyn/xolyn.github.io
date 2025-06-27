@@ -87,3 +87,5 @@
 > **Fun Fact**
 >
 > 事实上，使用`<meta http-equiv="refresh">`将导致不符合 W3C 的 Web 内容可访问性指南。
+
+<script src="../widgets/a11y-m.js"></script>

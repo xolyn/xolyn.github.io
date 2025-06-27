@@ -4,3 +4,5 @@ I used this book - Nonlinear Dynamics and Chaos by Steven Strogatz when I took M
 Anyway, its logic and way of explaining questions really make it a great book to read, even for outsiders as a book for popular science. Strongly recommended.
 
 [^1]：Later I found out the author is actually working in my graduate school. Such a coincidence!
+
+<script src="../widgets/a11y-m.js"></script>

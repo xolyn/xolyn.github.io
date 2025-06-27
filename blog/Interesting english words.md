@@ -19,3 +19,5 @@ The same naming convetion applys to hydrogen: "element that generates water"
 
 In (not) + fant (speak, comes from latin affix **fari**, extended to modern english: con**fess**, **fate**, **fa**te), simply means "unable to speak", which, well, is quite vivid to describe an infant.
 
+
+<script src="../widgets/a11y-m.js"></script>

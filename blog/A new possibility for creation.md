@@ -91,3 +91,5 @@ Click me
 </summary>
 This is an accordian.
 </details>
+
+<script src="../widgets/a11y-m.js"></script>
