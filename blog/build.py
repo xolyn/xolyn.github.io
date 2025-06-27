@@ -25,7 +25,7 @@ allPosts=[]
 
 for mdFile in [x for x in os.listdir(relativeDir) if x.strip().endswith('.md') and not x.strip().startswith('.')]:
     with open(mdFile, 'a') as file:
-            file.write('\n<script src="../widgets/a11y-m.js"></script>')
+            file.write('\n<script src="../widgets/a11y-m-customized.js"></script>')
     file.close()
 
     postRelDir=os.path.join(relativeDir, mdFile)

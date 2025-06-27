@@ -4,3 +4,4 @@ Olibaba OSS has entered the termination of its life cycle. Although offering a d
 
 Hope to create more using this completely new website CMS!
 <script src="../widgets/a11y-m.js"></script>
+<script src="../widgets/a11y-m-customized.js"></script>

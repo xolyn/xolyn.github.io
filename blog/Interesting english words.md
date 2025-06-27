@@ -21,3 +21,4 @@ In (not) + fant (speak, comes from latin affix **fari**, extended to modern engl
 
 
 <script src="../widgets/a11y-m.js"></script>
+<script src="../widgets/a11y-m-customized.js"></script>

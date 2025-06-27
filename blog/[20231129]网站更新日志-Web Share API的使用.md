@@ -35,3 +35,4 @@ if (navigator.share) {
 
 ***仍在更新中…***
 <script src="../widgets/a11y-m.js"></script>
+<script src="../widgets/a11y-m-customized.js"></script>

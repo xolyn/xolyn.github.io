@@ -51,3 +51,4 @@ Below are some photos I shot on my iPhone 13 Pro with a tripod (my iPhone's batt
 
 
 <script src="../widgets/a11y-m.js"></script>
+<script src="../widgets/a11y-m-customized.js"></script>

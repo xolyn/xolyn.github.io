@@ -46,3 +46,4 @@ folder/
 R2的玩法远比想象的丰富，最简单的方法可以将html文件存入存储桶，访问对应的URI时，会直接渲染网页而不是下载文件。例如：<https://f.xoy.one/index.html>。最强的一点是R2还可以选北美亚太欧洲等多个数据湖地点可以说秒杀阿里云OSS了。甚至受益于Cloudflare的网站托管，域名连接比OSS还简单，缓存延迟也比OSS小很多，对于删除重新上传的同名文件，基本是瞬间更新的。唯一的缺陷就是不借助workers无法设置主页，只能访问特定的HTML文件。更进阶的玩法有使用脚本为博客搭建图床，搭配Alist实现无服务器搭建私人聚合网盘等等。我会在后续文章陆续介绍这些。
 
 <script src="../widgets/a11y-m.js"></script>
+<script src="../widgets/a11y-m-customized.js"></script>
