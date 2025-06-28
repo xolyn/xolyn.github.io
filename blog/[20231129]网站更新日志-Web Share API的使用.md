@@ -34,5 +34,6 @@ if (navigator.share) {
 此外，现在landscape窗口中终于没有横向滚动条了。在使用F12页面检视了许久后最终发现原因是footer的宽度导致的。landscape模式默认下宽度不会减去窗口中竖向滚动条的宽度，但是portrait窗口却没有这个问题，原因是其竖向滚动条是置于页面顶层的。
 
 ***仍在更新中…***
-<script src="../widgets/a11y-m.js"></script>
+
+
 <script src="../widgets/a11y-m-customized.js"></script>

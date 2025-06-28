@@ -23,9 +23,15 @@ outputDir=os.path.join(relativeDir, 'index.html')
 
 allPosts=[]
 
+# add a customized js script
+jsURL='<script src="../widgets/a11y-m-customized.js"></script>'
 for mdFile in [x for x in os.listdir(relativeDir) if x.strip().endswith('.md') and not x.strip().startswith('.')]:
-    with open(mdFile, 'a') as file:
-            file.write('\n<script src="../widgets/a11y-m-customized.js"></script>')
+    with open(mdFile, 'r', encoding='utf-8') as file:
+        content = file.read()
+        if jsURL not in content:
+            with open(mdFile, 'a') as file:
+                    file.write(f'\n{jsURL}')
+                    
     file.close()
 
     postRelDir=os.path.join(relativeDir, mdFile)
