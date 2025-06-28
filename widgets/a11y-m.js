@@ -8,10 +8,10 @@ if (!linkExists) {
 }
 
 let a11ym=`
-       <div id="outer" style="position: fixed; left:50%; bottom: 2rem; transform: translateX(-50%); z-index: 9999; background-color: #D7D2DA; width: fit-content; padding: .5rem;border-radius: 99rem; display: flex; transition: .45s ; ">
-        <div id="left" style=" max-width: 5000px;overflow: hidden; transition: .45s ; text-wrap: nowrap; ">
-            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="window.scrollTo({top:0, behavior: 'smooth'})" class="material-symbols-outlined " style=" padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin: 0 .25rem;cursor: pointer; user-select: none;">&#xe5d8;</div>
-            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});" class="material-symbols-outlined " style=" padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin: 0 .25rem; cursor: pointer; user-select: none;">&#xe5db;</div></div>
+       <div id="outer" style="zoom: .7!important; position: fixed; left:50%; bottom: 2rem; transform: translateX(-50%); z-index: 9999; background-color: #D7D2DA; width: fit-content; padding: .5rem;border-radius: 99rem; display: flex; transition: .45s ; ">
+        <div id="left" style="max-width: 5000px;overflow: hidden; transition: .45s ; text-wrap: nowrap; ">
+            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="window.scrollTo({top:0, behavior: 'smooth'})" class="material-symbols-outlined " style=" padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; cursor: pointer; user-select: none;">&#xe5d8;</div>
+            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});" class="material-symbols-outlined " style=" padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer;  margin-right:.25rem; cursor: pointer; user-select: none;">&#xe5db;</div></div>
         <div id="toggle" 
         onclick="left.style.maxWidth=left.style.maxWidth=='0px'?'300px':'0px'; right.style.maxWidth=right.style.maxWidth=='0px'?'300px':'0px';"
         class="material-symbols-outlined" 
@@ -20,8 +20,8 @@ let a11ym=`
              &#xe5d3;
         </div>
         <div id="right" style=" max-width: 5000px;overflow: hidden; transition: .45s ; text-wrap: nowrap; ">
-            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="history.back()" class="material-symbols-outlined " style=" cursor: pointer; user-select: none; padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin: 0 .25rem;">&#xe5c4;</div>
-            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="window.location.reload()" class="material-symbols-outlined " style=" cursor: pointer; user-select: none; padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin: 0 .25rem;">&#xe5d5;</div>
+            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="history.back()" class="material-symbols-outlined " style=" cursor: pointer; user-select: none; padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; margin-left:.25rem; ">&#xe5c4;</div>
+            <div   onmouseover="this.style.backgroundColor='#6F6198';" onmouseout="this.style.backgroundColor='transparent';" onclick="window.location.reload()" class="material-symbols-outlined " style=" cursor: pointer; user-select: none; padding: .5rem; border-radius: 99rem; transition: .3s; cursor: pointer; ">&#xe5d5;</div>
         </div>
     </div>
 `
