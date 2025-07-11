@@ -9,7 +9,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Liter&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Liter&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
 <!-- https://icons.getbootstrap.com/ -->
 <link rel="stylesheet" href="widgets.css">
@@ -21,11 +23,16 @@
 
 :root{
 /* font-family: "zilla", serif; */
-font-family: "md";
+/* font-family: "md"; */
+font-family: Inter, sans-serif;
+letter-spacing: -.4px;
+font-weight: 400;
 /* font-feature-settings: 'liga' 1, 'calt' 1, 'ccmp' 1;  */
 -webkit-font-smoothing: antialiased;
 /* font-size: smaller; */
 }
+
+h1,h2,h3,h4,h5{font-weight: 600;}
 h2:hover::after,h3:hover::after,h4:hover::after,h5:hover::after{content: '\00a0 \F470'; font-family:'Bootstrap-icons'; font-size: smaller;}
 
 .note{
@@ -87,6 +94,14 @@ button:hover{
 }
 
 
+input.color:checked + label {background-color: #ddd;}
+label.color:hover {background-color: #ddd;}
+input.color{ display: none; }
+label.color{display: flex; 
+padding: 2.5px 5px; border-radius: 999rem; border: .75px solid #ddd; width: fit-content;font-size: small; cursor: pointer;
+display: flex; align-items: center; text-align: center; gap:2.5px; transition: background-color .3s ease-in-out; background-color: white;
+}
+
 </style>
 </head>
 <body style="margin: 5vh 5vw;">
@@ -111,7 +126,7 @@ button:hover{
             For customization purposes, contents inside do not have any pre-defined styles. <br>
         </p>
         <p>
-            For devices with a mouse: <span style="box-shadow: 1px 1px 1px; display: inline-block; background-color: rgb(242, 241, 241); padding: .15rem .3rem; border-radius: .5rem;">Shift</span> + wheel to scroll horizontally
+            For devices with a mouse: <span style="box-shadow: 1px 1px 1px; display: inline-block; background-color: rgb(242, 241, 241); padding: .15rem .6rem; border-radius: .5rem;">Shift</span> + wheel to scroll horizontally
         </p>
     </div>
 
@@ -216,10 +231,6 @@ button:hover{
     in this syntax:
 </p>
 
-<pre>
-&lt;div class="note-${code}"&gt;
-&lt;/div&gt;
-</pre>
 
 
 <div class="note">
@@ -233,67 +244,35 @@ button:hover{
 </div>
 
 
+<pre>
+&lt;div class="note-${code}"&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>Available colors</h3>
+
+
+
+<div style="display: flex; gap:.25rem;width: 100%; max-width: 100%; overflow-x: auto; ">
+    <input class="color" type="radio" name="a" id="g"  checked><label class='color' for="g"><span id="color" style="color:green">●</span> green </label>
+    <input class="color" type="radio" name="a" id="r" ><label class='color' for="r"><span id="color" style="color:red">●</span> red </label>
+    <input class="color" type="radio" name="a" id="y"><label class='color' for="y"><span id="color" style="color:yellow">●</span> yellow </label>
+    <input class="color" type="radio" name="a" id="b"><label  class='color' for="b"><span id="color" style="color:blue">●</span> blue </label>
+    <input class="color" type="radio" name="a" id="o"><label  class='color' for="o"><span id="color" style="color:orange">●</span> orange </label>
+    <input class="color" type="radio" name="a" id="p"><label  class='color' for="p"><span id="color" style="color:pink">●</span> pink </label>
+    <input class="color" type="radio" name="a" id="u"><label  class='color' for="u"><span id="color" style="color:purple">●</span> purple </label>
+    <input class="color" type="radio" name="a" id="e"><label  class='color' for="e"><span id="color" style="color:grey">●</span> grey </label>
+</div>
 
 
 <p>
-<!-- Green for tips, yellow for warning, red for error, blue for information. -->
+
 </p>
 
-<div class="note-g">
-    <p><b>This is a tip.</b></p>
-    Use color code <code>g</code> for <b>g</b>reen. 
-</div>
-<br>
-<div class="note-y">
-    <p><b>This is a warning.</b></p>
-    Use color code <code>y</code> for <b>y</b>ellow.
-</div>
-<br>
-<div class="note-r">
-    <p><b>This is an error.</b></p>
-    Use color code <code>r</code> for <b>r</b>ed.
-</div>
-<br>
-<div class="note-b">
-    <p><b>This is an info.</b></p>
-    Use color code <code>b</code> for <b>b</b>lue.
-</div>
-
-
-<h3>More themes</h3>
-
-<p>We dont know what do these color represent, but they are available for use.</p>
-
-<div class="note-e">
-    <p><b>This is an note of some kind.</b></p>
-    Use color code <code>e</code> for gr<b>e</b>y.
-</div>
-
-<br>
-
-<div class="note-k">
-    <p><b>This is an note of some kind.</b></p>
-    Use color code <code>k</code> for blac<b>k</b>.
-</div>
-
-<br>
-
-<div class="note-o">
-    <p><b>This is an note of some kind.</b></p>
-    Use color code <code>o</code> for <b>o</b>range.
-</div>
-
-<br>
-
-<div class="note-p">
-    <p><b>This is an note of some kind.</b></p>
-    Use color code <code>p</code> for <b>p</b>ink.
-</div>
-<br>
-
-<div class="note-u">
-    <p><b>This is an note of some kind.</b></p>
-    Use color code <code>u</code> for p<b>u</b>rple.
+<div class="note-g" id="show-note">
+<p><b>This is a note.</b></p>
+<p>Use color code <code id='colorAbbr'>g</code> for <code id='colorNameFull'>green</code></p>
+<!-- <br> -->
 </div>
 
 
@@ -441,6 +420,24 @@ document.getElementById('markers').addEventListener('change', function () {
     sDemo.classList.add(ms);
     markerStyle.innerHTML = ms;
 });
+
+
+const colorRadios = document.querySelectorAll('input.color');
+const showDiv = document.getElementById('show-note');
+
+colorRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            showDiv.className = '';
+            showDiv.classList.add('note-' + this.id);
+            document.getElementById('colorAbbr').innerHTML = this.id;
+            // find the span inside the label with id 'color' and change its color
+            const colorName = document.querySelector('label[for="' + this.id + '"] span#color').style.color;
+            document.getElementById('colorNameFull').innerHTML = colorName;
+        }
+    });
+});
+
 
 </script>
 </html>
