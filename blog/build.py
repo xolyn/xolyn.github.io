@@ -63,10 +63,15 @@ tempelateStart=\
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
 <link rel="stylesheet" href="index.css">
 <title>posts</title>
 </head>
 <body>
+<div style="width:100%; text-align: right; border-bottom: 1px solid #eee; padding: .5rem 0; position: sticky; top: 0; background: white;">
+<button id="sort-btn" style=" color:inherit; border:none; border-radius:.5rem; background:transparent;">&udarr;</button>
+</div>
+<div id='posts'>
 '''
 
 tempelateContent=''
@@ -76,14 +81,16 @@ allPosts.sort(key=lambda x:x['date'],reverse=True)
 
 for post in allPosts:
     _dir=post['dir']
-    content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+'\n'+ f'''<div class='date'>{datetime.strptime(str(post['date']), '%Y%m%d').strftime('%b %d, %Y')}</div>'''+'\n'
+    content=f'''<a href='{post['dir']}' class='title'>{post['title']}</a>'''+'\n'+ f'''<div class='date' data-date='{str(post['date'])}' >{datetime.strptime(str(post['date']), '%Y%m%d').strftime('%b %d, %Y')}</div>'''+'\n'
     content=f'''<div class='post'>{content}</div>'''+'\n'
     # print(content)
     tempelateContent+=content
 
 tempelateEnd=\
 '''
+</div>
 <script src="index.js"></script>
+<script src="../widgets/a11y-m.js"></script>
 </body>
 </html>
 '''

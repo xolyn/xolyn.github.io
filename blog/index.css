@@ -1,6 +1,6 @@
 html{font-family: inter; font-size: smaller;}
 body::before{
-    content: 'posts';
+    content: 'Posts';
     font-size: x-large;
     display: block;
     padding: 2vh 0;

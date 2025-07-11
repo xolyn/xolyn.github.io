@@ -1,11 +1,11 @@
 This post shows some interesting english words, etymologically. 
 
-1. Vitrify: convert something to glass(like)
+## Vitrify
+- Meaning: convert something to glass(like)
+- Origin: Old latin: Vitrium: glass
+- Extension: Vitriolic: sharp, keen (+critisism)
 
-Origin: Old latin: Vitrium: glass
-Extension: Vitriolic: sharp, keen (+critisism)
-
-2. Oxygen
+## Oxygen
 
 > **Intersting story**: 
 > 
@@ -20,6 +20,9 @@ The same naming convetion applys to hydrogen: "element that generates water"
 In (not) + fant (speak, comes from latin affix **fari**, extended to modern english: con**fess**, **fate**, **fa**te), simply means "unable to speak", which, well, is quite vivid to describe an infant.
 
 
-
+## Aftermath
+- Meaning: Result, Ramification
+- Origin: After (English) + mæð (Old English, from German Mahd, meaning mowing) 
+Actually, this word has nothing to do with 'math', which is not what I've been always imagining. It originally means "a second crop of grass grown on the same land after the first had been harvested", later converted to the meaning of "result" (of mowing).  
 
 <script src="../widgets/a11y-m-customized.js"></script>
