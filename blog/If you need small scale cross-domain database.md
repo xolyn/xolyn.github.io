@@ -1,5 +1,5 @@
 
-# In case you need small scale cross-domain database
+# If you need small scale cross-domain database
 
 Let’s be honest: sometimes you just want to store some structured data and read it from another domain, without messing with a real backend or complicated APIs. But then, CORS shows up and ruins your fetch-from-anywhere dreams.
 
