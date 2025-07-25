@@ -12,7 +12,8 @@ input{width: 5rem;}
 </style>
 <body style="font-family: aptos; ">
   <div id="warning" class="hideIfEmpty" style="background-color: orange; position: fixed; top:0; width:100dvw; left:0"></div>
-  <h2>SQL Schema Generator</h2>
+  <h2>UTILSQL</h2>
+  <h3>SQL Schema Generator</h3>
         SQL Flavor:
     <select id="sqlFlavor">
       <option value="sqlite">SQLite</option>
@@ -43,8 +44,13 @@ input{width: 5rem;}
 
   <button onclick="addField('sqlite')">Add Field</button>
   <button onclick="generateSQL()">Generate SQL</button>
-  <pre id="result" class="hideIfEmpty" style="border: 1px solid black; "></pre>
-  <button onclick="navigator.clipboard.writeText(document.getElementById('result').textContent);">Copy</button>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('result').textContent);">Copy schema</button>
+<pre id="result" class="hideIfEmpty" style="border: 1px solid black; " translate="no">
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY
+);
+</pre>
+
 <script src="function.js"></script>
 </body>
 </html>

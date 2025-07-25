@@ -76,7 +76,10 @@ function validateFields() {
             warning.style.color = 'red';
             warningDiv.appendChild(warning);
             hasErrors = true;
-            nameInput.focus();
+            nameInput.style.outline='2px solid red';
+            setTimeout(function (){
+            nameInput.style.outline='none';
+            }, 1500);
         }
         
         if (name && fieldNames.has(name.toLowerCase())) {
