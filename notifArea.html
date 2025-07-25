@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>Document</title>
+<style>
+</style>
+</head>
+<body>
+
+<button onclick="test()">Test pushing</button>
+
+<details open style="border: 1px solid black;">
+<summary style="width: 100%; display: flex;">Notifications <button style="margin-left:auto;" onclick="clearAllNotif()">Clear all</button></summary>
+<div id="notifArea" style=" height: 30dvh; width: 100%; overflow-y: auto; max-height: 20dvh; z-index: 22;"></div>
+</details>
+
+<script>
+    let removeCard = function(card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateX(-100%)';
+        setTimeout(() => {
+            card.remove();
+        }, 400);
+    }
+
+    let pushNotif = function(message, duration = 3000, when=false) {
+        let timeTxt=''
+        if (when==true){
+            timeTxt=`<span style='font-size:small'>${new Date().toTimeString()}</span><br>`
+        }
+        const card = document.createElement('div');
+        card.className = 'notif-card';
+        card.innerHTML = `<span>${timeTxt}${message}</span><div onclick='this.parentNode.dispatchEvent(new Event("remove"))' style='width:fit-content; margin-left:auto; cursor: pointer'>&times;</div>`;
+        card.style.border = '1px solid black';
+        card.style.display = 'flex';
+        card.style.boxSizing = 'border-box';
+        card.style.margin = '.25rem';
+        card.style.padding = '.25rem';
+        card.style.transition = 'opacity 0.4s, transform 0.4s';
+        card.style.opacity = '1';
+
+        // Add event listener for remove event
+        card.addEventListener('remove', function() {
+            removeCard(card);
+        });
+
+        notifArea.appendChild(card);
+
+        if(duration !== -1) {
+            setTimeout(() => {
+                removeCard(card);
+            }, duration);
+        }
+    }
+
+  let test = function(){
+    for (let i = 0; i < 20; i++) {
+        pushNotif(`Test notification #${i+1}`, -1)
+    }
+  }
+
+  let clearAllNotif = function(){
+      const cards = document.querySelectorAll('.notif-card');
+      cards.forEach(card => {
+          card.dispatchEvent(new Event('remove'));
+      });
+  }
+</script>
+</body>
+</html>

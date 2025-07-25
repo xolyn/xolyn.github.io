@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<title>SQL Schema Generator</title>
+</head>
+<style>
+.hideIfEmpty:empty{border: none !important;}
+select{width: 5rem;}
+input{width: 5rem;}
+</style>
+<body style="font-family: aptos; ">
+  <div id="warning" class="hideIfEmpty" style="background-color: orange; position: fixed; top:0; width:100dvw; left:0"></div>
+  <h2>SQL Schema Generator</h2>
+        SQL Flavor:
+    <select id="sqlFlavor">
+      <option value="sqlite">SQLite</option>
+    </select>  <br>
+
+    Table Name:
+    <input type="text" id="tableName" value="users">
+
+  <label>
+
+  </label>
+
+<div style="width: 100%; max-width: 100%; overflow-x: auto;margin: 1rem 0; box-sizing: border-box;">
+      <table id="fieldsTable" border="1" style="margin: 0;">
+    <thead>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Primary Key</th>
+        <th>Not null</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody id="fieldsBody">
+    </tbody>
+  </table>
+</div>
+
+  <button onclick="addField('sqlite')">Add Field</button>
+  <button onclick="generateSQL()">Generate SQL</button>
+  <pre id="result" class="hideIfEmpty" style="border: 1px solid black; "></pre>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('result').textContent);">Copy</button>
+<script src="function.js"></script>
+</body>
+</html>
