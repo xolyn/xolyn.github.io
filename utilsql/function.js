@@ -33,15 +33,16 @@ function addField(flavor='sqlite', placeHolder='') {
     const tbody = document.getElementById('fieldsBody');
     const tr = document.createElement('tr');
     tr.innerHTML = `
-    <td><input value="${placeHolder}" placeholder="field_name"></td>
+    <td><input class="mdl-textfield__input" value="${placeHolder}" placeholder="field_name"></td>
     <td>
-        <select>
+        <select class='mdl-textfield__input'>
         ${genOptions(flavor)}
         </select>
     </td>
-    <td><input type="checkbox" ${placeHolder==='id'?'checked':''}></td>
-    <td><input type="checkbox" ${placeHolder!=='id'?'checked':''}></td>
-    <td><button onclick="deleteRow(this)">Delete</button></td>
+    <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder==='id'?'checked':''}></td>
+    <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder!=='id'?'checked':''}></td>
+    <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder==='id'?'checked':''}></td>
+    <td class="action-cell"><button class="material-icons mdl-icon-toggle__label" style='border:none' onclick="deleteRow(this)">delete</button></td>
     `;
     tbody.appendChild(tr);
   
@@ -109,6 +110,9 @@ function generateSQL() {
         return;
     }
     
+    const flavor = document.getElementById('sqlFlavor').value;
+    const autoIncrementKeyword = info[flavor]?.autoIncrement || '';
+    
     const rows = document.querySelectorAll('#fieldsBody tr');
     let fields = [];
     let pkFields = [];
@@ -119,6 +123,7 @@ function generateSQL() {
         const type = cells[1].querySelector('select').value;
         const pk = cells[2].querySelector('input[type=checkbox]').checked;
         const nullable = cells[3].querySelector('input[type=checkbox]').checked;
+        const autoIncrement = cells[4].querySelector('input[type=checkbox]').checked;
         
         if (!name) return;
         
@@ -131,6 +136,10 @@ function generateSQL() {
         
         if (nullable) {
             fieldDef += ' NOT NULL';
+        }
+        
+        if (autoIncrement && autoIncrementKeyword) {
+            fieldDef += ' ' + autoIncrementKeyword;
         }
         
         fields.push(fieldDef);
@@ -147,10 +156,29 @@ function generateSQL() {
 
 
 window.onload = function(){
-    addField('sqlite','id');
     let sqlFlavorinnerHTML=''
-        Object.keys(info).forEach(x=>{
-        sqlFlavorinnerHTML+=`<option value="${x}">${x}</option>\n`
+    Object.keys(info).forEach(x=>{
+        sqlFlavorinnerHTML+=`<option value="${x}" ${x=='sqlite'?'selected':''}>${x}</option>\n`
     })
     sqlFlavor.innerHTML=sqlFlavorinnerHTML;
+    
+    // 监听SQL类型变化
+    document.getElementById('sqlFlavor').addEventListener('change', function() {
+        const flavor = this.value;
+        // 更新已有行的类型选项
+        const rows = document.querySelectorAll('#fieldsBody tr');
+        rows.forEach(row => {
+            const typeCell = row.querySelectorAll('td')[1];
+            const typeSelect = typeCell.querySelector('select');
+            const currentValue = typeSelect.value;
+            typeSelect.innerHTML = genOptions(flavor);
+            // 尝试保持相同的类型，如果新的SQL类型中有的话
+            if (info[flavor]?.types.includes(currentValue)) {
+                typeSelect.value = currentValue;
+            }
+        });
+    });
+    
+    // 添加初始字段
+    addField('sqlite','id');
 }

@@ -3,54 +3,114 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel='stylesheet' href='https://xolyn.github.io/font.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <title>SQL Schema Generator</title>
 </head>
 <style>
 .hideIfEmpty:empty{border: none !important;}
 select{width: 5rem;}
 input{width: 5rem;}
+select,option{font-family: "Roboto" !important;}
+/* 禁用表格行的hover效果 */
+.mdl-data-table tbody tr:hover {
+  background-color: transparent !important;
+}
+/* 表头样式 */
+.mdl-data-table th {text-align: center !important; font-family: "Roboto";}
+/* Action列的sticky定位 */
+.action-cell {
+  position: sticky;
+  right: 0;
+  background-color: white;
+  z-index: 2;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.mdl-data-table td{text-align: center !important; padding: 5px !important;}
+/* 确保表头和单元格都有sticky定位 */
+.mdl-data-table th.action-cell,
+.mdl-data-table td.action-cell {
+  position: sticky;
+  right: 0;
+  background-color: white;
+}
+/* 表头的z-index更高，确保在滚动时显示在最上层 */
+.mdl-data-table th.action-cell,.mdl-data-table td.action-cell{
+  z-index: 3;
+}
+button{margin-top:.5rem !important;}
+
 </style>
-<body style="font-family: aptos; ">
-  <div id="warning" class="hideIfEmpty" style="background-color: orange; position: fixed; top:0; width:100dvw; left:0"></div>
-  <h2>UTILSQL</h2>
-  <h3>SQL Schema Generator</h3>
-        SQL Flavor:
-    <select id="sqlFlavor">
-      <option value="sqlite">SQLite</option>
-    </select>  <br>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    Table Name:
-    <input type="text" id="tableName" value="users">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <title>UTILSQL</title>
+</head>
+<body  style="margin: 0; " class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div id="warning" class="hideIfEmpty mdl-shadow--2dp" style="z-index: 9999; background-color: orange; position: fixed; top:0; width:100dvw; left:0"></div>
+  <main class="mdl-layout__content" style=" box-sizing: border-box; margin: 0;">
+    <h2 style="padding: 15dvh 2rem; background-color: #3F51B5; width: 100%; margin: 0; color:white">UTILSQL</h2>
 
-  <label>
+<section id="sql-schema-generator" style="padding: 1.5rem;">
+    <h3>SQL Schema Generator</h3>
 
-  </label>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <label class="mdl-textfield__label" for="sqlFlavor">SQL Flavor</label>
+      <select class="mdl-textfield__input" id="sqlFlavor">
+      </select>
+    </div>
 
-<div style="width: 100%; max-width: 100%; overflow-x: auto;margin: 1rem 0; box-sizing: border-box;">
-      <table id="fieldsTable" border="1" style="margin: 0;">
-    <thead>
-    <tr>
-        <th>Field</th>
-        <th>Type</th>
-        <th>Primary Key</th>
-        <th>Not null</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody id="fieldsBody">
-    </tbody>
-  </table>
-</div>
+    <br>
 
-  <button onclick="addField('sqlite')">Add Field</button>
-  <button onclick="generateSQL()">Generate SQL</button>
-  <button onclick="navigator.clipboard.writeText(document.getElementById('result').textContent);">Copy schema</button>
-<pre id="result" class="hideIfEmpty" style="border: 1px solid black; " translate="no">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" id="tableName" value="users">
+      <label class="mdl-textfield__label" for="tableName">Table Name</label>
+    </div>
+
+    <div style="width: 100%; max-width: 100%; overflow-x: auto; margin: 1rem 0; box-sizing: border-box;">
+      <table style="width: 100%;" id="fieldsTable" class="mdl-data-table mdl-js-data-table" border="1" style="margin: 0;">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">Field</th>
+            <th>Type</th>
+            <th>Primary Key</th>
+            <th>Not null</th>
+            <th>Autoincrement</th>
+            <th class="action-cell">Action</th>
+          </tr>
+        </thead>
+        <tbody id="fieldsBody">
+        </tbody>
+      </table>
+    </div>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" onclick="addField(document.getElementById('sqlFlavor').value)">
+          Add Field
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" onclick="generateSQL()">
+          Generate SQL
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="navigator.clipboard.writeText(document.getElementById('result').textContent); this.innerHTML='COPIED!'; setTimeout(()=>this.innerHTML='COPY SCHEMA', 500);">
+          Copy schema
+        </button>
+
+
+    <pre contenteditable id="result" class="hideIfEmpty" style="border: 1px solid black; border-radius: 3px; padding: 5px;" translate="no">
 CREATE TABLE users (
-  id INTEGER PRIMARY KEY
-);
-</pre>
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+);</pre>
 
-<script src="function.js"></script>
+    </section>
+
+  </main>
+  <script src="function.js"></script>
 </body>
 </html>
