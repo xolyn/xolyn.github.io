@@ -40,7 +40,7 @@ function addField(flavor='sqlite', placeHolder='') {
         </select>
     </td>
     <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder==='id'?'checked':''}></td>
-    <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder!=='id'?'checked':''}></td>
+    <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder!=='id'?'checked':''}></td>s
     <td><input class="mdl-checkbox__input" type="checkbox" ${placeHolder==='id'?'checked':''}></td>
     <td class="action-cell"><button class="material-icons mdl-icon-toggle__label" style='border:none' onclick="deleteRow(this)">delete</button></td>
     `;
