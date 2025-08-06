@@ -62,5 +62,5 @@ No CORS. No backend. Just data, ready to go.
 *Still exploring!*
 
 <script src="../widgets/a11y-m-customized.js"></script>
-<script src="../js/ctrlCode.js></script>
+<script src="../js/ctrlCode.js"></script>
 
