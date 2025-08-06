@@ -44,14 +44,13 @@
 @font-face {font-family:Neue Regrade; font-weight: normal; src:url("fonts/Neue Regrade Medium.otf");}
 @font-face {font-family:Neue Regrade; font-weight:bold;   src:url("fonts/Neue Regrade Bold.otf");}
 @font-face {font-family:ytf; font-weight:normal;   src:url("fonts/ytf.woff2");}
+@font-face {font-family:RM Neue;  src:url("fonts/RMNeue-Regular.otf");}
+@font-face {font-family:'snr';  src:url("fonts/snw.woff");}
 
 @font-face { font-family: 'SarasaGothicJ'; src: url("fonts/SarasaGothicJ-Regular.ttf") }
 @font-face { font-family: 'SarasaGothicK'; src: url("fonts/SarasaGothicK-Regular.ttf") }
 @font-face { font-family: 'SarasaGothicSC'; src: url("fonts/SarasaGothicSC-Regular.ttf") }
 @font-face { font-family: 'SarasaGothicTC'; src: url("fonts/SarasaGothicTC-Regular.ttf") }
-
-@font-face {font-family:RM Neue;  src:url("fonts/RMNeue-Regular.otf");}
-@font-face {font-family:'snr';  src:url("fonts/snw.woff");}
 
 @font-face {font-family:basier; src:url("fonts/Basier\ Square\ Regular.otf");}
 @font-face {font-family:pretendard; src:url("fonts/PretendardVariable.woff2");}
