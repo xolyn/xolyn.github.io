@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function() {
       btn.style.right = '1rem';
       btn.style.border = '1px solid #ddd';
       btn.style.backgroundColor = '1px solid #ccc';
-      btn.style.borderRadius = '20%';
+      btn.style.borderRadius = '.5rem';
       btn.style.color = 'inherit';
       btn.style.zIndex = '10';
       if (getComputedStyle(el).position === 'static') {
