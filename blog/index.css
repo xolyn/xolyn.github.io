@@ -1,4 +1,4 @@
-html{font-family: inter; font-size: smaller;}
+html{font-family: "lucida", "appletc"; font-size: small;}
 body::before{
     content: 'Posts';
     font-size: x-large;

@@ -53,6 +53,7 @@
 @font-face { font-family: 'SarasaGothicSC'; src: url("fonts/SarasaGothicSC-Regular.ttf") }
 @font-face { font-family: 'SarasaGothicTC'; src: url("fonts/SarasaGothicTC-Regular.ttf") }
 
+@font-face {font-family:lucida; src:url("fonts/lucidasansunicode.ttf");}
 @font-face {font-family:basier; src:url("fonts/Basier\ Square\ Regular.otf");}
 @font-face {font-family:pretendard; src:url("fonts/PretendardVariable.woff2");}
 
