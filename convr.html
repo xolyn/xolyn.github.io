@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://google-fonts.mirrors.sjtug.sjtu.edu.cn/css2?family=Inter:wght@400..900&display=swap">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/lucide-static@latest/font/lucide.css">
+    <title>Template</title>
+    <style>
+        :root{
+            --outer-margin: .5rem;
+            --inner-margin: .5rem;
+            --outer-color: #f1f1f1;
+            --inner-color: #fff;
+            --button-color: #f1f1f1;
+            --font-family: 'Inter';
+            font-synthesis: none;
+            letter-spacing: -.3px;
+        }
+
+        main *{ zoom:.9; }
+
+        main{ border-radius: 5.00px; }
+
+        button{
+            font-family: var(--font-family);
+            border-radius: 5.00px;
+            border: 1px solid color-mix(in srgb, var(--button-color) 95%, black 5%);
+            background-color: var(--button-color);
+            padding: calc( var(--outer-margin) / 2);
+            transition: .5s;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: color-mix(in srgb, var(--button-color) 95%, black 5%);
+        }
+
+        a {color: inherit; filter: contrast(.2); transition: .2s;}
+
+        a:hover{ filter: contrast(1); }
+
+        input, textarea{border: 1px solid color-mix(in srgb, var(--button-color) 95%, black 5%); border-radius: 5.00px;}
+
+    </style>
+</head>
+<body style="margin: var(--outer-margin); background-color: var(--outer-color); font-family: var(--font-family);">
+    <nav class="title" style="margin-bottom: var(--outer-margin); font-size: xx-large; padding: 1rem 0; font-weight: 900; ">
+        <span class="icon-refresh-ccw-dot" style="font-size: xx-large;"></span>&nbsp;<span class="icon-sparkle" style="font-size: xx-large;"></span>
+    </nav>
+    <main style="background-color: var(--inner-color); padding: var(--inner-margin) max(6%, calc(50% - 400px));">
+        <h1>hover → inline attribute</h1>
+        <h3>When not hovered:</h3>
+      
+          <code>...{</code><textarea id="original" type="text" style="width:100%;" rows="5" placeholder="// Will not check the validity of the CSS!
+      background-color:orange;
+      border-radius:8px;" ></textarea><code>}</code>
+      
+        <h3>When hovered:</h3>
+        <code>...:hover{</code>
+        <textarea id="cssIn" rows="5" style="width:100%;" placeholder="// Will not check the validity of the CSS!
+      background-color:red;
+      border-radius:10px;"></textarea>
+      <code>}</code>
+      
+      
+      
+        <h3>Options</h3>
+      <p>
+          <!-- <input type="checkbox" id="grave"><label for="grave">Use grave quotation marks</label>
+          <br> -->
+          <input type="checkbox" id="check"><label for="check">Remove styles that exists only in hover css rules instead of imputing as empty string</label>
+      </p>
+      
+        <div>
+          <button onclick="run()"><span class="icon-sparkle"></span> Generate inline attribute</button>
+        <button onclick="loadExample()"><span class="icon-pencil-line"></span> Load example</button>
+
+      </div>
+      
+        <h3>Result</h3>
+        <textarea id="out" rows="5" style="width:100%;" placeholder='Generated inline attributes'></textarea>
+        <button onclick="copyOut()"><span class="icon-copy"></span> Copy</button>
+
+
+      <h1>Resource speed up</h1>
+      <h3>Your resources:</h3>
+      <textarea id="resourceIn" rows="5" style="width:100%;" placeholder="Paste your resources here..."></textarea>
+      
+      <div>
+        <button onclick="speedUpResources()"><span class="icon-sparkle"></span> Generate proxied</button>
+        <button onclick="loadResourceExample()"><span class="icon-pencil-line"></span> Load example</button>
+
+      </div>
+      <h3>Result</h3>
+      <textarea id="resourceOut" rows="5" style="width:100%;" placeholder='Generated proxied resources'></textarea>
+      <button onclick="copyResourceOut()"><span class="icon-copy"></span> Copy</button>
+    </main>
+
+    
+    
+
+    <script>
+        // --- 工具：解析 "prop: value;" 列表为 { camelProp: 'value' } ---
+        function toCamel(prop) {
+          return prop
+            .trim()
+            .toLowerCase()
+            .replace(/[-_]+([a-z])/g, (_, c) => c.toUpperCase()); // kebab/snake -> camel
+        }
+    
+        function parseDecls(text) {
+          const map = {};
+          (text || "")
+            .split(";")
+            .map(s => s.trim())
+            .filter(Boolean)
+            .forEach(item => {
+              const idx = item.indexOf(":");
+              if (idx === -1) return;
+              const key = toCamel(item.slice(0, idx));
+              const val = item.slice(idx + 1).trim();
+              if (key) map[key] = val;
+            });
+          return map;
+        }
+    
+        function escapeSingle(str) {
+          return String(str).replace(/'/g, "\\'");
+        }
+    
+        function genHandlerCode(assignMap) {
+          // 生成 "this.style.xxx='val'; this.style.yyy='val2';"
+          const parts = [];
+          for (const k of Object.keys(assignMap)) {
+            const v = assignMap[k];
+            // 允许清空：当 v === "" 时写成空字符串赋值
+            parts.push(`this.style.${k}='${escapeSingle(v)}';`);
+          }
+          return parts.join(" ");
+        }
+    
+        function unionKeys(a, b) {
+          const s = new Set([...Object.keys(a), ...Object.keys(b)]);
+          return Array.from(s);
+        }
+    
+        function run() {
+          const baseText  = document.getElementById("original").value; // 非 hover
+          const hoverText = document.getElementById("cssIn").value;    // hover
+          const base = parseDecls(baseText);
+          const hov  = parseDecls(hoverText);
+          
+          // 读取复选框状态
+          const removeHoverOnly = document.getElementById("check").checked;
+    
+          // 统一 key 集，hover 缺省用 ""，base 缺省也用 ""
+          const keys = unionKeys(base, hov);
+    
+          const overAssign = {};
+          const outAssign  = {};
+          keys.forEach(k => {
+            overAssign[k] = hov[k] ?? "";   // 进入：设为 hover 值或清空
+            
+            // 离开时的处理
+            if (removeHoverOnly && !base.hasOwnProperty(k) && hov.hasOwnProperty(k)) {
+              // 如果选中了"移除仅存在于hover中的样式"，且该样式只在hover中存在
+              // 则不添加到 outAssign 中（跳过）
+              return;
+            }
+            outAssign[k]  = base[k] ?? "";  // 离开：复原为 base 值或清空
+          });
+    
+          const onOver = genHandlerCode(overAssign);
+          const onOut  = genHandlerCode(outAssign);
+    
+          const attrOver = `onmouseover="${onOver}"`;
+          const attrOut  = `onmouseout="${onOut}"`;
+    
+          const result = [
+            attrOver,
+            attrOut,
+            "",
+          ].join("\n");
+    
+          document.getElementById("out").value = result;
+        }
+    
+        function loadExample() {
+          document.getElementById("original").value = [
+          "background-color:orange;",
+          "border-radius:8px;",
+          ].join("\n");
+          document.getElementById("cssIn").value = [
+          "background-color:red;",
+          "border-radius:10px;",
+          ].join("\n");
+          document.getElementById("out").value = "";
+        }
+    
+        function copyOut() {
+          const ta = document.getElementById("out");
+          ta.select();
+          document.execCommand("copy");
+          ta.blur();
+          alert("已复制输出");
+        }
+    
+        // --- 资源加速功能 ---
+        function speedUpResources() {
+          const input = document.getElementById("resourceIn").value;
+          let result = input;
+    
+          // 1. cdn.jsdelivr.net → fastly.jsdelivr.net
+          result = result.replace(/https?:\/\/cdn\.jsdelivr\.net/g, 'https://fastly.jsdelivr.net');
+    
+          // 2. unpkg.com → s4.zstatic.net/npm
+          result = result.replace(/https?:\/\/unpkg\.com/g, 'https://s4.zstatic.net/npm');
+    
+          // 3. raw.githubusercontent.com → fastly.jsdelivr.net/gh
+          // 格式: raw.githubusercontent.com/user/repo/branch/path → fastly.jsdelivr.net/gh/user/repo@branch/path
+          result = result.replace(
+            /https?:\/\/raw\.githubusercontent\.com\/([^\/]+)\/([^\/]+)\/([^\/]+)\/(.*)/g,
+            'https://fastly.jsdelivr.net/gh/$1/$2@$3/$4'
+          );
+    
+          // 4. fonts.googleapis.com → google-fonts.mirrors.sjtug.sjtu.edu.cn
+          result = result.replace(/https?:\/\/fonts\.googleapis\.com/g, 'https://google-fonts.mirrors.sjtug.sjtu.edu.cn');
+    
+          document.getElementById("resourceOut").value = result;
+        }
+    
+        function loadResourceExample() {
+          document.getElementById("resourceIn").value = [
+            '<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">',
+            '<script src="https://unpkg.com/blaze-slider@latest/dist/blaze-slider.min.js"><\/script>',
+            '<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"><\/script>',
+            '<link rel="stylesheet" href="https://raw.githubusercontent.com/user/repo/main/style.css">',
+          ].join("\n");
+          document.getElementById("resourceOut").value = "";
+        }
+    
+        function copyResourceOut() {
+          const ta = document.getElementById("resourceOut");
+          ta.select();
+          document.execCommand("copy");
+          ta.blur();
+          alert("已复制输出");
+        }
+      </script>
+
+</body>
+</html>
